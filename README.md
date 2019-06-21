@@ -1,9 +1,9 @@
-# CMake C++ Google Test Project template
+# Gene's C++ Music Frobs
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/genedelisa/cppGoogleTestDLProject.svg)](https://github.com/genedelisa/cppGoogleTestDLProject/commits/master)
+[![GitHub last commit](https://img.shields.io/github/last-commit/genedelisa/GDMusicKit.svg)](https://github.com/genedelisa/GDMusicKit/commits/master)
 
-[![GitHub release](https://img.shields.io/github/release/genedelisa/cppGoogleTestDLProject.svg)](https://github.com/genedelisa/cppGoogleTestDLProject/releases/)
-[![GitHub release date](https://img.shields.io/github/release-date/genedelisa/cppGoogleTestDLProject.svg)](https://github.com/genedelisa/cppGoogleTestDLProject/releases)
+[![GitHub release](https://img.shields.io/github/release/genedelisa/GDMusicKit.svg)](https://github.com/genedelisa/GDMusicKit/releases/)
+[![GitHub release date](https://img.shields.io/github/release-date/genedelisa/GDMusicKit.svg)](https://github.com/genedelisa/GDMusicKit/releases)
 
 [![C++17](https://img.shields.io/badge/c++17-compatible-4BC51D.svg?style=flat")](https://www.iso.org/standard/68564.html)
 [![Platforms macOS](https://img.shields.io/badge/Platforms-OS%20X-lightgray.svg?style=flat)](https://swift.org/)
@@ -15,18 +15,19 @@
 
 ## What's this?
 
+Gene's music frobs. Things like Pitch and Note etc.
+
+
 This is a [CMake 3](https://cmake.org) configured C++ project.
 
-There is one C++ class and it is shoved into a static library.
+A typical cmake tapdance is like this:
 
-* src contains the source for the library. Surprise!
-* include contains the headers.
-* test contains the Google test.
-* app contains a command line app that uses the library.
-
-The executable and a test runner are built in build/bin.
-
-Google Test/Mock are downloaded if an option is set.
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
 
 [Doxygen](http://www.doxygen.nl) is run to generate documentation if an option is set. You need to download and install it first. I suggest you run the app to reconfigure doc/Doxyfile.in
 
