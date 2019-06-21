@@ -1,4 +1,6 @@
 # Download and unpack googletest at configure time
+# copied from the google test page
+
 configure_file(${CMAKE_SOURCE_DIR}/cmake/GoogleTest-CMakeLists.txt.in ${CMAKE_BINARY_DIR}/googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
@@ -20,9 +22,17 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
                  EXCLUDE_FROM_ALL)
 
 #######################################
-# Now simply link against gtest or gtest_main as needed. Eg
+# Configure the tests
+
+include(googletest)
+
+set(Source
+    src/main.cpp
+    src/Pitch_test.cpp
+)
+
 add_executable(gdmusickit_test
-	src/main.cpp
+    ${Source}
 )
 
 target_compile_features(gdmusickit_test
@@ -31,6 +41,13 @@ target_compile_features(gdmusickit_test
 )
 
 target_link_libraries(gdmusickit_test
+    PUBLIC
+    gtest
 	gtest_main
 	GDMusicKit::gdmusickit
+)
+
+gtest_discover_tests(gdmusickit_test
+    ${Source}
+    "discovering tests"
 )

@@ -2,16 +2,18 @@
 
 #include <gdmusickit/gdmusickit.h>
 
-
-using gdmusickit::Pitch;
-//using GDMusicKit;
+using namespace gdmusickit;
 
 TEST(GDMusicTest, create) {
 	Pitch *p = new Pitch(60);
+    EXPECT_EQ(60, p->midiPitchNumber());
+
+    auto pitch = std::make_unique<Pitch>(72);
+    EXPECT_EQ(72, pitch->midiPitchNumber());    
 }
 
 
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
+// int main(int argc, char **argv) {
+//   ::testing::InitGoogleTest(&argc, argv);
+//   return RUN_ALL_TESTS();
+// }
