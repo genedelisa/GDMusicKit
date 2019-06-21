@@ -1,0 +1,24 @@
+
+
+// gene's music kit
+namespace gdmusickit {
+
+    class Pitch {
+      public:
+				Pitch(int midiNumber);
+        int pitchClass();
+        int octave();
+        static double midiEqualTemperamentFrequency(int midiNumber);
+				inline static int octaveForMiddleC = 5;
+
+      protected:
+
+      private:
+        int midiNumber{0};
+        double frequency{0};
+
+
+        // pitchbend? cents? spelling?
+    };
+
+} // namespace gmk

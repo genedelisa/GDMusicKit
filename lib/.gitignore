@@ -1,0 +1,4 @@
+build
+buildMacOS
+ipch
+.DS_Store

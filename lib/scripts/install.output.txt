@@ -1,0 +1,12 @@
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/lib/libgdmusickit.a
+-- Up-to-date: /usr/local/include
+-- Installing: /usr/local/include/.DS_Store
+-- Installing: /usr/local/include/gdmusickit
+-- Installing: /usr/local/include/gdmusickit/gdmusickit.h
+-- Installing: /usr/local/include/gdmusickit/Pitch.hpp
+-- Installing: /usr/local/lib/cmake/GDMusicKit/GDMusicKitTargets.cmake
+-- Installing: /usr/local/lib/cmake/GDMusicKit/GDMusicKitTargets-noconfig.cmake
+-- Installing: /usr/local/lib/cmake/GDMusicKit/GDMusicConfig.cmake
+-- Installing: /usr/local/lib/cmake/GDMusicKit/GDMusicConfigVersion.cmake

@@ -1,0 +1,115 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options":{
+		"env": {
+			"ename": "${workspaceFolderBasename}"
+		}
+	  },
+	"presentation": {
+		"clear": true,
+		"echo": false,
+		"reveal": "always",
+		"focus": true,
+		"panel": "shared",
+		"showReuseMessage": false
+	},
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "clang++ C++17 build active file",
+            "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+            "args": [
+                "-std=c++17",
+                "-stdlib=libc++",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "build and run active file",
+            "command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "dependsOn": "clang++ C++17 build active file",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "make all",
+            "type": "shell",
+            "command": "cd build && make all",
+            "group": {
+                "kind": "build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "make test",
+            "type": "shell",
+            "command": "cd build && make test",
+            "problemMatcher": []
+        },
+        {
+            "label": "make clean",
+            "type": "shell",
+            "command": "cd build && make clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "make doc",
+            "type": "shell",
+            "command": "cd build && make doc",
+            "problemMatcher": []
+        },
+        {
+            "label": "clean build",
+            "type": "process",
+            "command": "rm -rf build/*",
+            "problemMatcher": []
+        },
+        {
+            "label": "cmake",
+            "type": "shell",
+            "command": "rm -rf build/* && cd build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON .. && make all",
+            "problemMatcher": []
+        },
+        {
+            "label": "cmake just docs",
+            "type": "shell",
+            "command": "rm -rf build/* && cd build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "clang++ build active file",
+            "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
