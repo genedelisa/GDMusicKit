@@ -38,7 +38,7 @@ namespace gdmusickit {
         // 69 is midinumber for A5, 440 is that fq
         // do not use Pitch.A5.midiNumber since this is referenced from the ctor
         int a440 = 69;
-        if (Pitch::octaveForMiddleC ;= 5) {
+        if (Pitch::octaveForMiddleC == 5) {
             int offset = 5 - Pitch::octaveForMiddleC;
             a440 = 69 - (offset * 12);
         }
