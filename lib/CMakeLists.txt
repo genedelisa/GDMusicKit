@@ -62,65 +62,10 @@ target_link_libraries(gdmusickit
         Boost::regex
 )
 
-##############################################
-# Installation instructions
-
-include(GNUInstallDirs)
-set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/GDMusicKit)
-
-install(TARGETS gdmusickit
-    EXPORT gdmusickit-targets
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
-
-#This is required so that the exported target has the name GDMusicKit and not gdmusickit
-set_target_properties(gdmusickit PROPERTIES EXPORT_NAME GDMusicKit)
-
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-
-#Export the targets to a script
-install(EXPORT gdmusickit-targets
-  FILE
-    GDMusicKitTargets.cmake
-  NAMESPACE
-    GDMusicKit::
-  DESTINATION
-    ${INSTALL_CONFIGDIR}
-)
-
-#Create a ConfigVersion.cmake file
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    ${CMAKE_CURRENT_BINARY_DIR}/GDMusicKitConfigVersion.cmake
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY AnyNewerVersion
-)
-
-configure_package_config_file(${CMAKE_CURRENT_LIST_DIR}/cmake/GDMusicKitConfig.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/GDMusicKitConfig.cmake
-    INSTALL_DESTINATION ${INSTALL_CONFIGDIR}
-)
-
-#Install the config, configversion and custom find modules
-install(FILES
-    #${CMAKE_CURRENT_LIST_DIR}/cmake/FindRapidJSON.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/GDMusicKitConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/GDMusicKitConfigVersion.cmake
-    DESTINATION ${INSTALL_CONFIGDIR}
-)
-
-##############################################
-## Exporting from the build tree
-
-export(EXPORT gdmusickit-targets
-	FILE ${CMAKE_CURRENT_BINARY_DIR}/GDMusicKitTargets.cmake
-	NAMESPACE GDMusicKit::)
-
-#Register package in user's package registry
-export(PACKAGE GDMusicKit)
-
 #########################
 
 add_subdirectory(test)
 add_subdirectory(doc)
+
+#########################
+include(installation.cmake.in)

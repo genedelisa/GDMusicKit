@@ -1,8 +1,9 @@
 
 # Main Project Documentation Page {#mainpage}
 
-A template for C++17 projects.
+My music frobs.
 
+## doxygen foo
 This page will be under Related Files unless you edit Doxyfile
 and set USE_MDFILE_AS_MAINPAGE = main.md
 Or you can use your top level README.md if you don't mind the tags.
@@ -14,7 +15,7 @@ here I'm linking to another page by its header label
 
 ## Classes
 
-Here is [the account class with namespace](@ref gend::Account) 
+Here is [the gdmusickit::Pitch class](@ref gdmusickit::Pitch) 
 If a class is in a namespace, you must specify it here for it to be found.
 
 

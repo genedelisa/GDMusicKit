@@ -51,7 +51,7 @@ PROJECT_BRIEF          = "Gene's Music Frobs"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = /Users/gene/Development/C++/gene/GDMusicKit/doc/dude.gif
+PROJECT_LOGO           = /Users/gene/Development/C++/gene/GDMusicKit/lib/doc/dude.gif
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -899,7 +899,8 @@ RECURSIVE              = YES
 # run.
 
 EXCLUDE                = /Users/gene/Development/C++/gene/GDMusicKit/lib/build \
-                         /Users/gene/Development/C++/gene/GDMusicKit/app/build
+                         /Users/gene/Development/C++/gene/GDMusicKit/app/build \
+                         build
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
