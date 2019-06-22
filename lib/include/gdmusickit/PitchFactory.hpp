@@ -37,9 +37,14 @@ namespace gdmusickit {
             }
 
             // or
-            for (auto entry : *m) {
+            for (const auto& entry : *m) {
                 std::cout << entry.first << " => " << entry.second << '\n';
             }
+            // or
+            for (const auto&[key, value] : *m) {
+                std::cout << key << " => " << value << '\n';                
+            }
+
 
             for (auto it = m->begin(); it != m->end(); ++it) {
                 std::cout << it->first << " => " << it->second << '\n';

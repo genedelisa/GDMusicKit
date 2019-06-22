@@ -9,12 +9,18 @@ namespace gdmusickit {
 
     Pitch PitchFactory::getPitch(int midiNumber) {
         // std::cout << "PitchFactory::getPitch() " << midiNumber << std::endl;
-        auto p = pitchMap.get(); 
-        Pitch pitch = p->at(midiNumber);
+        
+        auto map = pitchMap.get();
+        if (map->count(midiNumber) == 0) {
+            std::cout << midiNumber << " is not in the map" << std::endl;
+            // todo: update this to lazy init
+        }
+        Pitch pitch = map->at(midiNumber);
+        //Pitch p = map[midiNumber];
         std::cout << "pitch from map " << pitch << std::endl;
         return pitch;
 
-        //return Pitch(midiNumber);
+        // return Pitch(midiNumber);
     }
 
 } // namespace gdmusickit
