@@ -1,18 +1,15 @@
 #pragma once
 
-#include <iostream>
-using namespace std;
-
 namespace gdmusickit {
 
     class PitchFactory {
       public:
-        static PitchFactory& getInstance() {
+        static PitchFactory& getSharedInstance() {
             static PitchFactory instance;
             return instance;
         }
 
-        void print() { cout << "test" << endl; }
+        Pitch getPitch(int midiNumber);
 
       private:
         PitchFactory() = default;

@@ -84,12 +84,17 @@ namespace gdmusickit {
 
         friend std::ostream& operator<<(std::ostream& out, const Pitch& pitch);
 
+        static int octaveAdjustment(int fromDefault) {
+            auto offset = 5 - octaveForMiddleC;
+            return ((5 + offset + fromDefault) * 12);
+        }
+
       protected:
       private:
         int midiNumber{0};
         double frequency{0};
 
         // pitchbend? cents? spelling?
-    };
+    }; // namespace gdmusickit
 
 } // namespace gdmusickit
