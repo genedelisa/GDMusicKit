@@ -9,6 +9,6 @@ project(GDMusicKit
 
 ##############################################
 
-add_subdirectory(doc)
+#add_subdirectory(doc)
 #add_subdirectory(lib)
 #add_subdirectory(app)

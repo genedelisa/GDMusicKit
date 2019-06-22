@@ -120,4 +120,7 @@ export(EXPORT gdmusickit-targets
 #Register package in user's package registry
 export(PACKAGE GDMusicKit)
 
+#########################
+
 add_subdirectory(test)
+add_subdirectory(doc)
