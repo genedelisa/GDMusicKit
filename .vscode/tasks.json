@@ -26,10 +26,10 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/build/${fileBasenameNoExtension}"
+                "${workspaceFolder}/lib/build/${fileBasenameNoExtension}"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/build/bin"
+                "cwd": "${workspaceFolder}/lib/build/bin"
             },
             "problemMatcher": [
                 "$gcc"
@@ -52,46 +52,44 @@
         {
             "label": "make all",
             "type": "shell",
-            "command": "cd build && make all",
-            "group": {
-                "kind": "build"
-            },
+            "command": "cd ${workspaceFolder}/lib/build && make all",
+            
             "problemMatcher": []
         },
         {
             "label": "make test",
             "type": "shell",
-            "command": "cd build && make test",
+            "command": "cd ${workspaceFolder}/lib/build && make test",
             "problemMatcher": []
         },
         {
             "label": "make clean",
             "type": "shell",
-            "command": "cd build && make clean",
+            "command": "cd ${workspaceFolder}/build && make clean",
             "problemMatcher": []
         },
         {
             "label": "make doc",
             "type": "shell",
-            "command": "cd build && make doc",
+            "command": "cd ${workspaceFolder}/lib/build && make doc",
             "problemMatcher": []
         },
         {
             "label": "clean build",
             "type": "process",
-            "command": "rm -rf build/*",
+            "command": "rm -rf ${workspaceFolder}/lib/build/*",
             "problemMatcher": []
         },
         {
             "label": "cmake",
             "type": "shell",
-            "command": "rm -rf build/* && cd build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON .. && make all",
+            "command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON .. && make all",
             "problemMatcher": []
         },
         {
             "label": "cmake just docs",
             "type": "shell",
-            "command": "rm -rf build/* && cd build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
+            "command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
             "problemMatcher": []
         },
         {
