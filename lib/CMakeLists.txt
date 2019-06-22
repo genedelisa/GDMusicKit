@@ -21,7 +21,12 @@ find_package(Boost REQUIRED COMPONENTS regex)
 # Create library target
 
 add_library(gdmusickit
+    src/PitchFactory.cpp
+    src/MusicFrequency.cpp
     src/Pitch.cpp
+    src/PitchStringFormat.cpp
+    src/Pitch.hppx
+    src/Note.cpp
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing

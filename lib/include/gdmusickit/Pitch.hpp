@@ -16,6 +16,8 @@
 * @todo clean this up
 * @todo the sections above look far to big in the output.
 */
+#pragma once
+
 #include <iostream>
 
 // gene's music kit
