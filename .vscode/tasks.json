@@ -57,9 +57,9 @@
             }
         },
         {
-            "label": "make test",
+            "label": "make test and run it",
             "type": "shell",
-            "command": "cd ${workspaceFolder}/lib/build && make test",
+            "command": "cd ${workspaceFolder}/lib/build && make test && test/gdmusickit_test",
             "problemMatcher": []
         },
         {
