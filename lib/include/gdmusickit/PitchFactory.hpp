@@ -28,13 +28,19 @@ namespace gdmusickit {
 
             typedef std::map<int, Pitch> MyMap;
             auto m = std::unique_ptr<MyMap>(new MyMap());
+            // why I make the typedef
+            // auto m2 = std::unique_ptr<std::map<int, Pitch>>(
+            // new std::map<int, Pitch>());
 
-            std::cout << "inserting" << std::endl;
             for (auto i{0}; i <= 127; ++i) {
                 m->insert(std::pair<int, Pitch>(i, Pitch(i)));
             }
 
-            // for (std::map<int, Pitch>::iterator it = m->begin();
+            // or
+            for (auto entry : *m) {
+                std::cout << entry.first << " => " << entry.second << '\n';
+            }
+
             for (auto it = m->begin(); it != m->end(); ++it) {
                 std::cout << it->first << " => " << it->second << '\n';
             }
