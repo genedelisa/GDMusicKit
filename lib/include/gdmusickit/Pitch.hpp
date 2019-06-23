@@ -89,6 +89,8 @@ namespace gdmusickit {
             return ((5 + offset + fromDefault) * 12);
         }
 
+        static Pitch A5;
+
       protected:
       private:
         int midiNumber{0};

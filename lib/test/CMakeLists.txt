@@ -12,6 +12,8 @@ set(Source
     src/main.cpp
     src/Pitch_test.cpp
     src/PitchFactory_test.cpp    
+    src/PitchStringParser_test.cpp        
+    src/PitchStringFormat_test.cpp            
 )
 
 add_executable(gdmusickit_test

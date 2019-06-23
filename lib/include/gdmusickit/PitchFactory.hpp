@@ -28,27 +28,29 @@ namespace gdmusickit {
 
             typedef std::map<int, Pitch> MyMap;
             auto m = std::unique_ptr<MyMap>(new MyMap());
+
             // why I make the typedef
             // auto m2 = std::unique_ptr<std::map<int, Pitch>>(
             // new std::map<int, Pitch>());
 
             for (auto i{0}; i <= 127; ++i) {
-                m->insert(std::pair<int, Pitch>(i, Pitch(i)));
+                m->emplace(std::pair<int, Pitch>(i, Pitch(i)));
+                //m->insert(std::pair<int, Pitch>(i, Pitch(i)));
             }
 
             // or
-            for (const auto& entry : *m) {
-                std::cout << entry.first << " => " << entry.second << '\n';
-            }
-            // or
-            for (const auto&[key, value] : *m) {
-                std::cout << key << " => " << value << '\n';                
+            // for (const auto& entry : *m) {
+            //     std::cout << entry.first << " => " << entry.second << '\n';
+            // }
+
+            // or structured binding and decomposition c++17
+            for (const auto& [key, value] : *m) {
+                std::cout << key << " => " << value << '\n';
             }
 
-
-            for (auto it = m->begin(); it != m->end(); ++it) {
-                std::cout << it->first << " => " << it->second << '\n';
-            }
+            // for (auto it = m->begin(); it != m->end(); ++it) {
+            //     std::cout << it->first << " => " << it->second << '\n';
+            // }
             return m;
         }
         static inline std::unique_ptr<std::map<int, Pitch>> pitchMap =
@@ -60,10 +62,12 @@ namespace gdmusickit {
         // If (!success) {
         //     // Insert failure
         // }
-      public:
-        // Delete the copy and move constructors.
-        // These should be public as it results in clearer error messages.
-        PitchFactory(const PitchFactory&) = delete;
+
+
+            public:
+            // Delete the copy and move constructors.
+            // These should be public as it results in clearer error messages.
+            PitchFactory(const PitchFactory&) = delete;
         PitchFactory& operator=(const PitchFactory&) = delete;
         PitchFactory(PitchFactory&&) = delete;
         PitchFactory& operator=(PitchFactory&&) = delete;

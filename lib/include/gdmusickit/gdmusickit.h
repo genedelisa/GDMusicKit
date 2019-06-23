@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Pitch.hpp"
+//#include "Pitch.hpp"
 
 //#include <Pitch.hpp>
 
@@ -12,8 +12,10 @@
 // 	class Pitch;
 // }
 
+#include "Pitch.hpp"
 #include "Note.hpp"
 #include "MusicFrequency.hpp"
 #include "PitchFactory.hpp"
 #include "PitchStringFormat.hpp"
+#include "PitchStringParser.hpp"
 

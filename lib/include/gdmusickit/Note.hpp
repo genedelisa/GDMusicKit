@@ -6,11 +6,11 @@
 namespace gdmusickit {
 
     /** @class Note Note.hpp "Note.hpp"
-     * 
+     *
      * @brief This is a Note class.
-     * 
+     *
      * Groovy, huh?
-     *      
+     *
      * ## Usage:
      *
      *  @code
@@ -21,8 +21,10 @@ namespace gdmusickit {
 
     class Note {
       public:
-      Note(Pitch pitch, double startTime = 1.0, double duration = 1.0);
+        Note(Pitch pitch, double startTime = 1.0, double duration = 1.0);
+
       protected:
+      
       private:
         Pitch pitch{60};
         double startTime{1.0};

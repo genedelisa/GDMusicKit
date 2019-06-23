@@ -10,6 +10,7 @@ namespace gdmusickit {
     Pitch PitchFactory::getPitch(int midiNumber) {
         // std::cout << "PitchFactory::getPitch() " << midiNumber << std::endl;
         
+        // get the pointer to the map
         auto map = pitchMap.get();
         if (map->count(midiNumber) == 0) {
             std::cout << midiNumber << " is not in the map" << std::endl;

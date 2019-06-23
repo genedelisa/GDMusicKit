@@ -25,7 +25,7 @@ add_library(gdmusickit
     src/MusicFrequency.cpp
     src/Pitch.cpp
     src/PitchStringFormat.cpp
-    src/Pitch.hppx
+    src/PitchStringParser.cpp    
     src/Note.cpp
 )
 
