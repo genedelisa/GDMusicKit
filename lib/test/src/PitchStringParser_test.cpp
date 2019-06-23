@@ -31,8 +31,19 @@ struct PitchStringParserTest: testing::Test {
 
 TEST_F(PitchStringParserTest, ShouldParseToMIDINumber) {
 
-    EXPECT_EQ(60, PitchStringParser::stringToMidiNumber("C5"));
-    EXPECT_EQ(60, PitchStringParser::stringToMidiNumber("C"));
-    EXPECT_EQ(60, PitchStringParser::stringToMidiNumber("C#5"));
-    EXPECT_EQ(60, PitchStringParser::stringToMidiNumber("Cf5"));
+    // EXPECT_EQ(0, PitchStringParser::stringToMidiNumber("C"));
+    // EXPECT_EQ(60, PitchStringParser::stringToMidiNumber("C5"));
+    // EXPECT_EQ(59, PitchStringParser::stringToMidiNumber("CF5"));
+    // EXPECT_EQ(59, PitchStringParser::stringToMidiNumber("C-5"));
+    // EXPECT_EQ(59, PitchStringParser::stringToMidiNumber("Cb5"));
+    // EXPECT_EQ(61, PitchStringParser::stringToMidiNumber("CS5"));
+    // EXPECT_EQ(61, PitchStringParser::stringToMidiNumber("C#5"));
+
+    EXPECT_EQ(2, PitchStringParser::stringToMidiNumber("D"));
+    EXPECT_EQ(62, PitchStringParser::stringToMidiNumber("D5"));
+    EXPECT_EQ(61, PitchStringParser::stringToMidiNumber("DF5"));
+    //EXPECT_EQ(61, PitchStringParser::stringToMidiNumber("D-5"));
+    EXPECT_EQ(61, PitchStringParser::stringToMidiNumber("Db5"));
+    EXPECT_EQ(63, PitchStringParser::stringToMidiNumber("DS5"));
+    EXPECT_EQ(63, PitchStringParser::stringToMidiNumber("D#5"));
 }

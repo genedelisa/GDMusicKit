@@ -18,6 +18,63 @@ namespace gdmusickit {
 
         Pitch getPitch(int midiNumber);
 
+        static inline const std::map<int, int> mymap = {std::pair<int, int>(1, 1),
+                                    std::pair<int, int>(2, 2),
+                                    std::pair<int, int>(2, 2)};
+
+        // the input is uppercased when this is accessed
+        static inline const std::map<std::string, int> pitchClassNames =
+            {
+                 std::pair<std::string, int>("C", 0),
+                 std::pair<std::string, int>("CF", 11),
+                 std::pair<std::string, int>("C-", 11),
+                 std::pair<std::string, int>("CB", 11),
+                 std::pair<std::string, int>("CS", 1),
+                 std::pair<std::string, int>("C#", 1),
+
+                 std::pair<std::string, int>("D", 2),
+                 std::pair<std::string, int>("DF", 1),
+                 std::pair<std::string, int>("D-", 1),
+                 std::pair<std::string, int>("DB", 1),
+                 std::pair<std::string, int>("DS", 3),
+                 std::pair<std::string, int>("D#", 3),
+
+                  std::pair<std::string, int>("E", 4),
+                 std::pair<std::string, int>("EF", 3),
+                 std::pair<std::string, int>("E-", 3),
+                 std::pair<std::string, int>("EB", 3),
+                 std::pair<std::string, int>("ES", 5),
+                 std::pair<std::string, int>("E#", 5),
+
+                 std::pair<std::string, int>("F", 5),
+                 std::pair<std::string, int>("FF", 4),
+                 std::pair<std::string, int>("F-", 4),
+                 std::pair<std::string, int>("FB", 4),
+                 std::pair<std::string, int>("FS", 6),
+                 std::pair<std::string, int>("F#", 6),
+
+                 std::pair<std::string, int>("G", 7),
+                 std::pair<std::string, int>("GF", 6),
+                 std::pair<std::string, int>("G-", 6),
+                 std::pair<std::string, int>("GB", 6),
+                 std::pair<std::string, int>("GS", 8),
+                 std::pair<std::string, int>("G#", 8),
+
+                 std::pair<std::string, int>("A", 9),
+                 std::pair<std::string, int>("AF", 8),
+                 std::pair<std::string, int>("A-", 8),
+                 std::pair<std::string, int>("AB", 8),
+                 std::pair<std::string, int>("AS", 10),
+                 std::pair<std::string, int>("A#", 10),
+
+                std::pair<std::string, int>("B", 11),
+                 std::pair<std::string, int>("BF", 10),
+                 std::pair<std::string, int>("B-", 10),
+                 std::pair<std::string, int>("BB", 10),
+                 std::pair<std::string, int>("BS", 0),
+                 std::pair<std::string, int>("B#", 0)
+    };
+
       private:
         PitchFactory() = default;
         ~PitchFactory() = default;
@@ -35,7 +92,7 @@ namespace gdmusickit {
 
             for (auto i{0}; i <= 127; ++i) {
                 m->emplace(std::pair<int, Pitch>(i, Pitch(i)));
-                //m->insert(std::pair<int, Pitch>(i, Pitch(i)));
+                // m->insert(std::pair<int, Pitch>(i, Pitch(i)));
             }
 
             // or
@@ -63,11 +120,10 @@ namespace gdmusickit {
         //     // Insert failure
         // }
 
-
-            public:
-            // Delete the copy and move constructors.
-            // These should be public as it results in clearer error messages.
-            PitchFactory(const PitchFactory&) = delete;
+      public:
+        // Delete the copy and move constructors.
+        // These should be public as it results in clearer error messages.
+        PitchFactory(const PitchFactory&) = delete;
         PitchFactory& operator=(const PitchFactory&) = delete;
         PitchFactory(PitchFactory&&) = delete;
         PitchFactory& operator=(PitchFactory&&) = delete;

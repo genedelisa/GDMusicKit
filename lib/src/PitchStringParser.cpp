@@ -3,6 +3,8 @@
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
 
+#include <algorithm>
+#include <charconv> // from_char, to_char
 #include <iostream>
 #include <regex>
 #include <string>
@@ -10,15 +12,26 @@
 namespace gdmusickit {
 
     int PitchStringParser::stringToMidiNumber(std::string pitchString) {
+
         
-        //"([a-gA-G]+[b|#]?)([0-9]*)";
         std::cout << "input string: '" << pitchString << "'" << std::endl;
-        std::regex r(PitchStringParser::pitchPattern);
+        std::regex r("([a-gA-G]+[s|f|b|#]?)([0-9]*)");
+        //std::regex r(PitchStringParser::pitchPattern);        
         std::smatch m;
+
+        std::transform(pitchString.begin(), pitchString.end(),
+                       pitchString.begin(), ::toupper);
+        std::cout << "input string: '" << pitchString << "'" << std::endl;
+
         if (std::regex_search(pitchString, m, r)) {
             auto pitch = m.str(1);
+
+            auto pitchClass = PitchFactory::pitchClassNames.at(pitch);
+            std::cout << "pitch class: " << pitchClass << std::endl;
+            // auto pc = PitchFactory::pitchClassNames[pitch];
+
             auto octave = m.str(2);
-            if(octave.empty()) {
+            if (octave.empty()) {
                 std::cout << "no octave" << std::endl;
             }
             std::cout << "s1 " << m.str(1) << std::endl;
@@ -26,6 +39,16 @@ namespace gdmusickit {
             for (auto v : m) {
                 std::cout << v << std::endl;
             }
+
+            int oct = 0;
+            const auto res = std::from_chars(
+                octave.data(), octave.data() + octave.size(), oct);
+
+            // need a special case for cf
+            int midiNumber = pitchClass + (oct * 12);
+            std::cout << "midi number returned: " << midiNumber << std::endl;
+
+            return midiNumber;
         }
 
         return 0;
