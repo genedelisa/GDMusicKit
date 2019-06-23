@@ -43,10 +43,11 @@ namespace gdmusickit {
             const auto res = std::from_chars(
                 octave.data(), octave.data() + octave.size(), oct);
 
-            // need a special case for cf
+            if (pitch == "CB" || pitch == "CF") {
+                oct -= 1;
+            }
             int midiNumber = pitchClass + (oct * 12);
             std::cout << "midi number returned: " << midiNumber << std::endl;
-
             std::cout << std::endl;
             return midiNumber;
         }
