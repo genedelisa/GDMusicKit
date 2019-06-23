@@ -10,10 +10,10 @@ namespace gdmusickit {
         static int stringToMidiNumber(std::string pitchString);
 
       protected:
-
       private:
+        // input is uppercased
         static inline constexpr auto pitchPattern =
-            "([a-gA-G]+[b|#]?)([0-9]*)";
+            "([a-gA-G]{1}[S|F|B|#]?)([0-9]*)";
     };
 
 } // namespace gdmusickit

@@ -78,7 +78,7 @@
         {
             "name": "${filename}",
             "description": "${relDirpath}/",
-            "pattern": "build/bin/*test*"
+            "pattern": "lib/build/test/*test*"
         }
     ],
     "C_Cpp.configurationWarnings": "Disabled"

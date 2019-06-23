@@ -12,11 +12,10 @@
 namespace gdmusickit {
 
     int PitchStringParser::stringToMidiNumber(std::string pitchString) {
-
-        
+        std::cout << std::endl;
         std::cout << "input string: '" << pitchString << "'" << std::endl;
-        std::regex r("([a-gA-G]+[s|f|b|#]?)([0-9]*)");
-        //std::regex r(PitchStringParser::pitchPattern);        
+        // std::regex r("([a-gA-G]{1}[S|F|B|#]?)([0-9]*)");
+        std::regex r(PitchStringParser::pitchPattern);
         std::smatch m;
 
         std::transform(pitchString.begin(), pitchString.end(),
@@ -48,6 +47,7 @@ namespace gdmusickit {
             int midiNumber = pitchClass + (oct * 12);
             std::cout << "midi number returned: " << midiNumber << std::endl;
 
+            std::cout << std::endl;
             return midiNumber;
         }
 
