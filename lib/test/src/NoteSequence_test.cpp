@@ -35,15 +35,25 @@ TEST_F(NoteSequenceTest, ShouldInitMIDINumber) {
     NoteSequence seq;
 
     Pitch pitch = PitchFactory::getSharedInstance().getPitch(69);
-    Note n(pitch, 1.0, 0.5);
+    double startBeat{0};
+    Note n(pitch, startBeat++, 0.5);
     seq.addNote(n);
+    seq.addNote(Note(pitch, startBeat++, 0.5));    
+    seq.addNote(Note(pitch, startBeat++, 0.5));    
+    seq.addNote(Note(pitch, startBeat++, 0.5));    
+    seq.addNote(Note(pitch, startBeat++, 0.5));                
 
     auto v = seq[0];
     std::cout << v << std::endl;
 
-    // for(auto n : seq) {
-    //     std::cout << n << std::endl;
-    // }
+    for(int i{0}; i <= seq.size(); ++i) {
+    
+    }
+
+    std::cout << "Range based iteration" << std::endl;
+    for(auto n : seq) {
+        std::cout << n << std::endl;
+    }
 
     // EXPECT_EQ(60, pitch->midiPitchNumber());
 

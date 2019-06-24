@@ -57,10 +57,25 @@
 			"label": "make test and run it",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make  && test/gdmusickit_test",
-			"problemMatcher": [],
+
 			"group": {
 				"kind": "build",
 				"isDefault": true
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
 			}
 		},
 		{

@@ -39,7 +39,11 @@ namespace gdmusickit {
     };
 
     /**
-     * @brief
+     * @brief Parse a pitch string into a MIDI number.
+     * 
+     * Not all bad input strings fail.
+     * "badinput" would succeed! B is a pitch class.
+     * "junk" will fail
      *
      * @code
      int midiNumber{0};
