@@ -3,11 +3,21 @@
 
 #include "gdmusickit/Note.hpp"
 #include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
 
 namespace gdmusickit {
 
+    Pitch findPitch(std::string s) {
+        return PitchFactory::getSharedInstance().getPitch(s);
+    }
+
     Note::Note(Pitch pitch, double startBeat, double duration) {
         this->pitch = pitch;
+        this->startBeat = startBeat;
+        this->duration = duration;
+    }
+    Note::Note(std::string pitchString, double startBeat, double duration) {
+        this->pitch = findPitch(pitchString);
         this->startBeat = startBeat;
         this->duration = duration;
     }

@@ -77,9 +77,9 @@ namespace gdmusickit {
          */
         Pitch(std::wstring pitchString);
 
-        int midiPitchNumber();
-        int pitchClass();
-        int octave();
+        int midiPitchNumber() const;
+        int pitchClass() const;
+        int octave() const;
 
         static double midiEqualTemperamentFrequency(int midiNumber);
         inline static int octaveForMiddleC = 5;

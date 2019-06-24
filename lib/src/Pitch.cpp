@@ -15,11 +15,11 @@ namespace gdmusickit {
     // @todo parse pitchString
     Pitch::Pitch(std::wstring pitchString) {}
 
-    int Pitch::pitchClass() { return midiNumber % 12; }
+    int Pitch::pitchClass() const { return midiNumber % 12; }
 
-    int Pitch::octave() { return midiNumber / 12; }
+    int Pitch::octave() const { return midiNumber / 12; }
 
-    int Pitch::midiPitchNumber() { return midiNumber; }
+    int Pitch::midiPitchNumber() const { return midiNumber; }
 
     constexpr auto URL_PATTERN =
         "(http|https)://(\\w+\\.)+(\\w)/?(\\w+/{0,1})*";

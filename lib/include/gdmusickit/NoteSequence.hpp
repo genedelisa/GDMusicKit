@@ -12,6 +12,7 @@ namespace gdmusickit {
         NoteSequence() : notes{std::make_unique<std::vector<Note>>()} {}
 
         void addNote(Note note);
+        
         friend std::ostream& operator<<(std::ostream& os,
                                         NoteSequence const& noteSequence);
 

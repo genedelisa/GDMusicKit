@@ -20,9 +20,9 @@ struct NoteTest: testing::Test {
   protected:
     std::unique_ptr<Pitch> pitch;
 
-    NoteTest() { pitch = std::make_unique<Pitch>(60); }    
+    NoteTest() { pitch = std::make_unique<Pitch>(60); }
 
-    void SetUp() override { }
+    void SetUp() override {}
     void TearDown() override {}
 };
 
@@ -32,14 +32,19 @@ struct NoteTest: testing::Test {
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
 TEST_F(NoteTest, ShouldInitMIDINumber) {
-    
+
     EXPECT_EQ(60, pitch->midiPitchNumber());
 
     auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(60, p->midiPitchNumber()); 
+    EXPECT_EQ(60, p->midiPitchNumber());
 
     p = std::make_unique<Pitch>(72);
-    EXPECT_EQ(72, p->midiPitchNumber());    
+    EXPECT_EQ(72, p->midiPitchNumber());
 }
 
+TEST(NoteTestFuns, ShouldInitMIDINumberFromString) {
 
+    Note sut{"C5"};
+    std::cout << sut << std::endl;
+    EXPECT_EQ(60, sut.getPitch().midiPitchNumber());
+}
