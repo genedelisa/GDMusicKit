@@ -41,8 +41,9 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
     //auto p = std::make_unique<Pitch>(60);
     EXPECT_EQ(0, p.midiPitchNumber()); 
 
-     p = PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
-    EXPECT_EQ(69, p.midiPitchNumber()); 
+    //  p = PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
+    // EXPECT_EQ(69, p.midiPitchNumber()); 
+
     //p = std::make_unique<Pitch>(72);
     //EXPECT_EQ(72, p->midiPitchNumber());    
 }

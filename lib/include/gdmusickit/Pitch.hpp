@@ -18,7 +18,8 @@
 */
 #pragma once
 
-#include "PitchFactory.hpp"
+//class Pitch;
+//#include "PitchFactory.hpp"
 #include <iostream>
 
 // gene's music kit
@@ -99,7 +100,7 @@ namespace gdmusickit {
         // static Pitch A5;
         inline static const int sValue = 777;
 
-         static Pitch A5;
+        //static Pitch A5{Pitch(69)}
         //  static const Pitch A5 =
         //     PitchFactory::getSharedInstance().getPitch(
         //         9 + Pitch::octaveAdjustment(0));
