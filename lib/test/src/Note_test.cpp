@@ -16,11 +16,11 @@ using namespace gdmusickit;
  * @brief a test fixture for the Account class
  *
  */
-struct PitchFactoryTest: testing::Test {
+struct NoteTest: testing::Test {
   protected:
-    PitchFactoryTest() { 
+    std::unique_ptr<Pitch> pitch;
 
-    }    
+    NoteTest() { pitch = std::make_unique<Pitch>(60); }    
 
     void SetUp() override { }
     void TearDown() override {}
@@ -31,18 +31,15 @@ struct PitchFactoryTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
-// TEST(PitchFactoryTest, ShouldPrint) {
-// }
-
-TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
+TEST_F(NoteTest, ShouldInitMIDINumber) {
     
+    EXPECT_EQ(60, pitch->midiPitchNumber());
 
-    auto p = PitchFactory::getSharedInstance().getPitch(0);
-    //auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(0, p.midiPitchNumber()); 
+    auto p = std::make_unique<Pitch>(60);
+    EXPECT_EQ(60, p->midiPitchNumber()); 
 
-     p = PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
-    EXPECT_EQ(69, p.midiPitchNumber()); 
-    //p = std::make_unique<Pitch>(72);
-    //EXPECT_EQ(72, p->midiPitchNumber());    
+    p = std::make_unique<Pitch>(72);
+    EXPECT_EQ(72, p->midiPitchNumber());    
 }
+
+

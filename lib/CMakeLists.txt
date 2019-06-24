@@ -27,6 +27,7 @@ add_library(gdmusickit
     src/PitchStringFormat.cpp
     src/PitchStringParser.cpp    
     src/Note.cpp
+    src/NoteSequence.cpp
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing

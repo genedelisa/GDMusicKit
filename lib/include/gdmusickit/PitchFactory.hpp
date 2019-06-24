@@ -101,9 +101,9 @@ namespace gdmusickit {
             // }
 
             // or structured binding and decomposition c++17
-            for (const auto& [key, value] : *m) {
-                std::cout << key << " => " << value << '\n';
-            }
+            // for (const auto& [key, value] : *m) {
+            //     std::cout << key << " => " << value << '\n';
+            // }
 
             // for (auto it = m->begin(); it != m->end(); ++it) {
             //     std::cout << it->first << " => " << it->second << '\n';

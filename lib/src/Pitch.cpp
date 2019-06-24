@@ -44,7 +44,11 @@ namespace gdmusickit {
         return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
     }
 
-
+    void createConstants() {
+        //     static Pitch A5;
+        A5 = PitchFactory::getSharedInstance().getPitch(
+            9 + Pitch::octaveAdjustment(0));
+    }
     // Constants
     static Pitch C0 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-5));
@@ -340,8 +344,8 @@ namespace gdmusickit {
     static Pitch Ab5 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(0));
 
-    static Pitch A5 = PitchFactory::getSharedInstance().getPitch(
-        9 + Pitch::octaveAdjustment(0));
+    // static Pitch A5 = PitchFactory::getSharedInstance().getPitch(
+    //     9 + Pitch::octaveAdjustment(0));
 
     static Pitch AS5 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(0));

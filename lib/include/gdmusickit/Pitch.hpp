@@ -18,6 +18,7 @@
 */
 #pragma once
 
+#include "PitchFactory.hpp"
 #include <iostream>
 
 // gene's music kit
@@ -84,12 +85,24 @@ namespace gdmusickit {
 
         friend std::ostream& operator<<(std::ostream& out, const Pitch& pitch);
 
+        friend auto operator==(Pitch lhs, Pitch rhs) {
+            return rhs.midiNumber == lhs.midiNumber;
+        }
+        friend auto operator!=(Pitch lhs, Pitch rhs) {
+            return rhs.midiNumber != lhs.midiNumber;
+        }
         static int octaveAdjustment(int fromDefault) {
             auto offset = 5 - octaveForMiddleC;
             return ((5 + offset + fromDefault) * 12);
         }
 
-        static Pitch A5;
+        // static Pitch A5;
+        inline static const int sValue = 777;
+
+         static Pitch A5;
+        //  static const Pitch A5 =
+        //     PitchFactory::getSharedInstance().getPitch(
+        //         9 + Pitch::octaveAdjustment(0));
 
       protected:
       private:

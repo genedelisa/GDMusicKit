@@ -71,7 +71,8 @@
         "utility": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "charconv": "cpp"
     },
 
     "catch2TestExplorer.executables": [
