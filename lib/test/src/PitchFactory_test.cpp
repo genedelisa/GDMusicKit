@@ -18,11 +18,9 @@ using namespace gdmusickit;
  */
 struct PitchFactoryTest: testing::Test {
   protected:
-    PitchFactoryTest() { 
+    PitchFactoryTest() {}
 
-    }    
-
-    void SetUp() override { }
+    void SetUp() override {}
     void TearDown() override {}
 };
 
@@ -35,15 +33,23 @@ struct PitchFactoryTest: testing::Test {
 // }
 
 TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
-    
 
     auto p = PitchFactory::getSharedInstance().getPitch(0);
-    //auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(0, p.midiPitchNumber()); 
+    // auto p = std::make_unique<Pitch>(60);
+    EXPECT_EQ(0, p.midiPitchNumber());
 
-    //  p = PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
-    // EXPECT_EQ(69, p.midiPitchNumber()); 
+    //  p =
+    //  PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
+    // EXPECT_EQ(69, p.midiPitchNumber());
 
-    //p = std::make_unique<Pitch>(72);
-    //EXPECT_EQ(72, p->midiPitchNumber());    
+    // p = std::make_unique<Pitch>(72);
+    // EXPECT_EQ(72, p->midiPitchNumber());
+}
+
+TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
+    std::string s{"C5"};
+
+    auto p = PitchFactory::getSharedInstance().getPitch(s);
+//auto p = PitchFactory::getSharedInstance().getPitch("C5");    
+    EXPECT_EQ(60, p.midiPitchNumber());
 }

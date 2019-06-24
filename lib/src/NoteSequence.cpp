@@ -13,7 +13,8 @@ namespace gdmusickit {
     //  NoteSequence::NoteSequence() noexcept {
     //     notes = std::make_unique<std::vector<Note>>();
     // }
-    
+    //int NoteSequence::begin(return 0);
+
     void NoteSequence::addNote(Note note) { notes->emplace_back(note); }
     
     // std::ostream& operator<<(std::ostream& os,

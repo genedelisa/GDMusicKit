@@ -7,6 +7,7 @@
 
 #include "gtest/gtest.h"
 
+#include <iostream>
 #include <memory>
 
 #include <gdmusickit/gdmusickit.h>
@@ -16,13 +17,11 @@ using namespace gdmusickit;
  * @brief a test fixture for the Account class
  *
  */
-struct NoteSequencTest: testing::Test {
+struct NoteSequenceTest: testing::Test {
   protected:
-    std::unique_ptr<Pitch> pitch;
+    NoteSequenceTest() {}
 
-    NoteSequencTest() { pitch = std::make_unique<Pitch>(60); }    
-
-    void SetUp() override { }
+    void SetUp() override {}
     void TearDown() override {}
 };
 
@@ -31,15 +30,26 @@ struct NoteSequencTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
-TEST_F(NoteSequencTest, ShouldInitMIDINumber) {
-    
-    EXPECT_EQ(60, pitch->midiPitchNumber());
+TEST_F(NoteSequenceTest, ShouldInitMIDINumber) {
 
-    auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(60, p->midiPitchNumber()); 
+    NoteSequence seq;
 
-    p = std::make_unique<Pitch>(72);
-    EXPECT_EQ(72, p->midiPitchNumber());    
+    Pitch pitch = PitchFactory::getSharedInstance().getPitch(69);
+    Note n(pitch, 1.0, 0.5);
+    seq.addNote(n);
+
+    auto v = seq[0];
+    std::cout << v << std::endl;
+
+    // for(auto n : seq) {
+    //     std::cout << n << std::endl;
+    // }
+
+    // EXPECT_EQ(60, pitch->midiPitchNumber());
+
+    // auto p = std::make_unique<Pitch>(60);
+    // EXPECT_EQ(60, p->midiPitchNumber());
+
+    // p = std::make_unique<Pitch>(72);
+    // EXPECT_EQ(72, p->midiPitchNumber());
 }
-
-
