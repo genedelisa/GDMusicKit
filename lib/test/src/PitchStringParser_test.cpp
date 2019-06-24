@@ -45,3 +45,10 @@ TEST_F(PitchStringParserTest, ShouldParseToMIDINumber) {
     EXPECT_EQ(63, PitchStringParser::stringToMidiNumber("DS5"));
     EXPECT_EQ(63, PitchStringParser::stringToMidiNumber("D#5"));
 }
+
+TEST_F(PitchStringParserTest, ShouldNotParseToMIDINumber) {
+
+    ASSERT_THROW(PitchStringParser::stringToMidiNumber("Junk"), std::invalid_argument);
+
+    // EXPECT_EQ(0, PitchStringParser::stringToMidiNumber("Junk"));
+}

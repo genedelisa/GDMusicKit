@@ -65,6 +65,7 @@ namespace gdmusickit {
         std::regex r(PitchStringParser::pitchPattern);
         std::smatch m;
         if (std::regex_search(pitchString, m, r)) {
+            // std::cout << "matches: " << m.size() << std::endl;
 
             auto pitch = m.str(1);
             auto pitchClass = PitchFactory::pitchClassNames.at(pitch);
@@ -72,20 +73,32 @@ namespace gdmusickit {
             std::cout << "pitch class: " << pitchClass << std::endl;
             // auto pc = PitchFactory::pitchClassNames[pitch];
 
-            auto octave = m.str(2);
-            if (octave.empty()) {
-                std::cout << "no octave" << std::endl;
-            }
-
             // std::cout << "s1 " << m.str(1) << std::endl;
             // std::cout << "s2 " << m.str(2) << std::endl;
             // for (auto v : m) {
             //     std::cout << v << std::endl;
             // }
 
-            int oct = 0;
-            const auto res = std::from_chars(
-                octave.data(), octave.data() + octave.size(), oct);
+            auto octave = m.str(2);
+            int oct{0};
+            if (octave.empty()) {
+                std::cout << "no octave" << std::endl;
+            } else {
+                // parse the octave string into an int. This is the most
+                // efficient way.
+                const auto [ptr, ec] = std::from_chars(
+                    octave.data(), octave.data() + octave.size(), oct);
+
+                // posix error codes
+                if (ec == std::errc()) {
+                    std::cout << "value: " << oct
+                              << ", distance: " << ptr - octave.data() << '\n';
+
+                } else if (ec == std::errc::invalid_argument) {
+                    std::cout << "invalid argument!\n";
+                    throw std::invalid_argument("Invalid input octave.");
+                }
+            }
 
             if (pitch == "CB" || pitch == "CF") {
                 oct -= 1;

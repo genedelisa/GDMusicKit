@@ -47,9 +47,17 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
 }
 
 TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
-    std::string s{"C5"};
-
-    auto p = PitchFactory::getSharedInstance().getPitch(s);
-//auto p = PitchFactory::getSharedInstance().getPitch("C5");    
+    // std::string s{"C5"};
+    // auto p = PitchFactory::getSharedInstance().getPitch(s);
+    auto p = PitchFactory::getSharedInstance().getPitch("C5");
     EXPECT_EQ(60, p.midiPitchNumber());
+
+    p = PitchFactory::getSharedInstance().getPitch("Db5");
+    EXPECT_EQ(61, p.midiPitchNumber());
+
+    p = PitchFactory::getSharedInstance().getPitch("A5");
+    EXPECT_EQ(69, p.midiPitchNumber());
+
+    // p = PitchFactory::getSharedInstance().getPitch("badinput");
+    // EXPECT_EQ(69, p.midiPitchNumber());
 }
