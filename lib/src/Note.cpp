@@ -4,6 +4,7 @@
 #include "gdmusickit/Note.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
+#include "gdmusickit/PitchStringFormat.hpp"
 
 namespace gdmusickit {
 
@@ -22,8 +23,14 @@ namespace gdmusickit {
         this->duration = duration;
     }
     std::ostream& operator<<(std::ostream& os, Note const& note) {
-        return os << "Pitch: " << note.pitch << " Start " << note.startBeat
-                  << " Duration " << note.duration;
+
+        std::string ps =
+            PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                note.pitch.midiPitchNumber(), PitchStringFormat::Spelling::flat,
+                PitchStringFormat::Justification::left, true);
+
+        return os << "Pitch: " << note.pitch << " " << ps << " Start "
+                  << note.startBeat << " Duration " << note.duration;
     }
     // Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 
