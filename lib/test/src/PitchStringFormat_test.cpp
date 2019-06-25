@@ -51,6 +51,7 @@ TEST(PitchStringFormatTestFuns, ShouldFormatFlat) {
 }
 TEST(PitchStringFormatTestFuns, ShouldFormatSolfege) {
 
+    PitchStringFormat::getSharedInstance().setWidth(0);
     bool includeOctave = false;
 
     EXPECT_EQ("do", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
@@ -80,6 +81,37 @@ TEST(PitchStringFormatTestFuns, ShouldFormatSolfege) {
     EXPECT_EQ("do", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
                         96, PitchStringFormat::Spelling::solfege,
                         PitchStringFormat::Justification::left, includeOctave));
+
+
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        1, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        13, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        25, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        37, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        49, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        61, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        73, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        85, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));
+    EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                        97, PitchStringFormat::Spelling::solfege,
+                        PitchStringFormat::Justification::left, includeOctave));                        
+// @todo: complete all of this
+
 }
 
 /*

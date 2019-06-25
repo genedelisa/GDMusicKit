@@ -25,7 +25,9 @@ namespace gdmusickit {
         Note(Pitch pitch, double startBeat = 1.0, double duration = 1.0);
         Note(std::string pitchString, double startBeat = 1.0, double duration = 1.0);
 
-        const Pitch& getPitch() const {return pitch;}
+        const Pitch getPitch() const {return pitch;}
+        const double getStartBeat() const {return startBeat;}        
+        const double getDuration() const {return duration;}        
 
         bool operator<(const Note& note) const {
             return startBeat < note.startBeat;
