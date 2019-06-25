@@ -17,12 +17,10 @@ namespace gdmusickit {
         }
 
         Pitch getPitch(int midiNumber);
-        
+
         Pitch getPitch(std::string pitchString);
 
-        static inline const std::map<int, int> mymap = {
-            std::pair<int, int>(1, 1), std::pair<int, int>(2, 2),
-            std::pair<int, int>(2, 2)};
+        
 
         // the input is uppercased when this is accessed
         static inline const std::map<std::string, int> pitchClassNames = {

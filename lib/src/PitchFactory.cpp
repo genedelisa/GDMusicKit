@@ -23,7 +23,7 @@ namespace gdmusickit {
         }
         Pitch pitch = map->at(midiNumber);
         // Pitch p = map[midiNumber];
-        std::cout << "pitch from map " << pitch << std::endl;
+        //std::cout << "pitch from map " << pitch << std::endl;
         return pitch;
 
         // return Pitch(midiNumber);

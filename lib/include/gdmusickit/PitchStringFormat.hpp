@@ -6,19 +6,22 @@
 
 namespace gdmusickit {
 
-//PitchStringFormat::getSharedInstance().stringFromMIDINumber(60);
+    // PitchStringFormat::getSharedInstance().stringFromMIDINumber(60);
     class PitchStringFormat {
       public:
-       static PitchStringFormat& getSharedInstance() {
+        static PitchStringFormat& getSharedInstance() {
             static PitchStringFormat instance;
             return instance;
         }
-        enum class Spelling : int { sharp = 0, flat = 1 };
+        enum class Spelling : int { sharp = 0, flat = 0 };
         enum class Justification : int { left = 0, center = 1, right = 2 };
 
         std::string stringFromMIDINumber(
-            int midiNumber, PitchStringFormat::Spelling spelling,
-            PitchStringFormat::Justification justification, bool includeOctave);
+            int midiNumber,
+            PitchStringFormat::Spelling spelling = Spelling::flat,
+            PitchStringFormat::Justification justification =
+                Justification::left,
+            bool includeOctave = true);
 
       protected:
       private:
@@ -37,6 +40,9 @@ namespace gdmusickit {
             std::make_pair(6, "Gb"),  std::make_pair(7, "G"),
             std::make_pair(8, "Ab"),  std::make_pair(9, "A"),
             std::make_pair(10, "Bb"), std::make_pair(11, "B")};
+
+        // do di re ri mi fa fi sol si la li ti do
+        // but descending: do ti te la le sol se fa mi me re ra do
     };
 
 } // namespace gdmusickit

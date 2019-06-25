@@ -12,9 +12,9 @@
 namespace gdmusickit {
 
     std::string PitchStringFormat::stringFromMIDINumber(
-        int midiNumber, PitchStringFormat::Spelling spelling = Spelling::flat,
-        PitchStringFormat::Justification justification = Justification::left,
-        bool includeOctave = true) {
+        int midiNumber, PitchStringFormat::Spelling spelling,
+        PitchStringFormat::Justification justification,
+        bool includeOctave) {
 
         int pc = midiNumber % 12;
         int offset = 5 - Pitch::octaveForMiddleC;

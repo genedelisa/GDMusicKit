@@ -60,10 +60,10 @@ namespace gdmusickit {
     int PitchStringParser::stringToMidiNumber(std::string pitchString) {
         std::cout << std::endl;
 
-        std::cout << "input string: '" << pitchString << "'" << std::endl;
+        //std::cout << "input string: '" << pitchString << "'" << std::endl;
         std::transform(pitchString.begin(), pitchString.end(),
                        pitchString.begin(), ::toupper);
-        std::cout << "input string uc: '" << pitchString << "'" << std::endl;
+        //std::cout << "input string uc: '" << pitchString << "'" << std::endl;
 
         // std::regex r("([a-gA-G]{1}[S|F|B|#]?)([0-9]*)");
         std::regex r(PitchStringParser::pitchPattern);
@@ -73,8 +73,9 @@ namespace gdmusickit {
 
             auto pitch = m.str(1);
             auto pitchClass = PitchFactory::pitchClassNames.at(pitch);
-            std::cout << "pitch: " << pitch << std::endl;
-            std::cout << "pitch class: " << pitchClass << std::endl;
+            //std::cout << "pitch: " << pitch << std::endl;
+            //std::cout << "pitch class: " << pitchClass << std::endl;
+
             // auto pc = PitchFactory::pitchClassNames[pitch];
 
             // std::cout << "s1 " << m.str(1) << std::endl;
@@ -95,11 +96,12 @@ namespace gdmusickit {
 
                 // posix error codes
                 if (ec == std::errc()) {
-                    std::cout << "value: " << oct
-                              << ", distance: " << ptr - octave.data() << '\n';
+                    std::cout << "octave value: " << oct
+                              << ", distance: " << ptr - octave.data() 
+                              << '\n';
 
                 } else if (ec == std::errc::invalid_argument) {
-                    std::cout << "invalid argument!\n";
+                    std::cerr << "invalid argument!\n";
                     throw std::invalid_argument("Invalid input octave.");
                 }
             }
@@ -108,8 +110,8 @@ namespace gdmusickit {
                 oct -= 1;
             }
             int midiNumber = pitchClass + (oct * 12);
-            std::cout << "midi number returned: " << midiNumber << std::endl;
-            std::cout << std::endl;
+            //std::cout << "midi number returned: " << midiNumber << std::endl;
+            //std::cout << std::endl;
 
             // @todo: return a tuple instead?
             // std::tuple<int, int, int> ret;

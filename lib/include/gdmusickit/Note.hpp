@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Pitch.hpp"
+#include "PitchStringFormat.hpp"
 #include <string>
 
 namespace gdmusickit {
@@ -45,6 +46,7 @@ namespace gdmusickit {
         Pitch pitch{60};
         double startBeat{1.0};
         double duration{1.0};
+        PitchStringFormat::Spelling spelling{PitchStringFormat::Spelling::flat};
     };
 
     /**
