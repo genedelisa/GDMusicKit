@@ -58,3 +58,18 @@ TEST_F(PitchStringParserTest, ShouldNotParseToMIDINumber) {
 
     // EXPECT_EQ(0, PitchStringParser::stringToMidiNumber("Junk"));
 }
+
+TEST_F(PitchStringParserTest, ShouldTestToBeValid) {
+    EXPECT_TRUE(PitchStringParser::isValid("D"));
+    EXPECT_TRUE(PitchStringParser::isValid("D5"));
+    EXPECT_TRUE(PitchStringParser::isValid("Db5"));
+    EXPECT_TRUE(PitchStringParser::isValid("D#5"));            
+}
+
+
+TEST_F(PitchStringParserTest, ShouldTestToBeInvalid) {
+    EXPECT_FALSE(PitchStringParser::isValid("D13"));
+    EXPECT_FALSE(PitchStringParser::isValid("Junk"));
+    EXPECT_FALSE(PitchStringParser::isValid("Dq5"));
+
+}

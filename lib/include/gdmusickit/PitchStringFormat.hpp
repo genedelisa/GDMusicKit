@@ -25,6 +25,8 @@ namespace gdmusickit {
 
       protected:
       private:
+        int width{5};
+
         std::map<int, std::string> sharpPitches = {
             std::make_pair(0, "C"),   std::make_pair(1, "C#"),
             std::make_pair(2, "D"),   std::make_pair(3, "D#"),

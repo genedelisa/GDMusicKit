@@ -57,7 +57,7 @@ target_compile_features(gdmusickit
 target_compile_options(gdmusickit
 	PRIVATE
 		$<$<CXX_COMPILER_ID:MSVC>:/W3>
-    	$<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra -pedantic>
+    	$<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
     	$<$<CXX_COMPILER_ID:GNU>:-Wall>
 )
 # clang++ -cc1 --help
