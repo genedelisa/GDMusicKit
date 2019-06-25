@@ -48,7 +48,13 @@ TEST_F(PitchStringParserTest, ShouldParseToMIDINumber) {
 
 TEST_F(PitchStringParserTest, ShouldNotParseToMIDINumber) {
 
-    ASSERT_THROW(PitchStringParser::stringToMidiNumber("Junk"), std::invalid_argument);
+    // assert = Fatal assertion
+    // expect = non-Fatal assertion
+    ASSERT_ANY_THROW(PitchStringParser::stringToMidiNumber("Junk"));
+    ASSERT_THROW(PitchStringParser::stringToMidiNumber("Junk"),
+                 std::invalid_argument);
+    // EXPECT_THROW(PitchStringParser::stringToMidiNumber("Junk"),
+    // std::invalid_argument);
 
     // EXPECT_EQ(0, PitchStringParser::stringToMidiNumber("Junk"));
 }

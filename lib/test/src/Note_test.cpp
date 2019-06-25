@@ -77,5 +77,18 @@ TEST(NoteTestFuns, ShouldInitMIDINumberFromString) {
     sut = Note("Gs5");
     EXPECT_EQ(68, sut.getPitch().midiPitchNumber());
     sut = Note("Gb5");
-    EXPECT_EQ(66, sut.getPitch().midiPitchNumber());    
+    EXPECT_EQ(66, sut.getPitch().midiPitchNumber());
+}
+
+TEST(NoteTestFuns, ShouldFailFromString) {
+    // Note sut{"Junk"};
+    // std::cout << sut << std::endl;
+
+    // assert = Fatal assertion
+    // expect = non-Fatal assertion
+    ASSERT_ANY_THROW(Note("Junk"));
+    
+    EXPECT_THROW(Note("Junk"), std::invalid_argument);
+    ASSERT_THROW(Note("Junk"), std::invalid_argument);
+
 }
