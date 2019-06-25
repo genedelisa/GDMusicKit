@@ -51,6 +51,7 @@ TEST_F(NoteSequenceTest, ShouldInitMIDINumber) {
     seq.addNote(Note(pitch, startBeat++, 0.5));    
     seq.addNote(Note(getPitch("C5"), startBeat++, 0.5));    
     seq.addNote(Note("Ab5", startBeat++, 0.25));    
+    seq.addNote(Note("Gf10", startBeat++, 0.25));        
     seq.addNote(Note(pp, startBeat++, 1.5));                
 
     auto v = seq[0];

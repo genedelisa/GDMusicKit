@@ -13,7 +13,7 @@ namespace gdmusickit {
             static PitchStringFormat instance;
             return instance;
         }
-        enum class Spelling : int { sharp = 0, flat = 0 };
+        enum class Spelling : int { sharp = 0, flat = 1, solfege = 2 };
         enum class Justification : int { left = 0, center = 1, right = 2 };
 
         std::string stringFromMIDINumber(
@@ -23,9 +23,13 @@ namespace gdmusickit {
                 Justification::left,
             bool includeOctave = true);
 
+            void setWidth(int w) {
+                width = w;
+            }
+
       protected:
       private:
-        int width{5};
+        int width{3};
 
         std::map<int, std::string> sharpPitches = {
             std::make_pair(0, "C"),   std::make_pair(1, "C#"),
@@ -42,6 +46,15 @@ namespace gdmusickit {
             std::make_pair(6, "Gb"),  std::make_pair(7, "G"),
             std::make_pair(8, "Ab"),  std::make_pair(9, "A"),
             std::make_pair(10, "Bb"), std::make_pair(11, "B")};
+
+
+        std::map<int, std::string> solfegePitches = {
+            std::make_pair(0, "do"),   std::make_pair(1, "di"),
+            std::make_pair(2, "re"),   std::make_pair(3, "ri"),
+            std::make_pair(4, "mi"),   std::make_pair(5, "fa"),
+            std::make_pair(6, "fi"),  std::make_pair(7, "sol"),
+            std::make_pair(8, "si"),  std::make_pair(9, "la"),
+            std::make_pair(10, "li"), std::make_pair(11, "ti")};
 
         // do di re ri mi fa fi sol si la li ti do
         // but descending: do ti te la le sol se fa mi me re ra do

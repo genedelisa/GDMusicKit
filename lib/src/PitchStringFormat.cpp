@@ -5,6 +5,7 @@
 
 #include <charconv> // from_char, to_char
 #include <exception>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -13,14 +14,20 @@ namespace gdmusickit {
 
     std::string PitchStringFormat::stringFromMIDINumber(
         int midiNumber, PitchStringFormat::Spelling spelling,
-        PitchStringFormat::Justification justification,
-        bool includeOctave) {
+        PitchStringFormat::Justification justification, bool includeOctave) {
 
         int pc = midiNumber % 12;
         int offset = 5 - Pitch::octaveForMiddleC;
         int oct = (midiNumber / 12) - offset;
 
         std::ostringstream stringStream;
+        // stringStream.setf(std::ios_base::adjustfield, std::ios_base::left);
+        // stringStream.setf(std::ios_base::adjustfield,
+        // std::ios_base::internal);
+
+        // stringStream << std::setw(3);
+        stringStream << std::setw(width);
+
         switch (justification) {
         case Justification::left:
             break;
@@ -31,11 +38,18 @@ namespace gdmusickit {
         };
 
         std::string ps;
-        if (spelling == Spelling::flat) {
+        switch (spelling) {
+        case Spelling::flat:
             ps = flatPitches.at(pc);
-        } else {
+            break;
+        case Spelling::sharp:
             ps = sharpPitches.at(pc);
+            break;
+        case Spelling::solfege:
+            ps = solfegePitches.at(pc);
+            break;
         }
+       
 
         stringStream << ps;
         if (includeOctave) {

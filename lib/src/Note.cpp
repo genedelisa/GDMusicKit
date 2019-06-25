@@ -5,6 +5,7 @@
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
 #include "gdmusickit/PitchStringFormat.hpp"
+#include <iomanip>
 
 namespace gdmusickit {
 
@@ -29,8 +30,9 @@ namespace gdmusickit {
                 note.pitch.midiPitchNumber(), PitchStringFormat::Spelling::flat,
                 PitchStringFormat::Justification::left, true);
 
-        return os << "Pitch: " << note.pitch << " " << ps << " Start "
-                  << note.startBeat << " Duration " << note.duration;
+        return os << "Pitch: " << std::setw(3) << note.pitch << " " << ps
+                  << " Start " << std::fixed << std::setprecision(2) << note.startBeat << " Duration "
+                  << note.duration;
     }
     // Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 
