@@ -11,11 +11,19 @@ FROM debian:9
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install git, process tools
-RUN apt-get update && apt-get -y install git procps
+RUN apt-get update && apt-get -y install --fix-missing \
+   git \
+   wget \
+   procps \
+   make \
+   build-essential \
+   cppcheck \
+   valgrind \
+   vim \
+   curl
 
 # Install C++ tools
-RUN apt-get -y install build-essential cppcheck valgrind
-# RUN apt-get install -y cmake_3.13.4-1_i386.deb
+# RUN apt-get -y install build-essential cppcheck valgrind
 
 RUN cd /usr/local/src \
     && wget https://cmake.org/files/LatestRelease/cmake-3.14.5.tar.gz \

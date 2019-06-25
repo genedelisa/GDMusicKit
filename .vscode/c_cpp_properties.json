@@ -3,8 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-			"${workspaceFolder}/**",
-			"${workspaceFolder}/lib/include"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/include"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -13,9 +13,21 @@
             ],
             "compilerPath": "/usr/bin/clang",
             "intelliSenseMode": "clang-x64",
-			"cStandard": "c11",
-			"cppStandard": "c++17",
-            "configurationProvider": "vector-of-bool.cmake-tools"
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "compilerPath": "/usr/bin/g++",
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 4
