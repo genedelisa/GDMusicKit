@@ -38,7 +38,7 @@ namespace gdmusickit {
         bool operator<(const MIDITrack& note) const {
             return startBeat < note.startBeat;
         }
-        
+
         friend std::ostream& operator<<(std::ostream& os,
                                         MIDITrack const& note);
 
@@ -55,7 +55,7 @@ namespace gdmusickit {
 
       protected:
       private:
-        std::map<double, Note> notes;
+        std::multimap<double, Note> notes;
         double startBeat{1.0};
     };
 
