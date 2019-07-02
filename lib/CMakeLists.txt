@@ -15,7 +15,8 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 
 ##############################################
 # dependencies
-find_package(Boost REQUIRED COMPONENTS regex)
+find_package(Boost REQUIRED COMPONENTS system)
+# find_package(Boost REQUIRED COMPONENTS regex)
 
 ##############################################
 # Create library target
@@ -28,6 +29,8 @@ add_library(gdmusickit
     src/PitchStringParser.cpp    
     src/Note.cpp
     src/NoteSequence.cpp
+    src/MIDISequence.cpp
+    src/MIDITrack.cpp    
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
@@ -67,7 +70,7 @@ target_link_libraries(gdmusickit
     PUBLIC
         Boost::boost
     PRIVATE
-        Boost::regex
+        #Boost::regex
 )
 
 #########################

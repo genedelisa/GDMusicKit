@@ -6,6 +6,7 @@ include(GoogleTestConfig.in)
 #######################################
 # Configure the tests
 
+# not found when running the the container
 include(googletest)
 
 set(Source
@@ -16,6 +17,8 @@ src/Pitch_test.cpp
 src/PitchFactory_test.cpp
 src/MusicFrequency_test.cpp
 src/NoteSequence_test.cpp
+src/MIDISequence_test.cpp
+src/MIDITrack_test.cpp
 src/main.cpp        
 )
 
@@ -39,3 +42,8 @@ gtest_discover_tests(gdmusickit_test
     ${Source}
     "discovering tests"
 )
+
+# link against gtest or gtest_main as needed. Eg
+#add_executable(example example.cpp)
+#target_link_libraries(example gtest_main)
+#add_test(NAME example_test COMMAND example)

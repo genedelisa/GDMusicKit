@@ -15,6 +15,8 @@
 
 #include "Note.hpp"
 #include "NoteSequence.hpp"
+#include "MIDISequence.hpp"
+#include "MIDITrack.hpp"
 #include "MusicFrequency.hpp"
 #include "Pitch.hpp"
 #include "PitchFactory.hpp"
