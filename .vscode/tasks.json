@@ -16,45 +16,17 @@
 		"showReuseMessage": false
 	},
     "tasks": [
+
 		{
-			"type": "shell",
-			"label": "clang++ C++17 build active file",
-			"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
-			"args": [
-				"-std=c++17",
-				"-stdlib=libc++",
-				"-g",
-				"${file}",
-				"-o",
-				"${workspaceFolder}/lib/build/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}/lib/build/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "build and run active file",
-			"command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-			"dependsOn": "clang++ C++17 build active file",
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"label": "make all",
+			"label": "lib make all",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make all",
 			"problemMatcher": [],
 			"group": "build"
 		},
+
 		{
-			"label": "make test and run it",
+			"label": "lib make test and run it",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make  && test/gdmusickit_test",
 
@@ -79,52 +51,71 @@
 			}
 		},
 		{
-			"label": "make clean",
+			"label": "lib make clean",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make clean",
 			"problemMatcher": []
 		},
 		{
-			"label": "make doc",
+			"label": "lib make doc",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make doc",
 			"problemMatcher": []
 		},
 		{
-			"label": "clean build",
+			"label": "lib clean build",
 			"type": "process",
 			"command": "rm -rf ${workspaceFolder}/lib/build/*",
 			"problemMatcher": []
 		},
 		{
-			"label": "cmake",
+			"label": "lib cmake and make",
 			"type": "shell",
 			"command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON .. && make all",
 			"problemMatcher": []
 		},
 		{
-			"label": "cmake just docs",
+			"label": "lib cmake just docs",
 			"type": "shell",
 			"command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
 			"problemMatcher": []
 		},
+
+
 		{
+			"label": "app cmake and make",
 			"type": "shell",
-			"label": "clang++ build active file",
-			"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
-			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			]
+			"command": "rm -rf ${workspaceFolder}/app/build/* && cd ${workspaceFolder}/app/build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON .. && make all",
+			"problemMatcher": []
 		},
+		{
+			"label": "app make all",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/app/build && make all",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "app run",
+			"dependsOn" : "app make all",
+			"type": "process",
+			"command": "${workspaceFolder}/app/build/loggingTestApp",
+			"options": {
+				"cwd": "${workspaceFolder}/app/build",
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "app clean build",
+			"type": "process",
+			"command": "rm -rf ${workspaceFolder}/app/build/*",
+			"problemMatcher": []
+		},
+
+
+
+
+
 
 
 		{
@@ -186,6 +177,39 @@
                 "panel": "dedicated"
             },
             "problemMatcher": []
-		}
+		},
+
+
+
+		{
+			"type": "shell",
+			"label": "clang++ C++17 build active file",
+			"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+			"args": [
+				"-std=c++17",
+				"-stdlib=libc++",
+				"-g",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/lib/build/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/lib/build/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "build and run active file",
+			"command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+			"dependsOn": "clang++ C++17 build active file",
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
 	]
 }

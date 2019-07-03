@@ -18,7 +18,10 @@ project(gdmusicTestApp
 # set(CMAKE_PREFIX_PATH "GDMusicKit")
 #set(GDMusicKit_DIR "../../gdmusickit/cmake")
 
-add_executable(loggingTestApp src/loggingfrobs.cpp)
+add_executable(loggingTestApp
+	src/Log.cpp
+	src/loggingfrobs.cpp
+)
 target_compile_features(loggingTestApp
 	PRIVATE
 		cxx_std_17
@@ -31,7 +34,9 @@ target_compile_options(loggingTestApp
 )
 
 ##########################################
-add_executable(gdmusicTestApp src/main)
+add_executable(gdmusicTestApp
+	src/main
+)
 target_compile_features(gdmusicTestApp
 	PRIVATE
 		cxx_std_17
@@ -52,7 +57,7 @@ target_compile_options(gdmusicTestApp
 find_package(GDMusicKit 1.0 REQUIRED)
 #find_package(Threads REQUIRED)
 
-
+#########################################################
 set(Boost_USE_STATIC_LIBS ON)
 # to debug this find
 set(Boost_DEBUG OFF)
@@ -60,7 +65,6 @@ set(Boost_DEBUG OFF)
 find_package(Boost 1.7.0 REQUIRED COMPONENTS log)
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
-
 
 target_link_libraries(gdmusicTestApp
  PUBLIC
@@ -76,10 +80,8 @@ target_link_libraries(loggingTestApp
 )
 
 message("Boost_LIBRARIES: ${Boost_LIBRARIES}")
-
 #/usr/local/lib/libboost_log-mt.a;/usr/local/lib/libboost_date_time-mt.a;/usr/local/lib/libboost_log_setup-mt.a;/usr/local/lib/libboost_filesystem-mt.a;/usr/local/lib/libboost_thread-mt.a;/usr/local/lib/libboost_regex-mt.a;/usr/local/lib/libboost_chrono-mt.a;/usr/local/lib/libboost_atomic-mt.a
-
-	 #Boost::boost
+#Boost::boost
 
 
 
