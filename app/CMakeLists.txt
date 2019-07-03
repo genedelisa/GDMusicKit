@@ -59,14 +59,20 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
 target_link_libraries(gdmusicTestApp
+ PUBLIC
 	GDMusicKit::GDMusicKit
 )
 target_link_libraries(loggingTestApp
-	GDMusicKit::GDMusicKit
-	Threads::Threads
-	Boost::boost
-	${Boost_LIBRARIES}
+	PUBLIC
+		GDMusicKit::GDMusicKit
+		${Boost_LIBRARIES}
+	PRIVATE
+		Threads::Threads
 )
+	 #Boost::boost
+
+
+
 
 
 
