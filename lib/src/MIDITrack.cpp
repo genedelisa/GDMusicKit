@@ -9,6 +9,12 @@
 #include <iostream>
 #include <regex>
 #include <string>
+#include <map>
+
+#include <boost/log/common.hpp>
+#include <boost/log/sinks.hpp>
+#include <boost/log/sources/severity_logger.hpp>
+#include <boost/shared_ptr.hpp>
 
 namespace gdmusickit {
 
@@ -32,6 +38,23 @@ namespace gdmusickit {
         // std::vector<Note>* v = notes.get();
         // notes.erase(std::remove(notes.begin(), notes.end(), note),
         // notes.end());
+    }
+
+    std::multimap<double, Note> MIDITrack::subset(int from, int to) {
+        std::multimap<double, Note> resultMap;
+
+        auto range_start = notes.find(from);
+        auto range_end = notes.find(to);
+        //        auto range_end = notes.end();
+        resultMap.insert(range_start, range_end);
+
+        // std::copy_if(begin(notes), end(notes),
+        //              std::inserter(resultMap, begin(resultMap)),
+        //              [&from](std::pair<int, int> p) {
+        //                  return p.first >= from;
+        //              });
+
+        return resultMap;
     }
 
     std::ostream& operator<<(std::ostream& os, MIDITrack const& MIDITrack) {

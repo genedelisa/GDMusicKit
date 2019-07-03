@@ -35,6 +35,9 @@ namespace gdmusickit {
         void clear();
         size_t size() const;
 
+        std::multimap<double, Note> subset(int from, int to);
+
+
         bool operator<(const MIDITrack& note) const {
             return startBeat < note.startBeat;
         }

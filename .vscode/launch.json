@@ -5,13 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+			"preLaunchTask": "make all",
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/lib/build/test/gdmusickit_test",
             "args": [],
             "stopAtEntry": false,
-			"cwd": "${workspaceFolder}/lib/build",
+			"cwd": "${workspaceFolder}/lib/",
 //"cwd": "${workspaceFolder}/lib/build/test",
             "environment": [],
             "externalConsole": true,

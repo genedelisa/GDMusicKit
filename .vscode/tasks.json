@@ -124,6 +124,68 @@
 			"problemMatcher": [
 				"$gcc"
 			]
+		},
+
+
+		{
+            "label": "Test NoteSequenceTest.ShouldAddNote",
+			"type": "process",
+			"command": "${workspaceFolder}/lib/build/test/gdmusickit_test",
+            "args": [
+				"--gtest_filter=NoteSequenceTest.ShouldAddNote"
+            ],
+            "group": "test",
+            "options": {
+				"cwd": "${workspaceFolder}/lib/build",
+				"env": {
+					"WHATEVER" : "thing=1"
+				}
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+		},
+		{
+            "label": "Test NoteSequenceTest.*",
+			"type": "process",
+			"command": "${workspaceFolder}/lib/build/test/gdmusickit_test",
+            "args": [
+				"--gtest_filter=NoteSequenceTest.*"
+            ],
+            "group": "test",
+            "options": {
+				"cwd": "${workspaceFolder}/lib/build",
+				"env": {
+					"WHATEVER" : "thing=1"
+				}
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+		},
+		{
+            "label": "Test MIDITrackTest.*",
+			"type": "process",
+			"command": "${workspaceFolder}/lib/build/test/gdmusickit_test",
+            "args": [
+				"--gtest_filter=MIDITrackTest.*"
+            ],
+            "group": "test",
+            "options": {
+				"cwd": "${workspaceFolder}/lib/build",
+				"env": {
+					"WHATEVER" : "thing=1"
+				}
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
 		}
 	]
 }

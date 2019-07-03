@@ -5,7 +5,12 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/lib/include"
-            ],
+			],
+			"browse": {
+				"path": [
+				  "${workspaceFolder}"
+				]
+			},
             "defines": [],
             "macFrameworkPath": [
                 "/System/Library/Frameworks",
