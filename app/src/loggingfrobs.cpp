@@ -12,6 +12,15 @@
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <fstream>
 #include <ostream>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/log/expressions.hpp>
+#include <boost/log/sources/severity_logger.hpp>
+#include <boost/log/sources/record_ostream.hpp>
+#include <boost/log/utility/setup/file.hpp>
+#include <boost/log/utility/setup/common_attributes.hpp>
+#include <boost/log/support/date_time.hpp>
+
+
 namespace logging = boost::log;
 namespace src = boost::log::sources;
 namespace expr = boost::log::expressions;
@@ -47,9 +56,9 @@ void init() {
   logging::core::get()->add_sink(sink);
 
   // Output message to console
-  boost::log::add_console_log(std::cout,
-                              boost::log::keywords::format = &my_formatter,
-                              boost::log::keywords::auto_flush = true);
+  // boost::log::add_console_log(std::cout,
+  //                             boost::log::keywords::format = &my_formatter,
+  //                             boost::log::keywords::auto_flush = true);
 }
 
 #define MY_GLOBAL_LOGGER(log_, sv)                                             \
@@ -57,9 +66,12 @@ void init() {
                           << boost::log::add_value("File", __FILE__)           \
                           << boost::log::add_value("Function",                 \
                                                    BOOST_CURRENT_FUNCTION)
-int main(int, char *[]) {
+int xmain(int, char *[]) {
   init();
   logging::add_common_attributes();
+
+	//boost::shared_ptr< logging::core > core = logging::core::get();
+  //core->add_global_attribute("LineID", attrs::counter< unsigned int >(1));
 
   using namespace logging::trivial;
   src::severity_logger<severity_level> lg;
@@ -94,8 +106,24 @@ static void init_log() {
       boost::log::keywords::max_size = 20 * 1024 * 1024,
       boost::log::keywords::time_based_rotation =
           boost::log::sinks::file::rotation_at_time_point(0, 0, 0),
-      boost::log::keywords::format = COMMON_FMT,
-      boost::log::keywords::auto_flush = true);
+      //boost::log::keywords::format = COMMON_FMT,
+			// boost::log::keywords::format =
+      //   (
+      //       expr::stream
+      //           << expr::attr< unsigned int >("LineID")
+      //           //<< ": <" << logging::trivial::severity
+      //           << "> " << expr::smessage
+      //   ),
+				 boost::log::keywords::format =
+        (
+            expr::stream
+                << expr::format_date_time< boost::posix_time::ptime >("TimeStamp", "%Y-%m-%d %H:%M:%S")
+                << ": <" << logging::trivial::severity
+								<< " line: " << expr::attr< unsigned int >("LineID")
+                << "> " << expr::smessage
+        ),
+      boost::log::keywords::auto_flush = true
+			);
 
   boost::log::add_common_attributes();
 
@@ -106,7 +134,7 @@ static void init_log() {
 #endif
 }
 
-int oldmain(int, char **) {
+int main(int, char **) {
   init_log();
 
   // Output some simple log message

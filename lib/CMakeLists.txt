@@ -18,6 +18,24 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 find_package(Boost REQUIRED COMPONENTS system)
 # find_package(Boost REQUIRED COMPONENTS regex)
 
+if(APPLE)
+    message("this is apple. finding core audio")
+    find_library(CORE_AUDIO_LIBRARY CoreAudio)
+    find_library(AUDIO_TOOLBOX_LIBRARY AudioToolbox)
+    find_library(AUDIO_UNIT_LIBRARY AudioUnit)
+    find_library(CARBON_LIBRARY Carbon)
+    SET(NATIVE_AUDIO_LIBS ${CORE_AUDIO_LIBRARY} ${AUDIO_TOOLBOX_LIBRARY} ${AUDIO_UNIT_LIBRARY} ${CARBON_LIBRARY})
+elseif(UNIX)
+    message("this is unix. finding alsa audio")
+    set(THREADS_PREFER_PTHREAD_FLAG ON)
+    find_package(ALSA REQUIRED)
+    find_package(Threads REQUIRED)
+    SET(NATIVE_AUDIO_LIBS rt ${ALSA_LIBRARIES} jack Threads::Threads)
+endif()
+
+message("NATIVE_AUDIO_LIBS: ${NATIVE_AUDIO_LIBS}")
+
+
 ##############################################
 # Create library target
 
@@ -70,6 +88,7 @@ target_link_libraries(gdmusickit
     PUBLIC
         Boost::boost
     PRIVATE
+        ${NATIVE_AUDIO_LIBS}
         #Boost::regex
 )
 
