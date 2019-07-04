@@ -1,6 +1,26 @@
 #include "Log.hpp"
 
 /*************************************************************************************************************************************************************************************************************/
+
+// https://stackoverflow.com/questions/31154429/boost-log-support-file-name-and-line-number/31160870#31160870
+
+void my_formatter(logging::record_view const &rec,
+                  logging::formatting_ostream &strm) {
+  // Get the LineID attribute value and put it into the stream
+  strm << logging::extract<unsigned int>("LineID", rec) << ": ";
+  strm << logging::extract<int>("Line", rec) << ": ";
+  logging::value_ref<std::string> fullpath =
+      logging::extract<std::string>("File", rec);
+  strm << boost::filesystem::path(fullpath.get()).filename().string() << ": ";
+
+  // The same for the severity level.
+  // The simplified syntax is possible if attribute keywords are used.
+  strm << "<" << rec[logging::trivial::severity] << "> ";
+
+  // Finally, put the record message to the stream
+  strm << rec[expr::smessage];
+}
+
 void initLog(const std::string_view filename) {
 
   boost::log::add_common_attributes();
@@ -11,11 +31,14 @@ void initLog(const std::string_view filename) {
   auto fmtTimeStamp{
       boost::log::expressions::format_date_time<boost::posix_time::ptime>(
           "TimeStamp", "%Y-%m-%d %H:%M:%S.%f")};
+
   auto fmtThreadId{boost::log::expressions::attr<
       boost::log::attributes::current_thread_id::value_type>("ThreadID")};
+
   auto fmtSeverity{
       boost::log::expressions::attr<boost::log::trivial::severity_level>(
           "Severity")};
+
   auto fmtScope{boost::log::expressions::format_named_scope(
       "Scope", boost::log::keywords::format = "%n(%f:%l)",
       boost::log::keywords::iteration = boost::log::expressions::reverse,
@@ -27,7 +50,8 @@ void initLog(const std::string_view filename) {
       boost::log::expressions::smessage};
 
   auto consoleSink{boost::log::add_console_log(std::clog)};
-  consoleSink->set_formatter(logFmt);
+  consoleSink->set_formatter(&my_formatter);
+  // consoleSink->set_formatter(logFmt);
 
   auto fsSink{boost::log::add_file_log(
       boost::log::keywords::file_name = filename.data(),
@@ -43,8 +67,6 @@ void initLog(const std::string_view filename) {
                                       boost::log::trivial::info);
 #endif
 }
-
-
 
 #if 0
 static void init_log() {
@@ -97,7 +119,6 @@ static void init_log() {
 #endif
 }
 #endif
-
 
 #if 0
 
@@ -160,4 +181,3 @@ int xmain(int, char *[]) {
 }
 
 #endif
-

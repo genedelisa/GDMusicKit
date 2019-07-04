@@ -20,14 +20,26 @@
 #include <boost/date_time/posix_time/posix_time_types.hpp>
 #include <boost/log/support/date_time.hpp>
 
-
+#include <boost/log/expressions.hpp>
 
 namespace logging = boost::log;
 namespace src = boost::log::sources;
 namespace sinks = boost::log::sinks;
 namespace keywords = boost::log::keywords;
+namespace expr = boost::log::expressions;
 
-#define LOG(severity) BOOST_LOG_TRIVIAL(severity)
+#define LOGGER(severity) BOOST_LOG_TRIVIAL(severity)
+
+enum severity_level { trace, debug, info, warning, error, fatal };
+
+#include <boost/log/sources/global_logger_storage.hpp>
+BOOST_LOG_GLOBAL_LOGGER(logger, boost::log::sources::severity_logger_mt< severity_level >)
+
+#define LOG(log_, sv)                                                          \
+  BOOST_LOG_SEV(log_, sv) << boost::log::add_value("Line", __LINE__)           \
+                          << boost::log::add_value("File", __FILE__)           \
+                          << boost::log::add_value("Function",                 \
+                                                   BOOST_CURRENT_FUNCTION)
 
 /**
  * @brief Initializes the logger

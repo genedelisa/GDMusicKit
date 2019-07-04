@@ -20,6 +20,7 @@ project(gdmusicTestApp
 
 add_executable(loggingTestApp
 	src/Log.cpp
+	src/Logging.cpp
 	src/loggingfrobs.cpp
 )
 target_compile_features(loggingTestApp

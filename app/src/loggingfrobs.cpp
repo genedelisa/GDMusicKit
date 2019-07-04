@@ -1,9 +1,10 @@
 
-#include "Log.hpp"
+//#include "Log.hpp"
+#include "Logging.hpp"
 
 int main(int, char **) {
-  //init_log();
-	initLog("flobble_%3N.log");
+  // init_log();
+  // initLog("flobble_%3N.log");
 
   // Output some simple log message
   BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
@@ -12,6 +13,20 @@ int main(int, char **) {
   BOOST_LOG_TRIVIAL(warning) << "A warning severity message";
   BOOST_LOG_TRIVIAL(error) << "An error severity message";
   BOOST_LOG_TRIVIAL(fatal) << "A fatal severity message";
+
+  // boost::log::sources::severity_logger_mt<severity_level> lg = logger::get();
+  // LOG(lg, trace) << "A trace severity message";
+  // LOG(lg, debug) << "A debug severity message";
+  // LOG(lg, info) << "An informational severity message";
+  // LOG(lg, warning) << "A warning severity message";
+  // LOG(lg, error) << "An error severity message";
+  // LOG(lg, fatal) << "A fatal severity message";
+
+  TRACE << "trace";
+  DEBUG << "debug";
+  WARNING << "warning";
+  ERROR << "error";
+  FATAL << "fatal";
 
   return EXIT_SUCCESS;
 }
