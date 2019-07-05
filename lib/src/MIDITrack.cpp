@@ -3,18 +3,21 @@
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
 
+#include "Logging.hpp"
+#include "gdmusickit/MacMIDI.hpp"
+
 #include <algorithm>
 #include <charconv> // from_char, to_char
 #include <exception>
 #include <iostream>
+#include <map>
 #include <regex>
 #include <string>
-#include <map>
 
-#include <boost/log/common.hpp>
-#include <boost/log/sinks.hpp>
-#include <boost/log/sources/severity_logger.hpp>
-#include <boost/shared_ptr.hpp>
+#include <AudioUnit/AudioUnit.h>
+#include <CoreAudio/CoreAudio.h>
+#include <CoreMIDI/CoreMIDI.h>
+//#include <CoreServices/CoreServices.h>
 
 namespace gdmusickit {
 
@@ -27,7 +30,15 @@ namespace gdmusickit {
 
     void MIDITrack::addNote(Note note) {
         notes.emplace(note.getStartBeat(), note);
+
+        // MIDIPacketList pktlist{0};
+        // auto packet = MIDIPacketListInit(&pktlist);
+        // auto p = MIDIPacketListAdd(&pktlist, ByteCount listSize,
+        // MIDIPacket *curPacket, MIDITimeStamp time,
+        // ByteCount nData,
+        // const Byte *data);
     }
+
 
     void MIDITrack::removeNote(Note note) {
         for (auto it = notes.begin(); it != notes.end();) {

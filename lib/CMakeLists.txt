@@ -40,6 +40,8 @@ message("NATIVE_AUDIO_LIBS: ${NATIVE_AUDIO_LIBS}")
 # Create library target
 
 add_library(gdmusickit
+    src/MacMIDI.cpp
+    src/Logging.cpp    
     src/PitchFactory.cpp
     src/MusicFrequency.cpp
     src/Pitch.cpp
