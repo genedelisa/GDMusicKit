@@ -6,10 +6,11 @@ namespace logging = boost::log;
 
 std::string file_basename(logging::value_ref<std::string> const &filename) {
   // Check to see if the attribute value has been found
-  if (filename)
+  if (filename) {
     return boost::filesystem::path(filename.get()).filename().string();
-  else
+  } else {
     return std::string();
+  }
 }
 
 // Defines a global logger initialization routine

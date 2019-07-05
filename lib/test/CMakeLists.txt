@@ -31,6 +31,14 @@ target_compile_features(gdmusickit_test
 		cxx_std_17
 )
 
+# https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
+target_compile_options(gdmusickit_test
+	PRIVATE
+       	$<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic>
+        $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
+		$<$<CXX_COMPILER_ID:MSVC>:/W3>
+    	$<$<CXX_COMPILER_ID:GNU>:-g -Wall>
+)
 target_link_libraries(gdmusickit_test
     PUBLIC
     gtest

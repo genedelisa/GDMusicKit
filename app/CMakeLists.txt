@@ -27,8 +27,12 @@ target_compile_features(loggingTestApp
 	PRIVATE
 		cxx_std_17
 )
+# https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
+
 target_compile_options(loggingTestApp
 	PRIVATE
+	    $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic>
+    	$<$<CXX_COMPILER_ID:Clang>:-Wall -DBOOST_LOG_DYN_LINK>
 		$<$<CXX_COMPILER_ID:MSVC>:/W3>
     	$<$<CXX_COMPILER_ID:Clang>:-Wall -DBOOST_LOG_DYN_LINK>
     	$<$<CXX_COMPILER_ID:GNU>:-Wall>

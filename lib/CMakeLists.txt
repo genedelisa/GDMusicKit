@@ -100,6 +100,7 @@ target_link_libraries(gdmusickit
 # https://cmake.org/cmake/help/latest/command/target_link_options.html
 target_link_options(gdmusickit
     PUBLIC
+    #    -DBOOST_LOG_DYN_LINK
 )
 
 #########################
