@@ -7,37 +7,37 @@
 #include <boost/log/utility/manipulators/add_value.hpp>
 #include <boost/log/utility/setup.hpp>
 
-#define TRACE                                                                  \
+#define LOG_TRACE                                                                  \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::trace)                  \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-#define DEBUG                                                                  \
+#define LOG_DEBUG                                                                  \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::debug)                  \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-#define INFO                                                                   \
+#define LOG_INFO                                                                   \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::info)                   \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-#define WARNING                                                                \
+#define LOG_WARNING                                                                \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::warning)                \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-#define ERROR                                                                  \
+#define LOG_ERROR                                                                  \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::error)                  \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 	  
-#define FATAL                                                                  \
+#define LOG_FATAL                                                                  \
   BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::fatal)                  \
       << boost::log::add_value("Line", __LINE__)                               \
       << boost::log::add_value("File", __FILE__)                               \

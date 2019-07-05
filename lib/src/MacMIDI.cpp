@@ -14,10 +14,12 @@
 #include <regex>
 #include <string>
 
+#include <AudioToolbox/AudioToolbox.h> //for AUGraph
 #include <AudioUnit/AudioUnit.h>
 #include <CoreAudio/CoreAudio.h>
 #include <CoreMIDI/CoreMIDI.h>
-//#include <CoreServices/CoreServices.h>
+
+#include <CoreServices/CoreServices.h>
 
 namespace gdmusickit {
 
@@ -27,17 +29,21 @@ namespace gdmusickit {
         OSStatus result = noErr;
         result = MIDIClientCreate(name, NULL, NULL, &m_client);
         if (result != noErr) {
-            ERROR << "MIDIClientCreate() error:" << result;
+            LOG_ERROR << "MIDIClientCreate() LOG_ERROR:" << result;
+
             return;
         }
         result = MIDISourceCreate(m_client, name, &m_endpoint);
         if (result != noErr) {
-            ERROR << "MIDISourceCreate() error:" << result;
+            LOG_ERROR << "MIDISourceCreate() LOG_ERROR:" << result;
+            // LOG_ERROR << GetMacOSStatusLOG_ERRORString(result) << " ";
+            // LOG_ERROR << GetMacOSStatusCommentString(result) << " ";
             return;
         }
         result = MIDIOutputPortCreate(m_client, name, &m_port);
         if (result != noErr) {
-            ERROR << "MIDIOutputPortCreate() error:" << result;
+            LOG_ERROR << "MIDIOutputPortCreate() LOG_ERROR:" << result;
+
             return;
         }
         reloadDeviceList();
@@ -48,21 +54,24 @@ namespace gdmusickit {
         if (m_port != 0) {
             result = MIDIPortDispose(m_port);
             if (result != noErr) {
-                ERROR << "MIDIPortDispose() error:" << result;
+                LOG_ERROR << "MIDIPortDispose() LOG_ERROR:" << result;
+
                 m_port = 0;
             }
         }
         if (m_endpoint != 0) {
             result = MIDIEndpointDispose(m_endpoint);
             if (result != noErr) {
-                ERROR << "MIDIEndpointDispose() err:" << result;
+                LOG_ERROR << "MIDIEndpointDispose() err:" << result;
+
                 m_endpoint = 0;
             }
         }
         if (m_client != 0) {
             result = MIDIClientDispose(m_client);
             if (result != noErr) {
-                ERROR << "MIDIClientDispose() error:" << result;
+                LOG_ERROR << "MIDIClientDispose() LOG_ERROR:" << result;
+
                 m_client = 0;
             }
         }
@@ -110,14 +119,6 @@ namespace gdmusickit {
             sendEvents(&pktlist);
         }
     }
-    // void MacMIDI::sendNoteOff(int chan, int note, int vel) {}
-    // void MacMIDI::sendKeyPressure(int chan, int note, int value) {}
-    // void MacMIDI::sendController(int chan, int control, int value) {}
-    // void MacMIDI::sendProgram(int chan, int program) {}
-    // void MacMIDI::sendChannelPressure(int chan, int value) {}
-    // void MacMIDI::sendPitchBend(int chan, int value) {}
-    // // void MacMIDI::sendSysex(const ByteArray& data) {}
-    // void MacMIDI::sendSystemMsg(const int status) {}
 
     void MacMIDI::sendNoteOff(int chan, int note, int vel) {
         UInt8 data[3];
@@ -131,6 +132,11 @@ namespace gdmusickit {
         if (packet != nullptr) {
             sendEvents(&pktlist);
         }
+
+        MIDITimeStamp timestamp = 0; // 0 will mean play now.
+        Byte buffer[1024]; // storage space for MIDI Packets (max 65536)
+        MIDIPacketList* packetlist = (MIDIPacketList*)buffer;
+        MIDIPacket* currentpacket = MIDIPacketListInit(packetlist);
     }
 
     void MacMIDI::sendController(int chan, int control, int value) {
@@ -206,7 +212,7 @@ namespace gdmusickit {
         UInt8 buf[4096];
         if (data.size() > 4096)
             return;
-        
+
         // MIDIPacketList* pktlist = (MIDIPacketList*)&buf;
         // MIDIPacket* packet = MIDIPacketListInit(pktlist);
         // packet = MIDIPacketListAdd(pktlist, sizeof(buf), packet, 0,
@@ -229,38 +235,25 @@ namespace gdmusickit {
         }
     }
 
-    std::string cfStringToStdString(CFStringRef cfString) {
-        CFIndex bufferSize =
-            CFStringGetLength(cfString) +
-            1; // The +1 is for having space for the string to be NUL terminated
-        char buffer[bufferSize];
+    void emitSignals(MIDIPacket* packet) {}
 
-        // CFStringGetCString is documented to return a false if the buffer is
-        // too small (which shouldn't happen in this example) or if the
-        // conversion generally fails
-        if (CFStringGetCString(cfString, buffer, bufferSize,
-                               kCFStringEncodingUTF8)) {
-            std::string cppString(buffer);
-            return cppString;
+    void playPacketListOnAllDevices(MIDIPortRef midiout,
+                                    const MIDIPacketList* pktlist) {
+        // send MIDI message to all MIDI output devices connected to computer:
+        ItemCount nDests = MIDIGetNumberOfDestinations();
+        ItemCount iDest;
+        OSStatus status{noErr};
+        MIDIEndpointRef dest;
+        for (iDest = 0; iDest < nDests; iDest++) {
+            dest = MIDIGetDestination(iDest);
+            status = MIDISend(midiout, dest, pktlist);
+            if (status != noErr) {
+                LOG_ERROR << "Problem sendint MIDI data on port " << iDest;
+                //                LOG_ERROR <<
+                //                GetMacOSStatusLOG_ERRORString(status);
+                return;
+            }
         }
-        return 0;
-    }
-
-    std::string& ltrim(std::string& str,
-                       const std::string& chars = "\t\n\v\f\r ") {
-        str.erase(0, str.find_first_not_of(chars));
-        return str;
-    }
-
-    std::string& rtrim(std::string& str,
-                       const std::string& chars = "\t\n\v\f\r ") {
-        str.erase(str.find_last_not_of(chars) + 1);
-        return str;
-    }
-
-    std::string& trim(std::string& str,
-                      const std::string& chars = "\t\n\v\f\r ") {
-        return ltrim(rtrim(str, chars), chars);
     }
 
     std::string MacMIDI::getEndpointName(MIDIEndpointRef endpoint) {
@@ -305,4 +298,56 @@ namespace gdmusickit {
         }
         return result;
     }
+
+    void MacMIDIReadProc(const MIDIPacketList* pktlist, void* refCon,
+                         void* connRefCon) {
+
+        gdmusickit::MacMIDI* obj = nullptr;
+        if (refCon != nullptr) {
+            obj = static_cast<gdmusickit::MacMIDI*>(refCon);
+        }
+
+        MIDIPacket* packet = (MIDIPacket*)pktlist->packet;
+        for (unsigned int i = 0; i < pktlist->numPackets; ++i) {
+            if (obj != NULL) {
+                // obj->emitSignals(packet);
+            }
+            packet = MIDIPacketNext(packet);
+        }
+    }
+
+    std::string MacMIDI::cfStringToStdString(CFStringRef cfString) {
+        CFIndex bufferSize =
+            CFStringGetLength(cfString) + 1; // The +1 is for having space for
+                                             // the string to be NULL terminated
+        char buffer[bufferSize];
+
+        // CFStringGetCString is documented to return a false if the buffer is
+        // too small (which shouldn't happen in this example) or if the
+        // conversion generally fails
+        if (CFStringGetCString(cfString, buffer, bufferSize,
+                               kCFStringEncodingUTF8)) {
+            std::string cppString(buffer);
+            return cppString;
+        }
+        return 0;
+    }
+
+    std::string& ltrim(std::string& str,
+                       const std::string& chars = "\t\n\v\f\r ") {
+        str.erase(0, str.find_first_not_of(chars));
+        return str;
+    }
+
+    std::string& rtrim(std::string& str,
+                       const std::string& chars = "\t\n\v\f\r ") {
+        str.erase(str.find_last_not_of(chars) + 1);
+        return str;
+    }
+
+    std::string& trim(std::string& str,
+                      const std::string& chars = "\t\n\v\f\r ") {
+        return ltrim(rtrim(str, chars), chars);
+    }
+
 } // namespace gdmusickit

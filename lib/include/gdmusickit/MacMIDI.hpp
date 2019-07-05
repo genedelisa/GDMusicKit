@@ -140,5 +140,7 @@ namespace gdmusickit {
         void reloadDeviceList();
         void sendEvents(const MIDIPacketList* events);
         std::string getEndpointName(MIDIEndpointRef endpoint);
+        std::string cfStringToStdString(CFStringRef cfString);
+
     };
 } // namespace gdmusickit

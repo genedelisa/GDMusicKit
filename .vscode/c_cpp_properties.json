@@ -8,7 +8,7 @@
 			],
 			"browse": {
 				"path": [
-				  "${workspaceFolder}"
+				  "${workspaceFolder}/lib/src"
 				]
 			},
             "defines": [],
@@ -16,7 +16,7 @@
                 "/System/Library/Frameworks",
                 "/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/usr/bin/clang++",
             "intelliSenseMode": "clang-x64",
             "cStandard": "c11",
             "cppStandard": "c++17"
