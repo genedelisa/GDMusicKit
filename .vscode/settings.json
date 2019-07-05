@@ -72,7 +72,11 @@
         "variant": "cpp",
         "vector": "cpp",
         "regex": "cpp",
-        "charconv": "cpp"
+        "charconv": "cpp",
+        "csignal": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "strstream": "cpp"
     },
 
     "catch2TestExplorer.executables": [

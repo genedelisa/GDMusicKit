@@ -4,21 +4,47 @@
 #include <boost/log/sources/global_logger_storage.hpp>
 #include <boost/log/support/date_time.hpp>
 #include <boost/log/trivial.hpp>
+#include <boost/log/utility/manipulators/add_value.hpp>
 #include <boost/log/utility/setup.hpp>
 
-#define TRACE BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::trace)
-#define DEBUG BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::debug)
-#define INFO  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::info)
-#define WARNING  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::warning)
-#define ERROR BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::error)
-#define FATAL BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::fatal)
+#define TRACE                                                                  \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::trace)                  \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-#define SYS_LOGFILE             "log/example.log"
-//#define SYS_LOGFILE             "/var/log/example.log"
+#define DEBUG                                                                  \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::debug)                  \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-//Narrow-char thread-safe logger.
-typedef boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> logger_t;
+#define INFO                                                                   \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::info)                   \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-//declares a global logger with a custom initialization
+#define WARNING                                                                \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::warning)                \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
+
+#define ERROR                                                                  \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::error)                  \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
+	  
+#define FATAL                                                                  \
+  BOOST_LOG_SEV(my_logger::get(), boost::log::trivial::fatal)                  \
+      << boost::log::add_value("Line", __LINE__)                               \
+      << boost::log::add_value("File", __FILE__)                               \
+      << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
+
+typedef boost::log::sources::severity_logger_mt<
+    boost::log::trivial::severity_level>
+    logger_t;
+
 BOOST_LOG_GLOBAL_LOGGER(my_logger, logger_t)
-

@@ -30,9 +30,10 @@ target_compile_features(loggingTestApp
 target_compile_options(loggingTestApp
 	PRIVATE
 		$<$<CXX_COMPILER_ID:MSVC>:/W3>
-    	$<$<CXX_COMPILER_ID:Clang>:-Wall>
+    	$<$<CXX_COMPILER_ID:Clang>:-Wall -DBOOST_LOG_DYN_LINK>
     	$<$<CXX_COMPILER_ID:GNU>:-Wall>
 )
+
 
 ##########################################
 add_executable(gdmusicTestApp
@@ -66,6 +67,8 @@ set(Boost_DEBUG OFF)
 find_package(Boost 1.7.0 REQUIRED COMPONENTS log)
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
+
+#ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
 
 target_link_libraries(gdmusicTestApp
  PUBLIC
