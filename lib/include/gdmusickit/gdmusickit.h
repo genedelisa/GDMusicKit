@@ -23,5 +23,11 @@
 #include "PitchStringFormat.hpp"
 #include "PitchStringParser.hpp"
 
+// private
+//#include "Logging.hpp"
+//#include "MacMIDI.hpp"
+
+
+
 
 

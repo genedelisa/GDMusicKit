@@ -14,10 +14,6 @@
 #include <regex>
 #include <string>
 
-#include <AudioUnit/AudioUnit.h>
-#include <CoreAudio/CoreAudio.h>
-#include <CoreMIDI/CoreMIDI.h>
-//#include <CoreServices/CoreServices.h>
 
 namespace gdmusickit {
 

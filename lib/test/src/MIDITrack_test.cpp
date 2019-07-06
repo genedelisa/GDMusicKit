@@ -10,6 +10,7 @@
 #include <memory>
 
 #include <gdmusickit/gdmusickit.h>
+#include "Logging.hpp"
 
 using namespace gdmusickit;
 using namespace std;
@@ -42,6 +43,6 @@ struct MIDITrackTest: testing::Test {
 TEST_F(MIDITrackTest, ShouldInit) {
 
     // EXPECT_EQ(60, pitch->midiPitchNumber());
-
+    LOG_INFO << sut;
     cout << sut << endl;
 }
