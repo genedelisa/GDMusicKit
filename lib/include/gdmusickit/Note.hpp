@@ -25,6 +25,7 @@ namespace gdmusickit {
         Note(Pitch pitch, double startBeat = 1.0, double duration = 1.0);
         Note(std::string pitchString, double startBeat = 1.0,
              double duration = 1.0);
+        ~Note();
 
         Pitch getPitch() const { return pitch; }
         double getStartBeat() const { return startBeat; }
@@ -46,6 +47,11 @@ namespace gdmusickit {
 
       protected:
       private:
+        // pimpl
+        //https://www.fluentcpp.com/2017/09/22/make-pimpl-using-unique_ptr/
+        //class NoteImpl;
+        //std::unique_ptr<NoteImpl> impl_;
+
         Pitch pitch{60};
         double startBeat{1.0};
         double duration{1.0};

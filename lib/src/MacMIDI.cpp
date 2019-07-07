@@ -19,11 +19,16 @@
 #include <CoreAudio/CoreAudio.h>
 #include <CoreMIDI/CoreMIDI.h>
 
+// does not work in c++
+//#include <AVFoundation/AVFoundation.h>
+
 #include <CoreServices/CoreServices.h>
 
 namespace gdmusickit {
 
     MacMIDI::MacMIDI() {
+        //nope AVAudioPlayer player;
+        
         CFStringRef name = CFStringRef("thing");
 
         OSStatus result = noErr;
@@ -106,7 +111,24 @@ namespace gdmusickit {
             MIDISend(m_port, m_destination, events);
     }
 
-    void MacMIDI::sendNoteOn(int chan, int note, int vel) {
+//    void MacMIDI::sendNoteOn(std::byte chan, std::byte note, std::byte vel) {
+// std::byte data[3]; // apple. unsigned char.
+//         MIDIPacketList pktlist;
+//         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
+//         data[0] = MIDI_STATUS_NOTEON | (chan & MIDI_CHANNEL_MASK);
+//         data[1] = note;
+//         data[2] = vel;
+//         unsigned char* bytes = reinterpret_cast<unsigned char*>(bytes); 
+//         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
+//                                    sizeof(bytes), bytes);
+//                                  //                 sizeof(data), data);
+
+//         if (packet != nullptr) {
+//             sendEvents(&pktlist);
+//         }
+//     }
+    
+     void MacMIDI::sendNoteOn(int chan, int note, int vel) {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);

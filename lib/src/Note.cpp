@@ -8,6 +8,11 @@
 #include <iomanip>
 
 namespace gdmusickit {
+    // class NoteImpl {
+
+    // };
+    // Note::Note(): impl_(new NoteImpl) {}
+     Note::~Note() = default;
 
     Pitch findPitch(std::string s) {
         return PitchFactory::getSharedInstance().getPitch(s);

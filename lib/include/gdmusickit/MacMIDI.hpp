@@ -1,5 +1,33 @@
 #pragma once
 
+#include <cstddef>
+
+// since c++17. It's an enum. Only bitwise ops.
+// https://en.cppreference.com/w/cpp/types/byte
+// const std::byte midi_note_on{0x90};
+// const std::byte MIDI_STATUS_NOTEOFF{0x80};
+// const std::byte MIDI_STATUS_NOTEON{0x90};
+// const std::byte MIDI_STATUS_KEYPRESURE{0xa0};
+// const std::byte MIDI_STATUS_CONTROLCHANGE{0xb0};
+// const std::byte MIDI_STATUS_PROGRAMCHANGE{0xc0};
+// const std::byte MIDI_STATUS_CHANNELPRESSURE{0xd0};
+// const std::byte MIDI_STATUS_PITCHBEND{0xe0};
+// const std::byte MIDI_STATUS_SYSEX{0xf0};
+// const std::byte MIDI_STATUS_ENDSYSEX{0xf7};
+// const std::byte MIDI_STATUS_REALTIME{0xf8};
+
+const unsigned char midi_note_on{0x90};
+const unsigned char MIDI_STATUS_NOTEOFF{0x80};
+const unsigned char MIDI_STATUS_NOTEON{0x90};
+const unsigned char MIDI_STATUS_KEYPRESURE{0xa0};
+const unsigned char MIDI_STATUS_CONTROLCHANGE{0xb0};
+const unsigned char MIDI_STATUS_PROGRAMCHANGE{0xc0};
+const unsigned char MIDI_STATUS_CHANNELPRESSURE{0xd0};
+const unsigned char MIDI_STATUS_PITCHBEND{0xe0};
+const unsigned char MIDI_STATUS_SYSEX{0xf0};
+const unsigned char MIDI_STATUS_ENDSYSEX{0xf7};
+const unsigned char MIDI_STATUS_REALTIME{0xf8};
+
 #define MIDI_CHANNELS 16
 #define MIDI_GM_DRUM_CHANNEL (10 - 1)
 #define MIDI_CTL_MSB_MAIN_VOLUME 0x07
@@ -7,19 +35,25 @@
 #define MIDI_CTL_ALL_NOTES_OFF 0x7b
 #define MIDI_CTL_RESET_CONTROLLERS 0x79
 
-#define MIDI_STATUS_NOTEOFF 0x80
-#define MIDI_STATUS_NOTEON 0x90
-#define MIDI_STATUS_KEYPRESURE 0xa0
-#define MIDI_STATUS_CONTROLCHANGE 0xb0
-#define MIDI_STATUS_PROGRAMCHANGE 0xc0
-#define MIDI_STATUS_CHANNELPRESSURE 0xd0
-#define MIDI_STATUS_PITCHBEND 0xe0
-#define MIDI_STATUS_SYSEX 0xf0
-#define MIDI_STATUS_ENDSYSEX 0xf7
-#define MIDI_STATUS_REALTIME 0xf8
+// #define MIDI_STATUS_NOTEOFF 0x80
+// #define MIDI_STATUS_NOTEON 0x90
+// #define MIDI_STATUS_KEYPRESURE 0xa0
+// #define MIDI_STATUS_CONTROLCHANGE 0xb0
+// #define MIDI_STATUS_PROGRAMCHANGE 0xc0
+// #define MIDI_STATUS_CHANNELPRESSURE 0xd0
+// #define MIDI_STATUS_PITCHBEND 0xe0
+// #define MIDI_STATUS_SYSEX 0xf0
+// #define MIDI_STATUS_ENDSYSEX 0xf7
+// #define MIDI_STATUS_REALTIME 0xf8
 
-#define MIDI_STATUS_MASK 0xf0
-#define MIDI_CHANNEL_MASK 0x0f
+// const std::byte MIDI_STATUS_MASK{0xF0};
+// const std::byte MIDI_CHANNEL_MASK{0x0F};
+
+const unsigned char MIDI_STATUS_MASK{0xF0};
+const unsigned char MIDI_CHANNEL_MASK{0x0F};
+
+//#define MIDI_STATUS_MASK 0xf0
+//#define MIDI_CHANNEL_MASK 0x0f
 
 #define MIDI_COMMON_QTRFRAME 0xF1
 #define MIDI_COMMON_SONGPP 0xF2
@@ -76,6 +110,7 @@ namespace gdmusickit {
          * @param vel
          */
         virtual void sendNoteOn(int chan, int note, int vel) = 0;
+        //virtual void sendNoteOn(std::byte chan, std::byte note, std::byte vel);
 
         /**
          * @brief sendKeyPressure 0xA
@@ -141,6 +176,5 @@ namespace gdmusickit {
         void sendEvents(const MIDIPacketList* events);
         std::string getEndpointName(MIDIEndpointRef endpoint);
         std::string cfStringToStdString(CFStringRef cfString);
-
     };
 } // namespace gdmusickit

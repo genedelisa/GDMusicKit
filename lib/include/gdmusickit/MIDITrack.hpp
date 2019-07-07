@@ -26,7 +26,7 @@ namespace gdmusickit {
       public:
         explicit MIDITrack(double startBeat = 1.0);
 
-        const double getStartBeat() const { return startBeat; }
+         double getStartBeat() const { return startBeat; }
 
         void addNote(Note note);
         void removeNote(Note note);
