@@ -50,7 +50,8 @@ add_library(gdmusickit
     src/Note.cpp
     src/NoteSequence.cpp
     src/MIDISequence.cpp
-    src/MIDITrack.cpp    
+    src/MIDITrack.cpp   
+    src/TimedMetaMessage.cpp 
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing

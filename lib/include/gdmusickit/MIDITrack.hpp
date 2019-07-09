@@ -26,7 +26,7 @@ namespace gdmusickit {
       public:
         explicit MIDITrack(double startBeat = 1.0);
 
-         double getStartBeat() const { return startBeat; }
+        double getStartBeat() const { return startBeat; }
 
         void addNote(Note note);
         void removeNote(Note note);
@@ -36,7 +36,6 @@ namespace gdmusickit {
         size_t size() const;
 
         std::multimap<double, Note> subset(int from, int to);
-
 
         bool operator<(const MIDITrack& note) const {
             return startBeat < note.startBeat;
@@ -60,6 +59,17 @@ namespace gdmusickit {
       private:
         std::multimap<double, Note> notes;
         double startBeat{1.0};
+
+        // auto metaEvents = [TimedMetaMessage]()
+
+        // auto channelMessages = [TimedChannelMessage]()
+        /// will be a meta text event if set
+        std::string name;
+
+        // loopDuration = MusicTimeStamp(0)
+
+        bool loop = false;
+        // unsigned char patchNum = GMPatch.piano
     };
 
 } // namespace gdmusickit
