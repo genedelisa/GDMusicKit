@@ -2,10 +2,9 @@
 //#include <gdmusickit/Pitch.hpp>
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
-//#include "Pitch.hpp"
-//#include <Pitch.hpp>
 #include <cmath>
 #include <iostream>
+
 
 // gene's music kit
 namespace gdmusickit {

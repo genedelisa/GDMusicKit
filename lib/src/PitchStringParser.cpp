@@ -2,6 +2,7 @@
 #include "gdmusickit/PitchStringParser.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
+#include "Logging.hpp"
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
@@ -59,7 +60,7 @@ namespace gdmusickit {
      * @return int The MIDI number for the Pitch.
      */
     int PitchStringParser::stringToMidiNumber(std::string pitchString) {
-        std::cout << std::endl;
+        //std::cout << std::endl;
 
         // std::cout << "input string: '" << pitchString << "'" << std::endl;
         std::transform(pitchString.begin(), pitchString.end(),
@@ -96,7 +97,7 @@ namespace gdmusickit {
             auto octave = m.str(2);
             int oct{0};
             if (octave.empty()) {
-                std::cout << "no octave" << std::endl;
+                LOG_INFO << "no octave" << std::endl;
             } else {
                 // parse the octave string into an int. This is the most
                 // efficient way.
@@ -105,11 +106,11 @@ namespace gdmusickit {
 
                 // posix error codes
                 if (ec == std::errc()) {
-                    std::cout << "octave value: " << oct
+                    LOG_ERROR << "octave value: " << oct
                               << ", distance: " << ptr - octave.data() << '\n';
 
                 } else if (ec == std::errc::invalid_argument) {
-                    std::cerr << "invalid argument!\n";
+                    LOG_ERROR << "invalid argument!\n";
                     throw std::invalid_argument("Invalid input octave.");
                 }
             }
@@ -167,13 +168,13 @@ namespace gdmusickit {
         std::regex regexp(isValidRegex);
         std::smatch matches;
         if (std::regex_search(pitchString, matches, regexp)) {
-            std::cout << "n matches " << matches.size() << std::endl;
+            LOG_INFO << "n matches " << matches.size() << std::endl;
             auto octave = matches.str(1);
             if (octave.empty()) {
-                std::cout << "no octave" << std::endl;
+                LOG_INFO << "no octave" << std::endl;
             } else {
                 int oct = stringToInt(octave);
-                std::cout << "octave " << octave << std::endl;
+                LOG_INFO << "octave " << octave << std::endl;
                 if (oct < 0 || oct > 11) {
                     return false;
                 }
@@ -195,11 +196,11 @@ namespace gdmusickit {
 
         // posix error codes
         if (ec == std::errc()) {
-            std::cout << "int value: " << result
+            LOG_ERROR << "int value: " << result
                       << ", distance: " << ptr - input.data() << '\n';
 
         } else if (ec == std::errc::invalid_argument) {
-            std::cerr << "invalid argument!"
+            LOG_ERROR << "invalid argument!"
                       << "'" << input << "'\n";
             throw std::invalid_argument("Invalid int input.");
         }
