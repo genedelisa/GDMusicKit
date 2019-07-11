@@ -64,6 +64,7 @@ target_include_directories(gdmusickit
 #        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     PRIVATE
+    /Library/Developer/CommandLineTools/usr/include/c++/v1
         ${CMAKE_CURRENT_SOURCE_DIR}/include/
 #        ${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic
 #        ${CMAKE_CURRENT_SOURCE_DIR}/src

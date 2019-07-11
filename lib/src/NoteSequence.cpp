@@ -8,6 +8,7 @@
 #include <iostream>
 #include <regex>
 #include <string>
+#include "Logging.hpp"
 
 namespace gdmusickit {
 
@@ -40,9 +41,9 @@ namespace gdmusickit {
             std::find_if(v->begin(), v->end(), ifFun);
 
         if (result != v->end()) {
-            std::cout << "find of results" << std::endl;
+            LOG_INFO << "find of results" << std::endl;
             for (auto p = result; p != v->end(); p++) {
-                std::cout << *p << std::endl;
+                LOG_INFO << *p << std::endl;
                 results.emplace_back(*p);
             }
         }

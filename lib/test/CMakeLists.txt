@@ -44,6 +44,7 @@ target_link_libraries(gdmusickit_test
     gtest
 	gtest_main
 	GDMusicKit::gdmusickit
+    Boost::boost
 )
 
 gtest_discover_tests(gdmusickit_test

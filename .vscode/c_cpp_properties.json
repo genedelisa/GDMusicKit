@@ -4,13 +4,14 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/lib/include"
-			],
-			"browse": {
-				"path": [
-				  "${workspaceFolder}/lib/src"
-				]
-			},
+                "${workspaceFolder}/lib/include/**",
+                "/Library/Developer/CommandLineTools/usr/include/c++/v1/**"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/lib/src"
+                ]
+            },
             "defines": [],
             "macFrameworkPath": [
                 "/System/Library/Frameworks",
@@ -19,7 +20,8 @@
             "compilerPath": "/usr/bin/clang++",
             "intelliSenseMode": "clang-x64",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++17",
+            "compileCommands": "${workspaceFolder}/lib/build/compile_commands.json"
         },
         {
             "name": "Linux",

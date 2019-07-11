@@ -3,6 +3,7 @@
 #include "gdmusickit/PitchStringParser.hpp"
 #include <cmath>
 #include <iostream>
+#include "Logging.hpp"
 
 // gene's music kit
 namespace gdmusickit {
@@ -18,7 +19,7 @@ namespace gdmusickit {
         // get the pointer to the map
         auto map = pitchMap.get();
         if (map->count(midiNumber) == 0) {
-            std::cout << midiNumber << " is not in the map" << std::endl;
+            LOG_INFO << midiNumber << " is not in the map" << std::endl;
             // todo: update this to lazy init
         }
         Pitch pitch = map->at(midiNumber);

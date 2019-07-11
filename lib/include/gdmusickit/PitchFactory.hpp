@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Pitch.hpp"
-
 #include <iostream>
 #include <map>
 
@@ -78,7 +77,7 @@ namespace gdmusickit {
         ~PitchFactory() = default;
 
         static inline std::unique_ptr<std::map<int, Pitch>> initMap() {
-            std::cout << "init map" << std::endl;
+            //LOG_INFO << "init map" << std::endl;
             //          pitchMap[0] = Pitch(0);
 
             typedef std::map<int, Pitch> MyMap;

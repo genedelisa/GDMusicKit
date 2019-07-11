@@ -8,4 +8,4 @@
 
 namespace gdmusickit {
     
-}
+} // namespace gdmusickit
