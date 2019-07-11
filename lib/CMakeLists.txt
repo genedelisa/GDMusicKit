@@ -15,8 +15,30 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 
 ##############################################
 # dependencies
-find_package(Boost REQUIRED COMPONENTS system)
+# find_package(Boost REQUIRED COMPONENTS system)
 # find_package(Boost REQUIRED COMPONENTS regex)
+
+set(Boost_USE_STATIC_LIBS ON) 
+set(Boost_USE_MULTITHREADED ON)  
+#set(Boost_USE_STATIC_RUNTIME OFF) 
+find_package(Boost 1.7.0 REQUIRED COMPONENTS system log) 
+
+if(Boost_FOUND)
+    message("boost libraries found")
+    message("Boost_LIBRARIES ${Boost_LIBRARIES}")
+ #/usr/local/lib/libboost_system-mt.dylib
+ # static /usr/local/lib/libboost_system-mt.a;/usr/local/lib/libboost_log-mt.a;/usr/local/lib/libboost_date_time-mt.a;/usr/local/lib/libboost_log_setup-mt.a;/usr/local/lib/libboost_filesystem-mt.a;/usr/local/lib/libboost_thread-mt.a;/usr/local/lib/libboost_regex-mt.a;/usr/local/lib/libboost_chrono-mt.a;/usr/local/lib/libboost_atomic-mt.a
+    message("Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+    # /usr/local/include
+
+    #include_directories(${Boost_INCLUDE_DIRS}) 
+    #add_executable(progname file1.cxx file2.cxx) 
+    #target_link_libraries(progname ${Boost_LIBRARIES})
+else()
+    message("ERROR boost not found")
+    return()
+endif()
+
 
 if(APPLE)
     message("this is apple. finding core audio")
@@ -60,12 +82,17 @@ add_library(GDMusicKit::gdmusickit ALIAS gdmusickit)
 # Set library target properties
 target_include_directories(gdmusickit
     PUBLIC
+        ${Boost_INCLUDE_DIRS}
         $<INSTALL_INTERFACE:include>
-#        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+
+        # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic>
+
     PRIVATE
-    /Library/Developer/CommandLineTools/usr/include/c++/v1
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/
+         /Library/Developer/CommandLineTools/usr/include/c++/v1
+
+        #${CMAKE_CURRENT_SOURCE_DIR}/include/
+
 #        ${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic
 #        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
@@ -94,15 +121,15 @@ target_compile_options(gdmusickit
 
 target_link_libraries(gdmusickit
     PUBLIC
-        Boost::boost
+        ${Boost_LIBRARIES}
     PRIVATE
         ${NATIVE_AUDIO_LIBS}
         #Boost::regex
 )
 # https://cmake.org/cmake/help/latest/command/target_link_options.html
-target_link_options(gdmusickit
-    PUBLIC
-    #    -DBOOST_LOG_DYN_LINK
+target_link_options(gdmusickit 
+    PUBLIC 
+        "$<$<CONFIG:DEBUG>:${-v}>"
 )
 
 #########################

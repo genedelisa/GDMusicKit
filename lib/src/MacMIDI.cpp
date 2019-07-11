@@ -1,7 +1,11 @@
-#include "gdmusickit/MIDITrack.hpp"
-#include "gdmusickit/Note.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
+// #include "gdmusickit/MIDITrack.hpp"
+// #include "gdmusickit/Note.hpp"
+// #include "gdmusickit/Pitch.hpp"
+// #include "gdmusickit/PitchFactory.hpp"
+class Pitch;
+class Note;
+class PitchFactory;
+class MIDITrack;
 
 #include "Logging.hpp"
 #include "gdmusickit/MacMIDI.hpp"

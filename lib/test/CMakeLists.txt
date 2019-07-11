@@ -44,7 +44,14 @@ target_link_libraries(gdmusickit_test
     gtest
 	gtest_main
 	GDMusicKit::gdmusickit
-    Boost::boost
+    ${Boost_LIBRARIES}
+)
+
+# https://cmake.org/cmake/help/latest/command/target_link_options.html
+target_link_options(gdmusickit_test
+    PUBLIC
+    -v
+    #    -DBOOST_LOG_DYN_LINK
 )
 
 gtest_discover_tests(gdmusickit_test

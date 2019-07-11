@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Pitch.hpp"
+//class Pitch;
 #include <iostream>
 #include <map>
 

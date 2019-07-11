@@ -1,3 +1,5 @@
+#pragma once
+
 #include "gdmusickit/MIDITrack.hpp"
 #include "gdmusickit/Note.hpp"
 #include "gdmusickit/Pitch.hpp"
