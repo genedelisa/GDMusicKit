@@ -28,26 +28,33 @@
 		{
 			"label": "lib make test and run it",
 			"type": "shell",
-			"command": "cd ${workspaceFolder}/lib/build && make  && test/gdmusickit_test",
+			"command": "cd ${workspaceFolder}/lib/build && make -j8  && test/gdmusickit_test",
 
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
+			// "problemMatcher": {
+			// 	"owner": "cpp",
+			// 	 "fileLocation": [
+			// 	 	"relative",
+			// 	 	//"${workspaceRoot}/lib/src"
+			// 	 ],
+			// 	"pattern": {
+			// 		"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+			// 		"file": 1,
+			// 		"line": 2,
+			// 		"column": 3,
+			// 		"severity": 4,
+			// 		"message": 5
+			// 	}
+			// },
 			"problemMatcher": {
 				"owner": "cpp",
+				"base": "$gcc",
 				"fileLocation": [
-					"relative",
-					"${workspaceRoot}"
-				],
-				"pattern": {
-					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-					"file": 1,
-					"line": 2,
-					"column": 3,
-					"severity": 4,
-					"message": 5
-				}
+				  	"absolute"
+  				]
 			}
 		},
 		{
