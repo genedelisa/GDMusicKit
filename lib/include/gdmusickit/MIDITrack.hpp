@@ -45,12 +45,14 @@ namespace gdmusickit {
                                         MIDITrack const& note);
 
         friend auto operator==(MIDITrack lhs, MIDITrack rhs) {
-            return true;
+            return (rhs.startBeat == lhs.startBeat);
             //   return (rhs.pitch == lhs.pitch) && (rhs.startBeat ==
             //   lhs.startBeat);
         }
         friend auto operator!=(MIDITrack lhs, MIDITrack rhs) {
-            return true;
+
+            return (rhs.startBeat != lhs.startBeat);
+
             // return (rhs.pitch != lhs.pitch) | (rhs.startBeat !=
             // lhs.startBeat);
         }
@@ -68,7 +70,7 @@ namespace gdmusickit {
 
         // loopDuration = MusicTimeStamp(0)
 
-        bool loop = false;
+        // bool loop = false;
         // unsigned char patchNum = GMPatch.piano
     };
 

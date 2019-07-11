@@ -3,8 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/lib/include/**",
+                "${workspaceFolder}/lib/include/",
                 "/Library/Developer/CommandLineTools/usr/include/c++/v1/**"
             ],
             "browse": {
