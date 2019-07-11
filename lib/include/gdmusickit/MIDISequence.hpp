@@ -16,7 +16,7 @@ namespace gdmusickit {
 
     class MIDISequence {
       public:
-        void addTrack(MIDITrack track);
+        void addTrack(MIDITrack& track);
 
       private:
         std::map<double, MIDITrack> tracks;

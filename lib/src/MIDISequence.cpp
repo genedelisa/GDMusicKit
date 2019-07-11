@@ -12,6 +12,8 @@
 #include <string>
 
 namespace gdmusickit {
-    void MIDISequence::addTrack(MIDITrack track) {}
+    void MIDISequence::addTrack(MIDITrack& track) {
+        tracks.emplace(track.getStartBeat(), track);
+    }
 
 } // namespace gdmusickit

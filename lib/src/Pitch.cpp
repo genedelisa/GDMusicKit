@@ -20,8 +20,8 @@ namespace gdmusickit {
 
     int Pitch::midiPitchNumber() const { return midiNumber; }
 
-    constexpr auto URL_PATTERN =
-        "(http|https)://(\\w+\\.)+(\\w)/?(\\w+/{0,1})*";
+    // constexpr auto URL_PATTERN =
+    //     "(http|https)://(\\w+\\.)+(\\w)/?(\\w+/{0,1})*";
 
     std::ostream& operator<<(std::ostream& os, Pitch const& pitch) {
         return os << "MIDI number: " << pitch.midiNumber;
