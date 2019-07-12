@@ -20,7 +20,7 @@ struct NoteTest: testing::Test {
   protected:
     std::unique_ptr<Pitch> pitch;
 
-    NoteTest() { pitch = std::make_unique<Pitch>(60); };
+    NoteTest() : pitch{std::make_unique<Pitch>(60)} {}
 
     void SetUp() override {}
     void TearDown() override {}

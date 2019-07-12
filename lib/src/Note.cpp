@@ -14,7 +14,7 @@ namespace gdmusickit {
     // Note::Note(): impl_(new NoteImpl) {}
      Note::~Note() = default;
 
-    Pitch findPitch(std::string s) {
+    Pitch findPitch(const std::string s) {
         return PitchFactory::getSharedInstance().getPitch(s);
     }
 
@@ -23,7 +23,7 @@ namespace gdmusickit {
         this->startBeat = startBeat;
         this->duration = duration;
     }
-    Note::Note(std::string pitchString, double startBeat, double duration) {
+    Note::Note(const std::string pitchString, double startBeat, double duration) {
         this->pitch = findPitch(pitchString);
         this->startBeat = startBeat;
         this->duration = duration;

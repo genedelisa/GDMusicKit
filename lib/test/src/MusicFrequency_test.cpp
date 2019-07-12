@@ -20,7 +20,8 @@ struct MusicFrequencyTest: testing::Test {
   protected:
     std::unique_ptr<Pitch> pitch;
 
-    MusicFrequencyTest() { pitch = std::make_unique<Pitch>(60); }
+    MusicFrequencyTest(): 
+    pitch{std::make_unique<Pitch>(60)} {}
 
     void SetUp() override {}
     void TearDown() override {}

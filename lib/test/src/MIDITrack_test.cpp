@@ -23,7 +23,7 @@ struct MIDITrackTest: testing::Test {
   protected:
     MIDITrack sut{0};
 
-    MIDITrackTest(){} = default;
+    MIDITrackTest() = default;
 
     void SetUp() override {
         double startBeat{1};
@@ -45,4 +45,15 @@ TEST_F(MIDITrackTest, ShouldInit) {
     // EXPECT_EQ(60, pitch->midiPitchNumber());
     // LOG_INFO << sut;
     LOG_INFO << sut << endl;
+}
+
+TEST_F(MIDITrackTest, ShouldChangeStartBeat) {
+
+//setLogLevelDebug();
+
+    LOG_INFO << sut << "\n";
+    sut.changeStartBeat(4.0);
+    LOG_INFO << "changed sb to 4"
+             << "\n";
+    LOG_INFO << sut << "\n";
 }

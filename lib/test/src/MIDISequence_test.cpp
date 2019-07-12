@@ -21,7 +21,7 @@ struct MIDISequenceTest: testing::Test {
   protected:
     MIDISequence sut;
 
-    MIDISequenceTest(){} = default;
+    MIDISequenceTest() = default;
 
     void SetUp() override {}
     void TearDown() override {}

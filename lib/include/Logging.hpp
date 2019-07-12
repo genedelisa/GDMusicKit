@@ -48,3 +48,14 @@ typedef boost::log::sources::severity_logger_mt<
     logger_t;
 
 BOOST_LOG_GLOBAL_LOGGER(my_logger, logger_t)
+
+
+// void setLogLevelInfo() {
+//     boost::log::core::get()->set_filter(boost::log::trivial::severity >=
+//                                      boost::log::trivial::info);
+// }
+
+// void setLogLevelDebug() {
+//     boost::log::core::get()->set_filter(boost::log::trivial::severity >=
+//                                      boost::log::trivial::debug);
+// }

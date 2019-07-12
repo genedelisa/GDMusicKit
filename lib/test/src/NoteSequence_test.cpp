@@ -20,7 +20,7 @@ using namespace gdmusickit;
 struct NoteSequenceTest: testing::Test {
   protected:
     NoteSequence sequence;
-    NoteSequenceTest(){} = default;
+    NoteSequenceTest() = default;
 
     void SetUp() override {
         double startBeat{1};
@@ -173,8 +173,8 @@ TEST_F(NoteSequenceTest, ThisIsNotATest) {
     }
 
     std::cout << "Range based iteration" << std::endl;
-    for (auto n : seq) {
-        std::cout << n << std::endl;
+    for (auto note : seq) {
+        std::cout << note << std::endl;
     }
     std::cout << std::endl;
 

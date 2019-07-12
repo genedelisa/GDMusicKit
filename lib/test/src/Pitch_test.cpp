@@ -20,9 +20,9 @@ struct PitchTest: testing::Test {
   protected:
     std::unique_ptr<Pitch> pitch;
 
-    PitchTest() { pitch = std::make_unique<Pitch>(60); }    
+    PitchTest() : pitch{std::make_unique<Pitch>(60)} {}
 
-    void SetUp() override { }
+    void SetUp() override {}
     void TearDown() override {}
 };
 
@@ -32,14 +32,12 @@ struct PitchTest: testing::Test {
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
 TEST_F(PitchTest, ShouldInitMIDINumber) {
-    
+
     EXPECT_EQ(60, pitch->midiPitchNumber());
 
     auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(60, p->midiPitchNumber()); 
+    EXPECT_EQ(60, p->midiPitchNumber());
 
     p = std::make_unique<Pitch>(72);
-    EXPECT_EQ(72, p->midiPitchNumber());    
+    EXPECT_EQ(72, p->midiPitchNumber());
 }
-
-

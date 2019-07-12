@@ -153,7 +153,7 @@ namespace gdmusickit {
          * @brief sendSysex
          * @param data 0xF0 ... 0xF7
          */
-        virtual void sendSysex(const std::vector<UInt8> data) = 0;
+        virtual void sendSysex(const std::vector<UInt8>& data) = 0;
 
         /**
          * @brief sendSystemMsg

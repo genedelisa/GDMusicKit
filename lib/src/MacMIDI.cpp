@@ -252,7 +252,7 @@ namespace gdmusickit {
         }
     }
 
-    void MacMIDI::sendSysex(const std::vector<UInt8> data) {
+    void MacMIDI::sendSysex(const std::vector<UInt8>& data) {
         UInt8 buf[4096];
         if (data.size() > 4096)
             return;

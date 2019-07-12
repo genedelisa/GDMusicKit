@@ -25,15 +25,17 @@ namespace gdmusickit {
 
     class Note {
       public:
-        Note(Pitch pitch, double startBeat = 1.0, double duration = 1.0);
-        Note(std::string pitchString, double startBeat = 1.0,
-             double duration = 1.0);
+        explicit Note(Pitch pitch, double startBeat = 1.0,
+                      double duration = 1.0);
+        explicit Note(const std::string pitchString, double startBeat = 1.0,
+                      double duration = 1.0);
         ~Note();
 
         [[nodiscard]] Pitch getPitch() const { return pitch; }
         [[nodiscard]] double getStartBeat() const { return startBeat; }
         [[nodiscard]] double getDuration() const { return duration; }
 
+        void setStartBeat(const double beat) { startBeat = beat; }
         bool operator<(const Note& note) const {
             return startBeat < note.startBeat;
         }
@@ -51,9 +53,9 @@ namespace gdmusickit {
       protected:
       private:
         // pimpl
-        //https://www.fluentcpp.com/2017/09/22/make-pimpl-using-unique_ptr/
-        //class NoteImpl;
-        //std::unique_ptr<NoteImpl> impl_;
+        // https://www.fluentcpp.com/2017/09/22/make-pimpl-using-unique_ptr/
+        // class NoteImpl;
+        // std::unique_ptr<NoteImpl> impl_;
 
         Pitch pitch{60};
         double startBeat{1.0};

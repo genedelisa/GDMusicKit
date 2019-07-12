@@ -12,8 +12,8 @@
 #include <iostream>
 #include <map>
 #include <regex>
+#include <stdexcept>
 #include <string>
-
 
 namespace gdmusickit {
 
@@ -34,7 +34,6 @@ namespace gdmusickit {
         // ByteCount nData,
         // const Byte *data);
     }
-
 
     void MIDITrack::removeNote(Note note) {
         for (auto it = notes.begin(); it != notes.end();) {
@@ -74,6 +73,40 @@ namespace gdmusickit {
     }
 
     size_t MIDITrack::size() const { return notes.size(); }
+
+    void MIDITrack::changeStartBeat(double toBeat) {
+
+        if (toBeat < 1.0) {
+            throw std::invalid_argument("bad start beat");
+            // log.error("beat is < 1. wtf?")
+            return;
+        }
+        LOG_INFO << "changing to startBeat: " << toBeat << "\n";
+
+        //auto firstNote = notes.find(1)->second;
+        auto firstNote = notes.begin()->second;
+        LOG_INFO << "firstNote: " << firstNote << "\n";
+
+        double now = firstNote.getStartBeat();
+        LOG_INFO << "now: " << now << "\n";
+
+        double diff = now - toBeat;
+        LOG_INFO << "diff: " << diff << "\n";
+        for (auto& [sb, note] : notes) {
+
+            double newstart = sb - diff;
+
+//            double newstart = note.getStartBeat() - diff;
+            LOG_INFO << "New start " << newstart << "\n";
+
+            auto nodeHandler = notes.extract(sb);
+            nodeHandler.key() = newstart;
+            note.setStartBeat(newstart);
+            notes.insert(std::move(nodeHandler));
+        }
+        startBeat = toBeat;
+        // with new starbeat \(self)")
+    }
 
     // std::vector<Note> MIDITrack::search() {
     //     std::vector<Note>* v = notes.get();

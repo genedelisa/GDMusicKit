@@ -21,7 +21,13 @@
 			"label": "lib make all",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make all",
-			"problemMatcher": [],
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+				  	"absolute"
+  				]
+			},
 			"group": "build"
 		},
 
@@ -86,6 +92,7 @@
 			"type": "shell",
 			"command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=ON -D GENERATE_DOC=ON -DCMAKE_BUILD_TYPE=Release -D CMAKE_CXX_COMPILER=/Library/Developer/CommandLineTools/usr/bin/clang++ .. && make all",
 			"problemMatcher": []
+
 		},
 		{
 			"label": "lib cmake just docs",
@@ -200,8 +207,15 @@
             "presentation": {
                 "reveal": "always",
                 "panel": "dedicated"
-            },
-            "problemMatcher": []
+			},
+			"dependsOn":["lib make all"],
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+				  	"absolute"
+  				]
+			}
 		},
 
 

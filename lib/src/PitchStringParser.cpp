@@ -31,7 +31,7 @@ namespace gdmusickit {
       public:
         MyException(const char* msg, const char* file_, int line_,
                     const char* func_, const char* info_ = "")
-            : msg(msg), file(file_), line(line_), func(func_), info(info_) {}
+            :  file(file_), line(line_), func(func_), info(info_), msg(msg) {}
 
         const char* get_file() const { return file; }
         int get_line() const { return line; }
