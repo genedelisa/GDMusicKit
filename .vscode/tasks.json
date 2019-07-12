@@ -93,7 +93,18 @@
 			"command": "rm -rf ${workspaceFolder}/lib/build/* && cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
 			"problemMatcher": []
 		},
-
+		{
+			"label": "lib cppcheck",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/lib/build && make cppcheck",
+			"problemMatcher": []
+		},
+		{
+			"label": "lib clang-tidy",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/lib/build && make clang-tidy",
+			"problemMatcher": []
+		},
 
 		{
 			"label": "app cmake and make",
@@ -108,6 +119,7 @@
 			"problemMatcher": [],
 			"group": "build"
 		},
+
 		{
 			"label": "app run",
 			"dependsOn" : "app make all",

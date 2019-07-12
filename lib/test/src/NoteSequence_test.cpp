@@ -20,7 +20,7 @@ using namespace gdmusickit;
 struct NoteSequenceTest: testing::Test {
   protected:
     NoteSequence sequence;
-    NoteSequenceTest() {}
+    NoteSequenceTest(){} = default;
 
     void SetUp() override {
         double startBeat{1};
@@ -108,16 +108,14 @@ TEST_F(NoteSequenceTest, ShouldSearch) {
 
     ASSERT_EQ(3, results.size());
     Note n = results[0];
-    ASSERT_EQ(126, n.getPitch().midiPitchNumber()); 
+    ASSERT_EQ(126, n.getPitch().midiPitchNumber());
     EXPECT_EQ(2.0, n.getStartBeat());
     n = results[1];
-    ASSERT_EQ(58, n.getPitch().midiPitchNumber()); 
+    ASSERT_EQ(58, n.getPitch().midiPitchNumber());
     EXPECT_EQ(3.0, n.getStartBeat());
     n = results[2];
-    ASSERT_EQ(43, n.getPitch().midiPitchNumber()); 
+    ASSERT_EQ(43, n.getPitch().midiPitchNumber());
     EXPECT_EQ(4.0, n.getStartBeat());
-   
-
 }
 
 TEST_F(NoteSequenceTest, ThisIsNotATest) {

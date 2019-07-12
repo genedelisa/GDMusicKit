@@ -9,8 +9,8 @@
 
 #include <memory>
 
-#include <gdmusickit/gdmusickit.h>
 #include "Logging.hpp"
+#include <gdmusickit/gdmusickit.h>
 
 using namespace gdmusickit;
 using namespace std;
@@ -23,7 +23,7 @@ struct MIDITrackTest: testing::Test {
   protected:
     MIDITrack sut{0};
 
-    MIDITrackTest() {}
+    MIDITrackTest(){} = default;
 
     void SetUp() override {
         double startBeat{1};
@@ -43,6 +43,6 @@ struct MIDITrackTest: testing::Test {
 TEST_F(MIDITrackTest, ShouldInit) {
 
     // EXPECT_EQ(60, pitch->midiPitchNumber());
-    //LOG_INFO << sut;
+    // LOG_INFO << sut;
     LOG_INFO << sut << endl;
 }

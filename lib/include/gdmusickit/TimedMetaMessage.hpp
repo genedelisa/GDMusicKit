@@ -13,22 +13,25 @@
 
 namespace gdmusickit {
 
-    typedef float MusicTimeStamp;
+    //typedef float MusicTimeStamp;
+    using MusicTimeStamp = float;
 
-    typedef struct MIDIChannelMessage {
+    struct MIDIChannelMessage {
         unsigned char status;
         unsigned char data1;
         unsigned char data2;
-    } MIDIChannelMessage;
+    };
+    using MIDIChannelMessage=MIDIChannelMessage;
 
-    typedef struct MIDIMetaEvent {
+    struct MIDIMetaEvent {
         unsigned char data[1];
         int32_t dataLength;
         unsigned char metaEventType;
 
-    } MIDIMetaEvent;
+    };
+    using MIDIMetaEvent=MIDIMetaEvent;
 
-    typedef struct MIDINoteMessage {
+    struct MIDINoteMessage {
         unsigned char channel;
 
         unsigned char duration;
@@ -38,7 +41,8 @@ namespace gdmusickit {
         unsigned char releaseVelocity;
 
         unsigned char velocity;
-    } MIDINoteMessage;
+    }; 
+    using MIDINoteMessage=MIDINoteMessage;
 
     class TimedMetaMessage {
       public:

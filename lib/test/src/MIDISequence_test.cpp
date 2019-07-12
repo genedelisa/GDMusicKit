@@ -21,7 +21,7 @@ struct MIDISequenceTest: testing::Test {
   protected:
     MIDISequence sut;
 
-    MIDISequenceTest() {  }
+    MIDISequenceTest(){} = default;
 
     void SetUp() override {}
     void TearDown() override {}
@@ -34,7 +34,7 @@ struct MIDISequenceTest: testing::Test {
 
 TEST_F(MIDISequenceTest, ShouldInit) {
 
-    //EXPECT_EQ(60, pitch->midiPitchNumber());
+    // EXPECT_EQ(60, pitch->midiPitchNumber());
 
-    //cout << sut << endl;
+    // cout << sut << endl;
 }
