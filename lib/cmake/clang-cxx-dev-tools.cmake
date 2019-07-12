@@ -1,4 +1,4 @@
-# Additional targets to perform clang-format and clang-tidy
+# custom targets to runclang-format, clang-tidy, and cppcheck
 
 # Get all c++ files in lib
 file(GLOB_RECURSE
