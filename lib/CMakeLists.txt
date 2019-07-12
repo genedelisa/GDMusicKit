@@ -18,11 +18,13 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 # find_package(Boost REQUIRED COMPONENTS system)
 # find_package(Boost REQUIRED COMPONENTS regex)
 
-set(Boost_USE_STATIC_LIBS ON) 
-set(Boost_USE_MULTITHREADED ON)  
-#set(Boost_USE_STATIC_RUNTIME OFF) 
-find_package(Boost 1.7.0 REQUIRED COMPONENTS system log) 
 
+set(Boost_USE_STATIC_LIBS        ON)  # only find static libs
+set(Boost_USE_DEBUG_LIBS         OFF) # ignore debug libs and 
+set(Boost_USE_RELEASE_LIBS       ON)  # only find release libs 
+set(Boost_USE_MULTITHREADED      ON)
+set(Boost_USE_STATIC_RUNTIME    OFF) 
+find_package(Boost 1.7.0 REQUIRED COMPONENTS system log) 
 if(Boost_FOUND)
     message("boost libraries found")
     message("Boost_LIBRARIES ${Boost_LIBRARIES}")
@@ -30,11 +32,7 @@ if(Boost_FOUND)
  # static /usr/local/lib/libboost_system-mt.a;/usr/local/lib/libboost_log-mt.a;/usr/local/lib/libboost_date_time-mt.a;/usr/local/lib/libboost_log_setup-mt.a;/usr/local/lib/libboost_filesystem-mt.a;/usr/local/lib/libboost_thread-mt.a;/usr/local/lib/libboost_regex-mt.a;/usr/local/lib/libboost_chrono-mt.a;/usr/local/lib/libboost_atomic-mt.a
     message("Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
     # /usr/local/include
-
-    #include_directories(${Boost_INCLUDE_DIRS}) 
-    #add_executable(progname file1.cxx file2.cxx) 
-    #target_link_libraries(progname ${Boost_LIBRARIES})
-else()
+    else()
     message("ERROR boost not found")
     return()
 endif()
@@ -61,7 +59,7 @@ message("NATIVE_AUDIO_LIBS: ${NATIVE_AUDIO_LIBS}")
 ##############################################
 # Create library target
 
-add_library(gdmusickit
+add_library(gdmusickit STATIC
     src/MacMIDI.cpp
     src/Logging.cpp    
     src/PitchFactory.cpp
@@ -78,6 +76,7 @@ add_library(gdmusickit
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
 add_library(GDMusicKit::gdmusickit ALIAS gdmusickit)
+
 
 # Set library target properties
 target_include_directories(gdmusickit
@@ -131,6 +130,11 @@ target_link_options(gdmusickit
     PUBLIC 
         "$<$<CONFIG:DEBUG>:${-v}>"
 )
+
+# -DBUILD_SHARED_LIBS=OFF
+# set_target_properties(gdmusickit STATIC_LIBRARY_OPTIONS)
+
+
 
 #########################
 

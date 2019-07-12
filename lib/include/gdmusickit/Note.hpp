@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_NOTE_HPP
+#define GDMUSICKIT_NOTE_HPP
+
 #pragma once
 
 #include "Pitch.hpp"
@@ -27,9 +30,9 @@ namespace gdmusickit {
              double duration = 1.0);
         ~Note();
 
-        Pitch getPitch() const { return pitch; }
-        double getStartBeat() const { return startBeat; }
-        double getDuration() const { return duration; }
+        [[nodiscard]] Pitch getPitch() const { return pitch; }
+        [[nodiscard]] double getStartBeat() const { return startBeat; }
+        [[nodiscard]] double getDuration() const { return duration; }
 
         bool operator<(const Note& note) const {
             return startBeat < note.startBeat;
@@ -86,3 +89,4 @@ namespace gdmusickit {
     // }
 
 } // namespace gdmusickit
+#endif

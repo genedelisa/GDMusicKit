@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_PITCH_HPP
+#define GDMUSICKIT_PITCH_HPP
+
 /**
 * @file Pitch.hpp
 * @author Gene De Lisa <gene@rockhoppertech.com>
@@ -58,7 +61,7 @@ namespace gdmusickit {
          * @brief The ctor.
          *
          */
-        Pitch(int midiNumber);
+        explicit Pitch(int midiNumber);
 
         /**
          * @brief Create a Pitch with a MIDI pitch number.
@@ -75,11 +78,11 @@ namespace gdmusickit {
          *
          *  @todo Fix this I think. Maybe not.
          */
-        Pitch(std::wstring pitchString);
+        explicit Pitch(const std::wstring& pitchString);
 
-        int midiPitchNumber() const;
-        int pitchClass() const;
-        int octave() const;
+        [[nodiscard]] int midiPitchNumber() const;
+        [[nodiscard]] int pitchClass() const;
+        [[nodiscard]] int octave() const;
 
         static double midiEqualTemperamentFrequency(int midiNumber);
         inline static int octaveForMiddleC = 5;
@@ -114,3 +117,5 @@ namespace gdmusickit {
     }; // namespace gdmusickit
 
 } // namespace gdmusickit
+
+#endif

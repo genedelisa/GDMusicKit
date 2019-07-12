@@ -1,9 +1,13 @@
+#ifndef GDMUSICKIT_PITCHFACTORY_HPP
+#define GDMUSICKIT_PITCHFACTORY_HPP
+
 #pragma once
 
 #include "Pitch.hpp"
 //class Pitch;
 #include <iostream>
 #include <map>
+#include <memory>
 
 //#include <algorithm>
 
@@ -81,8 +85,9 @@ namespace gdmusickit {
             //LOG_INFO << "init map" << std::endl;
             //          pitchMap[0] = Pitch(0);
 
-            typedef std::map<int, Pitch> MyMap;
-            auto m = std::unique_ptr<MyMap>(new MyMap());
+            using MyMap = std::map<int, Pitch>;
+            //typedef std::map<int, Pitch> MyMap;
+            auto m = std::make_unique<MyMap>();
 
             // why I make the typedef
             // auto m2 = std::unique_ptr<std::map<int, Pitch>>(
@@ -128,3 +133,4 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+#endif

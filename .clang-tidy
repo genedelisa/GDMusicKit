@@ -19,7 +19,7 @@ readability-identifier-naming,
 
 WarningsAsErrors: 'modernize-*'
 
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: '-boost/*'
 
 CheckOptions:
   - key:             readability-identifier-naming.ClassCase

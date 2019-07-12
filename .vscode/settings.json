@@ -76,7 +76,8 @@
         "csignal": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "strstream": "cpp"
+        "strstream": "cpp",
+        "numeric": "cpp"
     },
 
     "catch2TestExplorer.executables": [

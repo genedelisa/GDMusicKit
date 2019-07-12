@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_PITCHSTRINGFORMAT_HPP
+#define GDMUSICKIT_PITCHSTRINGFORMAT_HPP
+
 #pragma once
 
 #include "Pitch.hpp"
@@ -61,3 +64,4 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+#endif

@@ -12,7 +12,7 @@ namespace gdmusickit {
     Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 
     // @todo parse pitchString
-    Pitch::Pitch(std::wstring pitchString) {}
+    Pitch::Pitch(const std::wstring& pitchString) {}
 
     int Pitch::pitchClass() const { return midiNumber % 12; }
 

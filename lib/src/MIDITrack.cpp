@@ -50,10 +50,10 @@ namespace gdmusickit {
     std::multimap<double, Note> MIDITrack::subset(int from, int to) {
         std::multimap<double, Note> resultMap;
 
-        auto range_start = notes.find(from);
-        auto range_end = notes.find(to);
+        auto rangeStart = notes.find(from);
+        auto rangeEnd = notes.find(to);
         //        auto range_end = notes.end();
-        resultMap.insert(range_start, range_end);
+        resultMap.insert(rangeStart, rangeEnd);
 
         // std::copy_if(begin(notes), end(notes),
         //              std::inserter(resultMap, begin(resultMap)),
@@ -64,9 +64,9 @@ namespace gdmusickit {
         return resultMap;
     }
 
-    std::ostream& operator<<(std::ostream& os, MIDITrack const& MIDITrack) {
+    std::ostream& operator<<(std::ostream& os, MIDITrack const& midiTrack) {
 
-        for (const auto& note : MIDITrack.notes) {
+        for (const auto& note : midiTrack.notes) {
             os << note.first << " : " << note.second << "\n";
         }
 
