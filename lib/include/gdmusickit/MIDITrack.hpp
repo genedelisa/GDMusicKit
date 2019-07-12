@@ -42,7 +42,7 @@ namespace gdmusickit {
         }
 
         friend std::ostream& operator<<(std::ostream& os,
-                                        MIDITrack const& note);
+                                        MIDITrack const& midiTrack);
 
         friend auto operator==(MIDITrack lhs, MIDITrack rhs) {
             return (rhs.startBeat == lhs.startBeat);
