@@ -143,3 +143,6 @@ add_subdirectory(doc)
 
 #########################
 include(installation.cmake.in)
+
+# Including custom cmake rules
+include(CMake/clang-cxx-dev-tools.cmake)
