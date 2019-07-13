@@ -74,6 +74,39 @@ namespace gdmusickit {
 
     size_t MIDITrack::size() const { return notes.size(); }
 
+    std::vector<Note> MIDITrack::notesAtBeat(double beat) {
+        std::vector<Note> vector;
+        auto er = notes.equal_range(beat);
+        for (auto it = er.first; it != er.second; ++it) {
+            LOG_INFO << "at beat " << beat << " : " << it->second << "\n";
+            vector.push_back(it->second);
+        }
+
+        // find returns just one. So, that's the wrong one to use
+
+        // for (auto it = notes.find(beat); it != notes.end(); ++it) {
+        auto eer = notes.find(beat);
+        LOG_INFO << "eer: " << eer->second << "\n";
+
+        // for (auto it = eer.first; it != eer.second; ++it) {
+        // }
+
+        //                for ( auto iter = it->first; iter != it->second;
+        //                ++iter) {
+
+        // while ( it++) {
+        //     LOG_INFO << "at beat " << beat << " : " << it->second << "\n";
+        //     vector.push_back(it->second);
+        // }
+
+        // while (it != notes.end()) {
+        //     ++it;
+        //     //        for (auto i = it.; i != it.end(); ++i) {
+        //     // for (auto i = it.; i != it.end(); ++i) {
+        //     vector.push_back(it->second);
+        // }
+        return vector;
+    }
     void MIDITrack::changeStartBeat(double toBeat) {
 
         if (toBeat < 1.0) {
@@ -118,7 +151,8 @@ namespace gdmusickit {
         for (auto& [sb, note] : notes) {
             map.emplace(note.getStartBeat(), note);
         }
-        notes = map;
+        // notes = map;
+        notes.swap(map);
 
         // this breaks the loop too
         // for (auto& [sb, note] : notes) {
@@ -129,7 +163,8 @@ namespace gdmusickit {
         // }
 
         // for (auto const& pair : notes) {
-        //     std::cout << "notes {" << pair.first << ": " << pair.second << "}\n";
+        //     std::cout << "notes {" << pair.first << ": " << pair.second <<
+        //     "}\n";
         // }
 
         startBeat = toBeat;

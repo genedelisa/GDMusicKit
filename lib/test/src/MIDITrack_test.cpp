@@ -49,11 +49,28 @@ TEST_F(MIDITrackTest, ShouldInit) {
 
 TEST_F(MIDITrackTest, ShouldChangeStartBeat) {
 
-//setLogLevelDebug();
+    // setLogLevelDebug();
 
     LOG_INFO << sut << "\n";
     sut.changeStartBeat(4.0);
     LOG_INFO << "changed sb to 4"
              << "\n";
     LOG_INFO << sut << "\n";
+}
+
+TEST(MIDITrackLocalTest, ShouldFindNotesAtBeat) {
+    MIDITrack localSut{0};
+    double startBeat{1};
+    localSut.addNote(Note("C5", startBeat, 0.25));
+    localSut.addNote(Note("Gf10", startBeat, 0.25));
+    localSut.addNote(Note("bf4", startBeat++, 0.25));
+    localSut.addNote(Note("G3", startBeat++, 0.25));
+
+    auto v = localSut.notesAtBeat(1);
+    for (auto& n : v) {
+        LOG_INFO << n << "\n";
+        EXPECT_EQ(1.0, n.getStartBeat());
+    }
+     EXPECT_EQ(3, v.size());
+
 }

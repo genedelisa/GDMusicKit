@@ -39,6 +39,8 @@ namespace gdmusickit {
 
         void changeStartBeat(double toBeat);
 
+        std::vector<Note> notesAtBeat(double beat);
+
         bool operator<(const MIDITrack& note) const {
             return startBeat < note.startBeat;
         }
