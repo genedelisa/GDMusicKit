@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <charconv> // from_char, to_char
 #include <exception>
+#include <stdexcept>
 #include <iostream>
 #include <regex>
 #include <string>
@@ -106,7 +107,7 @@ namespace gdmusickit {
 
                 // posix error codes
                 if (ec == std::errc()) {
-                    LOG_ERROR << "octave value: " << oct
+                    LOG_INFO << "octave value: " << oct
                               << ", distance: " << ptr - octave.data() << '\n';
 
                 } else if (ec == std::errc::invalid_argument) {

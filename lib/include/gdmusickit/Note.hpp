@@ -6,7 +6,7 @@
 #include "Pitch.hpp"
 #include "PitchStringFormat.hpp"
 #include <string>
-
+#include "Logging.hpp"
 namespace gdmusickit {
 
     /** @class Note Note.hpp "Note.hpp"
@@ -25,20 +25,37 @@ namespace gdmusickit {
 
     class Note {
       public:
-        explicit Note(Pitch pitch, double startBeat = 1.0,
+        explicit Note(const Pitch& pitch, double startBeat = 1.0,
                       double duration = 1.0);
-        explicit Note(const std::string pitchString, double startBeat = 1.0,
+
+         Note(std::string pitchString, double startBeat = 1.0,
                       double duration = 1.0);
+        //Note(const std::string& pitchString, double startBeat,
+        //       double duration)
+
         ~Note();
 
         [[nodiscard]] Pitch getPitch() const { return pitch; }
         [[nodiscard]] double getStartBeat() const { return startBeat; }
         [[nodiscard]] double getDuration() const { return duration; }
 
-        void setStartBeat(const double beat) { startBeat = beat; }
+        Note& setStartBeat(const double startBeat) {
+            this->startBeat = startBeat;
+            return *this;
+        }
+        Note& setDuration(const double duration) {
+            this->duration = duration;
+            return *this;
+        }
+        Note& setPitch(const Pitch& pitch) {
+            this->pitch = pitch;
+            return *this;
+        }
+
         bool operator<(const Note& note) const {
             return startBeat < note.startBeat;
         }
+
         friend std::ostream& operator<<(std::ostream& os, Note const& note);
 
         friend auto operator==(Note lhs, Note rhs) {

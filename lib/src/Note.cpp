@@ -12,32 +12,39 @@ namespace gdmusickit {
 
     // };
     // Note::Note(): impl_(new NoteImpl) {}
-     Note::~Note() = default;
+    Note::~Note() = default;
 
-    Pitch findPitch(const std::string s) {
+    Pitch findPitch(const std::string& s) {
         return PitchFactory::getSharedInstance().getPitch(s);
     }
 
-    Note::Note(Pitch pitch, double startBeat, double duration) {
-        this->pitch = pitch;
-        this->startBeat = startBeat;
-        this->duration = duration;
+    Note::Note(const Pitch& pitch, double startBeat, double duration)
+        : pitch(pitch), startBeat(startBeat), duration(duration) {
+        LOG_INFO << "calling note ctor with pitch '" << pitch << "'\n";
+
+        // this->pitch = pitch;
+        // this->startBeat = startBeat;
+        // this->duration = duration;
     }
-    Note::Note(const std::string pitchString, double startBeat, double duration) {
+
+    Note::Note(std::string pitchString, double startBeat, double duration) {
+        LOG_INFO << "calling note ctor with string '" << pitchString << "'\n";
         this->pitch = findPitch(pitchString);
         this->startBeat = startBeat;
         this->duration = duration;
     }
+
     std::ostream& operator<<(std::ostream& os, Note const& note) {
 
         std::string ps =
             PitchStringFormat::getSharedInstance().stringFromMIDINumber(
-                note.pitch.midiPitchNumber(), PitchStringFormat::Spelling::flat,
-                PitchStringFormat::Justification::left, true);
+                note.pitch.midiPitchNumber(),
+                // PitchStringFormat::Spelling::flat,
+                note.spelling, PitchStringFormat::Justification::left, true);
 
         return os << "Pitch: " << std::setw(3) << note.pitch << " " << ps
-                  << " Start " << std::fixed << std::setprecision(2) << note.startBeat << " Duration "
-                  << note.duration;
+                  << " Start " << std::fixed << std::setprecision(2)
+                  << note.startBeat << " Duration " << note.duration;
     }
     // Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 

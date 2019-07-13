@@ -20,9 +20,9 @@ namespace gdmusickit {
             return instance;
         }
 
-        Pitch getPitch(int midiNumber);
+        const Pitch& getPitch(const int midiNumber);
 
-        Pitch getPitch(std::string pitchString);
+        const Pitch& getPitch(const std::string pitchString);
 
         
 

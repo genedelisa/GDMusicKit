@@ -77,33 +77,61 @@ namespace gdmusickit {
     void MIDITrack::changeStartBeat(double toBeat) {
 
         if (toBeat < 1.0) {
+            LOG_ERROR << "beat " << toBeat << " is cannot be < 1";
             throw std::invalid_argument("bad start beat");
-            // log.error("beat is < 1. wtf?")
-            return;
         }
         LOG_INFO << "changing to startBeat: " << toBeat << "\n";
 
-        //auto firstNote = notes.find(1)->second;
+        // auto firstNote = notes.find(1)->second;
         auto firstNote = notes.begin()->second;
         LOG_INFO << "firstNote: " << firstNote << "\n";
 
         double now = firstNote.getStartBeat();
         LOG_INFO << "now: " << now << "\n";
 
-        double diff = now - toBeat;
-        LOG_INFO << "diff: " << diff << "\n";
+        // double diff = now - toBeat;
+        double diff = toBeat - now;
+        // LOG_INFO << "diff: " << diff << "\n";
         for (auto& [sb, note] : notes) {
 
-            double newstart = sb - diff;
+            //            double newstart = sb + diff;
+            LOG_INFO << "loop sb: " << sb << "\n";
+            LOG_INFO << "note sb: " << note.getStartBeat() << "\n";
+            LOG_INFO << "note : " << note << "\n";
+            // double diff = toBeat - note.getStartBeat();
+            LOG_INFO << "diff: " << diff << "\n";
 
-//            double newstart = note.getStartBeat() - diff;
+            double newstart = note.getStartBeat() + diff;
+
             LOG_INFO << "New start " << newstart << "\n";
-
-            auto nodeHandler = notes.extract(sb);
-            nodeHandler.key() = newstart;
             note.setStartBeat(newstart);
-            notes.insert(std::move(nodeHandler));
+
+            // this breaks the loop
+            // auto nodeHandler = notes.extract(sb);
+            // nodeHandler.key() = newstart;
+            // note.setStartBeat(newstart);
+            // notes.insert(std::move(nodeHandler));
         }
+
+        // update the keys
+        std::multimap<double, Note> map;
+        for (auto& [sb, note] : notes) {
+            map.emplace(note.getStartBeat(), note);
+        }
+        notes = map;
+
+        // this breaks the loop too
+        // for (auto& [sb, note] : notes) {
+        //     auto nodeHandle = notes.extract(sb);
+        //     nodeHandle.key() = note.getStartBeat();
+        //     std::cout << sb << " nodeh " << nodeHandle.mapped() << "\n";
+        //     notes.insert(std::move(nodeHandle));
+        // }
+
+        // for (auto const& pair : notes) {
+        //     std::cout << "notes {" << pair.first << ": " << pair.second << "}\n";
+        // }
+
         startBeat = toBeat;
         // with new starbeat \(self)")
     }
