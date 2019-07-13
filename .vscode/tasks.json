@@ -15,6 +15,13 @@
 		"panel": "shared",
 		"showReuseMessage": false
 	},
+	"problemMatcher": {
+		"owner": "cpp",
+		"base": "$gcc",
+		"fileLocation": [
+			  "absolute"
+		  ]
+	},
     "tasks": [
 
 		{
@@ -104,13 +111,28 @@
 			"label": "lib cppcheck",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make cppcheck",
-			"problemMatcher": []
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+					  "absolute"
+				  ]
+			},
 		},
 		{
 			"label": "lib clang-tidy",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make clang-tidy",
-			"problemMatcher": []
+			"options": {
+				"cwd": "${workspaceFolder}/lib/",
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+					  "absolute"
+				  ]
+			},
 		},
 
 		{
