@@ -87,7 +87,7 @@ namespace gdmusickit {
         static double midiEqualTemperamentFrequency(int midiNumber);
         inline static int octaveForMiddleC = 5;
 
-        friend std::ostream& operator<<(std::ostream& out, const Pitch& pitch);
+        friend std::ostream& operator<<(std::ostream& os, const Pitch& pitch);
 
         friend auto operator==(Pitch lhs, Pitch rhs) {
             return rhs.midiNumber == lhs.midiNumber;

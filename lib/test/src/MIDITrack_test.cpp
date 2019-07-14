@@ -58,6 +58,21 @@ TEST_F(MIDITrackTest, ShouldChangeStartBeat) {
     LOG_INFO << sut << "\n";
 }
 
+TEST_F(MIDITrackTest, ShouldRemoveNote) {
+
+    // setLogLevelDebug();
+
+    LOG_INFO << sut << "\n";
+    EXPECT_EQ(4, sut.size());
+
+    Note n("Gf10", 2.0, 0.25);
+    sut.removeNote(n);
+
+    LOG_INFO << "note removed" << n << "\n";
+    LOG_INFO << sut << "\n";
+    EXPECT_EQ(3, sut.size());
+}
+
 TEST(MIDITrackLocalTest, ShouldFindNotesAtBeat) {
     MIDITrack localSut{0};
     double startBeat{1};
@@ -71,6 +86,5 @@ TEST(MIDITrackLocalTest, ShouldFindNotesAtBeat) {
         LOG_INFO << n << "\n";
         EXPECT_EQ(1.0, n.getStartBeat());
     }
-     EXPECT_EQ(3, v.size());
-
+    EXPECT_EQ(3, v.size());
 }

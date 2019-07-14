@@ -31,10 +31,29 @@ target_compile_features(gdmusickit_test
 		cxx_std_17
 )
 
+# add_compile_options(
+#   "-Wall" "-Wpedantic" "-Wextra" "-fexceptions"
+#   "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
+# )
+# if(MSVC)
+#     add_compile_options("/W4" "$<$<CONFIG:RELEASE>:/O2>")
+# else()
+#     add_compile_options("-Wall" "-Wextra" "-Werror" "$<$<CONFIG:RELEASE>:-O3>")
+#     if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+#         add_compile_options("-stdlib=libc++")
+#     else()
+#         # nothing special for gcc at the moment
+#     endif()
+# endif()
+
+
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 target_compile_options(gdmusickit_test
 	PRIVATE
-       	$<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic>
+
+       # $<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0 -g3>
+
+       	$<$<CXX_COMPILER_ID:AppleClang>:-Wall -Wextra -pedantic -fvisibility=hidden>
         $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
 		$<$<CXX_COMPILER_ID:MSVC>:/W3>
     	$<$<CXX_COMPILER_ID:GNU>:-g -Wall>

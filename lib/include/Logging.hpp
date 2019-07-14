@@ -43,9 +43,8 @@
       << boost::log::add_value("File", __FILE__)                               \
       << boost::log::add_value("Function", BOOST_CURRENT_FUNCTION)
 
-typedef boost::log::sources::severity_logger_mt<
-    boost::log::trivial::severity_level>
-    logger_t;
+using logger_t=boost::log::sources::severity_logger_mt<
+    boost::log::trivial::severity_level>;
 
 BOOST_LOG_GLOBAL_LOGGER(my_logger, logger_t)
 

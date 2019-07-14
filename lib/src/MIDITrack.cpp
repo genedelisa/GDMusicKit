@@ -36,14 +36,31 @@ namespace gdmusickit {
     }
 
     void MIDITrack::removeNote(Note note) {
-        for (auto it = notes.begin(); it != notes.end();) {
-            it = notes.erase(it);
+
+        auto it = notes.begin();
+        while (it != notes.end()) {
+            LOG_INFO << "checking" <<
+            note << 
+            " against " <<
+            it->second <<
+            "\n";
+            if (it->second == note) {
+                LOG_INFO << "match" << "\n";
+                it = notes.erase(it);
+            } else {
+                it++;
+                LOG_INFO << "no match" << "\n";
+            }
         }
+
+        // for (auto it = notes.begin(); it != notes.end();) {
+        //     it = notes.erase(it);
+        // }
 
         // https://en.wikipedia.org/wiki/Erase–remove_idiom
         // std::vector<Note>* v = notes.get();
-        // notes.erase(std::remove(notes.begin(), notes.end(), note),
-        // notes.end());
+        //std::pair<double, Note> n{note.getStartBeat(), note};
+        //notes.erase(std::remove(notes.begin(), notes.end(), n), notes.end());
     }
 
     std::multimap<double, Note> MIDITrack::subset(int from, int to) {

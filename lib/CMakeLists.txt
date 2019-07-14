@@ -105,14 +105,45 @@ target_compile_features(gdmusickit
 		cxx_std_17
 )
 
+# add_compile_options(
+#     # Enable (almost) all warnings on compilers
+#     # https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall-316
+#     $<$<CXX_COMPILER_ID:GNU>:-Wall>
+#     # http://clang.llvm.org/docs/DiagnosticsReference.html#wall
+#     $<$<CXX_COMPILER_ID:Clang>:-Wall>
+#     # https://msdn.microsoft.com/en-us/library/thxezb7y.aspx#Anchor_1
+#     $<$<CXX_COMPILER_ID:MSVC>:/W4>
+
+#     $<$<CXX_COMPILER_ID:Clang>:-Wextra>
+#     $<$<CXX_COMPILER_ID:Clang>:-pedantic>
+#     $<$<CXX_COMPILER_ID:Clang>:-fvisibility=hidden>
+#     #$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0;-g3;>
+
+#     # Disable "'<param>': unreferenced formal parameter" warning
+#     $<$<CXX_COMPILER_ID:MSVC>:/wd4100>
+#     # Disable "'<class>::<member>': class '<member-type>' needs to have dll-interface to be used by clients of class '<class>'" warning
+#     $<$<CXX_COMPILER_ID:MSVC>:/wd4251>
+#     # Disable "'<func>': unreferenced local function has been removed" warning
+#     $<$<CXX_COMPILER_ID:MSVC>:/wd4505>
+#     # Disable "declaration of '<type>' hides global declaration" warning
+#     $<$<CXX_COMPILER_ID:MSVC>:/wd4459>
+#     # Disable "function '<func>' marked as __forceinline not inlined" warning
+#     $<$<CXX_COMPILER_ID:MSVC>:/wd4714>
+
+#     # Enable C++ Exception unwind mechanics with DLL support
+#     $<$<CXX_COMPILER_ID:MSVC>:/EHsc>
+# )
+
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 target_compile_options(gdmusickit
 	PRIVATE
-       	$<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic>
+       $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic -fvisibility=hidden>
         $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
 		$<$<CXX_COMPILER_ID:MSVC>:/W3>
     	$<$<CXX_COMPILER_ID:GNU>:-g -Wall>
 )
+# for boost link warnings
+# -fvisibility=hidden
 
 
 # clang++ -cc1 --help
