@@ -63,12 +63,13 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
 }
 
 TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
-    auto p = PitchFactory::getSharedInstance().getPitch("C5");
+    const Pitch& p = PitchFactory::getSharedInstance().getPitch("C5");
     EXPECT_EQ(60, p.midiPitchNumber());
 
-    auto p2 = PitchFactory::getSharedInstance().getPitch(60);
+    const Pitch& p2 = PitchFactory::getSharedInstance().getPitch(60);
     EXPECT_EQ(60, p2.midiPitchNumber());
 
     EXPECT_EQ(p, p2);
-    EXPECT_EQ(&p, &p2);
+    EXPECT_EQ(std::addressof(p), std::addressof(p2));
+
 }
