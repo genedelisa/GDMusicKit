@@ -66,10 +66,25 @@ TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
     const Pitch& p = PitchFactory::getSharedInstance().getPitch("C5");
     EXPECT_EQ(60, p.midiPitchNumber());
 
-    const Pitch& p2 = PitchFactory::getSharedInstance().getPitch(60);
+    const Pitch& p2 = PitchFactory::getSharedInstance().getPitch("C5");
+    EXPECT_EQ(60, p2.midiPitchNumber());
+
+    const Pitch& p3 = PitchFactory::getSharedInstance().getPitch(60);
     EXPECT_EQ(60, p2.midiPitchNumber());
 
     EXPECT_EQ(p, p2);
-    EXPECT_EQ(std::addressof(p), std::addressof(p2));
+    EXPECT_EQ(p, p3);
+    EXPECT_EQ(p2, p3);
 
+    EXPECT_EQ(std::addressof(p), std::addressof(p2));
+    EXPECT_EQ(std::addressof(p), std::addressof(p3));
+    EXPECT_EQ(std::addressof(p2), std::addressof(p3));
+}
+TEST_F(PitchFactoryTest, ShouldBeSameFactory) {
+    const PitchFactory& p = PitchFactory::getSharedInstance();
+    const PitchFactory& p2 = PitchFactory::getSharedInstance();
+
+    // "invalid operands to binary expression". well, I didn't make it comparable
+    //EXPECT_EQ(p, p2);
+    EXPECT_EQ(std::addressof(p), std::addressof(p2));
 }
