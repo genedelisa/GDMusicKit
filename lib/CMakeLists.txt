@@ -134,13 +134,62 @@ target_compile_features(gdmusickit
 #     $<$<CXX_COMPILER_ID:MSVC>:/EHsc>
 # )
 
+#it looks like if you set target_compile_options, then this is not used
+add_compile_options(
+    "$<$<CXX_COMPILER_ID:AppleClang>:-pedantic>"
+
+    "$<$<CXX_COMPILER_ID:GNU>:-Os>"
+    "$<$<CXX_COMPILER_ID:GNU>:-s>"
+    "$<$<CXX_COMPILER_ID:GNU>:-Wall>"
+    "$<$<CXX_COMPILER_ID:GNU>:-Wextra>"
+    "$<$<AND:$<CXX_COMPILER_ID:GNU>,$<CONFIG:DEBUG>>:-g3>"
+    "$<$<AND:$<CXX_COMPILER_ID:GNU>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+
+    "$<$<CXX_COMPILER_ID:Clang>:-Os>"
+    "$<$<CXX_COMPILER_ID:Clang>:-Wall>"
+    "$<$<CXX_COMPILER_ID:Clang>:-Wextra>"
+    "$<$<CXX_COMPILER_ID:Clang>:-fvisibility=hidden>"
+    "$<$<AND:$<CXX_COMPILER_ID:Clang>,$<CONFIG:DEBUG>>:-g3>"
+    "$<$<AND:$<CXX_COMPILER_ID:Clang>,$<CONFIG:DEBUG>>:-O0>"
+    "$<$<AND:$<CXX_COMPILER_ID:Clang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+    
+
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wall>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+
+    "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:DEBUG>>:/Od>"
+    "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:RELEASE>>:/Os>"
+)
+  add_compile_options(
+    "$<$<AND:$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>,$<CONFIG:RELEASE>>:-Oz>"
+    "$<$<AND:$<NOT:$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>>,$<CONFIG:RELEASE>>:-Os>"
+  )
+
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 target_compile_options(gdmusickit
 	PRIVATE
-       $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic -fvisibility=hidden>
-        $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
-		$<$<CXX_COMPILER_ID:MSVC>:/W3>
-    	$<$<CXX_COMPILER_ID:GNU>:-g -Wall>
+
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wall>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+
+
+
+
+
+      # $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic -fvisibility=hidden>
+        # $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
+		# $<$<CXX_COMPILER_ID:MSVC>:/W3>
+    	# $<$<CXX_COMPILER_ID:GNU>:-g -Wall>
 )
 # for boost link warnings
 # -fvisibility=hidden
