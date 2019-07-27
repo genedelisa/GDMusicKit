@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 #include "gdmusickit/NoteSequence.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"

@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 
 #include "gdmusickit/PitchStringFormat.hpp"
 #include "gdmusickit/Pitch.hpp"

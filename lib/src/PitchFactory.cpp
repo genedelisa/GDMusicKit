@@ -1,3 +1,6 @@
+// -*- C++ -*-
+
+
 #include "gdmusickit/PitchFactory.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchStringParser.hpp"

@@ -21,7 +21,7 @@
 */
 #pragma once
 
-//class Pitch;
+// class Pitch;
 //#include "PitchFactory.hpp"
 #include <iostream>
 
@@ -59,11 +59,11 @@ namespace gdmusickit {
         friend auto operator!=(Pitch lhs, Pitch rhs) {
             return rhs.midiNumber != lhs.midiNumber;
         }
-        
+
       public:
         /**
-         * @brief The ctor.
-         *
+         * @brief the Constructor.
+         * @details Create a Pitch with a MIDI pitch number.
          */
         explicit Pitch(int midiNumber);
 
@@ -74,20 +74,23 @@ namespace gdmusickit {
          * ## Typical usage:
          *
          * @code
-         * Pitch* account = new Pitch(60);
+         * Pitch* p = new Pitch(60);
          * @endcode
          *
          * @param pitchString wstring. A string to be parsed into a midi number.
          * @returns nothing.
          *
-         *  @todo Fix this I think. Maybe not.
+         * @todo Fix this I think. Maybe not.
          */
         explicit Pitch(const std::wstring& pitchString);
-        //Pitch(const Pitch &) = delete;
-        //Pitch(Pitch &&) = delete;
+
+        // copy constructor
+        // Pitch(const Pitch&) = delete;
+        // move constructor
+        // Pitch(Pitch&&) = delete;
 
         [[nodiscard]] int midiPitchNumber() const;
-        
+
         [[nodiscard]] int pitchClass() const; /**< midinumber mod 12 */
 
         [[nodiscard]] int octave() const;
@@ -101,14 +104,10 @@ namespace gdmusickit {
             return ((5 + offset + fromDefault) * 12);
         }
 
-
-
-
-
         // static Pitch A5;
         // inline static const int sValue = 777;
 
-        //static Pitch A5{Pitch(69)}
+        // static Pitch A5{Pitch(69)}
         //  static const Pitch A5 =
         //     PitchFactory::getSharedInstance().getPitch(
         //         9 + Pitch::octaveAdjustment(0));

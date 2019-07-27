@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 #include "gdmusickit/MIDISequence.hpp"
 #include "gdmusickit/MIDITrack.hpp"
 #include "gdmusickit/Note.hpp"

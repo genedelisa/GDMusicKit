@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 #ifndef GDMUSICKIT_NOTE_HPP
 #define GDMUSICKIT_NOTE_HPP
 
@@ -8,12 +10,13 @@
 #include "PitchFactory.hpp"
 #include "PitchStringFormat.hpp"
 #include <string>
+
 namespace gdmusickit {
 
     /** @class Note Note.hpp "Note.hpp"
      *
      * @brief This is a Note class.
-     *
+     * @details
      * Groovy, huh?
      *
      * ## Usage:
@@ -26,7 +29,6 @@ namespace gdmusickit {
 
     class Note {
       public:
-
 #pragma mark -
 #pragma mark === Public Interface ===
 #pragma mark> Constructors
@@ -56,28 +58,39 @@ namespace gdmusickit {
         //       double duration)
 
         // Note(const Note& note) :
-        // pitch(note.pitch), startBeat(note.startBeat), duration(note.duration) {
+        // pitch(note.pitch), startBeat(note.startBeat), duration(note.duration)
+        // {
         //     // this->pitch = note.pitch;
         //     // this->startBeat = note.startBeat;
         //     // this->duration = note.duration;
         // }
-         /**
-     * @brief Constructor
-     * @param p a Pitch.
-     */
-    // Note(std::shared_ptr<Pitch> p, double start = 1.0, double dur = 1.0)
-    //     : pitch(p), startBeat(start), duration(dur) {}
-     Note(Pitch* p, double start = 1.0, double dur = 1.0)
-         : pitch(p), startBeat(start), duration(dur) {}
+
+        /**
+         * @brief Constructor
+         * @param p a Pitch.
+         */
+        // Note(std::shared_ptr<Pitch> p, double start = 1.0, double dur = 1.0)
+        //     : pitch(p), startBeat(start), duration(dur) {}
+        Note(Pitch* p, double start = 1.0, double dur = 1.0)
+            : pitch(p), startBeat(start), duration(dur) {}
 
         ~Note();
         ///@}
 
+#pragma mark> Accessors
+        /** @name Accessors */
+        ///@{
         [[nodiscard]] Pitch* getPitch() const { return pitch; }
         [[nodiscard]] double getStartBeat() const { return startBeat; }
         [[nodiscard]] double getDuration() const { return duration; }
-        [[nodiscard]] int midiPitchNumber() const { return pitch->midiPitchNumber(); }
+        [[nodiscard]] int midiPitchNumber() const {
+            return pitch->midiPitchNumber();
+        }
+        ///@}
 
+#pragma mark> Utilities
+        /** @name Utilities */
+        ///@{
         /**
          * @brief Set the Start Beat object
          *
@@ -92,7 +105,7 @@ namespace gdmusickit {
          * @brief Set the Duration object
          *
          * @param duration
-         * @return Note&
+         * @return Note& for cascading calls
          */
         Note& setDuration(const double duration) {
             this->duration = duration;
@@ -102,23 +115,44 @@ namespace gdmusickit {
          * @brief Set the Pitch object
          *
          * @param pitch
-         * @return Note&
+         * @return Note& for cascading calls
          */
         Note& setPitch(Pitch* pitch) {
             this->pitch = pitch;
             return *this;
         }
-         /**
+        /**
          * @brief Change Pitch to new Pitch with midiPitchNumber.
          * This will look up the Pitch by midiPitchNumber
          * and assign it to the Note.
          * @param pitch
          * @return Note&
+         * @throws std::invalid_argument if the number param is out of range.
          */
         Note& setMidiPitchNumber(const int midiPitchNumber) {
-            this->pitch = PitchFactory::getSharedInstance().getPitch(midiPitchNumber);
+            if (!isValidMIDINumber(midiPitchNumber)) {
+                throw std::invalid_argument("MIDI pitch number is out of range");
+            }
+            this->pitch =
+                PitchFactory::getSharedInstance().getPitch(midiPitchNumber);
             return *this;
         }
+        /**
+         * @brief Checks validity of pitch number
+         * @details MIDI pitch numbers must be between 0 and 127
+         * @param midiPitchNumber the number to be tested
+         * @return true if valid
+         * @return false if not valid
+         */
+        bool isValidMIDINumber(const int midiPitchNumber) {
+            return (midiPitchNumber >=0 &&  midiPitchNumber <= 127);
+        }
+        ///@}
+
+#pragma mark> Operators
+        /** @name Operators */
+        ///@{
+
         /**
          * @brief less than comparison operator by start beat
          *
@@ -129,20 +163,62 @@ namespace gdmusickit {
             return startBeat < note.startBeat;
         }
 
-        void operator=(const Note& n ) { 
-            pitch = n.pitch;
-            startBeat = n.startBeat;
-            duration = n.duration;
+        /**
+         * @brief Assignment operator
+         *
+         * @param rhs
+         */
+        void operator=(const Note& rhs) {
+            //pitch is a pointer. But it's a flyweight!
+            // it's ok to point to the same thing
+            pitch = rhs.pitch;
+            startBeat = rhs.startBeat;
+            duration = rhs.duration;
         }
 
+        /**
+         * @brief Insertion operator
+         * @details prints a formatted description of the Note
+         * @param os the output stream
+         * @param note the note that's going to be printed
+         * @return std::ostream& the stream for cascading calls
+         */
         friend std::ostream& operator<<(std::ostream& os, Note const& note);
 
-        friend auto operator==(Note lhs, Note rhs) {
-            return (rhs.pitch == lhs.pitch) && (rhs.startBeat == lhs.startBeat);
+        // friend auto operator==(Note lhs, Note rhs) {
+        //     return (rhs.pitch == lhs.pitch) && (rhs.startBeat ==
+        //     lhs.startBeat);
+        // }
+
+        // friend auto operator!=(Note lhs, Note rhs) {
+        //     return (rhs.pitch != lhs.pitch) | (rhs.startBeat !=
+        //     lhs.startBeat);
+        // }
+
+        /**
+         * @brief Equality operator
+         *
+         * @param rhs
+         * @return true
+         * @return false
+         */
+        bool operator==(const Note& rhs) const {
+            return (this->pitch == rhs.pitch &&
+                    this->startBeat == rhs.startBeat &&
+                    this->duration == rhs.duration);
         }
-        friend auto operator!=(Note lhs, Note rhs) {
-            return (rhs.pitch != lhs.pitch) | (rhs.startBeat != lhs.startBeat);
+        /**
+         * @brief Inequality operator
+         *
+         * @param rhs
+         * @return true
+         * @return false
+         */
+        bool operator!=(const Note& rhs) const {
+            return (this->pitch == rhs.pitch);
         }
+
+        ///@}
 
         friend struct NoteStartBeatComparator;
 
@@ -153,15 +229,16 @@ namespace gdmusickit {
         // class NoteImpl;
         // std::unique_ptr<NoteImpl> impl_;
 
-        Pitch* pitch;
+        Pitch* pitch{nullptr};
         // Pitch pitch{60};
-
-        //         const Pitch& pitch;
+        // const Pitch& pitch;
 
         // const Pitch& pitch{60};
 
         double startBeat{1.0};
+
         double duration{1.0};
+
         PitchStringFormat::Spelling spelling{PitchStringFormat::Spelling::flat};
     };
 

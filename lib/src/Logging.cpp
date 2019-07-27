@@ -1,3 +1,6 @@
+// -*- C++ -*-
+
+
 #include "Logging.hpp"
 #include <boost/phoenix.hpp>
 namespace attrs = boost::log::attributes;

@@ -1,3 +1,4 @@
+// -*- C++ -*-
 
 //#include <gdmusickit/Pitch.hpp>
 #include "gdmusickit/Pitch.hpp"
@@ -49,9 +50,9 @@ namespace gdmusickit {
         //     9 + Pitch::octaveAdjustment(0));
     }
     // Constants
-    static Pitch C0 = PitchFactory::getSharedInstance().getPitch(
+    static const Pitch* C0 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-5));
-
+/*
     static Pitch CS0 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-5));
 
@@ -591,5 +592,6 @@ namespace gdmusickit {
 
     static Pitch G10 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(5));
+        */
 
 } // namespace gdmusickit

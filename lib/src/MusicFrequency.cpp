@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 /**
  * @file MusicFrequency.cpp
  * @author Gene De Lisa (gene@rockhoppertech.com)
