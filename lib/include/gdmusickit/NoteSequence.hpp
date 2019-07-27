@@ -11,8 +11,10 @@ namespace gdmusickit {
       public:
         NoteSequence() : notes{std::make_unique<std::vector<Note>>()} {}
 
-        void addNote(Note note);
-        void removeNote(Note note); 
+        Note& addNote(const std::string& pitch, double startBeat, double duration);
+
+        void addNote(Note& note);
+        void removeNote(Note& note); 
         
         std::vector<Note> search(std::function<bool(Note)> ifFun);
      

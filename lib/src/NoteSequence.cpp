@@ -16,8 +16,18 @@ namespace gdmusickit {
     //     notes = std::make_unique<std::vector<Note>>();
     // }
     void NoteSequence::clear() { this->notes.get()->clear(); }
-    void NoteSequence::addNote(Note note) { notes->emplace_back(note); }
-    void NoteSequence::removeNote(Note note) {
+    
+    Note& NoteSequence::addNote(const std::string& pitch, double startBeat, double duration) {
+        //Note note{pitch, startBeat, duration};
+        auto note = std::make_unique<Note>(pitch, startBeat, duration);
+
+        //auto r = notes->emplace_back(note);
+        return *(note.get());
+    }
+
+    void NoteSequence::addNote(Note& note) { 
+        notes->emplace_back(note); }
+    void NoteSequence::removeNote(Note& note) {
         // https://en.wikipedia.org/wiki/Erase–remove_idiom
         std::vector<Note>* v = notes.get();
         v->erase(std::remove(v->begin(), v->end(), note), v->end());

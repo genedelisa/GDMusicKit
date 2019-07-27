@@ -46,38 +46,40 @@ TEST(NoteTestFuns, ShouldInitMIDINumberFromString) {
 
     Note sut{"C5"};
     std::cout << sut << std::endl;
-    EXPECT_EQ(60, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(60, sut.midiPitchNumber());
+
+    EXPECT_EQ(60, sut.midiPitchNumber());
 
     sut = Note("Cs5");
-    EXPECT_EQ(61, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(61, sut.midiPitchNumber());
 
     sut = Note("D5");
-    EXPECT_EQ(62, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(62, sut.midiPitchNumber());
     sut = Note("Df5");
-    EXPECT_EQ(61, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(61, sut.midiPitchNumber());
     sut = Note("Db5");
-    EXPECT_EQ(61, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(61, sut.midiPitchNumber());
     sut = Note("D#5");
-    EXPECT_EQ(63, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(63, sut.midiPitchNumber());
 
     sut = Note("E5");
-    EXPECT_EQ(64, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(64, sut.midiPitchNumber());
     sut = Note("Eb5");
-    EXPECT_EQ(63, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(63, sut.midiPitchNumber());
     sut = Note("Ef5");
-    EXPECT_EQ(63, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(63, sut.midiPitchNumber());
 
     sut = Note("F5");
-    EXPECT_EQ(65, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(65, sut.midiPitchNumber());
     sut = Note("F#5");
-    EXPECT_EQ(66, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(66, sut.midiPitchNumber());
 
     sut = Note("G5");
-    EXPECT_EQ(67, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(67, sut.midiPitchNumber());
     sut = Note("Gs5");
-    EXPECT_EQ(68, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(68, sut.midiPitchNumber());
     sut = Note("Gb5");
-    EXPECT_EQ(66, sut.getPitch().midiPitchNumber());
+    EXPECT_EQ(66, sut.midiPitchNumber());
 }
 
 TEST(NoteTestFuns, ShouldFailFromString) {

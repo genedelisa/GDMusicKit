@@ -14,6 +14,10 @@
 
 namespace gdmusickit {
 
+    /**
+     * @brief 
+     * 
+     */
     class MIDISequence {
       public:
         void addTrack(MIDITrack& track);

@@ -4,8 +4,13 @@
 My music frobs.
 
 ## doxygen foo
-This page will be under Related Files unless you edit Doxyfile
-and set USE_MDFILE_AS_MAINPAGE = main.md
+This page will be under Related Files unless you edit Doxyfile.in and set USE_MDFILE_AS_MAINPAGE = main.md
+
+In Doxyfile.in set this:
+```
+USE_MDFILE_AS_MAINPAGE = main.md
+```
+
 Or you can use your top level README.md if you don't mind the tags.
 
 here I'm linking to another page by its header label

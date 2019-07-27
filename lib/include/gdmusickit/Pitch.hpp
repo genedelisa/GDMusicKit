@@ -27,13 +27,6 @@
 
 // gene's music kit
 
-/**
- * @brief A namespace containing Gene's frobs.
- *
- * Right now it contains just the **Account** class.
- *
- * @author Gene De Lisa <gene@rockhoppertech.com>
- */
 namespace gdmusickit {
 
     // http://www.doxygen.nl/manual/faq.html#faq_code_inc
@@ -56,6 +49,17 @@ namespace gdmusickit {
      * @note Use the PitchFactory directly.
      */
     class Pitch {
+
+        friend std::ostream& operator<<(std::ostream& os, const Pitch& pitch);
+
+        friend auto operator==(Pitch lhs, Pitch rhs) {
+            return rhs.midiNumber == lhs.midiNumber;
+        }
+
+        friend auto operator!=(Pitch lhs, Pitch rhs) {
+            return rhs.midiNumber != lhs.midiNumber;
+        }
+        
       public:
         /**
          * @brief The ctor.
@@ -79,29 +83,30 @@ namespace gdmusickit {
          *  @todo Fix this I think. Maybe not.
          */
         explicit Pitch(const std::wstring& pitchString);
+        //Pitch(const Pitch &) = delete;
+        //Pitch(Pitch &&) = delete;
 
         [[nodiscard]] int midiPitchNumber() const;
-        [[nodiscard]] int pitchClass() const;
+        
+        [[nodiscard]] int pitchClass() const; /**< midinumber mod 12 */
+
         [[nodiscard]] int octave() const;
 
         static double midiEqualTemperamentFrequency(int midiNumber);
+
         inline static int octaveForMiddleC = 5;
 
-        friend std::ostream& operator<<(std::ostream& os, const Pitch& pitch);
-
-        friend auto operator==(Pitch lhs, Pitch rhs) {
-            return rhs.midiNumber == lhs.midiNumber;
-        }
-        friend auto operator!=(Pitch lhs, Pitch rhs) {
-            return rhs.midiNumber != lhs.midiNumber;
-        }
         static int octaveAdjustment(int fromDefault) {
             auto offset = 5 - octaveForMiddleC;
             return ((5 + offset + fromDefault) * 12);
         }
 
+
+
+
+
         // static Pitch A5;
-        inline static const int sValue = 777;
+        // inline static const int sValue = 777;
 
         //static Pitch A5{Pitch(69)}
         //  static const Pitch A5 =
@@ -110,7 +115,7 @@ namespace gdmusickit {
 
       protected:
       private:
-        int midiNumber{0};
+        int midiNumber{0}; /* 0 to 127 */
         double frequency{0};
 
         // pitchbend? cents? spelling?

@@ -108,6 +108,12 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "lib just docs",
+			"type": "shell",
+			"command": "cd ${workspaceFolder}/lib/build && cmake -D USE_UNIT_TESTING=OFF -D GENERATE_DOC=ON .. && make doc",
+			"problemMatcher": []
+		},
+		{
 			"label": "lib cppcheck",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make cppcheck",
@@ -218,6 +224,33 @@
 			"command": "${workspaceFolder}/lib/build/test/gdmusickit_test",
             "args": [
 				"--gtest_filter=MIDITrackTest.*"
+            ],
+            "group": "test",
+            "options": {
+				"cwd": "${workspaceFolder}/lib/build",
+				"env": {
+					"WHATEVER" : "thing=1"
+				}
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+			},
+			"dependsOn":["lib make all"],
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+				  	"absolute"
+  				]
+			}
+		},
+		{
+            "label": "Test NoteTestFuns.*",
+			"type": "process",
+			"command": "${workspaceFolder}/lib/build/test/gdmusickit_test",
+            "args": [
+				"--gtest_filter=NoteTestFuns.*"
             ],
             "group": "test",
             "options": {

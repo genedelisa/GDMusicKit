@@ -1,3 +1,20 @@
+/**
+ * @file MIDITrack.hpp
+ * @author Gene De Lisa (gene@rockhoppertech.com)
+ * @brief 
+ * @version 0.1.0
+ * @date 2019-07-19
+ * 
+ * @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
+ * 
+ * 2019-07-19 Gene De Lisa gene@rockhoppertech.com
+ * 
+ *  ## Usage:
+ * 
+ *   @code
+ * 
+ *   @endcode
+ */
 #pragma once
 
 #include "Note.hpp"
@@ -5,6 +22,7 @@
 #include "PitchStringFormat.hpp"
 #include <map>
 #include <string>
+#include <functional>
 
 namespace gdmusickit {
 
@@ -24,6 +42,8 @@ namespace gdmusickit {
 
     class MIDITrack {
       public:
+        using Callback = std::function<void(const MIDITrack &)>;
+
         explicit MIDITrack(double startBeat = 1.0);
 
         double getStartBeat() const { return startBeat; }
@@ -44,6 +64,9 @@ namespace gdmusickit {
         bool operator<(const MIDITrack& note) const {
             return startBeat < note.startBeat;
         }
+
+        //Note  operator[](unsigned i) const;
+        //Note& operator[](unsigned i);
 
         friend std::ostream& operator<<(std::ostream& os,
                                         MIDITrack const& midiTrack);

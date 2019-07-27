@@ -88,7 +88,7 @@ target_include_directories(gdmusickit
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic>
 
     PRIVATE
-         /Library/Developer/CommandLineTools/usr/include/c++/v1
+        # /Library/Developer/CommandLineTools/usr/include/c++/v1
 
         #${CMAKE_CURRENT_SOURCE_DIR}/include/
 
@@ -134,7 +134,10 @@ target_compile_features(gdmusickit
 #     $<$<CXX_COMPILER_ID:MSVC>:/EHsc>
 # )
 
+#######################################################################
+# N.B.
 #it looks like if you set target_compile_options, then this is not used
+#######################################################################
 add_compile_options(
     "$<$<CXX_COMPILER_ID:AppleClang>:-pedantic>"
 
@@ -178,11 +181,14 @@ target_compile_options(gdmusickit
     "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
     "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
     "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
+
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-DDEBUG>"
 
-
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-DNDEBUG>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-O3>"
 
 
 

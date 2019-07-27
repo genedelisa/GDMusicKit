@@ -6,6 +6,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 #include "gtest/gtest.h"
+#include "Logging.hpp"
 
 #include <memory>
 
@@ -36,7 +37,7 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
 
     auto p = PitchFactory::getSharedInstance().getPitch(0);
     // auto p = std::make_unique<Pitch>(60);
-    EXPECT_EQ(0, p.midiPitchNumber());
+    EXPECT_EQ(0, p->midiPitchNumber());
 
     //  p =
     //  PitchFactory::getSharedInstance().getPitch(Pitch::A5.midiPitchNumber());
@@ -50,27 +51,29 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
     // std::string s{"C5"};
     // auto p = PitchFactory::getSharedInstance().getPitch(s);
     auto p = PitchFactory::getSharedInstance().getPitch("C5");
-    EXPECT_EQ(60, p.midiPitchNumber());
+    EXPECT_EQ(60, p->midiPitchNumber());
 
     p = PitchFactory::getSharedInstance().getPitch("Db5");
-    EXPECT_EQ(61, p.midiPitchNumber());
+    EXPECT_EQ(61, p->midiPitchNumber());
 
     p = PitchFactory::getSharedInstance().getPitch("A5");
-    EXPECT_EQ(69, p.midiPitchNumber());
+    EXPECT_EQ(69, p->midiPitchNumber());
 
     // p = PitchFactory::getSharedInstance().getPitch("badinput");
     // EXPECT_EQ(69, p.midiPitchNumber());
 }
 
 TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
-    const Pitch& p = PitchFactory::getSharedInstance().getPitch("C5");
-    EXPECT_EQ(60, p.midiPitchNumber());
+    const Pitch* p = PitchFactory::getSharedInstance().getPitch("C5");
+    LOG_INFO << "addr of test object" << std::addressof(p) << "\n";
 
-    const Pitch& p2 = PitchFactory::getSharedInstance().getPitch("C5");
-    EXPECT_EQ(60, p2.midiPitchNumber());
+    EXPECT_EQ(60, p->midiPitchNumber());
 
-    const Pitch& p3 = PitchFactory::getSharedInstance().getPitch(60);
-    EXPECT_EQ(60, p2.midiPitchNumber());
+    const Pitch* p2 = PitchFactory::getSharedInstance().getPitch("C5");
+    EXPECT_EQ(60, p2->midiPitchNumber());
+
+    const Pitch* p3 = PitchFactory::getSharedInstance().getPitch(60);
+    EXPECT_EQ(60, p3->midiPitchNumber());
 
     EXPECT_EQ(p, p2);
     EXPECT_EQ(p, p3);

@@ -4,7 +4,8 @@
 #pragma once
 
 #include "Pitch.hpp"
-//class Pitch;
+// class Pitch;
+#include "Logging.hpp"
 #include <iostream>
 #include <map>
 #include <memory>
@@ -13,18 +14,22 @@
 
 namespace gdmusickit {
 
-    class PitchFactory {
+    class PitchFactory final {
       public:
         static PitchFactory& getSharedInstance() {
+            // Thread safety since C++11 - Magic Statics
             static PitchFactory instance;
             return instance;
         }
+        // see below
+        // PitchFactory(PitchFactory const&) = delete;
+        // PitchFactory& operator=(PitchFactory const&) = delete;
+        // PitchFactory(PitchFactory&&) = delete;
+        // PitchFactory& operator=(PitchFactory&&) = delete;
 
-        const Pitch& getPitch(const int midiNumber);
+        Pitch* getPitch(const int midiNumber);
 
-        const Pitch& getPitch(const std::string pitchString);
-
-        
+        Pitch* getPitch(const std::string pitchString);
 
         // the input is uppercased when this is accessed
         static inline const std::map<std::string, int> pitchClassNames = {
@@ -78,15 +83,16 @@ namespace gdmusickit {
             std::pair<std::string, int>("B#", 0)};
 
       private:
+        // PitchFactory(){}
         PitchFactory() = default;
         ~PitchFactory() = default;
 
         static inline std::unique_ptr<std::map<int, Pitch>> initMap() {
-            //LOG_INFO << "init map" << std::endl;
+            LOG_INFO << "init map" << std::endl;
             //          pitchMap[0] = Pitch(0);
 
             using MyMap = std::map<int, Pitch>;
-            //typedef std::map<int, Pitch> MyMap;
+            // typedef std::map<int, Pitch> MyMap;
             auto m = std::make_unique<MyMap>();
 
             // why I make the typedef
@@ -113,8 +119,12 @@ namespace gdmusickit {
             // }
             return m;
         }
-        static inline std::unique_ptr<std::map<int, Pitch>> pitchMap =
-            initMap();
+        using PitchMapT = std::map<const int, Pitch*>;
+        // c++17 allows static member definition here with inline
+        inline static PitchMapT pitchMap;
+
+        //static inline std::unique_ptr<std::map<int, Pitch>> pitchMap2 =
+        //    initMap();
         // static inline std::map<int, Pitch> pitchMap = initMap();
 
         //         //auto mapret = mymap.insert(std::pair('a', 100));

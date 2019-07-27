@@ -1,3 +1,20 @@
+/**
+ * @file MusicFrequency.cpp
+ * @author Gene De Lisa (gene@rockhoppertech.com)
+ * @brief 
+ * @version 0.1.0
+ * @date 2019-07-19
+ * 
+ * @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
+ * 
+ * 2019-07-19 Gene De Lisa gene@rockhoppertech.com
+ * 
+ *  ## Usage:
+ * 
+ *   @code
+ * 
+ *   @endcode
+ */
 #include "gdmusickit/MusicFrequency.hpp"
 #include "gdmusickit/Pitch.hpp"
 
