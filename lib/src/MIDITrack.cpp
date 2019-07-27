@@ -24,13 +24,12 @@ namespace gdmusickit {
     // }
     void MIDITrack::clear() { this->notes.clear(); }
 
-    Note MIDITrack::addNote(const std::string& pitch, double startBeat,
+    Note& MIDITrack::addNote(const std::string& pitch, double startBeat,
                              double duration) {
 
         Note note{pitch, startBeat, duration};
-        notes.emplace(note.getStartBeat(), note);
-
-        return note;
+        auto it = notes.emplace(note.getStartBeat(), note);
+        return it->second;
 
         // auto sp = std::make_unique<Note>(pitch, startBeat, duration);
         // auto note = sp.get();
@@ -38,8 +37,9 @@ namespace gdmusickit {
         // return *(note);
     }
 
-    void MIDITrack::addNote(Note note) {
-        notes.emplace(note.getStartBeat(), note);
+    Note& MIDITrack::addNote(Note note) {
+        auto it = notes.emplace(note.getStartBeat(), note);
+        return it->second;
 
         // MIDIPacketList pktlist{0};
         // auto packet = MIDIPacketListInit(&pktlist);
@@ -49,7 +49,7 @@ namespace gdmusickit {
         // const Byte *data);
     }
 
-    void MIDITrack::removeNote(Note note) {
+    Note& MIDITrack::removeNote(Note note) {
 
         auto it = notes.begin();
         while (it != notes.end()) {
@@ -58,12 +58,14 @@ namespace gdmusickit {
                 LOG_INFO << "match"
                          << "\n";
                 it = notes.erase(it);
+                return it->second;
             } else {
                 it++;
                 LOG_INFO << "no match"
                          << "\n";
             }
         }
+        throw std::invalid_argument("Note not in track!");
 
         // for (auto it = notes.begin(); it != notes.end();) {
         //     it = notes.erase(it);

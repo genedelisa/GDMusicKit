@@ -48,11 +48,12 @@ namespace gdmusickit {
 
         double getStartBeat() const { return startBeat; }
 
-        Note addNote(const std::string& pitch, double startBeat,
+        Note& addNote(const std::string& pitch, double startBeat,
                       double duration);
-        void addNote(Note note);
-        void removeNote(Note note);
+        Note& addNote(Note note);
+        Note& removeNote(Note note);
         //        void append(MIDITrack other);
+
 
         void clear();
         size_t size() const;

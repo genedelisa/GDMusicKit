@@ -49,4 +49,12 @@ namespace gdmusickit {
         return ptr;
     }
 
+    // if (it == pitchMap.end()) {
+    //     auto p = std::make_shared<Pitch>(n);
+    //     pitchMap[n] = p;
+    //     return p;
+    // } else {
+    //     return it->second;
+    // }
+
 } // namespace gdmusickit
