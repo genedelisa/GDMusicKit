@@ -11,11 +11,11 @@
             "request": "launch",
             "program": "${workspaceFolder}/lib/build/test/gdmusickit_test",
             "args": [
-				"--gtest_filter=MIDITrackTest.*"
+				//"--gtest_filter=NoteSequenceTest.*"
             ],
-            "stopAtEntry": true,
+            "stopAtEntry": false,
 			//"cwd": "${workspaceFolder}/lib/build",
-"cwd": "${workspaceFolder}/lib/build/test",
+			"cwd": "${workspaceFolder}/lib/build/test",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb"

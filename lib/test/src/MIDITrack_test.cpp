@@ -76,10 +76,15 @@ TEST_F(MIDITrackTest, ShouldRemoveNote) {
 TEST(MIDITrackLocalTest, ShouldFindNotesAtBeat) {
     MIDITrack localSut{0};
     double startBeat{1};
-    localSut.addNote(Note("C5", startBeat, 0.25));
-    localSut.addNote(Note("Gf10", startBeat, 0.25));
-    localSut.addNote(Note("bf4", startBeat++, 0.25));
-    localSut.addNote(Note("G3", startBeat++, 0.25));
+    // localSut.addNote(Note("C5", startBeat, 0.25));
+    // localSut.addNote(Note("Gf10", startBeat, 0.25));
+    // localSut.addNote(Note("bf4", startBeat++, 0.25));
+    // localSut.addNote(Note("G3", startBeat++, 0.25));
+
+    localSut.addNote("C5", startBeat, 0.25);
+    localSut.addNote("Gf10", startBeat, 0.25);
+    localSut.addNote("bf4", startBeat++, 0.25);
+    localSut.addNote("G3", startBeat++, 0.25);
 
     auto v = localSut.notesAtBeat(1);
     for (auto& n : v) {

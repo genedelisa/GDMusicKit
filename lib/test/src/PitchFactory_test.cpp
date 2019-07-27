@@ -79,9 +79,9 @@ TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
     EXPECT_EQ(p, p3);
     EXPECT_EQ(p2, p3);
 
-    EXPECT_EQ(std::addressof(p), std::addressof(p2));
-    EXPECT_EQ(std::addressof(p), std::addressof(p3));
-    EXPECT_EQ(std::addressof(p2), std::addressof(p3));
+    EXPECT_EQ(std::addressof(*p), std::addressof(*p2));
+    EXPECT_EQ(std::addressof(*p), std::addressof(*p3));
+    EXPECT_EQ(std::addressof(*p2), std::addressof(*p3));
 }
 TEST_F(PitchFactoryTest, ShouldBeSameFactory) {
     const PitchFactory& p = PitchFactory::getSharedInstance();

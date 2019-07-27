@@ -28,6 +28,11 @@ struct NoteSequenceTest: testing::Test {
         // sequence.addNote(Note("Gf10", startBeat++, 0.25));
         // sequence.addNote(Note("bf4", startBeat++, 0.25));
         // sequence.addNote(Note("G3", startBeat++, 0.25));
+
+         sequence.addNote("C5", startBeat++, 0.25);
+         sequence.addNote("Gf10", startBeat++, 0.25);
+         sequence.addNote("bf4", startBeat++, 0.25);
+         sequence.addNote("G3", startBeat++, 0.25);
     }
     void TearDown() override {}
 };
@@ -77,7 +82,7 @@ TEST_F(NoteSequenceTest, ShouldRemoveNote) {
     // sequence.addNote(Note("Bb5", startBeat++, duration));
     // sequence.addNote(Note("Af5", startBeat++, duration));
 
-sequence.addNote("C5", startBeat++, duration);
+    sequence.addNote("C5", startBeat++, duration);
     sequence.addNote("G5", startBeat++, duration);
     sequence.addNote("Bb5", startBeat++, duration);
     sequence.addNote("Af5", startBeat++, duration);
@@ -128,6 +133,7 @@ TEST_F(NoteSequenceTest, ShouldSearch) {
     EXPECT_EQ(4.0, n.getStartBeat());
 }
 
+/*
 TEST_F(NoteSequenceTest, ThisIsNotATest) {
 
     // Note sut{"C5", 1, 1};
@@ -202,6 +208,7 @@ sequence.addNote("C5", startBeat++, duration);
     // p = std::make_unique<Pitch>(72);
     // EXPECT_EQ(72, p->midiPitchNumber());
 }
+*/
 
 TEST_F(NoteSequenceTest, ShouldWriteToCout) {
 
@@ -211,9 +218,9 @@ TEST_F(NoteSequenceTest, ShouldWriteToCout) {
     // seq.addNote(Note("Gf10", startBeat++, 0.25));
     // seq.addNote(Note("bf4", startBeat++, 0.25));
     // seq.addNote(Note("G3", startBeat++, 0.25));
-double duration = 0.25;
+    double duration = 0.25;
 
-sequence.addNote("C5", startBeat++, duration);
+    sequence.addNote("C5", startBeat++, duration);
     sequence.addNote("G5", startBeat++, duration);
     sequence.addNote("Bb5", startBeat++, duration);
     sequence.addNote("Af5", startBeat++, duration);

@@ -19,10 +19,10 @@ namespace gdmusickit {
     
     Note& NoteSequence::addNote(const std::string& pitch, double startBeat, double duration) {
         //Note note{pitch, startBeat, duration};
-        auto note = std::make_unique<Note>(pitch, startBeat, duration);
-
-        //auto r = notes->emplace_back(note);
-        return *(note.get());
+        auto sp = std::make_unique<Note>(pitch, startBeat, duration);
+        auto note = sp.get();
+        notes->emplace_back(*note);
+        return *(note);
     }
 
     void NoteSequence::addNote(Note& note) { 
