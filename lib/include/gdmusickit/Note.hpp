@@ -65,12 +65,17 @@ namespace gdmusickit {
         //     // this->duration = note.duration;
         // }
 
-        /**
-         * @brief Constructor
-         * @param p a Pitch.
-         */
+        
         // Note(std::shared_ptr<Pitch> p, double start = 1.0, double dur = 1.0)
         //     : pitch(p), startBeat(start), duration(dur) {}
+        
+        /**
+         * @brief Construct a new Note object
+         * 
+         * @param p  a Pitch object
+         * @param start the start time in beats
+         * @param dur the duration in beats
+         */
         explicit Note(Pitch* p, double start = 1.0, double dur = 1.0)
             : pitch(p), startBeat(start), duration(dur) {}
 
@@ -125,7 +130,7 @@ namespace gdmusickit {
          * @brief Change Pitch to new Pitch with midiPitchNumber.
          * This will look up the Pitch by midiPitchNumber
          * and assign it to the Note.
-         * @param pitch
+         * @param midiPitchNumber 0-127
          * @return Note&
          * @throws std::invalid_argument if the number param is out of range.
          */
