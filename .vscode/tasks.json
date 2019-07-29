@@ -126,6 +126,33 @@
 			},
 		},
 		{
+			"label": "cppcheck current file",
+			"type": "shell",
+			"command": "echo ${file} && cppcheck --verbose --suppress=missingIncludeSystem --std=c++17 --enable=all -I./include ${file}",
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+					  "absolute"
+				  ]
+			},
+		},
+		{
+			"label": "clang-tidy current file",
+			"type": "shell",
+            "command": "cd ${workspaceFolder}/build && clang-tidy -extra-arg=-std=c++17 -header-filter='.*'  -p ${workspaceFolder}/build ${file} ",
+			"options": {
+				"cwd": "${workspaceFolder}/src",
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"base": "$gcc",
+				"fileLocation": [
+					  "absolute"
+				  ]
+			},
+		},
+		{
 			"label": "lib clang-tidy",
 			"type": "shell",
 			"command": "cd ${workspaceFolder}/lib/build && make clang-tidy",
