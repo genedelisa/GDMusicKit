@@ -6,7 +6,6 @@
 #include <cmath>
 #include <iostream>
 
-
 namespace gdmusickit {
 
     Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
@@ -43,559 +42,556 @@ namespace gdmusickit {
         return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
     }
 
-   
     // Pitch Constants
 
+    // inline const int Pitch::crap = 55;
 
-// inline const int Pitch::crap = 55;
+    // inline int Pitch::fooVar() {
+    //   static const int value = 42;
+    //   return value;
+    // }
 
-// inline int Pitch::fooVar() {
-//   static const int value = 42;
-//   return value;
-// }
+    const Pitch* Pitch::C0 = PitchFactory::getSharedInstance().getPitch(
+        0 + Pitch::octaveAdjustment(-5));
 
-
-   const Pitch* Pitch::C0 = PitchFactory::getSharedInstance().getPitch(
-         0 + Pitch::octaveAdjustment(-5));
-
-    static const Pitch* CS0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS0 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* Db0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db0 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* D0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D0 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* DS0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS0 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* Eb0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb0 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* E0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E0 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* F0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F0 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* FS0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS0 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* Gb0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb0 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* G0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G0 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* GS0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS0 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* Ab0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab0 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* A0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A0 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* AS0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS0 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* Bb0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb0 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* B0 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B0 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(-5));
 
-    static const Pitch* C1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C1 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* CS1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS1 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* Db1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db1 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* D1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D1 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* DS1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS1 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* Eb1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb1 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* E1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E1 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* F1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F1 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* FS1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS1 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* Gb1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb1 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* G1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G1 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* GS1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS1 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* Ab1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab1 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* A1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A1 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* AS1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS1 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* Bb1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb1 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* B1 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B1 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(-4));
 
-    static const Pitch* C2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C2 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* CS2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS2 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* Db2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db2 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* D2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D2 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* DS2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS2 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* Eb2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb2 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* E2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E2 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* F2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F2 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* FS2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS2 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* Gb2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb2 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* G2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G2 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* GS2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS2 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* Ab2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab2 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* A2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A2 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* AS2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS2 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* Bb2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb2 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* B2 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B2 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(-3));
 
-    static const Pitch* C3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C3 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* CS3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS3 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* Db3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db3 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* D3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D3 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* DS3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS3 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* Eb3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb3 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* E3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E3 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* F3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F3 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* FS3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS3 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* Gb3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb3 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* G3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G3 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* GS3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS3 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* Ab3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab3 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* A3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A3 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* AS3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS3 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* Bb3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb3 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* B3 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B3 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(-2));
 
-    static const Pitch* C4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C4 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* CS4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS4 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* Db4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db4 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* D4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D4 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* DS4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS4 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* Eb4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb4 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* E4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E4 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* F4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F4 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* FS4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS4 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* Gb4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb4 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* G4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G4 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* GS4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS4 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* Ab4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab4 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* A4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A4 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* AS4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS4 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* Bb4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb4 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* B4 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B4 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(-1));
 
-    static const Pitch* C5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C5 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* CS5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS5 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* Db5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db5 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* D5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D5 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* DS5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS5 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* Eb5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb5 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* E5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E5 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* F5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F5 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* FS5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS5 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* Gb5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb5 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* G5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G5 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* GS5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS5 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* Ab5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab5 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(0));
 
-    // static const Pitch* A5 = PitchFactory::getSharedInstance().getPitch(
-    //     9 + Pitch::octaveAdjustment(0));
+     const Pitch* Pitch::A5 = PitchFactory::getSharedInstance().getPitch(
+         9 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* AS5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS5 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* Bb5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb5 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* B5 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B5 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(0));
 
-    static const Pitch* C6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C6 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* CS6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS6 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* Db6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db6 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* D6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D6 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* DS6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS6 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* Eb6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb6 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* E6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E6 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* F6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F6 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* FS6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS6 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* Gb6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb6 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* G6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G6 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* GS6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS6 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* Ab6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab6 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* A6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A6 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* AS6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS6 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* Bb6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb6 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* B6 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B6 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(1));
 
-    static const Pitch* C7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C7 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* CS7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS7 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* Db7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db7 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* D7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D7 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* DS7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS7 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* Eb7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb7 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* E7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E7 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* F7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F7 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* FS7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS7 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* Gb7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb7 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* G7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G7 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* GS7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS7 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* Ab7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab7 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* A7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A7 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* AS7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS7 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* Bb7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb7 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* B7 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B7 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(2));
 
-    static const Pitch* C8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C8 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* CS8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS8 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* Db8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db8 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* D8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D8 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* DS8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS8 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* Eb8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb8 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* E8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E8 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* F8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F8 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* FS8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS8 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* Gb8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb8 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* G8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G8 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* GS8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS8 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* Ab8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab8 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* A8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A8 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* AS8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS8 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* Bb8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb8 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* B8 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B8 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(3));
 
-    static const Pitch* C9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C9 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* CS9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS9 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* Db9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db9 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* D9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D9 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* DS9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS9 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* Eb9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb9 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* E9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E9 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* F9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F9 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* FS9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS9 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* Gb9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb9 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* G9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G9 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* GS9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::GS9 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* Ab9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Ab9 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* A9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::A9 = PitchFactory::getSharedInstance().getPitch(
         9 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* AS9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::AS9 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* Bb9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Bb9 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* B9 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::B9 = PitchFactory::getSharedInstance().getPitch(
         11 + Pitch::octaveAdjustment(4));
 
-    static const Pitch* C10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::C10 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* CS10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::CS10 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* Db10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Db10 = PitchFactory::getSharedInstance().getPitch(
         1 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* D10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::D10 = PitchFactory::getSharedInstance().getPitch(
         2 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* DS10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::DS10 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* Eb10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Eb10 = PitchFactory::getSharedInstance().getPitch(
         3 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* E10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::E10 = PitchFactory::getSharedInstance().getPitch(
         4 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* F10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::F10 = PitchFactory::getSharedInstance().getPitch(
         5 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* FS10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::FS10 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* Gb10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::Gb10 = PitchFactory::getSharedInstance().getPitch(
         6 + Pitch::octaveAdjustment(5));
 
-    static const Pitch* G10 = PitchFactory::getSharedInstance().getPitch(
+    const Pitch* Pitch::G10 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(5));
 
 } // namespace gdmusickit
