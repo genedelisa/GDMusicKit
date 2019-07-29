@@ -42,7 +42,7 @@ struct NoteSequenceTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
-const Pitch* getPitch(const std::string s) {
+const Pitch* getPitch(std::string s) {
     return PitchFactory::getSharedInstance().getPitch(s);
 }
 

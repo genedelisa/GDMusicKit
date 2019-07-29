@@ -51,7 +51,7 @@ namespace gdmusickit {
          * @param startBeat
          * @param duration
          */
-        Note(std::string pitchString, double startBeat = 1.0,
+        explicit Note(std::string pitchString, double startBeat = 1.0,
              double duration = 1.0);
 
         // Note(const std::string& pitchString, double startBeat,
@@ -71,7 +71,7 @@ namespace gdmusickit {
          */
         // Note(std::shared_ptr<Pitch> p, double start = 1.0, double dur = 1.0)
         //     : pitch(p), startBeat(start), duration(dur) {}
-        Note(Pitch* p, double start = 1.0, double dur = 1.0)
+        explicit Note(Pitch* p, double start = 1.0, double dur = 1.0)
             : pitch(p), startBeat(start), duration(dur) {}
 
         ~Note();
@@ -168,12 +168,13 @@ namespace gdmusickit {
          *
          * @param rhs
          */
-        void operator=(const Note& rhs) {
+        Note& operator=(const Note& rhs) {
             //pitch is a pointer. But it's a flyweight!
             // it's ok to point to the same thing
             pitch = rhs.pitch;
             startBeat = rhs.startBeat;
             duration = rhs.duration;
+            return *this;
         }
 
         /**

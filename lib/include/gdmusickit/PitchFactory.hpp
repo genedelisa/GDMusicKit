@@ -29,7 +29,7 @@ namespace gdmusickit {
 
         Pitch* getPitch(const int midiNumber);
 
-        Pitch* getPitch(const std::string pitchString);
+        Pitch* getPitch(std::string pitchString);
 
         // the input is uppercased when this is accessed
         static inline const std::map<std::string, int> pitchClassNames = {

@@ -47,6 +47,11 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
     // EXPECT_EQ(72, p->midiPitchNumber());
 }
 
+/**
+ * @brief Construct a new test f object
+ * @test to init from string
+ * 
+ */
 TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
     // std::string s{"C5"};
     // auto p = PitchFactory::getSharedInstance().getPitch(s);

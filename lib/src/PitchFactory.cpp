@@ -13,8 +13,9 @@
 
 // gene's music kit
 namespace gdmusickit {
+class Pitch;
 
-    Pitch* PitchFactory::getPitch(const std::string pitchString) {
+    Pitch* PitchFactory::getPitch(std::string pitchString) {
         int n = PitchStringParser::stringToMidiNumber(pitchString);
         return PitchFactory::getSharedInstance().getPitch(n);
     }

@@ -40,4 +40,14 @@ TEST_F(PitchTest, ShouldInitMIDINumber) {
 
     p = std::make_unique<Pitch>(72);
     EXPECT_EQ(72, p->midiPitchNumber());
+
+    //std::cout << gdmusickit::Pitch::C0;
+    std::cout << *Pitch::C0 << "\n"; 
+    std::cout << std::endl;
+    
+
+    
+//std::cout << C0; 
+
+
 }

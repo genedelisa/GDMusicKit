@@ -23,6 +23,8 @@
 
 // class Pitch;
 //#include "PitchFactory.hpp"
+// nope. cant include
+
 #include <iostream>
 
 // gene's music kit
@@ -103,6 +105,16 @@ namespace gdmusickit {
             auto offset = 5 - octaveForMiddleC;
             return ((5 + offset + fromDefault) * 12);
         }
+
+/**
+ * @brief A constant
+ * @bug this doesn't fucking work
+ */
+static const Pitch* C0;
+
+        // inline static const Pitch* C0 =
+        //     PitchFactory::getSharedInstance().getPitch(
+        //         0 + Pitch::octaveAdjustment(-5));
 
         // static Pitch A5;
         // inline static const int sValue = 777;

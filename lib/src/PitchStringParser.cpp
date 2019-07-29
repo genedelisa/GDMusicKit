@@ -17,6 +17,7 @@
 
 namespace gdmusickit {
 
+class Pitch;
     // class Except: virtual public std::runtime_error {
 
     //    struct ParsePitchInputException: public std::exception {
