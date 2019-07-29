@@ -84,7 +84,7 @@ namespace gdmusickit {
          *
          * @todo Fix this I think. Maybe not.
          */
-        explicit Pitch(const std::wstring& pitchString);
+        explicit Pitch(const std::string& pitchString);
 
         // copy constructor
         // Pitch(const Pitch&) = delete;

@@ -1,4 +1,5 @@
 build
 buildMacOS
+ide
 ipch
 .DS_Store

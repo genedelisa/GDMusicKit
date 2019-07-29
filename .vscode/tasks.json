@@ -200,7 +200,32 @@
 		},
 
 
+		{
+			"label": "app run",
+			"dependsOn" : "app make all",
+			"type": "process",
+			"command": "${workspaceFolder}/app/build/loggingTestApp",
+			"options": {
+				"cwd": "${workspaceFolder}/app/build",
+			},
+			"problemMatcher": []
+		},
 
+		{
+			"label": "create Xcode project",
+			"type": "process",
+			"command": "cmake",
+			"args": [
+				"-G Xcode",
+				"-H../include/gdmusickit",
+				"-B../ide",
+				".."
+            ],
+			"options": {
+				"cwd": "${workspaceFolder}/lib/build",
+			},
+			"problemMatcher": []
+		},
 
 
 

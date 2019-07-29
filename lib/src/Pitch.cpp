@@ -3,6 +3,8 @@
 //#include <gdmusickit/Pitch.hpp>
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
+#include "gdmusickit/PitchStringParser.hpp"
+
 #include <cmath>
 #include <iostream>
 
@@ -10,8 +12,9 @@ namespace gdmusickit {
 
     Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 
-    // @todo parse pitchString
-    Pitch::Pitch(const std::wstring& pitchString) {}
+    Pitch::Pitch(const std::string& pitchString) {
+        this->midiNumber = PitchStringParser::stringToMidiNumber(pitchString);
+    }
 
     int Pitch::pitchClass() const { return midiNumber % 12; }
 
@@ -27,12 +30,13 @@ namespace gdmusickit {
     }
 
     /**
-         Calculate the frequency in Hz for a given Pitch
-         - returns: the frequence in Hz of the Pitch
-         */
+         @brief Calculate the frequency in Hz for a given Pitch
+         @return: the frequency in Hz of the Pitch
+    */
     static double midiEqualTemperamentFrequency(int midiNumber) {
         // 69 is midinumber for A5, 440 is that fq
-        // do not use Pitch.A5.midiNumber since this is referenced from the ctor
+        // do not use Pitch::A5.midiNumber since this is referenced from the
+        // ctor
         int a440 = 69;
         if (Pitch::octaveForMiddleC == 5) {
             int offset = 5 - Pitch::octaveForMiddleC;
@@ -42,15 +46,8 @@ namespace gdmusickit {
         return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
     }
 
-    // Pitch Constants
 
-    // inline const int Pitch::crap = 55;
-
-    // inline int Pitch::fooVar() {
-    //   static const int value = 42;
-    //   return value;
-    // }
-
+#pragma region Pitch constants
     const Pitch* Pitch::C0 = PitchFactory::getSharedInstance().getPitch(
         0 + Pitch::octaveAdjustment(-5));
 
@@ -345,8 +342,8 @@ namespace gdmusickit {
     const Pitch* Pitch::Ab5 = PitchFactory::getSharedInstance().getPitch(
         8 + Pitch::octaveAdjustment(0));
 
-     const Pitch* Pitch::A5 = PitchFactory::getSharedInstance().getPitch(
-         9 + Pitch::octaveAdjustment(0));
+    const Pitch* Pitch::A5 = PitchFactory::getSharedInstance().getPitch(
+        9 + Pitch::octaveAdjustment(0));
 
     const Pitch* Pitch::AS5 = PitchFactory::getSharedInstance().getPitch(
         10 + Pitch::octaveAdjustment(0));
@@ -593,5 +590,7 @@ namespace gdmusickit {
 
     const Pitch* Pitch::G10 = PitchFactory::getSharedInstance().getPitch(
         7 + Pitch::octaveAdjustment(5));
+
+#pragma endregion Pitch constants
 
 } // namespace gdmusickit
