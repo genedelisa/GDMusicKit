@@ -130,187 +130,189 @@ namespace gdmusickit {
          * @brief A constant
          * @bug this doesn't fucking work
          */
+
+        // NOLINTNEXTLINE(readability-identifier-naming)
         static const Pitch* C0;
-        static const Pitch* CS0;
-        static const Pitch* Db0;
-        static const Pitch* D0;
-        static const Pitch* DS0;
-        static const Pitch* Eb0;
-        static const Pitch* E0;
-        static const Pitch* F0;
-        static const Pitch* FS0;
-        static const Pitch* Gb0;
-        static const Pitch* G0;
-        static const Pitch* GS0;
-        static const Pitch* Ab0;
-        static const Pitch* A0;
-        static const Pitch* AS0;
-        static const Pitch* Bb0;
-        static const Pitch* B0;
-        static const Pitch* C1;
-        static const Pitch* CS1;
-        static const Pitch* Db1;
-        static const Pitch* D1;
-        static const Pitch* DS1;
-        static const Pitch* Eb1;
-        static const Pitch* E1;
-        static const Pitch* F1;
-        static const Pitch* FS1;
-        static const Pitch* Gb1;
-        static const Pitch* G1;
-        static const Pitch* GS1;
-        static const Pitch* Ab1;
-        static const Pitch* A1;
-        static const Pitch* AS1;
-        static const Pitch* Bb1;
-        static const Pitch* B1;
-        static const Pitch* C2;
-        static const Pitch* CS2;
-        static const Pitch* Db2;
-        static const Pitch* D2;
-        static const Pitch* DS2;
-        static const Pitch* Eb2;
-        static const Pitch* E2;
-        static const Pitch* F2;
-        static const Pitch* FS2;
-        static const Pitch* Gb2;
-        static const Pitch* G2;
-        static const Pitch* GS2;
-        static const Pitch* Ab2;
-        static const Pitch* A2;
-        static const Pitch* AS2;
-        static const Pitch* Bb2;
-        static const Pitch* B2;
-        static const Pitch* C3;
-        static const Pitch* CS3;
-        static const Pitch* Db3;
-        static const Pitch* D3;
-        static const Pitch* DS3;
-        static const Pitch* Eb3;
-        static const Pitch* E3;
-        static const Pitch* F3;
-        static const Pitch* FS3;
-        static const Pitch* Gb3;
-        static const Pitch* G3;
-        static const Pitch* GS3;
-        static const Pitch* Ab3;
-        static const Pitch* A3;
-        static const Pitch* AS3;
-        static const Pitch* Bb3;
-        static const Pitch* B3;
-        static const Pitch* C4;
-        static const Pitch* CS4;
-        static const Pitch* Db4;
-        static const Pitch* D4;
-        static const Pitch* DS4;
-        static const Pitch* Eb4;
-        static const Pitch* E4;
-        static const Pitch* F4;
-        static const Pitch* FS4;
-        static const Pitch* Gb4;
-        static const Pitch* G4;
-        static const Pitch* GS4;
-        static const Pitch* Ab4;
-        static const Pitch* A4;
-        static const Pitch* AS4;
-        static const Pitch* Bb4;
-        static const Pitch* B4;
-        static const Pitch* C5;
-        static const Pitch* CS5;
-        static const Pitch* Db5;
-        static const Pitch* D5;
-        static const Pitch* DS5;
-        static const Pitch* Eb5;
-        static const Pitch* E5;
-        static const Pitch* F5;
-        static const Pitch* FS5;
-        static const Pitch* Gb5;
-        static const Pitch* G5;
-        static const Pitch* GS5;
-        static const Pitch* Ab5;
-        static const Pitch* A5;
-        static const Pitch* AS5;
-        static const Pitch* Bb5;
-        static const Pitch* B5;
-        static const Pitch* C6;
-        static const Pitch* CS6;
-        static const Pitch* Db6;
-        static const Pitch* D6;
-        static const Pitch* DS6;
-        static const Pitch* Eb6;
-        static const Pitch* E6;
-        static const Pitch* F6;
-        static const Pitch* FS6;
-        static const Pitch* Gb6;
-        static const Pitch* G6;
-        static const Pitch* GS6;
-        static const Pitch* Ab6;
-        static const Pitch* A6;
-        static const Pitch* AS6;
-        static const Pitch* Bb6;
-        static const Pitch* B6;
-        static const Pitch* C7;
-        static const Pitch* CS7;
-        static const Pitch* Db7;
-        static const Pitch* D7;
-        static const Pitch* DS7;
-        static const Pitch* Eb7;
-        static const Pitch* E7;
-        static const Pitch* F7;
-        static const Pitch* FS7;
-        static const Pitch* Gb7;
-        static const Pitch* G7;
-        static const Pitch* GS7;
-        static const Pitch* Ab7;
-        static const Pitch* A7;
-        static const Pitch* AS7;
-        static const Pitch* Bb7;
-        static const Pitch* B7;
-        static const Pitch* C8;
-        static const Pitch* CS8;
-        static const Pitch* Db8;
-        static const Pitch* D8;
-        static const Pitch* DS8;
-        static const Pitch* Eb8;
-        static const Pitch* E8;
-        static const Pitch* F8;
-        static const Pitch* FS8;
-        static const Pitch* Gb8;
-        static const Pitch* G8;
-        static const Pitch* GS8;
-        static const Pitch* Ab8;
-        static const Pitch* A8;
-        static const Pitch* AS8;
-        static const Pitch* Bb8;
-        static const Pitch* B8;
-        static const Pitch* C9;
-        static const Pitch* CS9;
-        static const Pitch* Db9;
-        static const Pitch* D9;
-        static const Pitch* DS9;
-        static const Pitch* Eb9;
-        static const Pitch* E9;
-        static const Pitch* F9;
-        static const Pitch* FS9;
-        static const Pitch* Gb9;
-        static const Pitch* G9;
-        static const Pitch* GS9;
-        static const Pitch* Ab9;
-        static const Pitch* A9;
-        static const Pitch* AS9;
-        static const Pitch* Bb9;
-        static const Pitch* B9;
-        static const Pitch* C10;
-        static const Pitch* CS10;
-        static const Pitch* Db10;
-        static const Pitch* D10;
-        static const Pitch* DS10;
-        static const Pitch* Eb10;
-        static const Pitch* E10;
-        static const Pitch* F10;
-        static const Pitch* FS10;
-        static const Pitch* Gb10;
-        static const Pitch* G10;
+        static const Pitch* CS0; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db0; // NOLINT(readability-identifier-naming)
+        static const Pitch* D0; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS0; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb0; // NOLINT(readability-identifier-naming)
+        static const Pitch* E0; // NOLINT(readability-identifier-naming)
+        static const Pitch* F0; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS0; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb0; // NOLINT(readability-identifier-naming)
+        static const Pitch* G0; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS0; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab0; // NOLINT(readability-identifier-naming)
+        static const Pitch* A0; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS0; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb0; // NOLINT(readability-identifier-naming)
+        static const Pitch* B0; // NOLINT(readability-identifier-naming)
+        static const Pitch* C1; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS1; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db1; // NOLINT(readability-identifier-naming)
+        static const Pitch* D1; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS1; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb1; // NOLINT(readability-identifier-naming)
+        static const Pitch* E1; // NOLINT(readability-identifier-naming)
+        static const Pitch* F1; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS1; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb1; // NOLINT(readability-identifier-naming)
+        static const Pitch* G1; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS1; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab1; // NOLINT(readability-identifier-naming)
+        static const Pitch* A1; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS1; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb1; // NOLINT(readability-identifier-naming)
+        static const Pitch* B1; // NOLINT(readability-identifier-naming)
+        static const Pitch* C2; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS2; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db2; // NOLINT(readability-identifier-naming)
+        static const Pitch* D2; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS2; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb2; // NOLINT(readability-identifier-naming)
+        static const Pitch* E2; // NOLINT(readability-identifier-naming)
+        static const Pitch* F2; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS2; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb2; // NOLINT(readability-identifier-naming)
+        static const Pitch* G2; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS2; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab2; // NOLINT(readability-identifier-naming)
+        static const Pitch* A2; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS2; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb2; // NOLINT(readability-identifier-naming)
+        static const Pitch* B2; // NOLINT(readability-identifier-naming)
+        static const Pitch* C3; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS3; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db3; // NOLINT(readability-identifier-naming)
+        static const Pitch* D3; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS3; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb3; // NOLINT(readability-identifier-naming)
+        static const Pitch* E3; // NOLINT(readability-identifier-naming)
+        static const Pitch* F3; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS3; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb3; // NOLINT(readability-identifier-naming)
+        static const Pitch* G3; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS3; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab3; // NOLINT(readability-identifier-naming)
+        static const Pitch* A3; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS3; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb3; // NOLINT(readability-identifier-naming)
+        static const Pitch* B3; // NOLINT(readability-identifier-naming)
+        static const Pitch* C4; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS4; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db4; // NOLINT(readability-identifier-naming)
+        static const Pitch* D4; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS4; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb4; // NOLINT(readability-identifier-naming)
+        static const Pitch* E4; // NOLINT(readability-identifier-naming)
+        static const Pitch* F4; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS4; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb4; // NOLINT(readability-identifier-naming)
+        static const Pitch* G4; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS4; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab4; // NOLINT(readability-identifier-naming)
+        static const Pitch* A4; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS4; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb4; // NOLINT(readability-identifier-naming)
+        static const Pitch* B4; // NOLINT(readability-identifier-naming)
+        static const Pitch* C5; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS5; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db5; // NOLINT(readability-identifier-naming)
+        static const Pitch* D5; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS5; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb5; // NOLINT(readability-identifier-naming)
+        static const Pitch* E5; // NOLINT(readability-identifier-naming)
+        static const Pitch* F5; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS5; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb5; // NOLINT(readability-identifier-naming)
+        static const Pitch* G5; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS5; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab5; // NOLINT(readability-identifier-naming)
+        static const Pitch* A5; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS5; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb5; // NOLINT(readability-identifier-naming)
+        static const Pitch* B5; // NOLINT(readability-identifier-naming)
+        static const Pitch* C6; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS6; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db6; // NOLINT(readability-identifier-naming)
+        static const Pitch* D6; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS6; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb6; // NOLINT(readability-identifier-naming)
+        static const Pitch* E6; // NOLINT(readability-identifier-naming)
+        static const Pitch* F6; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS6; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb6; // NOLINT(readability-identifier-naming)
+        static const Pitch* G6; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS6; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab6; // NOLINT(readability-identifier-naming)
+        static const Pitch* A6; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS6; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb6; // NOLINT(readability-identifier-naming)
+        static const Pitch* B6; // NOLINT(readability-identifier-naming)
+        static const Pitch* C7; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS7; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db7; // NOLINT(readability-identifier-naming)
+        static const Pitch* D7; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS7; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb7; // NOLINT(readability-identifier-naming)
+        static const Pitch* E7; // NOLINT(readability-identifier-naming)
+        static const Pitch* F7; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS7; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb7; // NOLINT(readability-identifier-naming)
+        static const Pitch* G7; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS7; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab7; // NOLINT(readability-identifier-naming)
+        static const Pitch* A7; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS7; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb7; // NOLINT(readability-identifier-naming)
+        static const Pitch* B7; // NOLINT(readability-identifier-naming)
+        static const Pitch* C8; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS8; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db8; // NOLINT(readability-identifier-naming)
+        static const Pitch* D8; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS8; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb8; // NOLINT(readability-identifier-naming)
+        static const Pitch* E8; // NOLINT(readability-identifier-naming)
+        static const Pitch* F8; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS8; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb8; // NOLINT(readability-identifier-naming)
+        static const Pitch* G8; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS8; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab8; // NOLINT(readability-identifier-naming)
+        static const Pitch* A8; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS8; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb8; // NOLINT(readability-identifier-naming)
+        static const Pitch* B8; // NOLINT(readability-identifier-naming)
+        static const Pitch* C9; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS9; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db9; // NOLINT(readability-identifier-naming)
+        static const Pitch* D9; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS9; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb9; // NOLINT(readability-identifier-naming)
+        static const Pitch* E9; // NOLINT(readability-identifier-naming)
+        static const Pitch* F9; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS9; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb9; // NOLINT(readability-identifier-naming)
+        static const Pitch* G9; // NOLINT(readability-identifier-naming)
+        static const Pitch* GS9; // NOLINT(readability-identifier-naming)
+        static const Pitch* Ab9; // NOLINT(readability-identifier-naming)
+        static const Pitch* A9; // NOLINT(readability-identifier-naming)
+        static const Pitch* AS9; // NOLINT(readability-identifier-naming)
+        static const Pitch* Bb9; // NOLINT(readability-identifier-naming)
+        static const Pitch* B9; // NOLINT(readability-identifier-naming)
+        static const Pitch* C10; // NOLINT(readability-identifier-naming)
+        static const Pitch* CS10; // NOLINT(readability-identifier-naming)
+        static const Pitch* Db10; // NOLINT(readability-identifier-naming)
+        static const Pitch* D10; // NOLINT(readability-identifier-naming)
+        static const Pitch* DS10; // NOLINT(readability-identifier-naming)
+        static const Pitch* Eb10; // NOLINT(readability-identifier-naming)
+        static const Pitch* E10; // NOLINT(readability-identifier-naming)
+        static const Pitch* F10; // NOLINT(readability-identifier-naming)
+        static const Pitch* FS10; // NOLINT(readability-identifier-naming)
+        static const Pitch* Gb10; // NOLINT(readability-identifier-naming)
+        static const Pitch* G10; // NOLINT(readability-identifier-naming)
     }; // namespace gdmusickit
 
 } // namespace gdmusickit
