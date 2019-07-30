@@ -5,6 +5,10 @@
 
 namespace gdmusickit {
 
+    /**
+     * @brief Various frequency related calculations
+     *
+     */
     class MusicFrequency {
       public:
         double midiEqualTemperamentFrequency(int midiNumber);

@@ -24,7 +24,7 @@ struct MIDITrackTest: testing::Test {
     MIDITrack sut{0};
 
     MIDITrackTest() = default;
-
+    // NOLINTNEXTLINE(readability-identifier-naming)
     static void SetUpTestSuite() {
         boost::log::core::get()->set_filter(
             [](const boost::log::attribute_value_set& attr_set) {
@@ -34,8 +34,9 @@ struct MIDITrackTest: testing::Test {
             });
     }
 
+    // NOLINTNEXTLINE(readability-identifier-naming)
     static void TearDownTestSuite() {}
-
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {
         double startBeat{1};
         sut.addNote(Note("C5", startBeat++, 0.25));
@@ -43,6 +44,7 @@ struct MIDITrackTest: testing::Test {
         sut.addNote(Note("bf4", startBeat++, 0.25));
         sut.addNote(Note("G3", startBeat++, 0.25));
     }
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -51,6 +53,7 @@ struct MIDITrackTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(MIDITrackTest, ShouldInit) {
 
     // EXPECT_EQ(60, pitch->midiPitchNumber());
@@ -58,6 +61,7 @@ TEST_F(MIDITrackTest, ShouldInit) {
     LOG_INFO << sut << endl;
 }
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(MIDITrackTest, ShouldChangeStartBeat) {
 
     // setLogLevelDebug();
@@ -69,6 +73,7 @@ TEST_F(MIDITrackTest, ShouldChangeStartBeat) {
     LOG_INFO << sut << "\n";
 }
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(MIDITrackTest, ShouldRemoveNote) {
 
     // setLogLevelDebug();
@@ -84,6 +89,7 @@ TEST_F(MIDITrackTest, ShouldRemoveNote) {
     EXPECT_EQ(3, sut.size());
 }
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST(MIDITrackLocalTest, ShouldFindNotesAtBeat) {
     MIDITrack localSut{0};
     double startBeat{1};

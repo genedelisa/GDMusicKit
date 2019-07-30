@@ -6,11 +6,16 @@
 using namespace gdmusickit;
 using namespace std;
 
+/**
+ * @brief Global settings for all tests
+ * @detail Currently sets the Logging severity
+ * 
+ */
 class MyEnvironment: public ::testing::Environment {
   public:
-    virtual ~MyEnvironment() {}
+    virtual ~MyEnvironment() = default;
 
-    // Override this to define how to set up the environment.
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {
         cout << "global test setup" << endl;
         cout << "logging severity is debug" << endl;
@@ -23,12 +28,12 @@ class MyEnvironment: public ::testing::Environment {
             });
     }
 
-    // Override this to define how to tear down the environment.
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
-//Environment* AddGlobalTestEnvironment(Environment* env);
+// Environment* AddGlobalTestEnvironment(Environment* env);
 
-// but they recommend writing your own main
+// The authors prefer that you write your own main instead.
 ::testing::Environment* const fooEnv =
     ::testing::AddGlobalTestEnvironment(new MyEnvironment);

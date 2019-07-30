@@ -17,8 +17,9 @@ using namespace gdmusickit;
 struct PitchStringFormatTest: testing::Test {
   protected:
     PitchStringFormatTest() {}
-
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {}
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -26,9 +27,9 @@ struct PitchStringFormatTest: testing::Test {
 
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
-
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(PitchStringFormatTest, ShouldFormat) {}
-
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST(PitchStringFormatTestFuns, ShouldFormatFlat) {
 
     PitchStringFormat::getSharedInstance().setWidth(0);
@@ -49,6 +50,7 @@ TEST(PitchStringFormatTestFuns, ShouldFormatFlat) {
                   1, PitchStringFormat::Spelling::sharp,
                   PitchStringFormat::Justification::left, includeOctave));
 }
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST(PitchStringFormatTestFuns, ShouldFormatSolfege) {
 
     PitchStringFormat::getSharedInstance().setWidth(0);
@@ -82,7 +84,6 @@ TEST(PitchStringFormatTestFuns, ShouldFormatSolfege) {
                         96, PitchStringFormat::Spelling::solfege,
                         PitchStringFormat::Justification::left, includeOctave));
 
-
     EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
                         1, PitchStringFormat::Spelling::solfege,
                         PitchStringFormat::Justification::left, includeOctave));
@@ -109,9 +110,8 @@ TEST(PitchStringFormatTestFuns, ShouldFormatSolfege) {
                         PitchStringFormat::Justification::left, includeOctave));
     EXPECT_EQ("di", PitchStringFormat::getSharedInstance().stringFromMIDINumber(
                         97, PitchStringFormat::Spelling::solfege,
-                        PitchStringFormat::Justification::left, includeOctave));                        
-// @todo: complete all of this
-
+                        PitchStringFormat::Justification::left, includeOctave));
+    // @todo: complete all of this
 }
 
 /*

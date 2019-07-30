@@ -17,6 +17,7 @@ namespace gdmusickit {
         Note& addNote(const std::string& pitch, double startBeat, double duration);
 
         void addNote(Note& note);
+
         void removeNote(Note& note); 
         
         std::vector<Note> search(std::function<bool(Note)> ifFun);
@@ -30,12 +31,12 @@ namespace gdmusickit {
         Note& operator[](int i) { return notes->at(i); }
 
         [[nodiscard]] size_t size() const;
-        friend std::ostream& operator<<(std::ostream& os, NoteSequence const& noteSequence);
 
+        //friend std::ostream& operator<<(std::ostream& os, NoteSequence const& noteSequence);
 
         [[nodiscard]] std::vector<Note>::iterator begin() const { return notes->begin(); }
+        
         [[nodiscard]] std::vector<Note>::iterator end() const { return notes->end(); }
-
 
       protected:
       private:

@@ -22,8 +22,9 @@ struct MIDISequenceTest: testing::Test {
     MIDISequence sut;
 
     MIDISequenceTest() = default;
-
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {}
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -31,7 +32,7 @@ struct MIDISequenceTest: testing::Test {
 
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
-
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(MIDISequenceTest, ShouldInit) {
 
     // EXPECT_EQ(60, pitch->midiPitchNumber());
