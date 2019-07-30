@@ -138,11 +138,11 @@
 			},
 		},
 		{
-			"label": "clang-tidy current file",
+			"label": "lib clang-tidy fix current file",
 			"type": "shell",
-            "command": "cd ${workspaceFolder}/build && clang-tidy -extra-arg=-std=c++17 -header-filter='.*'  -p ${workspaceFolder}/build ${file} ",
+            "command": "cd ${workspaceFolder}/lib/build && clang-tidy -extra-arg=-std=c++17 -header-filter='.*'  -p ${workspaceFolder}/lib/build -fix ${file} ",
 			"options": {
-				"cwd": "${workspaceFolder}/src",
+				"cwd": "${workspaceFolder}/lib/build",
 			},
 			"problemMatcher": {
 				"owner": "cpp",

@@ -2,18 +2,18 @@
 
 
 #include "gdmusickit/PitchStringParser.hpp"
+#include "Logging.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
-#include "Logging.hpp"
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
 #include <exception>
-#include <stdexcept>
 #include <iostream>
 #include <regex>
-#include <string>
 #include <sstream>
+#include <stdexcept>
+#include <string>
 
 namespace gdmusickit {
 
@@ -22,7 +22,7 @@ class Pitch;
 
     //    struct ParsePitchInputException: public std::exception {
     struct ParsePitchInputException: public std::invalid_argument {
-        const char* what() const throw() { return "Invalid input Exception"; }
+        [[nodiscard]] const char* what() const noexcept override { return "Invalid input Exception"; }
     };
 
     class MyException: public std::exception {
@@ -33,15 +33,15 @@ class Pitch;
         const char* msg;
 
       public:
-        MyException(const char* msg, const char* file_, int line_,
-                    const char* func_, const char* info_ = "")
-            :  file(file_), line(line_), func(func_), info(info_), msg(msg) {}
+        MyException(const char* msg, const char* file, int line,
+                    const char* func, const char* info = "")
+            :  file(file), line(line), func(func), info(info), msg(msg) {}
 
-        const char* get_file() const { return file; }
-        int get_line() const { return line; }
-        const char* get_func() const { return func; }
-        const char* get_info() const { return info; }
-        const char* what() const throw() { return msg; }
+        [[nodiscard]] const char* getFile() const { return file; }
+        [[nodiscard]] int getLine() const { return line; }
+        [[nodiscard]] const char* getFunc() const { return func; }
+        [[nodiscard]] const char* getInfo() const { return info; }
+        [[nodiscard]] const char* what() const noexcept override { return msg; }
     };
 
     /**

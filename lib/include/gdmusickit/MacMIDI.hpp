@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_MACMIDI_HPP
+#define GDMUSICKIT_MACMIDI_HPP
+
 #pragma once
 
 #include <cstddef>
@@ -16,17 +19,17 @@
 // const std::byte MIDI_STATUS_ENDSYSEX{0xf7};
 // const std::byte MIDI_STATUS_REALTIME{0xf8};
 
-const unsigned char midi_note_on{0x90};
-const unsigned char MIDI_STATUS_NOTEOFF{0x80};
-const unsigned char MIDI_STATUS_NOTEON{0x90};
-const unsigned char MIDI_STATUS_KEYPRESURE{0xa0};
-const unsigned char MIDI_STATUS_CONTROLCHANGE{0xb0};
-const unsigned char MIDI_STATUS_PROGRAMCHANGE{0xc0};
-const unsigned char MIDI_STATUS_CHANNELPRESSURE{0xd0};
-const unsigned char MIDI_STATUS_PITCHBEND{0xe0};
-const unsigned char MIDI_STATUS_SYSEX{0xf0};
-const unsigned char MIDI_STATUS_ENDSYSEX{0xf7};
-const unsigned char MIDI_STATUS_REALTIME{0xf8};
+const unsigned char midiNoteOn{0x90};
+const unsigned char midiStatusNoteoff{0x80};
+const unsigned char midiStatusNoteon{0x90};
+const unsigned char midiStatusKeypresure{0xa0};
+const unsigned char midiStatusControlchange{0xb0};
+const unsigned char midiStatusProgramchange{0xc0};
+const unsigned char midiStatusChannelpressure{0xd0};
+const unsigned char midiStatusPitchbend{0xe0};
+const unsigned char midiStatusSysex{0xf0};
+const unsigned char midiStatusEndsysex{0xf7};
+const unsigned char midiStatusRealtime{0xf8};
 
 #define MIDI_CHANNELS 16
 #define MIDI_GM_DRUM_CHANNEL (10 - 1)
@@ -49,8 +52,8 @@ const unsigned char MIDI_STATUS_REALTIME{0xf8};
 // const std::byte MIDI_STATUS_MASK{0xF0};
 // const std::byte MIDI_CHANNEL_MASK{0x0F};
 
-const unsigned char MIDI_STATUS_MASK{0xF0};
-const unsigned char MIDI_CHANNEL_MASK{0x0F};
+const unsigned char midiStatusMask{0xF0};
+const unsigned char midiChannelMask{0x0F};
 
 //#define MIDI_STATUS_MASK 0xf0
 //#define MIDI_CHANNEL_MASK 0x0f
@@ -166,15 +169,16 @@ namespace gdmusickit {
 
       protected:
       private:
-        MIDIClientRef m_client;
-        MIDIPortRef m_port;
-        MIDIEndpointRef m_endpoint;
-        MIDIEndpointRef m_destination;
+        MIDIClientRef mClient;
+        MIDIPortRef mPort;
+        MIDIEndpointRef mEndpoint;
+        MIDIEndpointRef mDestination;
 
-        std::vector<std::string> m_outputDevices;
+        std::vector<std::string> mOutputDevices;
         void reloadDeviceList();
         void sendEvents(const MIDIPacketList* events);
         std::string getEndpointName(MIDIEndpointRef endpoint);
         std::string cfStringToStdString(CFStringRef cfString);
     };
 } // namespace gdmusickit
+#endif

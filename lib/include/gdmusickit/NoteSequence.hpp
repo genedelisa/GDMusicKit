@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_NOTESEQUENCE_HPP
+#define GDMUSICKIT_NOTESEQUENCE_HPP
+
 #pragma once
 
 #include "Note.hpp"
@@ -26,12 +29,12 @@ namespace gdmusickit {
 
         Note& operator[](int i) { return notes->at(i); }
 
-        size_t size() const;
+        [[nodiscard]] size_t size() const;
         friend std::ostream& operator<<(std::ostream& os, NoteSequence const& noteSequence);
 
 
-        std::vector<Note>::iterator begin() const { return notes->begin(); }
-        std::vector<Note>::iterator end() const { return notes->end(); }
+        [[nodiscard]] std::vector<Note>::iterator begin() const { return notes->begin(); }
+        [[nodiscard]] std::vector<Note>::iterator end() const { return notes->end(); }
 
 
       protected:
@@ -40,3 +43,4 @@ namespace gdmusickit {
     }; //
 
 } // namespace gdmusickit
+#endif

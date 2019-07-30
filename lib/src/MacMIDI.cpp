@@ -52,23 +52,23 @@ namespace gdmusickit {
     MacMIDI::MacMIDI() {
         // nope AVAudioPlayer player;
 
-        CFStringRef name = CFStringRef("thing");
+        auto name = CFStringRef("thing");
 
         OSStatus result = noErr;
-        result = MIDIClientCreate(name, NULL, NULL, &m_client);
+        result = MIDIClientCreate(name, NULL, NULL, &mClient);
         if (result != noErr) {
             LOG_ERROR << "MIDIClientCreate() LOG_ERROR:" << result;
 
             return;
         }
-        result = MIDISourceCreate(m_client, name, &m_endpoint);
+        result = MIDISourceCreate(mClient, name, &mEndpoint);
         if (result != noErr) {
             LOG_ERROR << "MIDISourceCreate() LOG_ERROR:" << result;
             // LOG_ERROR << GetMacOSStatusLOG_ERRORString(result) << " ";
             // LOG_ERROR << GetMacOSStatusCommentString(result) << " ";
             return;
         }
-        result = MIDIOutputPortCreate(m_client, name, &m_port);
+        result = MIDIOutputPortCreate(mClient, name, &mPort);
         if (result != noErr) {
             LOG_ERROR << "MIDIOutputPortCreate() LOG_ERROR:" << result;
 
@@ -79,35 +79,35 @@ namespace gdmusickit {
 
     MacMIDI::~MacMIDI() {
         OSStatus result = noErr;
-        if (m_port != 0) {
-            result = MIDIPortDispose(m_port);
+        if (mPort != 0) {
+            result = MIDIPortDispose(mPort);
             if (result != noErr) {
                 LOG_ERROR << "MIDIPortDispose() LOG_ERROR:" << result;
 
-                m_port = 0;
+                mPort = 0;
             }
         }
-        if (m_endpoint != 0) {
-            result = MIDIEndpointDispose(m_endpoint);
+        if (mEndpoint != 0) {
+            result = MIDIEndpointDispose(mEndpoint);
             if (result != noErr) {
                 LOG_ERROR << "MIDIEndpointDispose() err:" << result;
 
-                m_endpoint = 0;
+                mEndpoint = 0;
             }
         }
-        if (m_client != 0) {
-            result = MIDIClientDispose(m_client);
+        if (mClient != 0) {
+            result = MIDIClientDispose(mClient);
             if (result != noErr) {
                 LOG_ERROR << "MIDIClientDispose() LOG_ERROR:" << result;
 
-                m_client = 0;
+                mClient = 0;
             }
         }
     }
 
     void MacMIDI::reloadDeviceList() {
 
-        m_outputDevices.clear();
+        mOutputDevices.clear();
 
         int num = MIDIGetNumberOfDestinations();
 
@@ -116,22 +116,22 @@ namespace gdmusickit {
             MIDIEndpointRef dest = MIDIGetDestination(i);
             if (dest != 0) {
                 auto name = getEndpointName(dest);
-                m_outputDevices.emplace_back(name);
+                mOutputDevices.emplace_back(name);
             }
         }
 
-        // if (!m_currentOutput.isEmpty() && m_destination != 0 &&
-        //     !m_outputDevices.contains(m_currentOutput)) {
+        // if (!m_currentOutput.isEmpty() && mDestination != 0 &&
+        //     !mOutputDevices.contains(m_currentOutput)) {
 
         //     m_currentOutput.clear();
-        //     m_destination = 0;
+        //     mDestination = 0;
         // }
     }
 
     void MacMIDI::sendEvents(const MIDIPacketList* events) {
-        MIDIReceived(m_endpoint, events);
-        if (m_destination != 0)
-            MIDISend(m_port, m_destination, events);
+        MIDIReceived(mEndpoint, events);
+        if (mDestination != 0)
+            MIDISend(mPort, mDestination, events);
     }
 
     //    void MacMIDI::sendNoteOn(std::byte chan, std::byte note, std::byte
@@ -156,7 +156,7 @@ namespace gdmusickit {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_NOTEON | (chan & 0x0f);
+        data[0] = midiStatusNoteon | (chan & 0x0f);
         data[1] = note;
         data[2] = vel;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
@@ -170,7 +170,7 @@ namespace gdmusickit {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_NOTEOFF | (chan & 0x0f);
+        data[0] = midiStatusNoteoff | (chan & 0x0f);
         data[1] = note;
         data[2] = vel;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
@@ -189,7 +189,7 @@ namespace gdmusickit {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_CONTROLCHANGE | (chan & 0x0f);
+        data[0] = midiStatusControlchange | (chan & 0x0f);
         data[1] = control;
         data[2] = value;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
@@ -203,7 +203,7 @@ namespace gdmusickit {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_KEYPRESURE | (chan & 0x0f);
+        data[0] = midiStatusKeypresure | (chan & 0x0f);
         data[1] = note;
         data[2] = value;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
@@ -217,7 +217,7 @@ namespace gdmusickit {
         UInt8 data[2];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_PROGRAMCHANGE | (chan & 0x0f);
+        data[0] = midiStatusProgramchange | (chan & 0x0f);
         data[1] = program;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
                                    sizeof(data), data);
@@ -230,7 +230,7 @@ namespace gdmusickit {
         UInt8 data[2];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_CHANNELPRESSURE | (chan & 0x0f);
+        data[0] = midiStatusChannelpressure | (chan & 0x0f);
         data[1] = value;
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
                                    sizeof(data), data);
@@ -244,7 +244,7 @@ namespace gdmusickit {
         UInt8 data[3];
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
-        data[0] = MIDI_STATUS_PITCHBEND | (chan & 0x0f);
+        data[0] = midiStatusPitchbend | (chan & 0x0f);
         data[1] = MIDI_LSB(val); // LSB
         data[2] = MIDI_MSB(val); // MSB
         packet = MIDIPacketListAdd(&pktlist, sizeof(pktlist), packet, 0,
@@ -304,12 +304,12 @@ namespace gdmusickit {
 
     std::string MacMIDI::getEndpointName(MIDIEndpointRef endpoint) {
         std::string result{"Not found"};
-        CFStringRef str = 0;
+        CFStringRef str = nullptr;
         MIDIObjectGetStringProperty(endpoint, kMIDIPropertyName, &str);
-        if (str != 0) {
+        if (str != nullptr) {
             result = cfStringToStdString(str);
             CFRelease(str);
-            str = 0;
+            str = nullptr;
         }
 
         MIDIEntityRef entity = 0;

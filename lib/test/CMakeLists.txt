@@ -19,7 +19,8 @@ src/MusicFrequency_test.cpp
 src/NoteSequence_test.cpp
 src/MIDISequence_test.cpp
 src/MIDITrack_test.cpp
-src/main.cpp        
+src/main.cpp 
+src/Global_test.cpp       
 )
 
 add_executable(gdmusickit_test

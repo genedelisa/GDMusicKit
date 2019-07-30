@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_MIDITRACK_HPP
+#define GDMUSICKIT_MIDITRACK_HPP
+
 /**
  * @file MIDITrack.hpp
  * @author Gene De Lisa (gene@rockhoppertech.com)
@@ -46,7 +49,7 @@ namespace gdmusickit {
 
         explicit MIDITrack(double startBeat = 1.0);
 
-        double getStartBeat() const { return startBeat; }
+        [[nodiscard]] double getStartBeat() const { return startBeat; }
 
         Note& addNote(const std::string& pitch, double startBeat,
                       double duration);
@@ -56,7 +59,7 @@ namespace gdmusickit {
 
 
         void clear();
-        size_t size() const;
+        [[nodiscard]] size_t size() const;
 
         std::multimap<double, Note> subset(int from, int to);
 
@@ -105,3 +108,4 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+#endif

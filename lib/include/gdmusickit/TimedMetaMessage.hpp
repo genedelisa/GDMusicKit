@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_TIMEDMETAMESSAGE_HPP
+#define GDMUSICKIT_TIMEDMETAMESSAGE_HPP
+
 #pragma once
 
 #include "Note.hpp"
@@ -68,3 +71,5 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+
+#endif

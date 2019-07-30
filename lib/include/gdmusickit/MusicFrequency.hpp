@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_MUSICFREQUENCY_HPP
+#define GDMUSICKIT_MUSICFREQUENCY_HPP
+
 #pragma once
 
 namespace gdmusickit {
@@ -20,3 +23,4 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+#endif

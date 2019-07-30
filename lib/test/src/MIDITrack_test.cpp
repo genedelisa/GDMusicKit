@@ -25,6 +25,17 @@ struct MIDITrackTest: testing::Test {
 
     MIDITrackTest() = default;
 
+    static void SetUpTestSuite() {
+        boost::log::core::get()->set_filter(
+            [](const boost::log::attribute_value_set& attr_set) {
+                return attr_set["Severity"]
+                           .extract<boost::log::trivial::severity_level>() <=
+                       boost::log::trivial::debug;
+            });
+    }
+
+    static void TearDownTestSuite() {}
+
     void SetUp() override {
         double startBeat{1};
         sut.addNote(Note("C5", startBeat++, 0.25));

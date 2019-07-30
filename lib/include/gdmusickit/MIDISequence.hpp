@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_MIDISEQUENCE_HPP
+#define GDMUSICKIT_MIDISEQUENCE_HPP
+
 #pragma once
 
 #include "gdmusickit/MIDITrack.hpp"
@@ -27,3 +30,4 @@ namespace gdmusickit {
     };
     
 } // namespace gdmusickit
+#endif

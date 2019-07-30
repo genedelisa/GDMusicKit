@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_PITCHSTRINGPARSER_HPP
+#define GDMUSICKIT_PITCHSTRINGPARSER_HPP
+
 #pragma once
 
 #include <regex>
@@ -21,3 +24,4 @@ namespace gdmusickit {
     };
 
 } // namespace gdmusickit
+#endif

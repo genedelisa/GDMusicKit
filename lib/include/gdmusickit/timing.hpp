@@ -1,3 +1,6 @@
+#ifndef GDMUSICKIT_TIMING_HPP
+#define GDMUSICKIT_TIMING_HPP
+
 
 #pragma once
 
@@ -28,3 +31,4 @@ namespace gdmusickit {
     }
 
 } // namespace gdmusickit
+#endif

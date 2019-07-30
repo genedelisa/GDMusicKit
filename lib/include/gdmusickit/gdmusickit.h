@@ -1,3 +1,5 @@
+#ifndef GDMUSICKIT_GDMUSICKIT_H
+#define GDMUSICKIT_GDMUSICKIT_H
 
 #pragma once
 
@@ -26,8 +28,8 @@
  *
  * @author Gene De Lisa <gene@rockhoppertech.com>
  */
-namespace gdmusickit {
-}
+
+
 
 /**
     @mainpage GDMusicKit - A library for music frobs.
@@ -134,3 +136,4 @@ namespace gdmusickit {
     
     <center>Prev: \ref Compilation | Up: \ref mainpage "Home".</center>
  */
+#endif
