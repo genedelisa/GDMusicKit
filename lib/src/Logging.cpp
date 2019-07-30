@@ -25,17 +25,23 @@ BOOST_LOG_GLOBAL_LOGGER_INIT(my_logger, logger_t) {
 
     auto fsSink{logging::add_file_log(
         // or "/var/log/myapp.log"
-        boost::log::keywords::file_name = "log/myapp.log",
+        boost::log::keywords::file_name = "log/gdmusickit.log",
         boost::log::keywords::rotation_size = 10 * 1024 * 1024,
         boost::log::keywords::min_free_space = 30 * 1024 * 1024,
         boost::log::keywords::open_mode = std::ios_base::app,
         boost::log::keywords::format =
-            (expr::stream << expr::format_date_time<boost::posix_time::ptime>(
-                                 "TimeStamp", "%Y-%m-%d %H:%M:%S")
-                          << " ["
-                          << expr::attr<boost::log::trivial::severity_level>(
-                                 "Severity")
-                          << "]: " << expr::smessage))};
+            (expr::stream
+                        << expr::format_date_time<boost::posix_time::ptime>(
+                               "TimeStamp", "%Y-%m-%d %H:%M:%S.%f")
+                        << " ["
+                        << expr::attr<boost::log::trivial::severity_level>(
+                               "Severity")
+                        << "]"
+                        << " ["
+                        << boost::phoenix::bind(&file_basename,
+                                                expr::attr<std::string>("File"))
+                        << ":" << expr::attr<int>("Line") << "]\t" 
+                        << expr::smessage))};
 
     //    fsSink->set_formatter(logFmt);
     fsSink->locked_backend()->auto_flush(true);
