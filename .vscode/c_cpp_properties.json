@@ -1,4 +1,5 @@
 {
+
     "configurations": [
         {
             "name": "Mac",
@@ -7,10 +8,15 @@
                 "/Library/Developer/CommandLineTools/usr/include/c++/v1/**"
             ],
             "browse": {
+				"limitSymbolsToIncludedHeaders": true,
+				"databaseFilename": "${default}",
                 "path": [
-                    "${workspaceFolder}/lib/src"
+					"${default}",
+					"${workspaceFolder}",
+					"${workspaceFolder}/lib/src",
+					"${workspaceFolder}/lib/include"
                 ]
-            },
+			},
             "defines": [],
             "macFrameworkPath": [
                 "/System/Library/Frameworks",
