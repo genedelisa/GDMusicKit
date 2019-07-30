@@ -128,7 +128,7 @@
 		{
 			"label": "cppcheck current file",
 			"type": "shell",
-			"command": "echo ${file} && cppcheck --verbose --suppress=missingIncludeSystem --std=c++17 --enable=all -I./include ${file}",
+			"command": "echo ${file} && cppcheck --verbose --suppress=missingIncludeSystem --std=c++17 --enable=all -I${workspaceFolder}/lib/include ${file}",
 			"problemMatcher": {
 				"owner": "cpp",
 				"base": "$gcc",
