@@ -1,5 +1,12 @@
 {
-
+	"env" : {
+        "myDefaultIncludePath": [
+			"${workspaceFolder}",
+			"${workspaceFolder}/lib/include",
+            "${workspaceFolder}/include"
+        ],
+        "myCompilerPath": "/usr/bin/clang++"
+    },
     "configurations": [
         {
             "name": "Mac",
