@@ -23,6 +23,21 @@ namespace gdmusickit {
      *
      * @see gdmusickit::Pitch
      */
+
+    /**
+@startuml
+participant Client
+participant PitchFactory 
+participant Pitch 
+
+Client -> PitchFactory: getPitch
+PitchFactory -> map: at
+map -> Pitch: new
+PitchFactory <-- map:  pitch
+Client <-- PitchFactory:  pitch
+@enduml
+     */
+
     class PitchFactory final {
       public:
         static PitchFactory& getSharedInstance() {
@@ -37,7 +52,7 @@ namespace gdmusickit {
         // PitchFactory& operator=(PitchFactory&&) = delete;
 
         /**
-         * @brief Get the Pitch object
+         * @brief Get the Pitch object.
          *
          * @param midiNumber 0-127
          * @return Pitch* a pointer to the single Pitch instance
@@ -107,7 +122,6 @@ namespace gdmusickit {
             //          pitchMap[0] = Pitch(0);
 
             using MyMap = std::map<int, Pitch>;
-            // typedef std::map<int, Pitch> MyMap;
             auto m = std::make_unique<MyMap>();
 
             // why I make the typedef

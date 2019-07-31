@@ -21,13 +21,6 @@
 //#include "MacMIDI.hpp"
 
 
-/**
- * @brief A namespace containing Gene's frobs.
- *
- * Right now it contains just the **Pitch** class.
- *
- * @author Gene De Lisa <gene@rockhoppertech.com>
- */
 
 
 
@@ -133,4 +126,16 @@
     
     <center>Prev: \ref Compilation | Up: \ref mainpage "Home".</center>
  */
+
+
+/**
+ * @brief A namespace containing Gene's frobs.
+ *
+ * Right now it contains just Pitch and Note classes.
+ *
+ * @author Gene De Lisa <gene@rockhoppertech.com>
+ */
+namespace gdmusickit {
+}
+
 #endif
