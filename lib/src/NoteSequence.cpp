@@ -49,7 +49,9 @@ namespace gdmusickit {
     std::vector<Note> NoteSequence::search(std::function<bool(Note)> ifFun) {
         std::vector<Note>* v = notes.get();
         std::vector<Note> results;
-        const std::vector<Note>::const_iterator result =
+
+        //const std::vector<Note>::const_iterator result =
+        auto result =
             std::find_if(v->begin(), v->end(), ifFun);
 
         if (result != v->end()) {

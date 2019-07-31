@@ -47,21 +47,21 @@ namespace gdmusickit {
          */
         void clear();
 
-        using TrackMapT = std::map<double, MIDITrack>;
-
         MIDITrack& operator[](int i) { return tracks.at(i); }
 
-        [[nodiscard]] std::map<double, MIDITrack>::const_iterator
-        begin() const {
+        using TrackMapT = std::map<double, MIDITrack>;
+
+        [[nodiscard]] TrackMapT::const_iterator begin() const {
             return tracks.begin();
         }
 
-        [[nodiscard]] std::map<double, MIDITrack>::const_iterator end() const {
+        [[nodiscard]] TrackMapT::const_iterator end() const {
             return tracks.end();
         }
 
       private:
-        std::map<double, MIDITrack> tracks;
+
+        TrackMapT tracks;
     };
 
 } // namespace gdmusickit
