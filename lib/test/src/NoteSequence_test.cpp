@@ -12,9 +12,11 @@
 
 #include <gdmusickit/gdmusickit.h>
 using namespace gdmusickit;
+using std::cout;
+using std::endl;
 
 /**
- * @brief a test fixture for the Account class
+ * @brief a test fixture for the NoteSequence class
  *
  */
 struct NoteSequenceTest: testing::Test {
@@ -22,18 +24,15 @@ struct NoteSequenceTest: testing::Test {
     NoteSequence sequence;
     NoteSequenceTest() = default;
 
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {
         double startBeat{1};
-        // sequence.addNote(Note("C5", startBeat++, 0.25));
-        // sequence.addNote(Note("Gf10", startBeat++, 0.25));
-        // sequence.addNote(Note("bf4", startBeat++, 0.25));
-        // sequence.addNote(Note("G3", startBeat++, 0.25));
-
-         sequence.addNote("C5", startBeat++, 0.25);
-         sequence.addNote("Gf10", startBeat++, 0.25);
-         sequence.addNote("bf4", startBeat++, 0.25);
-         sequence.addNote("G3", startBeat++, 0.25);
+        sequence.addNote("C5", startBeat++, 0.25);
+        sequence.addNote("Gf10", startBeat++, 0.25);
+        sequence.addNote("bf4", startBeat++, 0.25);
+        sequence.addNote("G3", startBeat++, 0.25);
     }
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -46,6 +45,34 @@ const Pitch* getPitch(std::string s) {
     return PitchFactory::getSharedInstance().getPitch(s);
 }
 
+// NOLINTNEXTLINE(readability-identifier-naming)
+TEST(NoteSequenceFuncTest, ShouldAddNoteViaInsertionOp) {
+    NoteSequence sequence;
+    double startBeat{1};
+    double duration{1};
+    Note n{"C5", startBeat, duration};
+    sequence << n;
+    cout << sequence << endl;
+    // sequence.addNote("C5", startBeat++, duration);
+}
+
+// NOLINTNEXTLINE(readability-identifier-naming)
+TEST(NoteSequenceFuncTest, ShouldAddNoteViaInsertionOpString) {
+    NoteSequence sequence;
+    // double startBeat{1};
+    // double duration{1};
+    // Note n{"C5", startBeat, duration};
+
+    sequence << "Bb5";
+    sequence << "C5";
+    sequence << "Eb5";
+    sequence << "Ab5";
+
+    cout << sequence << endl;
+    // sequence.addNote("C5", startBeat++, duration);
+}
+
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(NoteSequenceTest, ShouldAddNote) {
     NoteSequence sequence;
     double startBeat{1};

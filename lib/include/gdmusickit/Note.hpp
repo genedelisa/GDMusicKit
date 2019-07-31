@@ -90,8 +90,15 @@ namespace gdmusickit {
          * @param startBeat
          * @param duration
          */
-        explicit Note(std::string pitchString, double startBeat = 1.0,
+        //explicit Note(std::string pitchString, double startBeat = 1.0,
+                      //double duration = 1.0);
+
+         Note(std::string const& pitchString, double startBeat = 1.0,
                       double duration = 1.0);
+            
+
+        // explicit Note(std::string const& pitchString, double startBeat,
+        //               double duration);
 
         // Note(const std::string& pitchString, double startBeat,
         //       double duration)

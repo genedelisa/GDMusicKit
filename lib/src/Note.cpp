@@ -58,15 +58,24 @@ namespace gdmusickit {
         // this->duration = duration;
     }
 
-    Note::Note(std::string pitchString, double startBeat, double duration) {
-        // : pitch(findPitch(pitchString)), startBeat(startBeat),
-        //   duration(duration) {
+    // Note::Note(std::string pitchString, double startBeat, double duration) {
+    //     // : pitch(findPitch(pitchString)), startBeat(startBeat),
+    //     //   duration(duration) {
 
-        LOG_INFO << "calling note ctor with string '" << pitchString << "'\n";
+    //     LOG_INFO << "calling note ctor with string '" << pitchString << "'\n";
+    //     this->pitch = findPitch(pitchString);
+    //     this->startBeat = startBeat;
+    //     this->duration = duration;
+    // }
+
+    Note::Note(std::string const& pitchString, double startBeat,
+         double duration) {
+        
+        LOG_INFO << "calling note ctor with const string '" << pitchString << "'\n";
         this->pitch = findPitch(pitchString);
         this->startBeat = startBeat;
         this->duration = duration;
-    }
+     }
 
     /**
      * @brief nice printing format. Uses the Note's spelling.
