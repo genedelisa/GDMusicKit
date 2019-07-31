@@ -19,7 +19,23 @@ namespace gdmusickit {
 
         void addNote(Note& note);
         void addNote(Note const& note);
+
+        /**
+         * @brief Append a Note to the sequence.
+         * 
+         * @detail
+         * This changes the Note's start beat to the end beat of the last
+         * Note in the sequence.
+         * 
+         * @param note 
+         */
+        void appendNote(Note& note);
+
         void removeNote(Note& note);
+
+        NoteSequence& makeSequential();
+        
+        double getEndBeat();
 
         std::vector<Note> search(std::function<bool(Note)> ifFun);
 
@@ -27,6 +43,7 @@ namespace gdmusickit {
 
         friend std::ostream& operator<<(std::ostream& os,
                                         NoteSequence const& noteSequence);
+
         friend NoteSequence& operator<<(NoteSequence& ns, std::string const& pitchString);
 
         /**
@@ -36,7 +53,7 @@ namespace gdmusickit {
          * @param note 
          * @return NoteSequence& 
          */
-        friend NoteSequence& operator<<(NoteSequence& ns, Note const& note);
+        friend NoteSequence& operator<<(NoteSequence& ns, Note& note);
 
         Note& operator[](int i) { return notes->at(i); }
 

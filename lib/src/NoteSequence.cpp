@@ -29,9 +29,35 @@ namespace gdmusickit {
     }
 
     void NoteSequence::addNote(Note& note) { notes->emplace_back(note); }
-    
+
     void NoteSequence::addNote(Note const& note) { notes->emplace_back(note); }
 
+
+    void NoteSequence::appendNote(Note& note) {
+        
+        note.setStartBeat(getEndBeat());
+        notes->emplace_back(note);
+        
+        // note.midiTrack = self
+        // if self.notes.count == 1 {
+        //     self.startBeat = note.startBeat
+        // }
+
+    }
+    
+    double NoteSequence::getEndBeat() {
+         double endBeat{1.0}; 
+         //auto v = notes->
+
+         for (const auto& note : *notes) {
+            if(note.getEndBeat() > endBeat) {
+                endBeat = note.getEndBeat();
+            }
+        }
+        return endBeat;
+    }
+
+    
     void NoteSequence::removeNote(Note& note) {
         // https://en.wikipedia.org/wiki/Erase–remove_idiom
         std::vector<Note>* v = notes.get();
@@ -48,17 +74,21 @@ namespace gdmusickit {
         return os;
     }
 
-    NoteSequence& operator<<(NoteSequence& ns, Note const& note) {
-        ns.addNote(note);
+    NoteSequence& operator<<(NoteSequence& ns, Note& note) {
+        ns.appendNote(note);
         return ns;
     }
     NoteSequence& operator<<(NoteSequence& ns, std::string const& pitchString) {
         Note note{pitchString};
-        ns.addNote(note);
+        ns.appendNote(note);
         return ns;
     }
 
     size_t NoteSequence::size() const { return notes->size(); }
+
+    
+
+    NoteSequence& NoteSequence::makeSequential() { return *this; }
 
     std::vector<Note> NoteSequence::search(std::function<bool(Note)> ifFun) {
         std::vector<Note>* v = notes.get();

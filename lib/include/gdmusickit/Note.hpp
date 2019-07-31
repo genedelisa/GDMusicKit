@@ -12,12 +12,12 @@
  *  @bug No known bugs.
  */
 
-/** 
+/**
  * @example{lineno} NoteExample.cpp
  * This is an example of how to use the Note class.
- * 
+ *
  * @par It doesn't do much.
- * 
+ *
  * @see gdmusickit::Note
  */
 
@@ -44,14 +44,14 @@ namespace gdmusickit {
      *
      *  @emoji scream_cat
      *
-     * 
-     * 😺:smiley_cat:	
+     *
+     * 😺:smiley_cat:
      * 😸 :smile_cat:
-    😻 :heart_eyes_cat:	
-    😽 :kissing_cat:	
+    😻 :heart_eyes_cat:
+    😽 :kissing_cat:
     😼 :smirk_cat:
-    🙀 :scream_cat:	
-    😿 :crying_cat_face:	
+    🙀 :scream_cat:
+    😿 :crying_cat_face:
     😹 :joy_cat:
     😾 :pouting_cat:
 
@@ -90,12 +90,11 @@ namespace gdmusickit {
          * @param startBeat
          * @param duration
          */
-        //explicit Note(std::string pitchString, double startBeat = 1.0,
-                      //double duration = 1.0);
+        // explicit Note(std::string pitchString, double startBeat = 1.0,
+        // double duration = 1.0);
 
-         Note(std::string const& pitchString, double startBeat = 1.0,
-                      double duration = 1.0);
-            
+        Note(std::string const& pitchString, double startBeat = 1.0,
+             double duration = 1.0);
 
         // explicit Note(std::string const& pitchString, double startBeat,
         //               double duration);
@@ -131,8 +130,13 @@ namespace gdmusickit {
         /** @name Accessors */
         ///@{
         [[nodiscard]] Pitch* getPitch() const { return pitch; }
+
         [[nodiscard]] double getStartBeat() const { return startBeat; }
+
+        [[nodiscard]] double getEndBeat() const { return startBeat + duration; }
+
         [[nodiscard]] double getDuration() const { return duration; }
+        
         [[nodiscard]] int midiPitchNumber() const {
             return pitch->midiPitchNumber();
         }
