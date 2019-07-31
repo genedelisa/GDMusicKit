@@ -10,17 +10,17 @@ include(GoogleTestConfig.in)
 include(googletest)
 
 set(Source
-src/Note_test.cpp
-src/PitchStringParser_test.cpp
-src/PitchStringFormat_test.cpp
-src/Pitch_test.cpp
-src/PitchFactory_test.cpp
-src/MusicFrequency_test.cpp
-src/NoteSequence_test.cpp
-src/MIDISequence_test.cpp
-src/MIDITrack_test.cpp
-src/main.cpp 
-src/Global_test.cpp       
+    src/Note_test.cpp
+    src/PitchStringParser_test.cpp
+    src/PitchStringFormat_test.cpp
+    src/Pitch_test.cpp
+    src/PitchFactory_test.cpp
+    src/MusicFrequency_test.cpp
+    src/NoteSequence_test.cpp
+    src/MIDISequence_test.cpp
+    src/MIDITrack_test.cpp
+    src/main.cpp 
+    src/Global_test.cpp       
 )
 
 add_executable(gdmusickit_test
@@ -84,15 +84,25 @@ target_compile_features(gdmusickit_test
 target_compile_options(gdmusickit_test
 	PRIVATE
 
-       # $<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>
-       # $<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wall>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
 
-       	# $<$<CXX_COMPILER_ID:AppleClang>:-Wall -Wextra -pedantic -fvisibility=hidden>
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-DDEBUG>"
+
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-DNDEBUG>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-O3>"
 
 
-        #$<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
-		$<$<CXX_COMPILER_ID:MSVC>:/W3>
-    	$<$<CXX_COMPILER_ID:GNU>:-g -Wall>
+
+      # $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic -fvisibility=hidden>
+        # $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
+		# $<$<CXX_COMPILER_ID:MSVC>:/W3>
+    	# $<$<CXX_COMPILER_ID:GNU>:-g -Wall>
 )
 target_link_libraries(gdmusickit_test
     PUBLIC
@@ -105,7 +115,7 @@ target_link_libraries(gdmusickit_test
 # https://cmake.org/cmake/help/latest/command/target_link_options.html
 target_link_options(gdmusickit_test
     PUBLIC
-    -v
+    "$<$<CONFIG:DEBUG>:${-v}>"
     #    -DBOOST_LOG_DYN_LINK
 )
 

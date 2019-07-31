@@ -334,10 +334,27 @@
 			"args": [
 				"-std=c++17",
 				"-stdlib=libc++",
+				"-I${workspaceFolder}/lib/include",
 				"-g",
 				"${file}",
 				"-o",
-				"${workspaceFolder}/lib/build/${fileBasenameNoExtension}"
+				"${workspaceFolder}/lib/build/${fileBasenameNoExtension}",
+				"-v",
+				"${workspaceFolder}/lib/build/libgdmusickit.a",
+				"/usr/local/lib/libboost_system-mt.a",
+				"/usr/local/lib/libboost_log-mt.a",
+				"/usr/local/lib/libboost_date_time-mt.a",
+				"/usr/local/lib/libboost_log_setup-mt.a",
+				"/usr/local/lib/libboost_filesystem-mt.a",
+				"/usr/local/lib/libboost_thread-mt.a",
+				"/usr/local/lib/libboost_regex-mt.a",
+				"/usr/local/lib/libboost_chrono-mt.a",
+				"/usr/local/lib/libboost_atomic-mt.a"
+
+
+
+				//"-L${workspaceFolder}/lib/build",
+				//"-llibgdmusickit.a"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}/lib/build/bin"
