@@ -18,11 +18,16 @@ using namespace gdmusickit;
  */
 struct NoteTest: testing::Test {
   protected:
-    std::unique_ptr<Pitch> pitch;
+    Note aNote{"C5"};
 
-    NoteTest() : pitch{std::make_unique<Pitch>(60)} {}
+    std::unique_ptr<Note> note;
 
+    NoteTest() : note{std::make_unique<Note>("C5")} {}
+
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {}
+
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -31,17 +36,19 @@ struct NoteTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(NoteTest, ShouldInitMIDINumber) {
 
-    EXPECT_EQ(60, pitch->midiPitchNumber());
+    EXPECT_EQ(60, note->midiPitchNumber());
 
-    auto p = std::make_unique<Pitch>(60);
+    auto p = std::make_unique<Note>("C5");
     EXPECT_EQ(60, p->midiPitchNumber());
 
-    p = std::make_unique<Pitch>(72);
+    p = std::make_unique<Note>("C6");
     EXPECT_EQ(72, p->midiPitchNumber());
 }
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST(NoteTestFuns, ShouldInitMIDINumberFromString) {
 
     Note sut{"C5"};
@@ -80,8 +87,14 @@ TEST(NoteTestFuns, ShouldInitMIDINumberFromString) {
     EXPECT_EQ(68, sut.midiPitchNumber());
     sut = Note("Gb5");
     EXPECT_EQ(66, sut.midiPitchNumber());
-}
 
+    sut = Note("C5", 2.5, 1.5);
+    EXPECT_EQ(60, sut.midiPitchNumber());
+    EXPECT_EQ(2.5, sut.getStartBeat());
+    EXPECT_EQ(1.5, sut.getDuration());
+
+}
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST(NoteTestFuns, ShouldFailFromString) {
     // Note sut{"Junk"};
     // std::cout << sut << std::endl;

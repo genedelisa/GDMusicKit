@@ -18,11 +18,15 @@ using namespace gdmusickit;
  */
 struct PitchTest: testing::Test {
   protected:
+    // NOLINTNEXTLINE(misc-non-private-member-variables-in-classes)
     std::unique_ptr<Pitch> pitch;
 
     PitchTest() : pitch{std::make_unique<Pitch>(60)} {}
 
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {}
+
+    // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
 
@@ -31,6 +35,7 @@ struct PitchTest: testing::Test {
 // https://github.com/google/googletest/blob/master/googletest/docs/primer.md#test-fixtures-using-the-same-data-configuration-for-multiple-tests
 // tl;dr use TEST_F if you're using a fixture. F for fixture. clever.
 
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(PitchTest, ShouldInitMIDINumber) {
 
     EXPECT_EQ(60, pitch->midiPitchNumber());
@@ -41,13 +46,9 @@ TEST_F(PitchTest, ShouldInitMIDINumber) {
     p = std::make_unique<Pitch>(72);
     EXPECT_EQ(72, p->midiPitchNumber());
 
-    //std::cout << gdmusickit::Pitch::C0;
-    std::cout << *Pitch::C0 << "\n"; 
+    // std::cout << gdmusickit::Pitch::C0;
+    std::cout << *Pitch::C0 << "\n";
     std::cout << std::endl;
-    
 
-    
-//std::cout << C0; 
-
-
+    // std::cout << C0;
 }

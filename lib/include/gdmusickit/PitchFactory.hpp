@@ -14,6 +14,15 @@
 
 namespace gdmusickit {
 
+    /**
+     * @brief The GoF Flyweight pattern for Pitches
+
+     * @details PitchFactory is a Singleton that
+     * creates Pitches lazily and stores them in a std::map.
+     * The getPitch functions returna pointer to the values in the map.
+     *
+     * @see gdmusickit::Pitch
+     */
     class PitchFactory final {
       public:
         static PitchFactory& getSharedInstance() {
@@ -27,6 +36,12 @@ namespace gdmusickit {
         // PitchFactory(PitchFactory&&) = delete;
         // PitchFactory& operator=(PitchFactory&&) = delete;
 
+        /**
+         * @brief Get the Pitch object
+         *
+         * @param midiNumber 0-127
+         * @return Pitch* a pointer to the single Pitch instance
+         */
         Pitch* getPitch(const int midiNumber);
 
         Pitch* getPitch(std::string pitchString);
@@ -119,11 +134,21 @@ namespace gdmusickit {
             // }
             return m;
         }
+
+        static inline void showPitchMap() {
+            // structured binding and decomposition c++17
+            for (const auto& [key, value] : pitchMap) {
+                std::cout << key << " => " << value << '\n';
+            }
+            std::cout << std::endl;
+        }
+
         using PitchMapT = std::map<const int, Pitch*>;
         // c++17 allows static member definition here with inline
         inline static PitchMapT pitchMap;
 
-        //static inline std::unique_ptr<std::map<int, Pitch>> pitchMap2 =
+        // nope, it's now lazily filled.
+        // static inline std::unique_ptr<std::map<int, Pitch>> pitchMap2 =
         //    initMap();
         // static inline std::map<int, Pitch> pitchMap = initMap();
 

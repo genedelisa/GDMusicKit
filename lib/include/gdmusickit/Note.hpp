@@ -1,5 +1,26 @@
 // -*- C++ -*-
 
+/** @file Note.hpp
+ *  @brief Note.hpp contains the Note declaration
+ *
+ *  This file contains the declaration for class Note.
+ *
+ *  You should add your own comments to
+ *  replace this one.
+ *
+ *  @author Gene De Lisa (gene@rockhoppertech.com)
+ *  @bug No known bugs.
+ */
+
+/** 
+ * @example{lineno} NoteExample.cpp
+ * This is an example of how to use the Note class.
+ * 
+ * @par It doesn't do much.
+ * 
+ * @see gdmusickit::Note
+ */
+
 #ifndef GDMUSICKIT_NOTE_HPP
 #define GDMUSICKIT_NOTE_HPP
 
@@ -16,15 +37,32 @@ namespace gdmusickit {
     /** @class Note Note.hpp "Note.hpp"
      *
      * @brief This is a Note class.
-     * @details
+     * @details A Note abstraction with a Pitch and timing.
      * Groovy, huh?
+     * @todo  Implement unit tests.
+     * @note requires C++17
      *
+     *  @emoji scream_cat
+     *
+     * 
+     * 😺:smiley_cat:	
+     * 😸 :smile_cat:
+    😻 :heart_eyes_cat:	
+    😽 :kissing_cat:	
+    😼 :smirk_cat:
+    🙀 :scream_cat:	
+    😿 :crying_cat_face:	
+    😹 :joy_cat:
+    😾 :pouting_cat:
+
      * ## Usage:
      *
-     *  @code
+     *  @code(c++)
+     *  Note n{"C5"};
+     *  n = Note("C5", 2.5, 1.5);
      *  std::unique_ptr<Note> x = std::make_unique<Note>(60);
      *  std::cout << "x: " << x << std::endl;
-     *  @endcode
+     *  @endcode(c++)
      */
 
     class Note {
@@ -38,6 +76,7 @@ namespace gdmusickit {
 
         /**
          * @brief Constructor
+         * @pre The startBeat must be >= 1.0
          * @param pitch
          * @param startBeat
          * @param duration
@@ -52,7 +91,7 @@ namespace gdmusickit {
          * @param duration
          */
         explicit Note(std::string pitchString, double startBeat = 1.0,
-             double duration = 1.0);
+                      double duration = 1.0);
 
         // Note(const std::string& pitchString, double startBeat,
         //       double duration)
@@ -65,13 +104,12 @@ namespace gdmusickit {
         //     // this->duration = note.duration;
         // }
 
-        
         // Note(std::shared_ptr<Pitch> p, double start = 1.0, double dur = 1.0)
         //     : pitch(p), startBeat(start), duration(dur) {}
-        
+
         /**
          * @brief Construct a new Note object
-         * 
+         *
          * @param p  a Pitch object
          * @param start the start time in beats
          * @param dur the duration in beats
@@ -98,7 +136,7 @@ namespace gdmusickit {
         ///@{
         /**
          * @brief Set the Start Beat object
-         *
+         * @pre much be >= 1.0
          * @param startBeat
          * @return Note& so you can cascade calls
          */
@@ -108,7 +146,7 @@ namespace gdmusickit {
         }
         /**
          * @brief Set the Duration object
-         *
+         * @pre music be > 0
          * @param duration
          * @return Note& for cascading calls
          */
@@ -119,7 +157,7 @@ namespace gdmusickit {
         /**
          * @brief Set the Pitch object
          *
-         * @param pitch
+         * @param pitch a Pitch pointer
          * @return Note& for cascading calls
          */
         Note& setPitch(Pitch* pitch) {
@@ -130,13 +168,15 @@ namespace gdmusickit {
          * @brief Change Pitch to new Pitch with midiPitchNumber.
          * This will look up the Pitch by midiPitchNumber
          * and assign it to the Note.
+         * @pre the pitch number must be between 0 and 127
          * @param midiPitchNumber 0-127
          * @return Note&
          * @throws std::invalid_argument if the number param is out of range.
          */
         Note& setMidiPitchNumber(const int midiPitchNumber) {
             if (!isValidMIDINumber(midiPitchNumber)) {
-                throw std::invalid_argument("MIDI pitch number is out of range");
+                throw std::invalid_argument(
+                    "MIDI pitch number is out of range");
             }
             this->pitch =
                 PitchFactory::getSharedInstance().getPitch(midiPitchNumber);
@@ -150,7 +190,7 @@ namespace gdmusickit {
          * @return false if not valid
          */
         bool isValidMIDINumber(const int midiPitchNumber) {
-            return (midiPitchNumber >=0 &&  midiPitchNumber <= 127);
+            return (midiPitchNumber >= 0 && midiPitchNumber <= 127);
         }
         ///@}
 
@@ -174,7 +214,7 @@ namespace gdmusickit {
          * @param rhs
          */
         Note& operator=(const Note& rhs) {
-            //pitch is a pointer. But it's a flyweight!
+            // pitch is a pointer. But it's a flyweight!
             // it's ok to point to the same thing
             pitch = rhs.pitch;
             startBeat = rhs.startBeat;
