@@ -27,8 +27,8 @@ namespace gdmusickit {
     /**
 @startuml
 participant Client
-participant PitchFactory 
-participant Pitch 
+participant PitchFactory
+participant Pitch
 
 Client -> PitchFactory: getPitch
 PitchFactory -> map: at
@@ -55,10 +55,20 @@ Client <-- PitchFactory:  pitch
          * @brief Get the Pitch object.
          *
          * @param midiNumber 0-127
-         * @return Pitch* a pointer to the single Pitch instance
+         * @return Pitch* a pointer to the single cached Pitch instance
          */
         Pitch* getPitch(const int midiNumber);
 
+        /**
+         * @brief Get the Pitch object
+         *
+         * @details
+         * The given string is parsed into a midiNumber, then the associated
+         * Pitch is either created or returned from the cache.
+         * 
+         * @param pitchString a Pitch description. e.g. "Bb5"
+         * @return Pitch* a pointer to the single cached Pitch instance
+         */
         Pitch* getPitch(std::string pitchString);
 
         // the input is uppercased when this is accessed
@@ -113,41 +123,8 @@ Client <-- PitchFactory:  pitch
             std::pair<std::string, int>("B#", 0)};
 
       private:
-        // PitchFactory(){}
         PitchFactory() = default;
         ~PitchFactory() = default;
-
-        static inline std::unique_ptr<std::map<int, Pitch>> initMap() {
-            LOG_INFO << "init map" << std::endl;
-            //          pitchMap[0] = Pitch(0);
-
-            using MyMap = std::map<int, Pitch>;
-            auto m = std::make_unique<MyMap>();
-
-            // why I make the typedef
-            // auto m2 = std::unique_ptr<std::map<int, Pitch>>(
-            // new std::map<int, Pitch>());
-
-            for (auto i{0}; i <= 127; ++i) {
-                m->emplace(std::pair<int, Pitch>(i, Pitch(i)));
-                // m->insert(std::pair<int, Pitch>(i, Pitch(i)));
-            }
-
-            // or
-            // for (const auto& entry : *m) {
-            //     std::cout << entry.first << " => " << entry.second << '\n';
-            // }
-
-            // or structured binding and decomposition c++17
-            // for (const auto& [key, value] : *m) {
-            //     std::cout << key << " => " << value << '\n';
-            // }
-
-            // for (auto it = m->begin(); it != m->end(); ++it) {
-            //     std::cout << it->first << " => " << it->second << '\n';
-            // }
-            return m;
-        }
 
         static inline void showPitchMap() {
             // structured binding and decomposition c++17
@@ -159,18 +136,12 @@ Client <-- PitchFactory:  pitch
 
         using PitchMapT = std::map<const int, Pitch*>;
         // c++17 allows static member definition here with inline
+        /**
+         * @brief The reusable Pitch objects.
+         *
+         * @details This is lazily populated from getPitch.
+         */
         inline static PitchMapT pitchMap;
-
-        // nope, it's now lazily filled.
-        // static inline std::unique_ptr<std::map<int, Pitch>> pitchMap2 =
-        //    initMap();
-        // static inline std::map<int, Pitch> pitchMap = initMap();
-
-        //         //auto mapret = mymap.insert(std::pair('a', 100));
-        // auto [itelem, success] = mymap.insert(std::pair(’a’, 100));
-        // If (!success) {
-        //     // Insert failure
-        // }
 
       public:
         // Delete the copy and move constructors.

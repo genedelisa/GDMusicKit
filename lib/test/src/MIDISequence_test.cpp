@@ -23,7 +23,16 @@ struct MIDISequenceTest: testing::Test {
 
     MIDISequenceTest() = default;
     // NOLINTNEXTLINE(readability-identifier-naming)
-    void SetUp() override {}
+    void SetUp() override {
+        MIDITrack track;
+        double startBeat{1.0};
+        double duration{1.0};
+        track.addNote(Note("C4", startBeat, duration));
+        track.addNote(Note("D4", startBeat += duration, duration));
+        track.addNote(Note("E4", startBeat += duration, duration));
+        track.addNote(Note("F4", startBeat += duration, duration));
+        sut.addTrack(track);
+    }
     // NOLINTNEXTLINE(readability-identifier-naming)
     void TearDown() override {}
 };
@@ -35,7 +44,40 @@ struct MIDISequenceTest: testing::Test {
 // NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(MIDISequenceTest, ShouldInit) {
 
-    // EXPECT_EQ(60, pitch->midiPitchNumber());
+    MIDITrack track;
+    double startBeat{1.0};
+    double duration{1.0};
+    track.addNote(Note("C4", startBeat, duration));
+    track.addNote(Note("D4", startBeat += duration, duration));
+    track.addNote(Note("E4", startBeat += duration, duration));
+    track.addNote(Note("F4", startBeat += duration, duration));
+    sut.addTrack(track);
 
-    // cout << sut << endl;
+    EXPECT_EQ(1, sut.size());
+
+    cout << sut << endl;
+
+    sut.clear();
+    EXPECT_EQ(0, sut.size());
+}
+
+TEST_F(MIDISequenceTest, ShouldIterate) {
+
+    for (const auto& entry : sut) {
+        std::cout << entry.first << " => " << entry.second << '\n';
+    }
+
+    cout << "structured binding and decomp "
+         << "\n";
+    // or structured binding and decomposition c++17
+    for (const auto& [key, value] : sut) {
+        std::cout << key << " => " << value << '\n';
+    }
+
+    cout << "begin end "
+         << "\n";
+    for (auto it = sut.begin(); it != sut.end(); ++it) {
+        std::cout << it->first << " => " << it->second << '\n';
+    }
+    cout << endl;
 }

@@ -5,6 +5,7 @@
 
 #include <gdmusickit/gdmusickit.h>
 #include <iostream>
+
 using namespace gdmusickit;
 using std::cout;
 using std::endl;

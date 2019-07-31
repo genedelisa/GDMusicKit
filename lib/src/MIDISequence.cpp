@@ -14,8 +14,27 @@
 #include <string>
 
 namespace gdmusickit {
+
     void MIDISequence::addTrack(MIDITrack& track) {
         tracks.emplace(track.getStartBeat(), track);
+    }
+    
+    size_t MIDISequence::size() const { return tracks.size(); }
+    
+    void MIDISequence::clear() { this->tracks.clear(); }
+
+    std::ostream& operator<<(std::ostream& os,
+                             MIDISequence const& midiSequence) {
+
+        for (const auto& track : midiSequence.tracks) {
+            os << track.second << "\n";
+        }
+
+        // for (const auto& note : midiTrack.notes) {
+        //     os << note.first << " : " << note.second << "\n";
+        // }
+
+        return os;
     }
 
 } // namespace gdmusickit

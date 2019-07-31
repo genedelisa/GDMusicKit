@@ -18,16 +18,51 @@
 namespace gdmusickit {
 
     /**
-     * @brief 
-     * 
+     * @brief A Collection of MIDITracks.
+     *
+     * @see gdmusickit::MIDITrack
      */
     class MIDISequence {
+        friend std::ostream& operator<<(std::ostream& os,
+                                        MIDISequence const& midiSequence);
+
       public:
+        /**
+         * @brief Add a MIDITrack to the sequence.
+         *
+         * @param track
+         */
         void addTrack(MIDITrack& track);
+
+        /**
+         * @brief Return how many MIDITracks are in the sequence.
+         *
+         * @return size_t
+         */
+        [[nodiscard]] size_t size() const;
+
+        /**
+         * @brief Remove all the tracks from th sequence.
+         *
+         */
+        void clear();
+
+        using TrackMapT = std::map<double, MIDITrack>;
+
+        MIDITrack& operator[](int i) { return tracks.at(i); }
+
+        [[nodiscard]] std::map<double, MIDITrack>::const_iterator
+        begin() const {
+            return tracks.begin();
+        }
+
+        [[nodiscard]] std::map<double, MIDITrack>::const_iterator end() const {
+            return tracks.end();
+        }
 
       private:
         std::map<double, MIDITrack> tracks;
     };
-    
+
 } // namespace gdmusickit
 #endif

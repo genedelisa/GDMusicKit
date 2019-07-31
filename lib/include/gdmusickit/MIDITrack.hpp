@@ -59,6 +59,7 @@ namespace gdmusickit {
 
 
         void clear();
+        
         [[nodiscard]] size_t size() const;
 
         std::multimap<double, Note> subset(int from, int to);
