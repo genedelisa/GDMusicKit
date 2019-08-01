@@ -366,8 +366,8 @@
 		},
 		{
 			"type": "shell",
-			"label": "build and run active file",
-			"command": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+			"label": "build and run active file (c++17)",
+			"command": "${workspaceFolder}/lib/build/${fileBasenameNoExtension}",
 			"dependsOn": "clang++ C++17 build active file",
 			"problemMatcher": [
 				"$gcc"

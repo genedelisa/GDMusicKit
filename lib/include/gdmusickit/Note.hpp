@@ -34,6 +34,7 @@
 
 namespace gdmusickit {
 
+
     /** @class Note Note.hpp "Note.hpp"
      *
      * @brief This is a Note class.
@@ -153,6 +154,10 @@ namespace gdmusickit {
          */
         Note& setStartBeat(const double startBeat) {
             this->startBeat = startBeat;
+            return *this;
+        }
+        Note& addToStartBeat(const double amount) {
+            this->startBeat += amount;
             return *this;
         }
         /**
@@ -325,6 +330,8 @@ namespace gdmusickit {
     //         return lhs.startBeat < rhs.startBeat;
     //     });
     // }
+
+
 
 } // namespace gdmusickit
 #endif

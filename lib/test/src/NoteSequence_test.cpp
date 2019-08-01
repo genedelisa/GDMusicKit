@@ -100,6 +100,22 @@ TEST(NoteSequenceFuncTest, ShouldMakeSequential) {
 }
 
 // NOLINTNEXTLINE(readability-identifier-naming)
+TEST_F(NoteSequenceTest, ShouldModifyFun) {
+    NoteSequence sequence;
+    double startBeat{1};
+    double duration{1};
+
+//[value](Note& note) { note.setStartBeat(value);
+    sequence.myFunctionWithLambda([](Note&){std::cout << "hey";});
+
+    // Note& someFun(Note& note, double value) {
+    //     return note;
+    // }
+    
+
+}
+
+// NOLINTNEXTLINE(readability-identifier-naming)
 TEST_F(NoteSequenceTest, ShouldAddNote) {
     NoteSequence sequence;
     double startBeat{1};

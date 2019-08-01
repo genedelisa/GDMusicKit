@@ -5,12 +5,15 @@
 #include "gdmusickit/PitchFactory.hpp"
 
 #include "Logging.hpp"
+
 #include <algorithm>
 #include <charconv> // from_char, to_char
 #include <exception>
+#include <functional>
 #include <iostream>
 #include <regex>
 #include <string>
+#include <vector>
 
 namespace gdmusickit {
 
@@ -90,24 +93,102 @@ namespace gdmusickit {
     size_t NoteSequence::size() const { return notes->size(); }
 
     NoteSequence& NoteSequence::makeSequential(double gap) {
-        if(gap > 0) {
-            //gap += 1;
-        }
+
         std::vector<Note>* v = notes.get();
-        auto n = v->at(0);
+        // auto n = v->at(0);
+        auto n = v->front();
         auto s = n.getStartBeat();
         auto d = n.getDuration();
+
+        // can loop like this too
+        // for (auto iter = v->begin() + 1; iter != v->end(); ++iter) {
+        // Note& note = *iter;
+        //     std::cout << *iter << "\n";
+        // }
+
         for (size_t i{1}; i < v->size(); ++i) {
             Note& nextNote = v->at(i);
-            //LOG_INFO << i << " nextNote: " << nextNote << "\n";
-            //LOG_INFO << "address: " << std::addressof(nextNote) << "\n";
+            // LOG_INFO << i << " nextNote: " << nextNote << "\n";
+            // LOG_INFO << "address: " << std::addressof(nextNote) << "\n";
             nextNote.setStartBeat(s + d + gap);
             s = nextNote.getStartBeat();
             d = nextNote.getDuration();
         }
         LOG_INFO << v << std::endl;
 
+        // std::for_each(std::begin(*v), std::end(*v),
+        //               [](Note& note) {
+        //                   note.setStartBeat(42);
+        //               });
+
+        // these don't work
+        // std::for_each(v->begin(), v->end(),
+        //               [](Note& note) { note.setStartBeat(42); });
+
+        // std::for_each(v->begin(), v->end(),
+        //               std::mem_fn(&Note::setStartBeat(199)));
+
+        // auto fn = std::bind(&Note::setStartBeat(1), note);
+
+        // std::for_each(std::begin(myVector), std::end(myVector),
+        // std::mem_fun(&SomeStruct::calculateFrequency));
+
         return *this;
+    }
+
+    void NoteSequence::modifyStartBeat(double value) {
+        std::vector<Note>* v = notes.get();
+
+        std::for_each(std::begin(*v), std::end(*v),
+                      [value](Note& note) { note.setStartBeat(value); });
+    }
+
+
+
+    Note& NoteSequence::modify(Note& n, double value, std::function<Note&(Note&, double)> func) {
+        return func(n, value);
+    }
+    
+    // void train(double const & data, int* d){}
+    // void lamb(double value) {
+    //     std::vector<Note>* v = notes.get();
+
+    //     for_each(v->begin(), v->end(), [&](double d) {
+    //         //train(d, value);
+    //     });
+    // }
+
+    // Note& NoteSequence::modify(Note& n, double value, NoteLambdaT lamb) {
+    //     std::vector<Note>* v = notes.get();
+    //     for_each(v->begin(), v->end(), lamb);
+    // }
+
+
+    // double Combiner(double a, double b,
+    //                 std::function<double(double, double)> func) {
+    //     return func(a, b);
+    // }
+
+    // double Add(double a, double b) { return a + b; }
+
+    // double Mult(double a, double b) { return a * b; }
+
+    // int main() {
+    //     Combiner(12, 13, Add);
+    //     Combiner(12, 13, Mult);
+    // }
+
+    std::vector<Pitch*> NoteSequence::getPitches() {
+        std::vector<Note>* v = notes.get();
+
+        std::vector<Pitch*> pitches(v->size());
+        transform(v->begin(), v->end(), pitches.begin(),
+                  std::mem_fn(&Note::getPitch));
+
+        // for (const auto& pitch : pitches) {
+        //     std::cout << "pitches " << pitch << std::endl;
+        // }
+        return pitches;
     }
 
     std::vector<Note> NoteSequence::search(std::function<bool(Note)> ifFun) {

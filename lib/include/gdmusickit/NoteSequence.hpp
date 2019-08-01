@@ -35,7 +35,26 @@ namespace gdmusickit {
 
         NoteSequence& makeSequential(double gap = 0.0);
         
+        std::vector<Pitch*> getPitches();
+
         double getEndBeat();
+
+    template <typename F>
+    void myFunctionWithLambda(F&& lambda){
+        //some things
+        std::cout << "lambda: " << lambda << std::endl;
+        LOG_INFO << "lambda: " << lambda << "\n";
+        //lambda();
+    }
+
+        // what for_each requires
+        //using NoteLambdaT = [](Note&){};
+        //Note& modify(Note& n, double value, NoteLambdaT lamb);
+
+        Note& modify(Note& n, double value, std::function<Note&(Note&, double)> func);
+
+        void modifyStartBeat(double value);
+
 
         std::vector<Note> search(std::function<bool(Note)> ifFun);
 
