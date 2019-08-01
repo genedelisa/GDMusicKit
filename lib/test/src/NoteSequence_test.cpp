@@ -66,10 +66,31 @@ TEST(NoteSequenceFuncTest, ShouldAddNoteViaInsertionOpString) {
     sequence << "Bb5";
     sequence << "C5";
     sequence << "Eb5";
-    sequence << "Ab5";
+    sequence << "Ab5"
+             << "C3";
 
     cout << sequence << endl;
     // sequence.addNote("C5", startBeat++, duration);
+}
+
+// NOLINTNEXTLINE(readability-identifier-naming)
+TEST(NoteSequenceFuncTest, ShouldMakeSequential) {
+    NoteSequence sequence;
+    double startBeat{1};
+    double duration{1};
+    // Note n{"C5", startBeat, duration};
+    sequence.addNote("C5", startBeat, duration);
+    sequence.addNote("Bb5", startBeat, duration);
+    sequence.addNote("Eb5", startBeat, duration);
+    sequence.addNote("Ab5", startBeat, duration);
+    cout << "before sequential"
+         << "\n";
+    cout << sequence << "\n";
+    
+    sequence.makeSequential();
+    cout << "after sequential"
+         << "\n";
+    cout << sequence << endl;
 }
 
 // NOLINTNEXTLINE(readability-identifier-naming)

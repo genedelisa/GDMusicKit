@@ -33,7 +33,7 @@ namespace gdmusickit {
 
         void removeNote(Note& note);
 
-        NoteSequence& makeSequential();
+        NoteSequence& makeSequential(double gap = 0.0);
         
         double getEndBeat();
 
