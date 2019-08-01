@@ -87,10 +87,16 @@ TEST(NoteSequenceFuncTest, ShouldMakeSequential) {
          << "\n";
     cout << sequence << "\n";
     
-    sequence.makeSequential();
+    NoteSequence& s = sequence.makeSequential();
     cout << "after sequential"
          << "\n";
     cout << sequence << endl;
+
+    sequence.makeSequential(5);
+     cout << "after sequential with gap 5"
+         << "\n";
+    cout << sequence << endl;
+
 }
 
 // NOLINTNEXTLINE(readability-identifier-naming)

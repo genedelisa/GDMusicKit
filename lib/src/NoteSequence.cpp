@@ -90,14 +90,17 @@ namespace gdmusickit {
     size_t NoteSequence::size() const { return notes->size(); }
 
     NoteSequence& NoteSequence::makeSequential(double gap) {
+        if(gap > 0) {
+            //gap += 1;
+        }
         std::vector<Note>* v = notes.get();
         auto n = v->at(0);
         auto s = n.getStartBeat();
         auto d = n.getDuration();
         for (size_t i{1}; i < v->size(); ++i) {
             Note& nextNote = v->at(i);
-            LOG_INFO << i << " nextNote: " << nextNote << "\n";
-            LOG_INFO << "address: " << std::addressof(nextNote) << "\n";
+            //LOG_INFO << i << " nextNote: " << nextNote << "\n";
+            //LOG_INFO << "address: " << std::addressof(nextNote) << "\n";
             nextNote.setStartBeat(s + d + gap);
             s = nextNote.getStartBeat();
             d = nextNote.getDuration();

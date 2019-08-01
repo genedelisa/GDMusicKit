@@ -94,7 +94,8 @@ namespace gdmusickit {
 
         return os << "Pitch: " << std::setw(3) << note.pitch << " " << ps
                   << " Start " << std::fixed << std::setprecision(2)
-                  << note.startBeat << " Duration " << note.duration;
+                  << note.startBeat << " Duration " << note.duration
+                  << " End Beat " << note.getEndBeat();
     }
     // Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
 
