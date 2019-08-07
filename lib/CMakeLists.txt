@@ -11,7 +11,15 @@ project(GDMusicKit
 #set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/libinstall" CACHE PATH "Installation Directory")
 
 # be able to find custom modules
-list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
+list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/CMake)
+message("CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}")
+
+# Output the compile commands
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# for debugging cmake files
+include(CMakePrintHelpers)
+# https://cmake.org/cmake/help/latest/module/CMakePrintHelpers.html
 
 ##############################################
 # dependencies
@@ -55,6 +63,12 @@ endif()
 
 message("NATIVE_AUDIO_LIBS: ${NATIVE_AUDIO_LIBS}")
 
+##############################################
+
+option(CLANG_TIDY           "Enable Clang Tidy"                     ON)
+option(CPPLINT              "Enable CppLint"                        ON)
+option(LINK_WHAT_YOU_USE    "Enable link-what-you-use"              OFF)
+option(INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"           OFF)
 
 ##############################################
 # Create library target
@@ -82,7 +96,7 @@ add_library(GDMusicKit::gdmusickit ALIAS gdmusickit)
 target_include_directories(gdmusickit
     PUBLIC
         ${Boost_INCLUDE_DIRS}
-        $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include/gdmusickit>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic>
@@ -168,10 +182,12 @@ add_compile_options(
     "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:DEBUG>>:/Od>"
     "$<$<AND:$<CXX_COMPILER_ID:MSVC>,$<CONFIG:RELEASE>>:/Os>"
 )
-  add_compile_options(
+
+add_compile_options(
     "$<$<AND:$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>,$<CONFIG:RELEASE>>:-Oz>"
     "$<$<AND:$<NOT:$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>>,$<CONFIG:RELEASE>>:-Os>"
-  )
+)
+
 
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 target_compile_options(gdmusickit
@@ -179,6 +195,7 @@ target_compile_options(gdmusickit
 
     "$<$<CXX_COMPILER_ID:AppleClang>:-Wall>"
     "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
+    "$<$<CXX_COMPILER_ID:AppleClang>:-pedantic>"
     "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
     "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
 
@@ -187,15 +204,27 @@ target_compile_options(gdmusickit
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-DDEBUG>"
 
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fprofile-arcs>"
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-ftest-coverage>"
+
+
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-DNDEBUG>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-O3>"
 
 
+#   https://msdn.microsoft.com/en-us/library/thxezb7y.aspx#Anchor_1
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
 
-      # $<$<CXX_COMPILER_ID:AppleClang>:-g -Wall -Wextra -pedantic -fvisibility=hidden>
-        # $<$<CXX_COMPILER_ID:Clang>:-g -Wall -Wextra -pedantic>
-		# $<$<CXX_COMPILER_ID:MSVC>:/W3>
-    	# $<$<CXX_COMPILER_ID:GNU>:-g -Wall>
+#   https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall-316
+    $<$<CXX_COMPILER_ID:GNU>:-Wall>
+    $<$<CXX_COMPILER_ID:GNU>:-Wextra>
+    $<$<CXX_COMPILER_ID:GNU>:-pedantic>
+
+#   http://clang.llvm.org/docs/DiagnosticsReference.html#wall
+    $<$<CXX_COMPILER_ID:Clang>:-Wall>
+    $<$<CXX_COMPILER_ID:Clang>:-Wextra>
+    $<$<CXX_COMPILER_ID:Clang>:-pedantic> 
+
 )
 # for boost link warnings
 # -fvisibility=hidden
@@ -217,11 +246,6 @@ target_link_options(gdmusickit
         "$<$<CONFIG:DEBUG>:${-v}>"
 )
 
-# -DBUILD_SHARED_LIBS=OFF
-# set_target_properties(gdmusickit STATIC_LIBRARY_OPTIONS)
-
-
-
 #########################
 
 add_subdirectory(test)
@@ -233,3 +257,136 @@ include(installation.cmake.in)
 # Including custom cmake rules
 include(CMake/clang-cxx-dev-tools.cmake)
 
+
+# set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,readability-*)
+# CMAKE_<LANG>_CPPLINT
+# CMAKE_CXX_CPPLINT
+
+
+# https://blog.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/
+
+# Enable Clang Tidy
+# -----------------
+# -DCMAKE_CXX_CLANG_TIDY:STRING="clang-tidy;-checks=-*,readability-*"
+
+if (CLANG_TIDY)
+	find_program(CLANG_TIDY_PATH NAMES clang-tidy)
+	if (CLANG_TIDY_PATH)
+		message(STATUS "Looking for clang-tidy - found")
+		set (CLANG_TIDY_OPTS
+			${CLANG_TIDY_PATH}
+			# "-fix"
+			"-checks=-*,readability-*,modernize-*"
+		)
+		set (CMAKE_C_CLANG_TIDY "${CLANG_TIDY_OPTS}")
+		set (CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for clang-tidy - not found")
+	endif ()
+endif (CLANG_TIDY)
+
+
+# Enable CppLint
+# --------------
+# -DCMAKE_CXX_CPPLINT:STRING="cpplint;--linelength=79"
+# pip install cpplint
+
+if (CPPLINT)
+	find_program(CPPLINT_PATH NAMES cpplint)
+	if (CPPLINT_PATH)
+		message(STATUS "Looking for CppLint - found")
+		set (CPPLINT_OPTS
+			${CPPLINT_PATH}
+			"--linelength=79"
+		)
+		set (CMAKE_C_CPPLINT "${CPPLINT_OPTS}")
+		set (CMAKE_CXX_CPPLINT "${CPPLINT_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for CppLint - not found")
+	endif ()
+endif (CPPLINT)
+
+
+# -DCMAKE_CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
+
+if (LINK_WHAT_YOU_USE)
+	message(STATUS "Enabling link-what-you-use - ok")
+	set (CMAKE_LINK_WHAT_YOU_USE ON)
+endif (LINK_WHAT_YOU_USE)
+
+
+# Enable Google's Include What You Use
+# ------------------------------------
+# -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING="include-what-you-use;-Xiwyu;--mapping_file=../iwyu.imp"
+
+if (INCLUDE_WHAT_YOU_USE)
+	find_program(INCLUDE_WHAT_YOU_USE_PATH NAMES include-what-you-use iwyu)
+	if (INCLUDE_WHAT_YOU_USE_PATH)
+		message(STATUS "Looking for include-what-you-use - found")
+		set (INCLUDE_WHAT_YOU_USE_OPTS
+			${INCLUDE_WHAT_YOU_USE_PATH}
+			"-Xiwyu"
+			"--mapping_file=${PROJECT_SOURCE_DIR}/iwyu.imp"
+		)
+		set (CMAKE_C_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
+		set (CMAKE_CXX_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for include-what-you-use - not found")
+	endif ()
+endif (INCLUDE_WHAT_YOU_USE)
+
+########### Add uninstall target ###############
+CONFIGURE_FILE(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake"
+  IMMEDIATE @ONLY)
+ADD_CUSTOM_TARGET(uninstall
+  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake")
+
+
+
+# https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html?#properties-on-targets
+cmake_print_properties(
+    TARGETS 
+        gdmusickit
+    PROPERTIES 
+        RUNTIME_OUTPUT_DIRECTORY 
+        COMPILE_DEFINITIONS
+        COMPILE_FEATURES
+        COMPILE_FLAGS
+        COMPILE_OPTIONS
+
+        INTERFACE_AUTOUIC_OPTIONS
+        INTERFACE_COMPILE_DEFINITIONS
+        INTERFACE_COMPILE_FEATURES
+        INTERFACE_COMPILE_OPTIONS
+        INTERFACE_INCLUDE_DIRECTORIES
+        INTERFACE_LINK_DEPENDS
+        INTERFACE_LINK_DIRECTORIES
+        INTERFACE_LINK_LIBRARIES
+        INTERFACE_LINK_OPTIONS
+        INTERFACE_POSITION_INDEPENDENT_CODE
+        INTERFACE_SOURCES
+        INTERFACE_SYSTEM_INCLUDE_DIRECTORIES
+
+        CXX_CLANG_TIDY
+        CXX_COMPILER_LAUNCHER
+        CXX_CPPCHECK
+        CXX_CPPLINT
+        CXX_INCLUDE_WHAT_YOU_USE
+        CXX_VISIBILITY_PRESET
+)
+
+# https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html
+cmake_print_variables(
+    CMAKE_MAJOR_VERSION
+    CMAKE_MINOR_VERSION
+    CMAKE_PROJECT_NAME
+    CMAKE_CURRENT_SOURCE_DIR
+)

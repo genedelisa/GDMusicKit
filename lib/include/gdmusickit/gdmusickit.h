@@ -57,7 +57,7 @@
     The library uses c++17.
     It depends on 
     <a href="http://www.boost.org/">Boost</a> mostly for logging, and
-    <a href="">Google Test</a> for unit-testing.
+    <a href="https://github.com/google/googletest">Google Test</a> for unit-testing.
     
     @section download Download
     
