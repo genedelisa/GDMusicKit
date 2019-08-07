@@ -77,7 +77,8 @@
         "queue": "cpp",
         "stack": "cpp",
         "strstream": "cpp",
-        "numeric": "cpp"
+		"numeric": "cpp"
+
     },
 
     "catch2TestExplorer.executables": [

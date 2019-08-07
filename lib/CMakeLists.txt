@@ -69,6 +69,7 @@ option(CLANG_TIDY           "Enable Clang Tidy"                     ON)
 option(CPPLINT              "Enable CppLint"                        ON)
 option(LINK_WHAT_YOU_USE    "Enable link-what-you-use"              OFF)
 option(INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"           OFF)
+option(DOWNLOAD_GTEST       "Download Google Test"                  OFF)
 
 ##############################################
 # Create library target
@@ -342,12 +343,12 @@ if (INCLUDE_WHAT_YOU_USE)
 endif (INCLUDE_WHAT_YOU_USE)
 
 ########### Add uninstall target ###############
-CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake"
-  IMMEDIATE @ONLY)
-ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake")
+#CONFIGURE_FILE(
+#  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
+#  "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake"
+#  IMMEDIATE @ONLY)
+#ADD_CUSTOM_TARGET(uninstall
+#  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake/cmake_uninstall.cmake")
 
 
 

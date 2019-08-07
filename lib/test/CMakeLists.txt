@@ -1,4 +1,5 @@
 
+if(DOWNLOAD_GTEST)
 #######################################
 # Download google test 
 include(GoogleTestConfig.in)
@@ -8,6 +9,14 @@ include(GoogleTestConfig.in)
 
 # not found when running the the container
 include(googletest)
+
+
+gtest_discover_tests(gdmusickit_test
+    ${Source}
+    "discovering tests"
+)
+
+endif(DOWNLOAD_GTEST)
 
 set(Source
     src/Note_test.cpp
@@ -119,10 +128,6 @@ target_link_options(gdmusickit_test
     #    -DBOOST_LOG_DYN_LINK
 )
 
-gtest_discover_tests(gdmusickit_test
-    ${Source}
-    "discovering tests"
-)
 
 # link against gtest or gtest_main as needed. Eg
 #add_executable(example example.cpp)
