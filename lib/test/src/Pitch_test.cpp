@@ -4,13 +4,15 @@
  *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
+#include "gtest/gtest.h"
+#include <gdmusickit/gdmusickit.h>
+#include <iomanip>
+#include <iostream>
 #include <memory>
 
-#include "gtest/gtest.h"
-
-
-#include <gdmusickit/gdmusickit.h>
 using namespace gdmusickit;
+using std::cout;
+using std::endl;
 
 /**
  * @brief a test fixture for the Account class
@@ -51,4 +53,15 @@ TEST_F(PitchTest, ShouldInitMIDINumber) {
     std::cout << std::endl;
 
     // std::cout << C0;
+}
+
+TEST(PitchFunTest, ShouldMatchETFq) {
+    
+    int middleC = 60;
+    auto fq = Pitch::midiEqualTemperamentFrequency(middleC);
+    
+    cout << std::fixed << std::setprecision(14);    
+    cout << "Middle C fq is: " << fq << endl;
+    // EXPECT_DOUBLE_EQ(261.626, fq);
+    EXPECT_NEAR(261.62556530059862, fq, 0.00000000001);
 }
