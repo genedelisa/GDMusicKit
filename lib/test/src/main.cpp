@@ -5,7 +5,7 @@
 using namespace gdmusickit;
 
 TEST(GDMusicTest, create) {
-	Pitch *p = new Pitch(60);
+	auto p = new Pitch(60);
     EXPECT_EQ(60, p->midiPitchNumber());
 
     auto pitch = std::make_unique<Pitch>(72);

@@ -19,7 +19,7 @@ using namespace gdmusickit;
  */
 struct PitchFactoryTest: testing::Test {
   protected:
-    PitchFactoryTest() {}
+    PitchFactoryTest() = default;
 
     void SetUp() override {}
     void TearDown() override {}

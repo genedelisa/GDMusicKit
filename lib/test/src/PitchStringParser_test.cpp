@@ -18,7 +18,7 @@ using namespace gdmusickit;
  */
 struct PitchStringParserTest: testing::Test {
   protected:
-    PitchStringParserTest() {}
+    PitchStringParserTest() = default;
 
     void SetUp() override {}
     void TearDown() override {}

@@ -14,7 +14,7 @@ using namespace std;
  */
 class MyEnvironment: public ::testing::Environment {
   public:
-    virtual ~MyEnvironment() = default;
+    MyEnvironment() = default;
 
     // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {

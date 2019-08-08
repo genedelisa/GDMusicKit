@@ -76,6 +76,8 @@ TEST_F(MIDISequenceTest, ShouldIterate) {
 
     cout << "begin end "
          << "\n";
+    // tell clang-tidy I really want to do this
+    // NOLINTNEXTLINE
     for (auto it = sut.begin(); it != sut.end(); ++it) {
         std::cout << it->first << " => " << it->second << '\n';
     }

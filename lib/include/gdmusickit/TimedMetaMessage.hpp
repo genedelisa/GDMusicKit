@@ -1,13 +1,15 @@
+#pragma once
+
 #ifndef GDMUSICKIT_TIMEDMETAMESSAGE_HPP
 #define GDMUSICKIT_TIMEDMETAMESSAGE_HPP
 
-#pragma once
+#include <array>
+#include <map>
+#include <string>
 
 #include "Note.hpp"
 #include "Pitch.hpp"
 #include "PitchStringFormat.hpp"
-#include <map>
-#include <string>
 
 //#include <AudioUnit/AudioUnit.h>
 //#include <CoreAudio/CoreAudio.h>
@@ -16,7 +18,6 @@
 
 namespace gdmusickit {
 
-    // typedef float MusicTimeStamp;
     using MusicTimeStamp = float;
 
     struct MIDIChannelMessage {
@@ -27,7 +28,8 @@ namespace gdmusickit {
     using MIDIChannelMessage = MIDIChannelMessage;
 
     struct MIDIMetaEvent {
-        unsigned char data[1];
+        // unsigned char data[1];
+        std::array<unsigned char, 1> data;
         int32_t dataLength;
         unsigned char metaEventType;
     };
@@ -48,19 +50,28 @@ namespace gdmusickit {
 
     class TimedMetaMessage {
       public:
+        TimedMetaMessage(MusicTimeStamp ts, MIDIMetaEvent me)
+            : eventTimeStamp(ts), metaEvent(me) {}
+
       private:
         MusicTimeStamp eventTimeStamp;
-        MIDIMetaEvent event;
+        MIDIMetaEvent metaEvent;
     };
 
     class TimedChannelMessage {
       public:
+        TimedChannelMessage(MusicTimeStamp ts, MIDIChannelMessage cm)
+            : eventTimeStamp(ts), channelMessage(cm) {}
+
       private:
         MusicTimeStamp eventTimeStamp;
-        MIDIChannelMessage event;
+        MIDIChannelMessage channelMessage;
     };
 
     class Timed {
+      public:
+        Timed(double s, double e, double d)
+            : startBeat(s), endBeat(e), duration(d) {}
 
       protected:
         double startBeat;

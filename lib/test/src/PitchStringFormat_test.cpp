@@ -17,7 +17,7 @@ using namespace gdmusickit;
  */
 struct PitchStringFormatTest: testing::Test {
   protected:
-    PitchStringFormatTest() {}
+    PitchStringFormatTest() = default;
     // NOLINTNEXTLINE(readability-identifier-naming)
     void SetUp() override {}
     // NOLINTNEXTLINE(readability-identifier-naming)

@@ -7,6 +7,16 @@ project(GDMusicKit
     HOMEPAGE_URL "https://github.com/genedelisa/gdmusickit"
 )
 
+##############################################
+# Options
+option(USE_CLANG_TIDY           "Enable Clang Tidy"             ON)
+option(USE_CPPLINT              "Enable CppLint"                OFF)
+option(USE_CPPCHECK              "Enable Cppcheck"              OFF)
+option(USE_LINK_WHAT_YOU_USE    "Enable link-what-you-use"      OFF)
+option(USE_INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"   OFF)
+# if off, assume that you installed it
+option(DOWNLOAD_GTEST            "Download Google Test"         OFF)
+##############################################
 
 # be able to find custom modules
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/CMake)
@@ -20,7 +30,7 @@ include(StaticAnalysis)
 
 # Enable static/dynamic tests
 # this is a macro in StaticAnalysis.cmake
-#enable_static_analysis()
+enable_static_analysis()
 
 
 # Output the compile commands
@@ -68,15 +78,6 @@ elseif(UNIX)
 endif()
 
 message("NATIVE_AUDIO_LIBS: ${NATIVE_AUDIO_LIBS}")
-
-##############################################
-
-option(CLANG_TIDY           "Enable Clang Tidy"                     ON)
-option(CPPLINT              "Enable CppLint"                        ON)
-option(LINK_WHAT_YOU_USE    "Enable link-what-you-use"              OFF)
-option(INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"           OFF)
-# if off, assume that you installed it
-option(DOWNLOAD_GTEST       "Download Google Test"                  OFF)
 
 ##############################################
 # Create library target
