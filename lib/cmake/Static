@@ -1,0 +1,83 @@
+
+# set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,readability-*)
+# CMAKE_<LANG>_CPPLINT
+# CMAKE_CXX_CPPLINT
+
+
+# https://blog.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/
+
+# Enable Clang Tidy
+# -----------------
+# -DCMAKE_CXX_CLANG_TIDY:STRING="clang-tidy;-checks=-*,readability-*"
+
+if (CLANG_TIDY)
+	find_program(CLANG_TIDY_PATH NAMES clang-tidy)
+	if (CLANG_TIDY_PATH)
+		message(STATUS "Looking for clang-tidy - found")
+		set (CLANG_TIDY_OPTS
+			${CLANG_TIDY_PATH}
+			# "-fix"
+			"-checks=-*,readability-*,modernize-*"
+		)
+		set (CMAKE_C_CLANG_TIDY "${CLANG_TIDY_OPTS}")
+		set (CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for clang-tidy - not found")
+	endif ()
+endif (CLANG_TIDY)
+
+
+# Enable CppLint
+# --------------
+# -DCMAKE_CXX_CPPLINT:STRING="cpplint;--linelength=79"
+# pip install cpplint
+
+if (CPPLINT)
+	find_program(CPPLINT_PATH NAMES cpplint)
+	if (CPPLINT_PATH)
+		message(STATUS "Looking for CppLint - found")
+		set (CPPLINT_OPTS
+			${CPPLINT_PATH}
+			"--linelength=79"
+		)
+		set (CMAKE_C_CPPLINT "${CPPLINT_OPTS}")
+		set (CMAKE_CXX_CPPLINT "${CPPLINT_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for CppLint - not found")
+	endif ()
+endif (CPPLINT)
+
+
+# -DCMAKE_CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
+
+if (LINK_WHAT_YOU_USE)
+	message(STATUS "Enabling link-what-you-use - ok")
+	set (CMAKE_LINK_WHAT_YOU_USE ON)
+endif (LINK_WHAT_YOU_USE)
+
+
+# Enable Google's Include What You Use
+# ------------------------------------
+# -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING="include-what-you-use;-Xiwyu;--mapping_file=../iwyu.imp"
+
+if (INCLUDE_WHAT_YOU_USE)
+	find_program(INCLUDE_WHAT_YOU_USE_PATH NAMES include-what-you-use iwyu)
+	if (INCLUDE_WHAT_YOU_USE_PATH)
+		message(STATUS "Looking for include-what-you-use - found")
+		set (INCLUDE_WHAT_YOU_USE_OPTS
+			${INCLUDE_WHAT_YOU_USE_PATH}
+			"-Xiwyu"
+			"--mapping_file=${PROJECT_SOURCE_DIR}/iwyu.imp"
+		)
+		set (CMAKE_C_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
+		set (CMAKE_CXX_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
+		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
+		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
+	else ()
+		message(STATUS "Looking for include-what-you-use - not found")
+	endif ()
+endif (INCLUDE_WHAT_YOU_USE)

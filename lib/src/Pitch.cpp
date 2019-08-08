@@ -1,12 +1,13 @@
 // -*- C++ -*-
 
+#include <cmath>
+#include <iostream>
+
 //#include <gdmusickit/Pitch.hpp>
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
 #include "gdmusickit/PitchStringParser.hpp"
 
-#include <cmath>
-#include <iostream>
 
 namespace gdmusickit {
 

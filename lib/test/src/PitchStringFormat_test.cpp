@@ -8,6 +8,7 @@
 #include "gtest/gtest.h"
 
 #include <gdmusickit/gdmusickit.h>
+
 using namespace gdmusickit;
 
 /**

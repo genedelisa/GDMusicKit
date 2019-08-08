@@ -4,11 +4,9 @@
  *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
-
-#include "gtest/gtest.h"
-
 #include <memory>
 
+#include "gtest/gtest.h"
 #include "Logging.hpp"
 #include <gdmusickit/gdmusickit.h>
 

@@ -1,11 +1,6 @@
 // -*- C++ -*-
 
 
-#include "gdmusickit/PitchStringParser.hpp"
-#include "Logging.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
-
 #include <algorithm>
 #include <charconv> // from_char, to_char
 #include <exception>
@@ -14,6 +9,12 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+
+#include "Logging.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
+#include "gdmusickit/PitchStringParser.hpp"
+
 
 namespace gdmusickit {
 

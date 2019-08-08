@@ -4,13 +4,13 @@
  *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
-
-#include "gtest/gtest.h"
-
 #include <iostream>
 #include <memory>
 
+#include "gtest/gtest.h"
+
 #include <gdmusickit/gdmusickit.h>
+
 using namespace gdmusickit;
 using std::cout;
 using std::endl;

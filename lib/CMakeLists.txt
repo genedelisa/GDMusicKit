@@ -7,12 +7,21 @@ project(GDMusicKit
     HOMEPAGE_URL "https://github.com/genedelisa/gdmusickit"
 )
 
-# just for testing
-#set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/libinstall" CACHE PATH "Installation Directory")
 
 # be able to find custom modules
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/CMake)
+#list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake)
 message("CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}")
+# Load CMake modules
+#include(BuildModules)
+include(StaticAnalysis)
+#include(PackageConfig)
+#include(clang-cxx-dev-tools)
+
+# Enable static/dynamic tests
+# this is a macro in StaticAnalysis.cmake
+#enable_static_analysis()
+
 
 # Output the compile commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -23,9 +32,6 @@ include(CMakePrintHelpers)
 
 ##############################################
 # dependencies
-# find_package(Boost REQUIRED COMPONENTS system)
-# find_package(Boost REQUIRED COMPONENTS regex)
-
 
 set(Boost_USE_STATIC_LIBS        ON)  # only find static libs
 set(Boost_USE_DEBUG_LIBS         OFF) # ignore debug libs and 
@@ -69,13 +75,15 @@ option(CLANG_TIDY           "Enable Clang Tidy"                     ON)
 option(CPPLINT              "Enable CppLint"                        ON)
 option(LINK_WHAT_YOU_USE    "Enable link-what-you-use"              OFF)
 option(INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"           OFF)
+# if off, assume that you installed it
 option(DOWNLOAD_GTEST       "Download Google Test"                  OFF)
 
 ##############################################
 # Create library target
 
-add_library(gdmusickit STATIC
-    src/MacMIDI.cpp
+set(LibSource
+    #${CMAKE_CURRENT_SOURCE_DIR}/src/gdlib/Frob.cpp
+    #src/MacMIDI.cpp
     src/Logging.cpp    
     src/PitchFactory.cpp
     src/MusicFrequency.cpp
@@ -86,7 +94,11 @@ add_library(gdmusickit STATIC
     src/NoteSequence.cpp
     src/MIDISequence.cpp
     src/MIDITrack.cpp   
-    src/TimedMetaMessage.cpp 
+    #src/TimedMetaMessage.cpp 
+)
+
+add_library(gdmusickit STATIC
+    ${LibSource}
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
@@ -110,10 +122,7 @@ target_include_directories(gdmusickit
 #        ${CMAKE_CURRENT_SOURCE_DIR}/include/gdmusic
 #        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
-#target_include_directories(mylib INTERFACE
-#  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/mylib>
-#  $<INSTALL_INTERFACE:include/mylib>  # <prefix>/include/mylib
-#)
+
 
 target_compile_features(gdmusickit
 	PRIVATE
@@ -189,29 +198,37 @@ add_compile_options(
     "$<$<AND:$<NOT:$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>>>,$<CONFIG:RELEASE>>:-Os>"
 )
 
+#https://clang.llvm.org/docs/UsersManual.html
 
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 target_compile_options(gdmusickit
 	PRIVATE
-
+    #https://clang.llvm.org/docs/DiagnosticsReference.html#wall
     "$<$<CXX_COMPILER_ID:AppleClang>:-Wall>"
+    #https://clang.llvm.org/docs/DiagnosticsReference.html#wextra
     "$<$<CXX_COMPILER_ID:AppleClang>:-Wextra>"
+    # https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic
     "$<$<CXX_COMPILER_ID:AppleClang>:-pedantic>"
-    "$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
-    "$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
 
+    #"$<$<CXX_COMPILER_ID:AppleClang>:-fembed-bitcode>"
+    #"$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
+
+    #"$<$<CXX_COMPILER_ID:AppleClang>:-fvisibility=hidden>"
+
+    #https://clang.llvm.org/docs/UsersManual.html#cmdoption-g
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-g3>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-O0>"
-    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-DDEBUG>"
-
-    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fprofile-arcs>"
-    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-ftest-coverage>"
-
+#    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fprofile-arcs>"
+#    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-ftest-coverage>"
+#    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
 
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-DNDEBUG>"
     "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-O3>"
+    #https://clang.llvm.org/docs/UsersManual.html#cmdoption-g0
+    "$<$<AND:$<CXX_COMPILER_ID:AppleClang>,$<CONFIG:RELEASE>>:-g0>"
 
+ 
 
 #   https://msdn.microsoft.com/en-us/library/thxezb7y.aspx#Anchor_1
     $<$<CXX_COMPILER_ID:MSVC>:/W4>
@@ -220,7 +237,8 @@ target_compile_options(gdmusickit
     $<$<CXX_COMPILER_ID:GNU>:-Wall>
     $<$<CXX_COMPILER_ID:GNU>:-Wextra>
     $<$<CXX_COMPILER_ID:GNU>:-pedantic>
-
+    "$<$<AND:$<CXX_COMPILER_ID:GNU>,$<CONFIG:DEBUG>>:-fno-omit-frame-pointer>"
+    "$<$<CXX_COMPILER_ID:GNU>:-fembed-bitcode>"
 #   http://clang.llvm.org/docs/DiagnosticsReference.html#wall
     $<$<CXX_COMPILER_ID:Clang>:-Wall>
     $<$<CXX_COMPILER_ID:Clang>:-Wextra>
@@ -230,6 +248,12 @@ target_compile_options(gdmusickit
 # for boost link warnings
 # -fvisibility=hidden
 
+# set_target_properties(gdmusickit PROPERTIES 
+#     VERSION ${PROJECT_VERSION}
+#     SOVERSION 1
+#     PUBLIC_HEADER include/gdmusickit/gdmusickit.h
+#     #PUBLIC_HEADER "${CMAKE_SOURCE_DIR}/include/gdmusickit/gdmusickit.h"
+# )
 
 # clang++ -cc1 --help
 # https://github.com/Barro/compiler-warnings
@@ -245,6 +269,8 @@ target_link_libraries(gdmusickit
 target_link_options(gdmusickit 
     PUBLIC 
         "$<$<CONFIG:DEBUG>:${-v}>"
+        "$<$<CONFIG:DEBUG>:${-lgcov}>"
+        "$<$<CONFIG:DEBUG>:${--coverage}>"
 )
 
 #########################
@@ -256,91 +282,9 @@ add_subdirectory(doc)
 include(installation.cmake.in)
 
 # Including custom cmake rules
-include(CMake/clang-cxx-dev-tools.cmake)
+# include(CMake/clang-cxx-dev-tools.cmake)
 
 
-# set(CMAKE_CXX_CLANG_TIDY clang-tidy -checks=-*,readability-*)
-# CMAKE_<LANG>_CPPLINT
-# CMAKE_CXX_CPPLINT
-
-
-# https://blog.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/
-
-# Enable Clang Tidy
-# -----------------
-# -DCMAKE_CXX_CLANG_TIDY:STRING="clang-tidy;-checks=-*,readability-*"
-
-if (CLANG_TIDY)
-	find_program(CLANG_TIDY_PATH NAMES clang-tidy)
-	if (CLANG_TIDY_PATH)
-		message(STATUS "Looking for clang-tidy - found")
-		set (CLANG_TIDY_OPTS
-			${CLANG_TIDY_PATH}
-			# "-fix"
-			"-checks=-*,readability-*,modernize-*"
-		)
-		set (CMAKE_C_CLANG_TIDY "${CLANG_TIDY_OPTS}")
-		set (CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_OPTS}")
-		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
-		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
-	else ()
-		message(STATUS "Looking for clang-tidy - not found")
-	endif ()
-endif (CLANG_TIDY)
-
-
-# Enable CppLint
-# --------------
-# -DCMAKE_CXX_CPPLINT:STRING="cpplint;--linelength=79"
-# pip install cpplint
-
-if (CPPLINT)
-	find_program(CPPLINT_PATH NAMES cpplint)
-	if (CPPLINT_PATH)
-		message(STATUS "Looking for CppLint - found")
-		set (CPPLINT_OPTS
-			${CPPLINT_PATH}
-			"--linelength=79"
-		)
-		set (CMAKE_C_CPPLINT "${CPPLINT_OPTS}")
-		set (CMAKE_CXX_CPPLINT "${CPPLINT_OPTS}")
-		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
-		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
-	else ()
-		message(STATUS "Looking for CppLint - not found")
-	endif ()
-endif (CPPLINT)
-
-
-# -DCMAKE_CMAKE_LINK_WHAT_YOU_USE:BOOL=ON
-
-if (LINK_WHAT_YOU_USE)
-	message(STATUS "Enabling link-what-you-use - ok")
-	set (CMAKE_LINK_WHAT_YOU_USE ON)
-endif (LINK_WHAT_YOU_USE)
-
-
-# Enable Google's Include What You Use
-# ------------------------------------
-# -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE:STRING="include-what-you-use;-Xiwyu;--mapping_file=../iwyu.imp"
-
-if (INCLUDE_WHAT_YOU_USE)
-	find_program(INCLUDE_WHAT_YOU_USE_PATH NAMES include-what-you-use iwyu)
-	if (INCLUDE_WHAT_YOU_USE_PATH)
-		message(STATUS "Looking for include-what-you-use - found")
-		set (INCLUDE_WHAT_YOU_USE_OPTS
-			${INCLUDE_WHAT_YOU_USE_PATH}
-			"-Xiwyu"
-			"--mapping_file=${PROJECT_SOURCE_DIR}/iwyu.imp"
-		)
-		set (CMAKE_C_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
-		set (CMAKE_CXX_INCLUDE_WHAT_YOU_USE "${INCLUDE_WHAT_YOU_USE_OPTS}")
-		set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ferror-limit=0")
-		set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ferror-limit=0")
-	else ()
-		message(STATUS "Looking for include-what-you-use - not found")
-	endif ()
-endif (INCLUDE_WHAT_YOU_USE)
 
 ########### Add uninstall target ###############
 #CONFIGURE_FILE(

@@ -55,7 +55,7 @@ namespace gdmusickit {
         auto name = CFStringRef("thing");
 
         OSStatus result = noErr;
-        result = MIDIClientCreate(name, NULL, NULL, &mClient);
+        result = MIDIClientCreate(name, nullptr, nullptr, &mClient);
         if (result != noErr) {
             LOG_ERROR << "MIDIClientCreate() LOG_ERROR:" << result;
 
@@ -153,7 +153,8 @@ namespace gdmusickit {
     //     }
 
     void MacMIDI::sendNoteOn(int chan, int note, int vel) {
-        UInt8 data[3];
+        //UInt8 data[3];
+        std::array<UInt8> data;
         MIDIPacketList pktlist;
         MIDIPacket* packet = MIDIPacketListInit(&pktlist);
         data[0] = midiStatusNoteon | (chan & 0x0f);

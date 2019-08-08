@@ -1,10 +1,5 @@
 // -*- C++ -*-
 
-#include "gdmusickit/MIDISequence.hpp"
-#include "gdmusickit/MIDITrack.hpp"
-#include "gdmusickit/Note.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
@@ -12,6 +7,13 @@
 #include <iostream>
 #include <regex>
 #include <string>
+
+#include "gdmusickit/MIDISequence.hpp"
+#include "gdmusickit/MIDITrack.hpp"
+#include "gdmusickit/Note.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
+
 
 namespace gdmusickit {
 

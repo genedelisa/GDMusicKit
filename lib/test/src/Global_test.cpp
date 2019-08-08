@@ -1,8 +1,9 @@
-#include "gtest/gtest.h"
-
 #include <memory>
 
+#include "gtest/gtest.h"
+
 #include <gdmusickit/gdmusickit.h>
+
 using namespace gdmusickit;
 using namespace std;
 

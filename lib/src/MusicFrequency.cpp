@@ -17,13 +17,17 @@
  * 
  *   @endcode
  */
+
+#include <cmath>
+//#include <iostream>
+
 #include "gdmusickit/MusicFrequency.hpp"
 #include "gdmusickit/Pitch.hpp"
 
-//#include <iostream>
-#include <cmath>
 
 namespace gdmusickit {
+
+    double a440MIDINumber{69};
 
     double MusicFrequency::midiEqualTemperamentFrequency(int midiNumber) {
         // 69 is midinumber for A5, 440 is that fq
@@ -32,9 +36,12 @@ namespace gdmusickit {
 
         if (octaveForMiddleC != 5) {
             int offset = 5 - octaveForMiddleC;
-            a440 = 69 - (offset * 12);
+            a440 = a440 - (offset * 12);
         }
-        return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
+        
+        return 440.0 * std::pow(2.0, (static_cast<double>(midiNumber - a440) / 12.0));
+        //return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
+
     }
 
     // just
@@ -127,8 +134,8 @@ namespace gdmusickit {
 
     double MusicFrequency::midiNumberFromFq(double fq) {
         return 12.0 * std::log2(fq / 440.0) +
-                double(69);
+                a440MIDINumber;
                //double(Pitch::A5.midiPitchNumber());
     }
-
+    
 } // namespace gdmusickit

@@ -17,13 +17,14 @@
  * *  @endcode
  */
 
+#include <iomanip>
+
 //#include "gdmusickit/gdmusickit.h"
 
 #include "gdmusickit/Note.hpp"
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
 #include "gdmusickit/PitchStringFormat.hpp"
-#include <iomanip>
 
 namespace gdmusickit {
     // class NoteImpl {

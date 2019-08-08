@@ -1,12 +1,5 @@
 // -*- C++ -*-
 
-#include "gdmusickit/MIDITrack.hpp"
-#include "gdmusickit/Note.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
-
-#include "Logging.hpp"
-#include "gdmusickit/MacMIDI.hpp"
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
@@ -16,6 +9,15 @@
 #include <regex>
 #include <stdexcept>
 #include <string>
+
+#include "gdmusickit/MIDITrack.hpp"
+#include "gdmusickit/Note.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
+
+#include "Logging.hpp"
+#include "gdmusickit/MacMIDI.hpp"
+
 
 namespace gdmusickit {
 

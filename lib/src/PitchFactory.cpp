@@ -1,14 +1,13 @@
 // -*- C++ -*-
 
-
-#include "gdmusickit/PitchFactory.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchStringParser.hpp"
 #include <cmath>
 #include <iostream>
 #include <memory>
 #include <stdexcept>
 
+#include "gdmusickit/PitchFactory.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchStringParser.hpp"
 #include "Logging.hpp"
 
 // gene's music kit

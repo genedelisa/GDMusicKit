@@ -125,6 +125,8 @@ target_link_libraries(gdmusickit_test
 target_link_options(gdmusickit_test
     PUBLIC
     "$<$<CONFIG:DEBUG>:${-v}>"
+     "$<$<CONFIG:DEBUG>:${-lgcov}>"
+    "$<$<CONFIG:DEBUG>:${--coverage}>"
     #    -DBOOST_LOG_DYN_LINK
 )
 

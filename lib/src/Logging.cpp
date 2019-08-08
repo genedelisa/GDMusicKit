@@ -1,8 +1,12 @@
 // -*- C++ -*-
 
 
-#include "Logging.hpp"
 #include <boost/phoenix.hpp>
+
+
+#include "Logging.hpp"
+
+
 namespace attrs = boost::log::attributes;
 namespace expr = boost::log::expressions;
 namespace logging = boost::log;

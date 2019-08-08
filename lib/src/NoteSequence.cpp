@@ -1,10 +1,5 @@
 // -*- C++ -*-
 
-#include "gdmusickit/NoteSequence.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
-
-#include "Logging.hpp"
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
@@ -14,6 +9,13 @@
 #include <regex>
 #include <string>
 #include <vector>
+
+#include "gdmusickit/NoteSequence.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
+
+#include "Logging.hpp"
+
 
 namespace gdmusickit {
 

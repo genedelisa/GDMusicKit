@@ -1,16 +1,17 @@
 // -*- C++ -*-
 
 
-#include "gdmusickit/PitchStringFormat.hpp"
-#include "gdmusickit/Pitch.hpp"
-#include "gdmusickit/PitchFactory.hpp"
-
 #include <charconv> // from_char, to_char
 #include <exception>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
+
+#include "gdmusickit/PitchStringFormat.hpp"
+#include "gdmusickit/Pitch.hpp"
+#include "gdmusickit/PitchFactory.hpp"
+
 
 namespace gdmusickit {
 
