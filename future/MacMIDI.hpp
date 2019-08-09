@@ -1,3 +1,12 @@
+// -*- C++ -*-
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
+ *  Licensed under the MIT License. 
+ *  See LICENSE in the project for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
 #ifndef GDMUSICKIT_MACMIDI_HPP
 #define GDMUSICKIT_MACMIDI_HPP
 

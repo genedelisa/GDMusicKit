@@ -1,5 +1,12 @@
 // -*- C++ -*-
 
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
+ *  Licensed under the MIT License. 
+ *  See LICENSE in the project for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
 /** @file Note.hpp
  *  @brief Note.hpp contains the Note declaration
  *

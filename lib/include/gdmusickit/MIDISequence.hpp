@@ -1,3 +1,23 @@
+// -*- C++ -*-
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
+ *  Licensed under the MIT License. 
+ *  See LICENSE in the project for license information.
+ *--------------------------------------------------------------------------------------------*/
+/** @file MIDISequence.hpp
+*  @brief brief The MIDISequence class.
+*
+*  The MIDISequence contains a collection of MIDITracks.
+*
+*  @date date 2019-07-19
+*  @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
+*  @version 0.1.0
+*  @author Gene De Lisa (gene@rockhoppertech.com)
+*  @bug No known bugs.
+*  @see http://rockhoppertech.com/
+*/
+
 #ifndef GDMUSICKIT_MIDISEQUENCE_HPP
 #define GDMUSICKIT_MIDISEQUENCE_HPP
 

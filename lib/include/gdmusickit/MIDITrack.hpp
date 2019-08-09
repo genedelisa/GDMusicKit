@@ -1,23 +1,26 @@
+// -*- C++ -*-
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
+ *  Licensed under the MIT License. 
+ *  See LICENSE in the project for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+
 #ifndef GDMUSICKIT_MIDITRACK_HPP
 #define GDMUSICKIT_MIDITRACK_HPP
+/** @file MIDITrack.hpp
+*  @brief The tracks inside a MIDISequence.
+*
+*  MIDITracks live inside a MIDISequence.
+*
+*  @date 2019-07-19
+*  @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
+*  @version 0.1.0
+*  @author Gene De Lisa (gene@rockhoppertech.com)
+*  @bug No known bugs.
+*/
 
-/**
- * @file MIDITrack.hpp
- * @author Gene De Lisa (gene@rockhoppertech.com)
- * @brief
- * @version 0.1.0
- * @date 2019-07-19
- *
- * @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
- *
- * 2019-07-19 Gene De Lisa gene@rockhoppertech.com
- *
- *  ## Usage:
- *
- *   @code
- *
- *   @endcode
- */
 #pragma once
 
 #include "Note.hpp"
@@ -42,7 +45,6 @@ namespace gdmusickit {
      *  std::cout << "x: " << x << std::endl;
      *  @endcode
      */
-
     class MIDITrack {
       public:
         using Callback = std::function<void(const MIDITrack&)>;
