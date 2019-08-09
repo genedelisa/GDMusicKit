@@ -44,7 +44,7 @@ namespace gdmusickit {
             break;
         case Justification::center:
             break;
-        };
+        }
 
         std::string ps;
         switch (spelling) {

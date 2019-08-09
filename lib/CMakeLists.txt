@@ -10,10 +10,10 @@ project(GDMusicKit
 ##############################################
 # Options
 option(USE_CLANG_TIDY           "Enable Clang Tidy"             ON)
-option(USE_CPPLINT              "Enable CppLint"                OFF)
-option(USE_CPPCHECK              "Enable Cppcheck"              OFF)
-option(USE_LINK_WHAT_YOU_USE    "Enable link-what-you-use"      OFF)
-option(USE_INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"   OFF)
+option(USE_CPPLINT              "Enable CppLint"                ON)
+option(USE_CPPCHECK              "Enable Cppcheck"              ON)
+option(USE_LINK_WHAT_YOU_USE    "Enable link-what-you-use"      ON)
+option(USE_INCLUDE_WHAT_YOU_USE "Enable include-what-you-use"   ON)
 # if off, assume that you installed it
 option(DOWNLOAD_GTEST            "Download Google Test"         OFF)
 ##############################################

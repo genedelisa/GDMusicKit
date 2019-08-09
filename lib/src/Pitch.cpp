@@ -1,10 +1,9 @@
 // -*- C++ -*-
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
- *  Licensed under the MIT License. 
+ *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
-
 
 #include <cmath>
 #include <iostream>
@@ -16,10 +15,20 @@
 
 namespace gdmusickit {
 
-    Pitch::Pitch(int midiNumber) { this->midiNumber = midiNumber; }
+    /**
+     * @brief Construct a new Pitch object
+     * 
+     * @param midiNumber 
+     */
+    Pitch::Pitch(int midiNumber) {
+        this->midiNumber = midiNumber;
+        this->frequency = midiEqualTemperamentFrequency(midiNumber);
+    }
 
+    
     Pitch::Pitch(const std::string& pitchString) {
         this->midiNumber = PitchStringParser::stringToMidiNumber(pitchString);
+        this->frequency = midiEqualTemperamentFrequency(midiNumber);
     }
 
     int Pitch::pitchClass() const { return midiNumber % 12; }
@@ -49,7 +58,8 @@ namespace gdmusickit {
             a440 = 69 - (offset * 12);
         }
         // log.debug("using midinumber \(a440) as A 440")
-        return 440.0 * std::pow(2.0, (double(midiNumber - a440) / 12));
+        return 440.0 *
+               std::pow(2.0, (static_cast<double>(midiNumber - a440) / 12.0));
     }
 
 #pragma region Pitch constants

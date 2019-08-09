@@ -1,11 +1,9 @@
 // -*- C++ -*-
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Rockhopper Technologies, Inc. All rights reserved.
- *  Licensed under the MIT License. 
+ *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
-
-
 
 #include <algorithm>
 #include <charconv> // from_char, to_char
@@ -21,15 +19,16 @@
 #include "gdmusickit/PitchFactory.hpp"
 #include "gdmusickit/PitchStringParser.hpp"
 
-
 namespace gdmusickit {
 
-class Pitch;
+    class Pitch;
     // class Except: virtual public std::runtime_error {
 
     //    struct ParsePitchInputException: public std::exception {
     struct ParsePitchInputException: public std::invalid_argument {
-        [[nodiscard]] const char* what() const noexcept override { return "Invalid input Exception"; }
+        [[nodiscard]] const char* what() const noexcept override {
+            return "Invalid input Exception";
+        }
     };
 
     class MyException: public std::exception {
@@ -42,7 +41,7 @@ class Pitch;
       public:
         MyException(const char* msg, const char* file, int line,
                     const char* func, const char* info = "")
-            :  file(file), line(line), func(func), info(info), msg(msg) {}
+            : file(file), line(line), func(func), info(info), msg(msg) {}
 
         [[nodiscard]] const char* getFile() const { return file; }
         [[nodiscard]] int getLine() const { return line; }
@@ -71,7 +70,7 @@ class Pitch;
      * @return int The MIDI number for the Pitch.
      */
     int PitchStringParser::stringToMidiNumber(std::string pitchString) {
-        //std::cout << std::endl;
+        // std::cout << std::endl;
 
         // std::cout << "input string: '" << pitchString << "'" << std::endl;
         std::transform(pitchString.begin(), pitchString.end(),
@@ -118,7 +117,7 @@ class Pitch;
                 // posix error codes
                 if (ec == std::errc()) {
                     LOG_INFO << "octave value: " << oct
-                              << ", distance: " << ptr - octave.data() << '\n';
+                             << ", distance: " << ptr - octave.data() << '\n';
 
                 } else if (ec == std::errc::invalid_argument) {
                     LOG_ERROR << "invalid argument!\n";
