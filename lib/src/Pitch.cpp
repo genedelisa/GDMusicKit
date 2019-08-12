@@ -85,6 +85,7 @@ namespace gdmusickit {
         return 440.0 *
                std::pow(2.0, (static_cast<double>(midiNumber - a440) / 12.0));
     }
+    Pitch* Pitch::transposed(Interval interval) { return nullptr; }
 
 #pragma region Pitch constants
     const Pitch* Pitch::C0 = PitchFactory::getSharedInstance().getPitch(

@@ -33,6 +33,7 @@
 // nope. cant include
 
 #include <iostream>
+#include "Interval.hpp"
 
 // gene's music kit
 
@@ -106,6 +107,8 @@ namespace gdmusickit {
 
         [[nodiscard]] double getEqualTemperamentFrequency() const { return frequency; }
         
+        [[nodiscard]] static Pitch* transposed(Interval interval);
+
         static double midiEqualTemperamentFrequency(int midiNumber);
 
         inline static int octaveForMiddleC = 5;

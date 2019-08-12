@@ -6,9 +6,8 @@
  *--------------------------------------------------------------------------------------------*/
 #include <memory>
 
-#include "gtest/gtest.h"
 #include "Logging.hpp"
-
+#include "gtest/gtest.h"
 
 #include <gdmusickit/gdmusickit.h>
 using namespace gdmusickit;
@@ -50,7 +49,7 @@ TEST_F(PitchFactoryTest, ShouldInitMIDINumber) {
 /**
  * @brief Construct a new test f object
  * @test to init from string
- * 
+ *
  */
 TEST_F(PitchFactoryTest, ShouldInitMIDINumberFromString) {
     // std::string s{"C5"};
@@ -90,13 +89,16 @@ TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
     EXPECT_EQ(std::addressof(*p), std::addressof(*p2));
     EXPECT_EQ(std::addressof(*p), std::addressof(*p3));
     EXPECT_EQ(std::addressof(*p2), std::addressof(*p3));
-     EXPECT_EQ(std::addressof(*p), std::addressof(*p4));
+    EXPECT_EQ(std::addressof(*p), std::addressof(*p4));
+    
 }
+
 TEST_F(PitchFactoryTest, ShouldBeSameFactory) {
     const PitchFactory& p = PitchFactory::getSharedInstance();
     const PitchFactory& p2 = PitchFactory::getSharedInstance();
 
-    // "invalid operands to binary expression". well, I didn't make it comparable
-    //EXPECT_EQ(p, p2);
+    // "invalid operands to binary expression". well, I didn't make it
+    // comparable
+    // EXPECT_EQ(p, p2);
     EXPECT_EQ(std::addressof(p), std::addressof(p2));
 }

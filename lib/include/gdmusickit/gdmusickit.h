@@ -14,6 +14,7 @@
 
 #include <string>
 
+#include "Interval.hpp"
 #include "MIDISequence.hpp"
 #include "MIDITrack.hpp"
 #include "MusicFrequency.hpp"
