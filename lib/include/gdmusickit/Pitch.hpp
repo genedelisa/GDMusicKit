@@ -107,7 +107,7 @@ namespace gdmusickit {
 
         [[nodiscard]] double getEqualTemperamentFrequency() const { return frequency; }
         
-        [[nodiscard]] static Pitch* transposed(Interval interval);
+        [[nodiscard]] Pitch* transposed(Interval::SemiTones interval);
 
         static double midiEqualTemperamentFrequency(int midiNumber);
 
