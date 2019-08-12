@@ -76,3 +76,14 @@ TEST(PitchFunTest, ShouldHaveValidConstants) {
     EXPECT_NEAR(261.62556530059862, Pitch::C5->getEqualTemperamentFrequency(),
                 0.00000000001);
 }
+
+
+TEST(PitchFunTest, ShouldTranspose) {
+    const Pitch* p = Pitch::C5;
+    
+    Interval::SemiTones i = Interval::SemiTones::majorSecond;
+
+    Pitch* p2 = p->transposed(i);
+    EXPECT_EQ(62, p2->midiPitchNumber());
+
+}
