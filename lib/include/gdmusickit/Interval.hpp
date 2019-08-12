@@ -40,7 +40,7 @@ namespace gdmusickit {
       public:
 
         // maybe a multimap would be better?
-        enum class SemiTones {
+        enum SemiTones {
             unison = 0,
             minorSecond = 1,
             majorSecond = 2,

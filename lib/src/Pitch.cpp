@@ -86,8 +86,8 @@ namespace gdmusickit {
                std::pow(2.0, (static_cast<double>(midiNumber - a440) / 12.0));
     }
     Pitch* Pitch::transposed(Interval::SemiTones interval) {
-        int mn = midiNumber + interval.;
-        Pitch* p = PitchFactory::getPitch(mn);
+        int mn = midiNumber + interval;
+        Pitch* p = PitchFactory::getSharedInstance().getPitch(mn);
         return p;
     }
 
