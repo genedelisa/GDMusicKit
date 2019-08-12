@@ -70,7 +70,8 @@ class Pitch;
         // pitchMap[8] = Pitch::GS0;
         // pitchMap[9] = Pitch::A0;
         // pitchMap[10] = Pitch::AS0;
-        // pitchMap[11] = Pitch::B0;                                                                                        
+        // pitchMap[11] = Pitch::B0;   
+                                                                                 
 
         return ptr;
     }

@@ -80,13 +80,17 @@ TEST_F(PitchFactoryTest, ShouldBeSamePitchObject) {
     const Pitch* p3 = PitchFactory::getSharedInstance().getPitch(60);
     EXPECT_EQ(60, p3->midiPitchNumber());
 
+    const Pitch* p4 = Pitch::C5;
+
     EXPECT_EQ(p, p2);
     EXPECT_EQ(p, p3);
+    EXPECT_EQ(p, p4);
     EXPECT_EQ(p2, p3);
 
     EXPECT_EQ(std::addressof(*p), std::addressof(*p2));
     EXPECT_EQ(std::addressof(*p), std::addressof(*p3));
     EXPECT_EQ(std::addressof(*p2), std::addressof(*p3));
+     EXPECT_EQ(std::addressof(*p), std::addressof(*p4));
 }
 TEST_F(PitchFactoryTest, ShouldBeSameFactory) {
     const PitchFactory& p = PitchFactory::getSharedInstance();
