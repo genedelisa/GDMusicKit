@@ -56,12 +56,23 @@ TEST_F(PitchTest, ShouldInitMIDINumber) {
 }
 
 TEST(PitchFunTest, ShouldMatchETFq) {
-    
+
     int middleC = 60;
     auto fq = Pitch::midiEqualTemperamentFrequency(middleC);
-    
-    cout << std::fixed << std::setprecision(14);    
+
+    cout << std::fixed << std::setprecision(14);
     cout << "Middle C fq is: " << fq << endl;
     // EXPECT_DOUBLE_EQ(261.626, fq);
     EXPECT_NEAR(261.62556530059862, fq, 0.00000000001);
+
+    Pitch p{middleC};
+    EXPECT_NEAR(261.62556530059862, p.getEqualTemperamentFrequency(),
+                0.00000000001);
+}
+
+TEST(PitchFunTest, ShouldHaveValidConstants) {
+    ASSERT_NE(Pitch::C5, nullptr);
+    EXPECT_EQ(60, Pitch::C5->midiPitchNumber());
+    EXPECT_NEAR(261.62556530059862, Pitch::C5->getEqualTemperamentFrequency(),
+                0.00000000001);
 }

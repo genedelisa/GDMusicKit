@@ -51,10 +51,27 @@ class Pitch;
     // lazily fill the map. Never deleted which is what we want.
     Pitch* PitchFactory::getPitch(const int midiNumber) {
         Pitch* ptr = pitchMap[midiNumber];
+        //Pitch* ptr = const_cast<Pitch*>(pitchMap[midiNumber]);
+
         if (ptr == nullptr) {
             pitchMap[midiNumber] = new Pitch(midiNumber);
             ptr = pitchMap[midiNumber];
         }
+
+        /// @todo. why not cache the constants like this?
+        // pitchMap[0] = Pitch::C0;
+        // pitchMap[1] = Pitch::CS0;
+        // pitchMap[2] = Pitch::D0;
+        // pitchMap[3] = Pitch::DS0;
+        // pitchMap[4] = Pitch::E0;
+        // pitchMap[5] = Pitch::F0;
+        // pitchMap[6] = Pitch::FS0;
+        // pitchMap[7] = Pitch::G0;
+        // pitchMap[8] = Pitch::GS0;
+        // pitchMap[9] = Pitch::A0;
+        // pitchMap[10] = Pitch::AS0;
+        // pitchMap[11] = Pitch::B0;                                                                                        
+
         return ptr;
     }
 

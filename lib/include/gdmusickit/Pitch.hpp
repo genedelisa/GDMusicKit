@@ -104,7 +104,8 @@ namespace gdmusickit {
 
         [[nodiscard]] int octave() const;
 
-        [[nodiscard]] double getFrequency() const { return frequency; }
+        [[nodiscard]] double getEqualTemperamentFrequency() const { return frequency; }
+        
         static double midiEqualTemperamentFrequency(int midiNumber);
 
         inline static int octaveForMiddleC = 5;

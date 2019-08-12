@@ -7,6 +7,11 @@ project(GDMusicKit
     HOMEPAGE_URL "https://github.com/genedelisa/gdmusickit"
 )
 
+# Enable C++17 standard options
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 ##############################################
 # Options
 option(USE_CLANG_TIDY           "Enable Clang Tidy"             ON)

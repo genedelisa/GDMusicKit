@@ -11,21 +11,36 @@
 //#include <gdmusickit/Pitch.hpp>
 #include "gdmusickit/Pitch.hpp"
 #include "gdmusickit/PitchFactory.hpp"
+#include "gdmusickit/PitchStringFormat.hpp"
 #include "gdmusickit/PitchStringParser.hpp"
 
 namespace gdmusickit {
 
     /**
-     * @brief Construct a new Pitch object
-     * 
-     * @param midiNumber 
+     * @brief Construct a new Pitch object.
+     *
+     * Create a Pitch with the given MIDI pitch number where 60 is
+     * middle C. 0-127 is the range.
+     *
+     * This assumes equal temperament, so the frequency is calculated.
+     *
+     * @param midiNumber
      */
     Pitch::Pitch(int midiNumber) {
         this->midiNumber = midiNumber;
         this->frequency = midiEqualTemperamentFrequency(midiNumber);
     }
 
-    
+    /**
+     * @brief Construct a new Pitch object.
+     *
+     * Create a Pitch with the given string which is parsed into a MIDI pitch
+     * number where 60 is middle C. 0-127 is the range.
+     *
+     * This assumes equal temperament, so the frequency is calculated.
+     *
+     * @param midiNumber
+     */
     Pitch::Pitch(const std::string& pitchString) {
         this->midiNumber = PitchStringParser::stringToMidiNumber(pitchString);
         this->frequency = midiEqualTemperamentFrequency(midiNumber);
@@ -41,12 +56,21 @@ namespace gdmusickit {
     //     "(http|https)://(\\w+\\.)+(\\w)/?(\\w+/{0,1})*";
 
     std::ostream& operator<<(std::ostream& os, const Pitch& pitch) {
-        return os << "MIDI number: " << pitch.midiNumber;
+        os << std::fixed << std::setprecision(14);
+
+        std::string s =
+            PitchStringFormat::getSharedInstance().stringFromMIDINumber(
+                pitch.midiNumber, PitchStringFormat::Spelling::flat,
+                PitchStringFormat::Justification::left, true);
+
+        return os << s << " midi: " << pitch.midiNumber << " oct "
+                  << pitch.octave() << " etFq "
+                  << pitch.getEqualTemperamentFrequency();
     }
 
     /**
-         @brief Calculate the frequency in Hz for a given Pitch
-         @return: the frequency in Hz of the Pitch
+         @brief Calculate the frequency in Hz for a given midiNumber.
+         @return: the frequency in Hz for the midiNumber.
     */
     double Pitch::midiEqualTemperamentFrequency(int midiNumber) {
         // 69 is midinumber for A5, 440 is that fq

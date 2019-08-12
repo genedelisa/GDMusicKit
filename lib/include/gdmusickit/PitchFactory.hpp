@@ -142,6 +142,7 @@ Client <-- PitchFactory:  pitch
             std::cout << std::endl;
         }
 
+        /// @todo make the pointer const
         using PitchMapT = std::map<const int, Pitch*>;
         // c++17 allows static member definition here with inline
         /**
