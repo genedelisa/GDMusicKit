@@ -24,6 +24,7 @@
 #include "PitchFactory.hpp"
 #include "PitchStringFormat.hpp"
 #include "PitchStringParser.hpp"
+#include "Scale.hpp"
 
 //#include "TimedMetaMessage.hpp"
 

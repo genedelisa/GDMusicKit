@@ -5,10 +5,10 @@
  *  Licensed under the MIT License.
  *  See LICENSE in the project for license information.
  *--------------------------------------------------------------------------------------------*/
-/** @file MIDISequence.hpp
- *  @brief brief The MIDISequence class.
+/** @file Interval.hpp
+ *  @brief brief The Interval class.
  *
- *  The MIDISequence contains a collection of MIDITracks.
+ *  The Interval
  *
  *  @date date 2019-07-19
  *  @copyright Copyright (c) 2019 Rockhopper Technologies, Inc.
@@ -59,7 +59,15 @@ namespace gdmusickit {
             // MINOR_ELEVENTH = 13;
             majorEleventh = 17,
             minorThirteenth = 20,
-            majorThirteenth = 21,
+            majorThirteenth = 21
+        };
+
+        enum Quality {
+            diminished,
+            perfect,
+            minor,
+            major,
+            augmented
         };
 
         static inline const std::map<std::string, int> intervalNames = {
@@ -88,8 +96,25 @@ namespace gdmusickit {
             std::pair<std::string, int>("Minor Seventh + Octave", 22),
             std::pair<std::string, int>("Major Seventh + Octave", 23),
             std::pair<std::string, int>("Two Octaves", 24)};
-    };
+    
 
+    Interval(Quality q, int d, int s)
+        : quality(q), degree(d), semitones(s) {}
+
+    /// Unison.
+    //  public static let P1 = Interval(quality: .perfect, degree: 1, semitones:
+    //  0)
+//    static inline const Interval P1 = Interval(Interval::Quality::perfect, 1, 0);
+    static const Interval P1;
+
+  private:
+    /// Quality of the interval.
+    Quality quality;
+    /// Degree of the interval.
+    int degree;
+    /// Semitones interval affect on a pitch.
+    int semitones;
+};
 } // namespace gdmusickit
 
 #endif // GDMUSICKIT_INTERVAL_HPP

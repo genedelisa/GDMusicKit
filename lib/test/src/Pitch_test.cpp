@@ -80,10 +80,11 @@ TEST(PitchFunTest, ShouldHaveValidConstants) {
 
 TEST(PitchFunTest, ShouldTranspose) {
     const Pitch* p = Pitch::C5;
-    
     Interval::SemiTones i = Interval::SemiTones::majorSecond;
 
     Pitch* p2 = p->transposed(i);
+    EXPECT_EQ(60, p->midiPitchNumber());
     EXPECT_EQ(62, p2->midiPitchNumber());
 
+    p2 = p->transposed(Interval::SemiTones::perfectFifth);
 }

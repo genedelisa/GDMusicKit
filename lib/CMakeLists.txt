@@ -96,7 +96,8 @@ set(LibSource
     src/MusicFrequency.cpp
     src/Pitch.cpp
     src/PitchStringFormat.cpp
-    src/PitchStringParser.cpp    
+    src/PitchStringParser.cpp
+    src/Scale.cpp    
     src/Note.cpp
     src/NoteSequence.cpp
     src/MIDISequence.cpp

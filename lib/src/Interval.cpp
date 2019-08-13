@@ -11,7 +11,11 @@
 #include <iostream>
 #include <string>
 
-#include "gdmusickit/gdmusickit.h"
+//#include "gdmusickit/gdmusickit.h"
+#include "gdmusickit/Interval.hpp"
 
 namespace gdmusickit {
+       
+       const Interval Interval::P1 = Interval(Interval::Quality::perfect, 1, 0);
+
 }
