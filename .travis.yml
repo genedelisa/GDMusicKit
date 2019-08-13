@@ -25,7 +25,7 @@ notifications:
   email: false
   irc:
     channels:
-    - chat.freenode.net#rubinius
+    - chat.freenode.net#rockhopper
     template:
     - "%{repository}/%{branch} (%{commit} - %{author}): %{build_url}: %{message}"
   webhooks:
