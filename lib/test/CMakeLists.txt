@@ -19,17 +19,19 @@ gtest_discover_tests(gdmusickit_test
 endif(DOWNLOAD_GTEST)
 
 set(Source
+    src/Global_test.cpp 
+    src/Interval_test.cpp
+    src/MIDISequence_test.cpp
+    src/MIDITrack_test.cpp
+    src/MusicFrequency_test.cpp    
+    src/main.cpp 
     src/Note_test.cpp
+    src/NoteSequence_test.cpp    
     src/PitchStringParser_test.cpp
     src/PitchStringFormat_test.cpp
     src/Pitch_test.cpp
     src/PitchFactory_test.cpp
-    src/MusicFrequency_test.cpp
-    src/NoteSequence_test.cpp
-    src/MIDISequence_test.cpp
-    src/MIDITrack_test.cpp
-    src/main.cpp 
-    src/Global_test.cpp       
+    src/Scale_test.cpp
 )
 
 add_executable(gdmusickit_test

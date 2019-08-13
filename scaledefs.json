@@ -1,0 +1,2820 @@
+ [
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Lydian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Harmonic Minor",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Aeolian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               6,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 1,
+                 2,
+                 3,
+                 1
+                 ],
+  "name" : "Persian",
+  "spelling" : "1 b2 3 4 b5 b6 7 9"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Double Harmonic",
+  "spelling" : "1 b2 3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               5,
+               7,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 3,
+                 2,
+                 3,
+                 2
+                 ],
+  "name" : "Egyptian",
+  "spelling" : "1 2 4 5 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Mohammedan",
+  "spelling" : "1 2 b3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Melodic Major",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               7,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 4,
+                 3,
+                 2
+                 ],
+  "name" : "Pelog2",
+  "spelling" : "1 b2 b3 5 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               6,
+               7,
+               8,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 4,
+                 1,
+                 1,
+                 4
+                 ],
+  "name" : "Two Semitone Tritone",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               5,
+               7,
+               8,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 4,
+                 2,
+                 1,
+                 4
+                 ],
+  "name" : "Japanese",
+  "spelling" : "1 b2 4 5 b6 8"
+  },
+  {
+  "information" : "different up and down",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               9,
+               11,
+               12,
+               14,
+               15,
+               17,
+               19,
+               20,
+               22,
+               24
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Melodic Minor",
+  "spelling" : "1 2 b3 4 5 6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Diminished Dominant",
+  "spelling" : "1 b2 #2 3 #4 5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World",
+                  "Gamelan"
+                  ],
+  "degrees" : [
+               0,
+               3,
+               5,
+               7,
+               8,
+               10
+               ],
+  "intervals" : [
+                 3,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Pelog",
+  "spelling" : "1 b3 4 #5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Hawaiian",
+  "spelling" : "1 2 b3 4 5 6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Jewish",
+  "spelling" : "1 b2 3 4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               3,
+               4,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 3,
+                 1,
+                 3,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Augmented",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Harmonic Major",
+  "spelling" : "1 2 3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Overtone",
+  "spelling" : "1 2 3 #4 5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Half Diminished",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World",
+                  "Gamelan",
+                  "Pentatonic"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               5,
+               6,
+               8
+               ],
+  "intervals" : [
+                 1,
+                 4,
+                 1,
+                 2
+                 ],
+  "name" : "Pelog Barang",
+  "spelling" : "1 b2 4 b5 b6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               6,
+               7,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 2,
+                 1,
+                 3,
+                 2
+                 ],
+  "name" : "Tritone",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               3,
+               4,
+               5,
+               6,
+               9,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 3,
+                 1,
+                 1,
+                 1,
+                 3,
+                 1,
+                 1,
+                 1
+                 ],
+  "name" : "Messiaen 4th Mode Inverse",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Neapolitan Minor",
+  "spelling" : "1 b2 b3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Lydian Minor",
+  "spelling" : "1 2 3 #4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Octatonic Mode 2",
+  "spelling" : "1 b2 b3 3 b5 5 6 b7"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic",
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               3,
+               4,
+               5,
+               6,
+               7,
+               8,
+               9,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1,
+                 1
+                 ],
+  "name" : "Chromatic",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Major Locrian",
+  "spelling" : "1 2 3 4 b5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               7,
+               8,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 4,
+                 1,
+                 4
+                 ],
+  "name" : "Balinese",
+  "spelling" : "1 b2 b3 5 b6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Neapolitan Major",
+  "spelling" : "1 b2 b3 4 5 6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               6,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 1,
+                 3,
+                 1,
+                 2
+                 ],
+  "name" : "Oriental",
+  "spelling" : "1 b2 3 4 b5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Arabian",
+  "spelling" : "1 2 3 4 b5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Hindu",
+  "spelling" : "1 2 3 4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic",
+                  "Pentatonic"
+                  ],
+  "degrees" : [
+               0,
+               3,
+               5,
+               7,
+               10,
+               12
+               ],
+  "intervals" : [
+                 3,
+                 2,
+                 2,
+                 3,
+                 2
+                 ],
+  "name" : "Pentatonic Minor",
+  "spelling" : "1 b3 4 5 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               6,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 3,
+                 1,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Hungarian Minor",
+  "spelling" : "1 2 b3 #4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic",
+                  "Pentatonic"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               7,
+               9,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 3,
+                 2,
+                 3
+                 ],
+  "name" : "Pentatonic Major",
+  "spelling" : "1 2 3 5 6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Whole Tone",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               6,
+               8,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2,
+                 1,
+                 1
+                 ],
+  "name" : "Messiaen 6th Mode",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               5,
+               6,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 4,
+                 1,
+                 4,
+                 2
+                 ],
+  "name" : "Iwato",
+  "spelling" : "1 b2 4 b5 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               6,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 3,
+                 1,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Hungarian Gypsy",
+  "spelling" : "1 2 b3 #4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Phrygian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Altered Dominant",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               5,
+               7,
+               8,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 4,
+                 2,
+                 1,
+                 4
+                 ],
+  "name" : "Kumoi",
+  "spelling" : "1 b2 4 5 b6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Lydian Dominant",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               8,
+               9,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 3,
+                 1,
+                 3
+                 ],
+  "name" : "Inverted Augmented",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               6,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Octatonic",
+  "spelling" : "1 2 b3 4 b5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               5,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 1,
+                 1,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Eight Tone Spanish",
+  "spelling" : "1 b2 #2 3 4 b5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               3,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Hungarian Major",
+  "spelling" : "1 #2 3 #4 5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 3,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Ionian Augmented",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Mixolydian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               3,
+               5,
+               6,
+               7,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1,
+                 1,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Messiaen 7th Mode",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Locrian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               6,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Diminished",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               4,
+               5,
+               6,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 4,
+                 1,
+                 1,
+                 4,
+                 1,
+                 1
+                 ],
+  "name" : "Messiaen 5th Mode Inverse",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Lydian Augmented",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               4,
+               6,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Messiaen 6th Mode Inverse",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Javanese",
+  "spelling" : "1 b2 b3 4 5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Basic"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Major",
+  "spelling" : "1 2 3 4 5 6 7"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical",
+                  "Decatonic"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               4,
+               5,
+               6,
+               7,
+               8,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 2,
+                 1,
+                 1,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1
+                 ],
+  "name" : "Symmetrical Decatonic",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               7,
+               9,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 3,
+                 2,
+                 3
+                 ],
+  "name" : "Mongolian",
+  "spelling" : "1 2 3 5 6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               6,
+               7,
+               9,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 3,
+                 1,
+                 2,
+                 3
+                 ],
+  "name" : "Messiaen 2nd Mode Truncated",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Jazz"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               4,
+               5,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 1,
+                 1,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Bebop minor",
+  "spelling" : "1 2 b3 3 4 5 6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Spanish",
+  "spelling" : "1 b2 3 4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World",
+                  "Gamelan",
+                  "Pentatonic"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               5,
+               7,
+               9,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 3,
+                 2,
+                 2,
+                 3
+                 ],
+  "name" : "Slendro",
+  "spelling" : "1 2 4 5 6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Romanian Minor",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               3,
+               4,
+               6,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Lydian Raised2",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Ethiopian",
+  "spelling" : "1 2 b3 4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               7,
+               8,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 4,
+                 1,
+                 4
+                 ],
+  "name" : "Hirajoshi",
+  "spelling" : "1 2 b3 5 b6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               5,
+               6,
+               7,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 4,
+                 1,
+                 1,
+                 4,
+                 1
+                 ],
+  "name" : "Messiaen 5th Mode",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical",
+                  "Decatonic"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               5,
+               7,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Genus Chromaticum",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Byzantine",
+  "spelling" : "1 b2 3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               6,
+               8,
+               9,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 3,
+                 2,
+                 1,
+                 3
+                 ],
+  "name" : "Raga Neelangi",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               4,
+               6,
+               7,
+               8,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1
+                 ],
+  "name" : "Messiaen 3rd Mode",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               8,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1,
+                 1
+                 ],
+  "name" : "Leading Whole Tone",
+  "spelling" : "1 2 3 #4 #5 #6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Gypsy",
+  "spelling" : "1 b2 3 4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               6,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 2,
+                 2,
+                 2,
+                 2
+                 ],
+  "name" : "Whole Tone Flat5",
+  "spelling" : "1 2 3 b5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               6,
+               7,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 1,
+                 1,
+                 2,
+                 2,
+                 1
+                 ],
+  "name" : "Van Der Host",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "World",
+                  "Gamelan",
+                  "Pentatonic"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               6,
+               7,
+               8
+               ],
+  "intervals" : [
+                 1,
+                 5,
+                 1,
+                 1
+                 ],
+  "name" : "Pelog Bem",
+  "spelling" : "1 b2 #4 5 b6 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Dorian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               6,
+               8,
+               9,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 3
+                 ],
+  "name" : "Ultralocrian",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               6,
+               8,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 2,
+                 2,
+                 2,
+                 1,
+                 1
+                 ],
+  "name" : "Enigmatic",
+  "spelling" : "1 b2 3 #4 #5 #6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               5,
+               6,
+               8,
+               9,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1
+                 ],
+  "name" : "Diminished Minor",
+  "spelling" : "1 2 b3 4 b5 b6 bb7 b8 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Phrygian Dominant",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               4,
+               5,
+               6,
+               8,
+               9,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 1,
+                 1,
+                 1,
+                 2,
+                 1,
+                 1,
+                 1,
+                 1
+                 ],
+  "name" : "Messiaen 7th Mode Inverse",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               2,
+               3,
+               6,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 1,
+                 3,
+                 1,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Algerian",
+  "spelling" : "1 2 b3 #4 5 b6 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               4,
+               6,
+               7,
+               11,
+               12
+               ],
+  "intervals" : [
+                 4,
+                 2,
+                 1,
+                 4,
+                 1
+                 ],
+  "name" : "Chinese",
+  "spelling" : "1 3 #4 5 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               6,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 1,
+                 3,
+                 1,
+                 2
+                 ],
+  "name" : "Locrian Raised6",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Major\/Minor",
+                  "Modal"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 2,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Dorian Flat2",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Jazz"
+                  ],
+  "degrees" : [
+               0,
+               2,
+               4,
+               5,
+               7,
+               9,
+               10,
+               11,
+               12
+               ],
+  "intervals" : [
+                 2,
+                 2,
+                 1,
+                 2,
+                 2,
+                 1,
+                 1,
+                 1
+                 ],
+  "name" : "Bebop Dominant",
+  "spelling" : "1 2 3 4 5 6 b7 7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               5,
+               6,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 2,
+                 1,
+                 1,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Bebop Half Diminished",
+  "spelling" : "1 b2 b3 4 b5 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+  
+  ],
+  "degrees" : [
+               0,
+               1,
+               4,
+               5,
+               7,
+               8,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 3,
+                 1,
+                 2,
+                 1,
+                 2,
+                 2
+                 ],
+  "name" : "Major Phrygian",
+  "spelling" : "1 b2 3 4 5 b6 b7 8"
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               3,
+               4,
+               6,
+               7,
+               9,
+               10,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2,
+                 1,
+                 2
+                 ],
+  "name" : "Diminished Half Tone",
+  "spelling" : ""
+  },
+  {
+  "information" : "",
+  "descendingIntervals" : [
+  
+  ],
+  "categories" : [
+                  "Symmetrical"
+                  ],
+  "degrees" : [
+               0,
+               1,
+               2,
+               5,
+               6,
+               7,
+               8,
+               11,
+               12
+               ],
+  "intervals" : [
+                 1,
+                 1,
+                 3,
+                 1,
+                 1,
+                 1,
+                 3,
+                 1
+                 ],
+  "name" : "Messiaen 4th Mode",
+  "spelling" : ""
+  }
+  ]
+

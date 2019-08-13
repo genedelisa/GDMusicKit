@@ -41,14 +41,15 @@ namespace gdmusickit {
         Scale(std::string name, std::vector<int> intervals)
             : name(name), intervals(intervals) {}
 
+        [[nodiscard]] std::string getName() const { return name; }
+
+        [[nodiscard]] std::vector<int> getIntervals() const {
+            return intervals;
+        }
+
         static const Scale major;
         static const Scale symmetricalDecatonic;
         static const std::map<std::string, const Scale> scaleMap;
-
-        // static inline const std::map<std::string, const Scale> scaleMap = {
-        //     std::pair<std::string, const Scale>("Major", major),
-        //     std::pair<std::string, const Scale>("Symmetrical Decatonic",
-        //     symmetricalDecatonic)};
 
       private:
         std::string name;

@@ -1,0 +1,4760 @@
+ [
+  {
+  "aliases" : [
+               "7#9#5#11",
+               "7+5+9+11",
+               "7#5#9#11"
+               ],
+  "symbol" : "7#9#5#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 18
+                 ],
+  "spelling" : "1 3 #5 b7 #9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b9#11"
+               ],
+  "symbol" : "13b9+11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished ninth raised eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 17
+                 ],
+  "spelling" : "1 3 5 b7 b9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 #5 7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "todo",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9-5-13"
+               ],
+  "symbol" : "9b5b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 14,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 3 b5 b7 9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "ninth diminished fifth diminished thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m11b9"
+               ],
+  "symbol" : "m11b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 13,
+                 17
+                 ],
+  "spelling" : "1 b3 5 b7 b9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor eleventh flat nine",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7#11#9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 18
+                 ],
+  "spelling" : "1 3 b6 b7 #9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#11b9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 b6 b7 b9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh diminished ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "min\/maj13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 11,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 b3 5 7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "minor\/major thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b9#5",
+               "7b9+5"
+               ],
+  "symbol" : "7b9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 3 b6 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh flat 9 augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "Maj"
+               ],
+  "symbol" : "maj",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7
+                 ],
+  "spelling" : "1 3 5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "major",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#5"
+               ],
+  "symbol" : "7#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10
+                 ],
+  "spelling" : "1 3 b6 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh sharp 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7+11b13",
+               "7#11b13"
+               ],
+  "symbol" : "7#11b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 18,
+                 20
+                 ],
+  "spelling" : "1 3 b5 b7 9 #11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh augmented eleventh diminished thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#9b13"
+               ],
+  "symbol" : "7#9b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 #9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh augmented ninth lowered thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m7b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 b3 b5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor seventh flat nine diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m11b9b5"
+               ],
+  "symbol" : "m11b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 13,
+                 17
+                 ],
+  "spelling" : "1 b3 b5 b7 b9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor eleventh flat nine diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "6\/9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 9,
+                 14
+                 ],
+  "spelling" : "1 3 5 bb7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "major sixth added ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#5b9"
+               ],
+  "symbol" : "7#5b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 3 #5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9-13"
+               ],
+  "symbol" : "9b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "ninth diminished thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11#9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 17
+                 ],
+  "spelling" : "1 3 b6 b7 #9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#11"
+               ],
+  "symbol" : "7#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 18
+                 ],
+  "spelling" : "1 3 5 b7 9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b6 b7 #9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "+"
+               ],
+  "symbol" : "aug",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8
+                 ],
+  "spelling" : "1 3 b6",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "augmented",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m7b9"
+               ],
+  "symbol" : "m7b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 b3 5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor seventh flat nine",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 b3 5 b7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "min\/maj11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 11,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 b3 5 7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor\/major eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#11#9b5"
+               ],
+  "symbol" : "7#11#9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 18
+                 ],
+  "spelling" : "1 3 b5 b7 #9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh augmented ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#5"
+               ],
+  "symbol" : "13#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m11-5"
+               ],
+  "symbol" : "m11b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 b3 b5 b7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor eleventh diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5#9b13"
+               ],
+  "symbol" : "7b5#9b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 3 b5 b7 #9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh flat 5 sharp 9 flat 13",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m7\/11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 17
+                 ],
+  "spelling" : "1 b3 5 b7 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor seven eleven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11#9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 17
+                 ],
+  "spelling" : "1 3 b5 b7 #9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh augmented ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m69",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 9,
+                 14
+                 ],
+  "spelling" : "1 3 5 6 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor with added sixth and ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#9"
+               ],
+  "symbol" : "13#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 #9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m7b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 b3 b5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor seventh flat nine diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9#11b13"
+               ],
+  "symbol" : "9#11b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 18,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 9 #11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "ninth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7#11b9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 b6 b7 b9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh diminished ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "11#5b9"
+               ],
+  "symbol" : "11b9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 17
+                 ],
+  "spelling" : "1 3 b6 b7 b9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh diminished ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10
+                 ],
+  "spelling" : "1 3 b6 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh sharp 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 17
+                 ],
+  "spelling" : "1 3 5 b7 #9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh augmented ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5"
+               ],
+  "symbol" : "7b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10
+                 ],
+  "spelling" : "1 3 b5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh flat 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj13#11",
+               "Maj13+11",
+               "Maj13#11"
+               ],
+  "symbol" : "maj13#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 14,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 7 9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "major thirteenth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5b13"
+               ],
+  "symbol" : "7b5b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 20
+                 ],
+  "spelling" : "1 3 b5 b7 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh flat 5 flat 13",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10
+                 ],
+  "spelling" : "1 3 5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m6\/9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 9,
+                 14
+                 ],
+  "spelling" : "1 b3 5 bb7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor six nine",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b9#11"
+               ],
+  "symbol" : "7b9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh flat 9 sharp 11",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b9"
+               ],
+  "symbol" : "13b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#11#9"
+               ],
+  "symbol" : "7#11#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 18
+                 ],
+  "spelling" : "1 3 5 b7 #9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh augmented ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "6\/7sus",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7,
+                 9,
+                 11
+                 ],
+  "spelling" : "1 4 5 bb7 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "six seven suspended",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 3 b5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh flat 9 dimished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m13b9"
+               ],
+  "symbol" : "m13b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 b3 5 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "minor thirteenth flat nine",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9#5"
+               ],
+  "symbol" : "9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 3 b6 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7sus-9#11-13"
+               ],
+  "symbol" : "7susb9#11b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7,
+                 10,
+                 13,
+                 18,
+                 20
+                 ],
+  "spelling" : "1 4 5 b7 b9 #11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "sustained fourth seventh lowered ninth augmented eleventh lowered thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#9b5"
+               ],
+  "symbol" : "7#9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15
+                 ],
+  "spelling" : "1 3 b5 b7 #9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh augmented ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "maj9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 3 b6 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "major ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "maj7sus4",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7,
+                 11
+                 ],
+  "spelling" : "1 4 5 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "major seventh suspended fourth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "maj7b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 11
+                 ],
+  "spelling" : "1 3 b5 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "major seventh flat 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#11b9"
+               ],
+  "symbol" : "7#11b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 b3 5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "minor thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#5b9#11"
+               ],
+  "symbol" : "7#5b9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 #5 b7 b9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m7b5"
+               ],
+  "symbol" : "m7b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10
+                 ],
+  "spelling" : "1 b3 b5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "half diminished",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj7#5",
+               "Maj7#5"
+               ],
+  "symbol" : "maj7#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 11
+                 ],
+  "spelling" : "1 3 b6 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "major seventh sharp 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b5"
+               ],
+  "symbol" : "13b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               ""
+               ],
+  "symbol" : "m791113",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 14,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 b3 5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "wtf",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m6\/7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 9,
+                 10
+                 ],
+  "spelling" : "1 b3 5 bb7 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "minor six seven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b9#5",
+               "13b9#5"
+               ],
+  "symbol" : "13b9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b6 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#11#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 #9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh augmented ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#9"
+               ],
+  "symbol" : "7#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15
+                 ],
+  "spelling" : "1 3 5 b7 #9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh augmented ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj9b5"
+               ],
+  "symbol" : "maj9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 3 b5 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "major ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#11b9",
+               "13#11b9"
+               ],
+  "symbol" : "13#11b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "min\/maj9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 b3 5 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor\/major ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5#9"
+               ],
+  "symbol" : "7b5#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15
+                 ],
+  "spelling" : "1 3 b5 b7 #9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh flat 5 sharp 9",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "6\/7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 9,
+                 11
+                 ],
+  "spelling" : "1 3 5 bb7 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "six seven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7#",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 11
+                 ],
+  "spelling" : "1 3 #5 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "todo",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m6",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 9
+                 ],
+  "spelling" : "1 b3 5 bb7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "minor sixth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 b3 5 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m13b5"
+               ],
+  "symbol" : "m13b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 b3 b5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "minor thirteenth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "maug",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 8
+                 ],
+  "spelling" : "1 3 #5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "todo",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7\/11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 17
+                 ],
+  "spelling" : "1 3 5 b7 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seven eleven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13+9b5"
+               ],
+  "symbol" : "13#9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 #9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#5#9#11"
+               ],
+  "symbol" : "13#5#9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 #5 b7 #9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#5#11"
+               ],
+  "symbol" : "13#5#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#5#11"
+               ],
+  "symbol" : "7#5#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14,
+                 18
+                 ],
+  "spelling" : "1 3 #5 b7 9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9#5#11"
+               ],
+  "symbol" : "9#5#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 18
+                 ],
+  "spelling" : "1 3 #5 b7 #9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "ninth augmented fifth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#9#11b13"
+               ],
+  "symbol" : "7#9#11b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 18,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 #9 #11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh augmented ninth augmented eleventh lowered thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#5b9"
+               ],
+  "symbol" : "13#5b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented fifth flat ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj9#11",
+               "Maj9+11",
+               "Maj9#11"
+               ],
+  "symbol" : "maj9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 14,
+                 18
+                 ],
+  "spelling" : "1 3 5 7 9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "major ninth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj9(no 3)"
+               ],
+  "symbol" : "Maj9(no 3)",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 5 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "major ninth no third (biab)",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10
+                 ],
+  "spelling" : "1 b3 5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "minor seventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj11#5"
+               ],
+  "symbol" : "maj11#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 11,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 3 b6 7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "major eleventh augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "maj11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 3 5 7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "major eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "69",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 9,
+                 14
+                 ],
+  "spelling" : "1 3 5 6 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "added sixth and ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b5b9"
+               ],
+  "symbol" : "13b5b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished fifth diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9b5"
+               ],
+  "symbol" : "9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 3 b5 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m6\/7\/11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 9,
+                 10,
+                 17
+                 ],
+  "spelling" : "1 b3 5 bb7 b7 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "minor six seven eleven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m13\/11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 b3 5 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "minor thirteen eleven",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#11#9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 #9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh augmented ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m9b5"
+               ],
+  "symbol" : "m9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 b3 b5 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "minor ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "9#",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 3 #5 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "todo",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#5b9#11"
+               ],
+  "symbol" : "13#5b9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 13,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented fifth flat ninth sharp 11",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj7+11"
+               ],
+  "symbol" : "maj7#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 5 7 9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "major seventh augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7s"
+               ],
+  "symbol" : "7sus",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7,
+                 10
+                 ],
+  "spelling" : "1 4 5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh sustained fourth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13#9#11"
+               ],
+  "symbol" : "13#9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 15,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 #9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented ninth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 5 b7 9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "Maj7"
+               ],
+  "symbol" : "maj7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11
+                 ],
+  "spelling" : "1 3 5 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "major seventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "dim13"
+               ],
+  "symbol" : "m7b91113",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 10,
+                 13,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 b3 5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "wtf",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 3 5 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "°7",
+               "o7"
+               ],
+  "symbol" : "dim7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 9
+                 ],
+  "spelling" : "1 b3 b5 bb7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "diminished seventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9#11"
+               ],
+  "symbol" : "9#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 18
+                 ],
+  "spelling" : "1 3 5 b7 9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "ninth augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m+5"
+               ],
+  "symbol" : "m#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 8
+                 ],
+  "spelling" : "1 3 #5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "minor augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "dim13"
+               ],
+  "symbol" : "dim791113",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6,
+                 10,
+                 13,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 b3 b5 b7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "dim thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7#9#5",
+               "7+5+9",
+               "7#5#9"
+               ],
+  "symbol" : "7#9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15
+                 ],
+  "spelling" : "1 3 b6 b7 #9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 17
+                 ],
+  "spelling" : "1 3 b5 b7 b9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh diminished ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "6",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 9
+                 ],
+  "spelling" : "1 3 5 6",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "six",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5b9",
+               "7alt"
+               ],
+  "symbol" : "7b5b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 3 b5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh flat 5 flat 9",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7-5"
+               ],
+  "symbol" : "7b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10
+                 ],
+  "spelling" : "1 3 b5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "seventh flat 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b9#11b13"
+               ],
+  "symbol" : "7b9#11b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 18,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 b9 #11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh flat thirteenth diminished ninth raised eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "add#11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 18
+                 ],
+  "spelling" : "1 3 5 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "added augmented eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13s"
+               ],
+  "symbol" : "13sus",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 4 5 b7 9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth sustained fourth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13+11b9b5",
+               "13#11b9b5"
+               ],
+  "symbol" : "13#11b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 b9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh diminished ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "m7+5"
+               ],
+  "symbol" : "m7#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 8,
+                 10
+                 ],
+  "spelling" : "1 3 #5 b7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "minor seventh sharp 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "Maj13"
+               ],
+  "symbol" : "maj13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 14,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 5 7 9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "major thirteenth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "°"
+               ],
+  "symbol" : "dim",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 6
+                 ],
+  "spelling" : "1 b3 b5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "diminished",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b9b13"
+               ],
+  "symbol" : "7b9b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 b9 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh flat 9 flat 13",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b9b5"
+               ],
+  "symbol" : "13b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 b9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "-5"
+               ],
+  "symbol" : "b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6
+                 ],
+  "spelling" : "1 3 b5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "flat 5",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b5b9b13"
+               ],
+  "symbol" : "7b5b9b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 17,
+                 20
+                 ],
+  "spelling" : "1 3 b5 b7 b9 11 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "seventh flat 5 flat 9 flat 13",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "mMaj7",
+               "mM7"
+               ],
+  "symbol" : "min\/maj7",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7,
+                 11
+                 ],
+  "spelling" : "1 b3 5 7",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7"
+  },
+  "chordDescription" : "minor\/major seventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "Maj9"
+               ],
+  "symbol" : "maj9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 11,
+                 14
+                 ],
+  "spelling" : "1 3 5 7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "major ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "sus4",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 5,
+                 7
+                 ],
+  "spelling" : "1 4 5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "suspended fourth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "m",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 3,
+                 7
+                 ],
+  "spelling" : "1 b3 5",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5"
+  },
+  "chordDescription" : "minor",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "13#11#9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 15,
+                 18,
+                 21
+                 ],
+  "spelling" : "1 3 b6 b7 #9 #11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth augmented eleventh augmented ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "11",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 3 5 b7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "eleventh",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9+5"
+               ],
+  "symbol" : "9#5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 3 b6 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "ninth augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "9-5"
+               ],
+  "symbol" : "9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 14
+                 ],
+  "spelling" : "1 3 b5 b7 9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7b9"
+               ],
+  "symbol" : "7b9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 7,
+                 10,
+                 13
+                 ],
+  "spelling" : "1 3 5 b7 b9",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9"
+  },
+  "chordDescription" : "seventh flat 9",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "13b5#9"
+               ],
+  "symbol" : "13b5#9",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 15,
+                 17,
+                 21
+                 ],
+  "spelling" : "1 3 b5 b7 #9 11 13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "thirteenth diminished fifth raised ninth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "7+11b9b5"
+               ],
+  "symbol" : "7#11b9b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 10,
+                 13,
+                 18
+                 ],
+  "spelling" : "1 3 b5 b7 b9 #11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "seventh augmented eleventh diminished ninth diminished fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+               "maj11b5"
+               ],
+  "symbol" : "maj11b5",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 6,
+                 11,
+                 14,
+                 17
+                 ],
+  "spelling" : "1 3 b5 7 9 11",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11"
+  },
+  "chordDescription" : "major eleventh augmented fifth",
+  "drop" : 0
+  },
+  {
+  "aliases" : [
+  
+  ],
+  "symbol" : "7b13",
+  "bass" : "",
+  "inversion" : 0,
+  "intervals" : [
+                 4,
+                 8,
+                 10,
+                 20
+                 ],
+  "spelling" : "1 3 5 b7 b13",
+  "root" : {
+  "midiNumber" : 60,
+  "cents" : 0,
+  "frequency" : 261.62556530059862,
+  "pitchBend" : {
+  "bendValue" : 0,
+  "channel" : 0
+  },
+  "pitchSpelling" : "none"
+  },
+  "startBeat" : 1,
+  "duration" : 4,
+  "chordVoicing" : {
+  "octave" : 5,
+  "voicing" : "1 3 5 7 9 11 13"
+  },
+  "chordDescription" : "todo",
+  "drop" : 0
+  }
+  ]
+

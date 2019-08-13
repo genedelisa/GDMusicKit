@@ -107,6 +107,12 @@ namespace gdmusickit {
 //    static inline const Interval P1 = Interval(Interval::Quality::perfect, 1, 0);
     static const Interval P1;
 
+        [[nodiscard]] Quality getQuality() const { return quality; }
+        
+        [[nodiscard]] int getDegree() const { return degree; }
+        
+        [[nodiscard]] int getSemitones() const { return semitones; }
+
   private:
     /// Quality of the interval.
     Quality quality;
