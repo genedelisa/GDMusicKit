@@ -47,22 +47,28 @@ namespace gdmusickit {
             return intervals;
         }
 
-        static const Scale major;
-        static const Scale symmetricalDecatonic;
+        std::vector<Pitch*> pitchesFromIntervals(int root);
+
+        std::vector<Pitch*> pitchesFromIntervals(const Pitch* root) {
+            return pitchesFromIntervals(root->midiPitchNumber());
+        }
+
+        static const Scale                              major;
+        static const Scale                              symmetricalDecatonic;
         static const std::map<std::string, const Scale> scaleMap;
 
       private:
-        std::string name;
-        std::vector<int> intervals;
-        std::vector<int> degrees;
-        std::vector<Pitch> pitches;
-        std::string spelling;
-        std::string information;
+        std::string              name;
+        std::vector<int>         intervals;
+        std::vector<int>         degrees;
+        std::vector<Pitch>       pitches;
+        std::string              spelling;
+        std::string              information;
         std::vector<std::string> categories;
         /**
          * e.g. melodic minor has a different descending form
          */
-        bool descendingDifferent = false;
+        bool             descendingDifferent = false;
         std::vector<int> descendingIntervals;
 
         int octave;

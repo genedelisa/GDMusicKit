@@ -14,26 +14,23 @@ UseTab: Never
 SpaceBeforeInheritanceColon: false
 
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
-AlignConsecutiveDeclarations: true
+AlignConsecutiveAssignments: 'true'
+AlignConsecutiveDeclarations: 'true'
 #AlignConsecutiveMacros: 'true'
 AlignEscapedNewlines: Right
-AlignOperands: true
-AlignTrailingComments: true
+AlignOperands: 'true'
+AlignTrailingComments: 'true'
 
+# AllowAllArgumentsOnNextLine: true
+#AllowAllConstructorInitializersOnNextLine: 'true'
+AllowAllParametersOfDeclarationOnNextLine: 'true'
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+#AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
 BreakBeforeBinaryOperators: NonAssignment
-
-
-AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
-AlignConsecutiveDeclarations: true
-#AlignConsecutiveMacros: 'true'
-AlignEscapedNewlines: Right
-AlignOperands: true
-AlignTrailingComments: true
-
-
-
 
 IncludeBlocks: Regroup
 IncludeCategories:
