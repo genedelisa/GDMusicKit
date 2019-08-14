@@ -17,7 +17,7 @@ using namespace std;
  */
 struct ScaleTest: testing::Test {
   protected:
-    Scale sut = Scale::major;
+    Scale sut = Scale::Major;
 
     ScaleTest() = default;
     // NOLINTNEXTLINE(readability-identifier-naming)
@@ -34,7 +34,7 @@ struct ScaleTest: testing::Test {
 TEST_F(ScaleTest, ShouldInit) { ASSERT_GT(sut.getIntervals().size(), 0); }
 
 TEST(ScaleFunTest, ShouldCreatePitchesFromIntervals) {
-    auto s = Scale::major;
+    auto s = Scale::Major;
 
     auto pitches = s.pitchesFromIntervals(Pitch::C5);
 
