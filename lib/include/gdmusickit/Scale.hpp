@@ -41,6 +41,13 @@ namespace gdmusickit {
         Scale(std::string name, std::vector<int> intervals)
             : name(name), intervals(intervals) {}
 
+        Scale(std::string name, std::vector<int> intervals,
+              std::vector<int> degrees, std::string spelling,
+              std::string information, std::vector<std::string> categories)
+            : name(name), intervals(intervals), degrees(degrees),
+              spelling(spelling), information(information),
+              categories(categories) {}
+
         [[nodiscard]] std::string getName() const { return name; }
 
         [[nodiscard]] std::vector<int> getIntervals() const {
@@ -76,8 +83,6 @@ namespace gdmusickit {
         // KeySignature keySignature;
 
       public:
-        static const Scale                              major;
-        static const Scale                              symmetricalDecatonic;
         static const std::map<std::string, const Scale> scaleMap;
 
         static const Scale Lydian;

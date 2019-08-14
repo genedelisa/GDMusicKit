@@ -39,245 +39,560 @@ namespace gdmusickit {
         return pitches;
     }
 
-    const Scale Scale::Lydian = Scale("Lydian", {2, 2, 2, 1, 2, 2, 1});
+    // Scale Constants
+
+    const Scale Scale::Lydian = Scale("Lydian", {2, 2, 2, 1, 2, 2, 1},
+                                      {0, 2, 4, 6, 7, 9, 11, 12}, "", "",
+                                      {
+                                          "Major/Minor",
+                                          "Modal",
+                                      });
 
     const Scale Scale::HarmonicMinor =
-        Scale("Harmonic Minor", {2, 1, 2, 2, 1, 3, 1});
+        Scale("Harmonic Minor", {2, 1, 2, 2, 1, 3, 1},
+              {0, 2, 3, 5, 7, 8, 11, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Aeolian = Scale("Aeolian", {2, 1, 2, 2, 1, 2, 2});
+    const Scale Scale::Aeolian = Scale("Aeolian", {2, 1, 2, 2, 1, 2, 2},
+                                       {0, 2, 3, 5, 7, 8, 10, 12}, "", "",
+                                       {
+                                           "Major/Minor",
+                                           "Modal",
+                                       });
 
-    const Scale Scale::Persian = Scale("Persian", {1, 3, 1, 1, 2, 3, 1});
+    const Scale Scale::Persian =
+        Scale("Persian", {1, 3, 1, 1, 2, 3, 1}, {0, 1, 4, 5, 6, 8, 11, 12},
+              "1 b2 3 4 b5 b6 7 9", "", {});
 
     const Scale Scale::DoubleHarmonic =
-        Scale("Double Harmonic", {1, 3, 1, 2, 1, 3, 1});
+        Scale("Double Harmonic", {1, 3, 1, 2, 1, 3, 1},
+              {0, 1, 4, 5, 7, 8, 11, 12}, "1 b2 3 4 5 b6 7 8", "", {});
 
-    const Scale Scale::Egyptian = Scale("Egyptian", {2, 3, 2, 3, 2});
+    const Scale Scale::Egyptian =
+        Scale("Egyptian", {2, 3, 2, 3, 2}, {0, 2, 5, 7, 10, 12}, "1 2 4 5 b7 8",
+              "", {});
 
-    const Scale Scale::Mohammedan = Scale("Mohammedan", {2, 1, 2, 2, 1, 3, 1});
+    const Scale Scale::Mohammedan =
+        Scale("Mohammedan", {2, 1, 2, 2, 1, 3, 1}, {0, 2, 3, 5, 7, 8, 11, 12},
+              "1 2 b3 4 5 b6 7 8", "", {});
 
     const Scale Scale::MelodicMajor =
-        Scale("Melodic Major", {2, 2, 1, 2, 1, 2, 2});
+        Scale("Melodic Major", {2, 2, 1, 2, 1, 2, 2},
+              {0, 2, 4, 5, 7, 8, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Pelog2 = Scale("Pelog2", {1, 2, 4, 3, 2});
+    const Scale Scale::Pelog2 =
+        Scale("Pelog2", {1, 2, 4, 3, 2}, {0, 1, 3, 7, 10, 12}, "1 b2 b3 5 b7 8",
+              "", {});
 
     const Scale Scale::TwoSemitoneTritone =
-        Scale("Two Semitone Tritone", {1, 1, 4, 1, 1, 4});
+        Scale("Two Semitone Tritone", {1, 1, 4, 1, 1, 4},
+              {0, 1, 2, 6, 7, 8, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Japanese = Scale("Japanese", {1, 4, 2, 1, 4});
+    const Scale Scale::Japanese = Scale(
+        "Japanese", {1, 4, 2, 1, 4}, {0, 1, 5, 7, 8, 12}, "1 b2 4 5 b6 8", "",
+        {
+            "World",
+        });
 
     const Scale Scale::MelodicMinor =
-        Scale("Melodic Minor", {2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2});
+        Scale("Melodic Minor", {2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2},
+              {0, 2, 3, 5, 7, 9, 11, 12, 14, 15, 17, 19, 20, 22, 24},
+              "1 2 b3 4 5 6 7 8", "different up and down",
+              {
+                  "Basic",
+              });
 
     const Scale Scale::DiminishedDominant =
-        Scale("Diminished Dominant", {1, 2, 1, 2, 1, 2, 1, 2});
+        Scale("Diminished Dominant", {1, 2, 1, 2, 1, 2, 1, 2},
+              {0, 1, 3, 4, 6, 7, 9, 10, 12}, "1 b2 #2 3 #4 5 6 b7 8", "", {});
 
-    const Scale Scale::Pelog = Scale("Pelog", {3, 2, 2, 1, 2});
+    const Scale Scale::Pelog = Scale(
+        "Pelog", {3, 2, 2, 1, 2}, {0, 3, 5, 7, 8, 10}, "1 b3 4 #5 6 b7 8", "",
+        {
+            "World",
+            "Gamelan",
+        });
 
-    const Scale Scale::Hawaiian = Scale("Hawaiian", {2, 1, 2, 2, 2, 2, 1});
+    const Scale Scale::Hawaiian =
+        Scale("Hawaiian", {2, 1, 2, 2, 2, 2, 1}, {0, 2, 3, 5, 7, 9, 11, 12},
+              "1 2 b3 4 5 6 7 8", "",
+              {
+                  "World",
+              });
 
-    const Scale Scale::Jewish = Scale("Jewish", {1, 3, 1, 2, 1, 2, 2});
+    const Scale Scale::Jewish =
+        Scale("Jewish", {1, 3, 1, 2, 1, 2, 2}, {0, 1, 4, 5, 7, 8, 10, 12},
+              "1 b2 3 4 5 b6 b7 8", "", {});
 
-    const Scale Scale::Augmented = Scale("Augmented", {3, 1, 3, 1, 3, 1});
+    const Scale Scale::Augmented =
+        Scale("Augmented", {3, 1, 3, 1, 3, 1}, {0, 3, 4, 7, 8, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::HarmonicMajor =
-        Scale("Harmonic Major", {2, 2, 1, 2, 1, 3, 1});
+        Scale("Harmonic Major", {2, 2, 1, 2, 1, 3, 1},
+              {0, 2, 4, 5, 7, 8, 11, 12}, "1 2 3 4 5 b6 7 8", "", {});
 
-    const Scale Scale::Overtone = Scale("Overtone", {2, 2, 2, 1, 2, 1, 2});
+    const Scale Scale::Overtone =
+        Scale("Overtone", {2, 2, 2, 1, 2, 1, 2}, {0, 2, 4, 6, 7, 9, 10, 12},
+              "1 2 3 #4 5 6 b7 8", "", {});
 
     const Scale Scale::HalfDiminished =
-        Scale("Half Diminished", {2, 1, 2, 1, 2, 2, 2});
+        Scale("Half Diminished", {2, 1, 2, 1, 2, 2, 2},
+              {0, 2, 3, 5, 6, 8, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::PelogBarang = Scale("Pelog Barang", {1, 4, 1, 2});
+    const Scale Scale::PelogBarang = Scale(
+        "Pelog Barang", {1, 4, 1, 2}, {0, 1, 5, 6, 8}, "1 b2 4 b5 b6 8", "",
+        {
+            "World",
+            "Gamelan",
+            "Pentatonic",
+        });
 
-    const Scale Scale::Tritone = Scale("Tritone", {1, 3, 2, 1, 3, 2});
+    const Scale Scale::Tritone =
+        Scale("Tritone", {1, 3, 2, 1, 3, 2}, {0, 1, 4, 6, 7, 10, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::Messiaen4thModeInverse =
-        Scale("Messiaen 4th Mode Inverse", {3, 1, 1, 1, 3, 1, 1, 1});
+        Scale("Messiaen 4th Mode Inverse", {3, 1, 1, 1, 3, 1, 1, 1},
+              {0, 3, 4, 5, 6, 9, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::NeapolitanMinor =
-        Scale("Neapolitan Minor", {1, 2, 2, 2, 1, 3, 1});
+        Scale("Neapolitan Minor", {1, 2, 2, 2, 1, 3, 1},
+              {0, 1, 3, 5, 7, 8, 11, 12}, "1 b2 b3 4 5 b6 7 8", "", {});
 
     const Scale Scale::LydianMinor =
-        Scale("Lydian Minor", {2, 2, 2, 1, 1, 2, 2});
+        Scale("Lydian Minor", {2, 2, 2, 1, 1, 2, 2}, {0, 2, 4, 6, 7, 8, 10, 12},
+              "1 2 3 #4 5 b6 b7 8", "", {});
 
     const Scale Scale::OctatonicMode2 =
-        Scale("Octatonic Mode 2", {1, 2, 1, 2, 1, 2, 1, 2});
+        Scale("Octatonic Mode 2", {1, 2, 1, 2, 1, 2, 1, 2},
+              {0, 1, 3, 4, 6, 7, 9, 10, 12}, "1 b2 b3 3 b5 5 6 b7", "",
+              {
+                  "Basic",
+              });
 
     const Scale Scale::Chromatic =
-        Scale("Chromatic", {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1});
+        Scale("Chromatic", {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+              {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, "", "",
+              {
+                  "Basic",
+                  "Symmetrical",
+              });
 
     const Scale Scale::MajorLocrian =
-        Scale("Major Locrian", {2, 2, 1, 1, 2, 2, 2});
+        Scale("Major Locrian", {2, 2, 1, 1, 2, 2, 2},
+              {0, 2, 4, 5, 6, 8, 10, 12}, "1 2 3 4 b5 b6 b7 8", "", {});
 
-    const Scale Scale::Balinese = Scale("Balinese", {1, 2, 4, 1, 4});
+    const Scale Scale::Balinese =
+        Scale("Balinese", {1, 2, 4, 1, 4}, {0, 1, 3, 7, 8, 12},
+              "1 b2 b3 5 b6 8", "", {});
 
     const Scale Scale::NeapolitanMajor =
-        Scale("Neapolitan Major", {1, 2, 2, 2, 2, 2, 1});
+        Scale("Neapolitan Major", {1, 2, 2, 2, 2, 2, 1},
+              {0, 1, 3, 5, 7, 9, 11, 12}, "1 b2 b3 4 5 6 7 8", "", {});
 
-    const Scale Scale::Oriental = Scale("Oriental", {1, 3, 1, 1, 3, 1, 2});
+    const Scale Scale::Oriental =
+        Scale("Oriental", {1, 3, 1, 1, 3, 1, 2}, {0, 1, 4, 5, 6, 9, 10, 12},
+              "1 b2 3 4 b5 6 b7 8", "", {});
 
-    const Scale Scale::Arabian = Scale("Arabian", {2, 2, 1, 1, 2, 2, 2});
+    const Scale Scale::Arabian =
+        Scale("Arabian", {2, 2, 1, 1, 2, 2, 2}, {0, 2, 4, 5, 6, 8, 10, 12},
+              "1 2 3 4 b5 b6 b7 8", "", {});
 
-    const Scale Scale::Hindu = Scale("Hindu", {2, 2, 1, 2, 1, 2, 2});
+    const Scale Scale::Hindu =
+        Scale("Hindu", {2, 2, 1, 2, 1, 2, 2}, {0, 2, 4, 5, 7, 8, 10, 12},
+              "1 2 3 4 5 b6 b7 8", "", {});
 
     const Scale Scale::PentatonicMinor =
-        Scale("Pentatonic Minor", {3, 2, 2, 3, 2});
+        Scale("Pentatonic Minor", {3, 2, 2, 3, 2}, {0, 3, 5, 7, 10, 12},
+              "1 b3 4 5 b7 8", "",
+              {
+                  "Basic",
+                  "Pentatonic",
+              });
 
     const Scale Scale::HungarianMinor =
-        Scale("Hungarian Minor", {2, 1, 3, 1, 1, 3, 1});
+        Scale("Hungarian Minor", {2, 1, 3, 1, 1, 3, 1},
+              {0, 2, 3, 6, 7, 8, 11, 12}, "1 2 b3 #4 5 b6 7 8", "", {});
 
     const Scale Scale::PentatonicMajor =
-        Scale("Pentatonic Major", {2, 2, 3, 2, 3});
+        Scale("Pentatonic Major", {2, 2, 3, 2, 3}, {0, 2, 4, 7, 9, 12},
+              "1 2 3 5 6 8", "",
+              {
+                  "Basic",
+                  "Pentatonic",
+              });
 
-    const Scale Scale::WholeTone = Scale("Whole Tone", {2, 2, 2, 2, 2, 2});
+    const Scale Scale::WholeTone =
+        Scale("Whole Tone", {2, 2, 2, 2, 2, 2}, {0, 2, 4, 6, 8, 10, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::Messiaen6thMode =
-        Scale("Messiaen 6th Mode", {2, 2, 1, 1, 2, 2, 1, 1});
+        Scale("Messiaen 6th Mode", {2, 2, 1, 1, 2, 2, 1, 1},
+              {0, 2, 4, 5, 6, 8, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Iwato = Scale("Iwato", {1, 4, 1, 4, 2});
+    const Scale Scale::Iwato =
+        Scale("Iwato", {1, 4, 1, 4, 2}, {0, 1, 5, 6, 10, 12}, "1 b2 4 b5 b7 8",
+              "", {});
 
     const Scale Scale::HungarianGypsy =
-        Scale("Hungarian Gypsy", {2, 1, 3, 1, 1, 2, 2});
+        Scale("Hungarian Gypsy", {2, 1, 3, 1, 1, 2, 2},
+              {0, 2, 3, 6, 7, 8, 10, 12}, "1 2 b3 #4 5 b6 b7 8", "", {});
 
-    const Scale Scale::Phrygian = Scale("Phrygian", {1, 2, 2, 2, 1, 2, 2});
+    const Scale Scale::Phrygian = Scale("Phrygian", {1, 2, 2, 2, 1, 2, 2},
+                                        {0, 1, 3, 5, 7, 8, 10, 12}, "", "",
+                                        {
+                                            "Major/Minor",
+                                            "Modal",
+                                        });
 
     const Scale Scale::AlteredDominant =
-        Scale("Altered Dominant", {1, 2, 1, 2, 2, 2, 2});
+        Scale("Altered Dominant", {1, 2, 1, 2, 2, 2, 2},
+              {0, 1, 3, 4, 6, 8, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Kumoi = Scale("Kumoi", {1, 4, 2, 1, 4});
+    const Scale Scale::Kumoi = Scale(
+        "Kumoi", {1, 4, 2, 1, 4}, {0, 1, 5, 7, 8, 12}, "1 b2 4 5 b6 8", "", {});
 
     const Scale Scale::LydianDominant =
-        Scale("Lydian Dominant", {2, 2, 2, 1, 2, 1, 2});
+        Scale("Lydian Dominant", {2, 2, 2, 1, 2, 1, 2},
+              {0, 2, 4, 6, 7, 9, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::InvertedAugmented =
-        Scale("Inverted Augmented", {1, 3, 1, 3, 1, 3});
+        Scale("Inverted Augmented", {1, 3, 1, 3, 1, 3}, {0, 1, 4, 5, 8, 9, 12},
+              "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Octatonic = Scale("Octatonic", {2, 1, 2, 1, 2, 1, 2, 1});
+    const Scale Scale::Octatonic =
+        Scale("Octatonic", {2, 1, 2, 1, 2, 1, 2, 1},
+              {0, 2, 3, 5, 6, 8, 9, 11, 12}, "1 2 b3 4 b5 b6 7 8", "",
+              {
+                  "Basic",
+              });
 
     const Scale Scale::EightToneSpanish =
-        Scale("Eight Tone Spanish", {1, 2, 1, 1, 1, 2, 2, 2});
+        Scale("Eight Tone Spanish", {1, 2, 1, 1, 1, 2, 2, 2},
+              {0, 1, 3, 4, 5, 6, 8, 10, 12}, "1 b2 #2 3 4 b5 b6 b7 8", "", {});
 
     const Scale Scale::HungarianMajor =
-        Scale("Hungarian Major", {3, 1, 2, 1, 2, 1, 2});
+        Scale("Hungarian Major", {3, 1, 2, 1, 2, 1, 2},
+              {0, 3, 4, 6, 7, 9, 10, 12}, "1 #2 3 #4 5 6 b7 8", "", {});
 
     const Scale Scale::IonianAugmented =
-        Scale("Ionian Augmented", {2, 2, 1, 3, 1, 2, 1});
+        Scale("Ionian Augmented", {2, 2, 1, 3, 1, 2, 1},
+              {0, 2, 4, 5, 8, 9, 11, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Mixolydian = Scale("Mixolydian", {2, 1, 2, 2, 2, 1, 2});
+    const Scale Scale::Mixolydian = Scale("Mixolydian", {2, 1, 2, 2, 2, 1, 2},
+                                          {0, 2, 3, 5, 7, 9, 10, 12}, "", "",
+                                          {
+                                              "Major/Minor",
+                                              "Modal",
+                                          });
 
     const Scale Scale::Messiaen7thMode =
-        Scale("Messiaen 7th Mode", {1, 1, 1, 2, 1, 1, 1, 1, 2, 1});
+        Scale("Messiaen 7th Mode", {1, 1, 1, 2, 1, 1, 1, 1, 2, 1},
+              {0, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Locrian = Scale("Locrian", {1, 2, 2, 1, 2, 2, 2});
+    const Scale Scale::Locrian = Scale("Locrian", {1, 2, 2, 1, 2, 2, 2},
+                                       {0, 1, 3, 5, 6, 8, 10, 12}, "", "",
+                                       {
+                                           "Major/Minor",
+                                           "Modal",
+                                       });
 
     const Scale Scale::Diminished =
-        Scale("Diminished", {2, 1, 2, 1, 2, 1, 2, 1});
+        Scale("Diminished", {2, 1, 2, 1, 2, 1, 2, 1},
+              {0, 2, 3, 5, 6, 8, 9, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::Messiaen5thModeInverse =
-        Scale("Messiaen 5th Mode Inverse", {4, 1, 1, 4, 1, 1});
+        Scale("Messiaen 5th Mode Inverse", {4, 1, 1, 4, 1, 1},
+              {0, 4, 5, 6, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::LydianAugmented =
-        Scale("Lydian Augmented", {2, 2, 2, 2, 1, 2, 1});
+        Scale("Lydian Augmented", {2, 2, 2, 2, 1, 2, 1},
+              {0, 2, 4, 6, 8, 9, 11, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::Messiaen6thModeInverse =
-        Scale("Messiaen 6th Mode Inverse", {1, 1, 2, 2, 1, 1, 2, 2});
+        Scale("Messiaen 6th Mode Inverse", {1, 1, 2, 2, 1, 1, 2, 2},
+              {0, 1, 2, 4, 6, 7, 8, 10, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Javanese = Scale("Javanese", {1, 2, 2, 2, 2, 1, 2});
+    const Scale Scale::Javanese =
+        Scale("Javanese", {1, 2, 2, 2, 2, 1, 2}, {0, 1, 3, 5, 7, 9, 10, 12},
+              "1 b2 b3 4 5 6 b7 8", "", {});
 
-    const Scale Scale::Major = Scale("Major", {2, 2, 1, 2, 2, 2, 1});
+    const Scale Scale::Major =
+        Scale("Major", {2, 2, 1, 2, 2, 2, 1}, {0, 2, 4, 5, 7, 9, 11, 12},
+              "1 2 3 4 5 6 7", "",
+              {
+                  "Basic",
+              });
 
     const Scale Scale::SymmetricalDecatonic =
-        Scale("Symmetrical Decatonic", {1, 1, 2, 1, 1, 1, 1, 2, 1, 1});
+        Scale("Symmetrical Decatonic", {1, 1, 2, 1, 1, 1, 1, 2, 1, 1},
+              {0, 1, 2, 4, 5, 6, 7, 8, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+                  "Decatonic",
+              });
 
-    const Scale Scale::Mongolian = Scale("Mongolian", {2, 2, 3, 2, 3});
+    const Scale Scale::Mongolian =
+        Scale("Mongolian", {2, 2, 3, 2, 3}, {0, 2, 4, 7, 9, 12}, "1 2 3 5 6 8",
+              "", {});
 
     const Scale Scale::Messiaen2ndModeTruncated =
-        Scale("Messiaen 2nd Mode Truncated", {1, 2, 3, 1, 2, 3});
+        Scale("Messiaen 2nd Mode Truncated", {1, 2, 3, 1, 2, 3},
+              {0, 1, 3, 6, 7, 9, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::Bebopminor =
-        Scale("Bebop minor", {2, 1, 1, 1, 2, 2, 1, 2});
+        Scale("Bebop minor", {2, 1, 1, 1, 2, 2, 1, 2},
+              {0, 2, 3, 4, 5, 7, 9, 10, 12}, "1 2 b3 3 4 5 6 b7 8", "",
+              {
+                  "Jazz",
+              });
 
-    const Scale Scale::Spanish = Scale("Spanish", {1, 3, 1, 2, 1, 2, 2});
+    const Scale Scale::Spanish =
+        Scale("Spanish", {1, 3, 1, 2, 1, 2, 2}, {0, 1, 4, 5, 7, 8, 10, 12},
+              "1 b2 3 4 5 b6 b7 8", "", {});
 
-    const Scale Scale::Slendro = Scale("Slendro", {2, 3, 2, 2, 3});
+    const Scale Scale::Slendro = Scale("Slendro", {2, 3, 2, 2, 3},
+                                       {0, 2, 5, 7, 9, 12}, "1 2 4 5 6 8", "",
+                                       {
+                                           "World",
+                                           "Gamelan",
+                                           "Pentatonic",
+                                       });
 
     const Scale Scale::RomanianMinor =
-        Scale("Romanian Minor", {2, 1, 3, 1, 2, 1, 2});
+        Scale("Romanian Minor", {2, 1, 3, 1, 2, 1, 2},
+              {0, 2, 3, 6, 7, 9, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::LydianRaised2 =
-        Scale("Lydian Raised2", {3, 1, 2, 1, 2, 2, 1});
+        Scale("Lydian Raised2", {3, 1, 2, 1, 2, 2, 1},
+              {0, 3, 4, 6, 7, 9, 11, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Ethiopian = Scale("Ethiopian", {2, 1, 2, 2, 1, 2, 2});
+    const Scale Scale::Ethiopian =
+        Scale("Ethiopian", {2, 1, 2, 2, 1, 2, 2}, {0, 2, 3, 5, 7, 8, 10, 12},
+              "1 2 b3 4 5 b6 b7 8", "", {});
 
-    const Scale Scale::Hirajoshi = Scale("Hirajoshi", {2, 1, 4, 1, 4});
+    const Scale Scale::Hirajoshi =
+        Scale("Hirajoshi", {2, 1, 4, 1, 4}, {0, 2, 3, 7, 8, 12},
+              "1 2 b3 5 b6 8", "", {});
 
     const Scale Scale::Messiaen5thMode =
-        Scale("Messiaen 5th Mode", {1, 4, 1, 1, 4, 1});
+        Scale("Messiaen 5th Mode", {1, 4, 1, 1, 4, 1}, {0, 1, 5, 6, 7, 11, 12},
+              "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::GenusChromaticum =
-        Scale("Genus Chromaticum", {1, 2, 1, 1, 2, 1, 1, 2, 1});
+        Scale("Genus Chromaticum", {1, 2, 1, 1, 2, 1, 1, 2, 1},
+              {0, 1, 3, 4, 5, 7, 8, 9, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+                  "Decatonic",
+              });
 
-    const Scale Scale::Byzantine = Scale("Byzantine", {1, 3, 1, 2, 1, 3, 1});
+    const Scale Scale::Byzantine =
+        Scale("Byzantine", {1, 3, 1, 2, 1, 3, 1}, {0, 1, 4, 5, 7, 8, 11, 12},
+              "1 b2 3 4 5 b6 7 8", "", {});
 
-    const Scale Scale::RagaNeelangi =
-        Scale("Raga Neelangi", {2, 1, 3, 2, 1, 3});
+    const Scale Scale::RagaNeelangi = Scale("Raga Neelangi", {2, 1, 3, 2, 1, 3},
+                                            {0, 2, 3, 6, 8, 9, 12}, "", "",
+                                            {
+                                                "Symmetrical",
+                                            });
 
     const Scale Scale::Messiaen3rdMode =
-        Scale("Messiaen 3rd Mode", {2, 1, 1, 2, 1, 1, 2, 1, 1});
+        Scale("Messiaen 3rd Mode", {2, 1, 1, 2, 1, 1, 2, 1, 1},
+              {0, 2, 3, 4, 6, 7, 8, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::LeadingWholeTone =
-        Scale("Leading Whole Tone", {2, 2, 2, 2, 2, 1, 1});
+        Scale("Leading Whole Tone", {2, 2, 2, 2, 2, 1, 1},
+              {0, 2, 4, 6, 8, 10, 11, 12}, "1 2 3 #4 #5 #6 7 8", "", {});
 
-    const Scale Scale::Gypsy = Scale("Gypsy", {1, 3, 1, 2, 1, 3, 1});
+    const Scale Scale::Gypsy =
+        Scale("Gypsy", {1, 3, 1, 2, 1, 3, 1}, {0, 1, 4, 5, 7, 8, 11, 12},
+              "1 b2 3 4 5 b6 7 8", "", {});
 
     const Scale Scale::WholeToneFlat5 =
-        Scale("Whole Tone Flat5", {2, 2, 2, 2, 2, 2});
+        Scale("Whole Tone Flat5", {2, 2, 2, 2, 2, 2}, {0, 2, 4, 6, 8, 10, 12},
+              "1 2 3 b5 b6 b7 8", "", {});
 
     const Scale Scale::VanDerHost =
-        Scale("Van Der Host", {1, 2, 2, 1, 1, 2, 2, 1});
+        Scale("Van Der Host", {1, 2, 2, 1, 1, 2, 2, 1},
+              {0, 1, 3, 5, 6, 7, 9, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::PelogBem = Scale("Pelog Bem", {1, 5, 1, 1});
+    const Scale Scale::PelogBem =
+        Scale("Pelog Bem", {1, 5, 1, 1}, {0, 1, 6, 7, 8}, "1 b2 #4 5 b6 8", "",
+              {
+                  "World",
+                  "Gamelan",
+                  "Pentatonic",
+              });
 
-    const Scale Scale::Dorian = Scale("Dorian", {2, 1, 2, 2, 2, 1, 2});
+    const Scale Scale::Dorian = Scale("Dorian", {2, 1, 2, 2, 2, 1, 2},
+                                      {0, 2, 3, 5, 7, 9, 10, 12}, "", "",
+                                      {
+                                          "Major/Minor",
+                                          "Modal",
+                                      });
 
     const Scale Scale::Ultralocrian =
-        Scale("Ultralocrian", {1, 2, 1, 2, 2, 1, 3});
+        Scale("Ultralocrian", {1, 2, 1, 2, 2, 1, 3}, {0, 1, 3, 4, 6, 8, 9, 12},
+              "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
-    const Scale Scale::Enigmatic = Scale("Enigmatic", {1, 3, 2, 2, 2, 1, 1});
+    const Scale Scale::Enigmatic =
+        Scale("Enigmatic", {1, 3, 2, 2, 2, 1, 1}, {0, 1, 4, 6, 8, 10, 11, 12},
+              "1 b2 3 #4 #5 #6 7 8", "", {});
 
     const Scale Scale::DiminishedMinor =
-        Scale("Diminished Minor", {2, 1, 2, 1, 2, 1, 2, 1});
+        Scale("Diminished Minor", {2, 1, 2, 1, 2, 1, 2, 1},
+              {0, 2, 3, 5, 6, 8, 9, 11, 12}, "1 2 b3 4 b5 b6 bb7 b8 8", "", {});
 
     const Scale Scale::PhrygianDominant =
-        Scale("Phrygian Dominant", {1, 3, 1, 2, 1, 2, 2});
+        Scale("Phrygian Dominant", {1, 3, 1, 2, 1, 2, 2},
+              {0, 1, 4, 5, 7, 8, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::Messiaen7thModeInverse =
-        Scale("Messiaen 7th Mode Inverse", {2, 1, 1, 1, 1, 2, 1, 1, 1, 1});
+        Scale("Messiaen 7th Mode Inverse", {2, 1, 1, 1, 1, 2, 1, 1, 1, 1},
+              {0, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
-    const Scale Scale::Algerian = Scale("Algerian", {2, 1, 3, 1, 1, 3, 1});
+    const Scale Scale::Algerian =
+        Scale("Algerian", {2, 1, 3, 1, 1, 3, 1}, {0, 2, 3, 6, 7, 8, 11, 12},
+              "1 2 b3 #4 5 b6 7 8", "", {});
 
-    const Scale Scale::Chinese = Scale("Chinese", {4, 2, 1, 4, 1});
+    const Scale Scale::Chinese =
+        Scale("Chinese", {4, 2, 1, 4, 1}, {0, 4, 6, 7, 11, 12}, "1 3 #4 5 7 8",
+              "", {});
 
     const Scale Scale::LocrianRaised6 =
-        Scale("Locrian Raised6", {1, 2, 2, 1, 3, 1, 2});
+        Scale("Locrian Raised6", {1, 2, 2, 1, 3, 1, 2},
+              {0, 1, 3, 5, 6, 9, 10, 12}, "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::DorianFlat2 =
-        Scale("Dorian Flat2", {1, 2, 2, 2, 2, 1, 2});
+        Scale("Dorian Flat2", {1, 2, 2, 2, 2, 1, 2}, {0, 1, 3, 5, 7, 9, 10, 12},
+              "", "",
+              {
+                  "Major/Minor",
+                  "Modal",
+              });
 
     const Scale Scale::BebopDominant =
-        Scale("Bebop Dominant", {2, 2, 1, 2, 2, 1, 1, 1});
+        Scale("Bebop Dominant", {2, 2, 1, 2, 2, 1, 1, 1},
+              {0, 2, 4, 5, 7, 9, 10, 11, 12}, "1 2 3 4 5 6 b7 7 8", "",
+              {
+                  "Jazz",
+              });
 
     const Scale Scale::BebopHalfDiminished =
-        Scale("Bebop Half Diminished", {1, 2, 2, 1, 1, 1, 2, 2});
+        Scale("Bebop Half Diminished", {1, 2, 2, 1, 1, 1, 2, 2},
+              {0, 1, 3, 5, 6, 7, 8, 10, 12}, "1 b2 b3 4 b5 5 b6 b7 8", "", {});
 
     const Scale Scale::MajorPhrygian =
-        Scale("Major Phrygian", {1, 3, 1, 2, 1, 2, 2});
+        Scale("Major Phrygian", {1, 3, 1, 2, 1, 2, 2},
+              {0, 1, 4, 5, 7, 8, 10, 12}, "1 b2 3 4 5 b6 b7 8", "", {});
 
     const Scale Scale::DiminishedHalfTone =
-        Scale("Diminished Half Tone", {1, 2, 1, 2, 1, 2, 1, 2});
+        Scale("Diminished Half Tone", {1, 2, 1, 2, 1, 2, 1, 2},
+              {0, 1, 3, 4, 6, 7, 9, 10, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const Scale Scale::Messiaen4thMode =
-        Scale("Messiaen 4th Mode", {1, 1, 3, 1, 1, 1, 3, 1});
+        Scale("Messiaen 4th Mode", {1, 1, 3, 1, 1, 1, 3, 1},
+              {0, 1, 2, 5, 6, 7, 8, 11, 12}, "", "",
+              {
+                  "Symmetrical",
+              });
 
     const std::map<std::string, const Scale> Scale::scaleMap = {
         std::pair<std::string, const Scale>("Lydian", Lydian),
@@ -400,7 +715,6 @@ namespace gdmusickit {
         std::pair<std::string, const Scale>("Diminished Half Tone",
                                             DiminishedHalfTone),
         std::pair<std::string, const Scale>("Messiaen 4th Mode",
-                                            Messiaen4thMode)
-    };
+                                            Messiaen4thMode)};
 
 } // namespace gdmusickit
